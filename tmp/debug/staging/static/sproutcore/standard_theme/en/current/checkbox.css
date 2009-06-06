@@ -1,0 +1,90 @@
+/* SC.CheckboxView - sc-theme */
+
+.sc-theme .sc-checkbox-view {
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.sc-theme .sc-checkbox-view .label {
+	position: absolute ;
+	left: 20px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	line-height: 18px;
+}
+
+.sc-theme .sc-checkbox-view.icon img.icon {
+	position: relative;
+	vertical-align: middle;
+	top: -2px;
+	margin-left: 2px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+.sc-theme .sc-checkbox-view.disabled {
+	color: #999;
+}
+
+/* @group Checkbox Image */
+
+/* Set the opacity of the input to 0 so it will take hits but not appear. */
+.sc-theme .sc-checkbox-view input {
+	width: 16px;
+	height: 16px;
+	top:1px; 
+	left: 1px;
+	position: relative;
+	opacity:0.0;
+	vertical-align: middle ;
+	margin: 0;
+	margin-right: 3px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+
+.sc-theme .sc-checkbox-view img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -728px;
+	width: 16px;
+	height: 16px;
+	position: absolute ;
+	left: 1px; 
+	top: 0px;
+}
+
+.sc-theme .sc-checkbox-view.sel img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -728px;
+}
+
+.sc-theme .sc-checkbox-view.mixed img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -744px;
+}
+
+.sc-theme .sc-checkbox-view.disabled img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -760px;
+} 
+
+.sc-theme .sc-checkbox-view.sel.disabled img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -792px;
+}
+
+.sc-theme .sc-checkbox-view.mixed.disabled img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -760px;
+}
+
+.sc-theme .sc-checkbox-view.active img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -744px;
+} 
+
+.sc-theme .sc-checkbox-view.sel.active img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -728px;
+}
+
+.sc-theme .sc-checkbox-view.mixed.active img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -744px;
+}
+
+/* @end */
+

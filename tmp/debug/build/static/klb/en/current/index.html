@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <title>Klb</title>
+  <script type="text/javascript">
+  var SC = SC || {};
+SC.browser = (function() {
+  var userAgent = navigator.userAgent.toLowerCase();
+  var version = (userAgent.match( /.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/ ) || [])[1] ;
+
+  var browser = {
+    version: version,
+    safari: (/webkit/).test( userAgent ) ? version : 0,
+    opera: (/opera/).test( userAgent ) ? version : 0,
+    msie: (/msie/).test( userAgent ) && !(/opera/).test( userAgent ) ? version : 0,
+    mozilla: (/mozilla/).test( userAgent ) && !(/(compatible|webkit)/).test( userAgent ) ? version : 0,
+    mobileSafari: (/apple.*mobile.*safari/).test(userAgent) ? version : 0,
+    windows: !!(/(windows)/).test(userAgent),
+    mac: !!((/(macintosh)/).test(userAgent) || (/(mac os x)/).test(userAgent)),
+    language: ((navigator.language || navigator.browserLanguage).split('-', 1)[0])
+  };
+  
+    browser.current = (browser.msie) ? 'msie' : (browser.mozilla) ? 'mozilla' : (browser.safari) ? 'safari' : (browser.opera) ? 'opera' : 'unknown' ;
+  return browser ;
+})();
+
+SC.setupBodyClassNames = function() {
+  var el = document.body ;
+  var browser, platform, shadows, borderRad, classNames;
+  if (!el) return ;
+  browser = SC.browser.current ;
+  platform = (SC.browser.windows) ? 'windows' : (SC.browser.mac) ? 'mac' : 'other-platform' ;
+  
+  shadows = (document.documentElement.style.MozBoxShadow !== undefined) || 
+                (document.documentElement.style.webkitBoxShadow !== undefined) ||
+                (document.documentElement.style.oBoxShadow !== undefined) ||
+                (document.documentElement.style.boxShadow !== undefined);
+  
+  borderRad = (document.documentElement.style.MozBorderRadius !== undefined) || 
+              (document.documentElement.style.webkitBorderRadius !== undefined) ||
+              (document.documentElement.style.oBorderRadius !== undefined) ||
+              (document.documentElement.style.borderRadius !== undefined);
+  
+  
+  classNames = (el.className) ? el.className.split(' ') : [] ;
+  if(shadows) classNames.push('box-shadow');
+  if(borderRad) classNames.push('border-rad');
+  classNames.push(browser) ;
+  classNames.push(platform) ;
+  if (SC.browser.mobileSafari) classNames.push('mobile-safari') ;
+  el.className = classNames.join(' ') ;
+} ;
+
+
+  </script>
+     <link href="/static/sproutcore/testing/en/current/stylesheet.css?1241509782" rel="stylesheet" type="text/css" />
+  <link href="/static/sproutcore/foundation/en/current/stylesheet.css?1244323413" rel="stylesheet" type="text/css" />
+  <link href="/static/sproutcore/desktop/en/current/stylesheet.css?1244323413" rel="stylesheet" type="text/css" />
+  <link href="/static/sproutcore/standard_theme/en/current/stylesheet.css?1241509782" rel="stylesheet" type="text/css" />
+  <link href="/static/klb/en/current/stylesheet.css?1244324505" rel="stylesheet" type="text/css" />
+   
+  </head>
+    
+  <body class="sc-theme focus">  
+    <script type="text/javascript">
+    if (SC.setupBodyClassNames) SC.setupBodyClassNames() ;
+
+    </script>
+<div class="sc-welcome">
+  <img class="logo" src="/static/sproutcore/foundation/en/current/images/sproutcore-logo.png?1241509782" />
+  <div class="message">
+    <h1>Welcome!</h1>
+    <h3>You are now running SproutCore.</h3>
+    <div class="sticky-note">
+      <p>Things to do:</p>
+      <ul>
+        <li>Add a model:<br/>sc-gen model contacts/my_model</li>
+        <li>Add a controller:<br/>sc-gen controller contacts/my_controller</li>
+        <li>Edit english.lproj/body.rhtml</li>
+        <li>Build for deployment:<br />sc-build</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript" src="/static/sproutcore/debug/en/current/source/core.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/core.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/utils.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/extras.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/jquery.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/qunit.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/system/dump.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/system/equiv.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/system/plan.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/system/runner.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/testing/en/current/source/system/suite.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/license.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/core.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/base.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/indexOf.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/insertAt.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/objectAt.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/popObject.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/pushObject.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/rangeObserver.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/removeAt.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/removeObject.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/replace.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/shiftObject.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/debug/test_suites/array/unshiftObject.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/private/observer_set.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/mixins/observable.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/enumerator.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/mixins/enumerable.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/range_observer.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/mixins/array.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/mixins/copyable.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/mixins/delegate_support.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/mixins/freezable.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/object.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/private/chain_observer.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/set.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/private/observer_queue.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/protocols/observable_protocol.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/protocols/sparse_array_delegate.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/binding.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/index_set.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/run_loop.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/selection_set.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/runtime/en/current/source/system/sparse_array.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/core.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/data_sources/data_source.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/data_sources/cascade.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/models/record.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/data_sources/fixtures.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/system/query.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/data_sources/fixtures_with_queries.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/debug/json.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/debug/standard_setup.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/fixtures/author_fixtures.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/fixtures/sample.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/models/record_attribute.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/models/fetched_attribute.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/models/many_attribute.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/system/many_array.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/system/store.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/system/nested_store.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/datastore/en/current/source/system/record_array.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/core.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/controllers/controller.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/selection_support.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/controllers/array.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/controllers/object.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/tree_item_content.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/collection_content.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/private/tree_item_observer.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/controllers/tree.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/browser.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/builder.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/core_query.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/event.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/cursor.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/responder.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/string.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/views/view.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/panes/pane.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/debug/control_test_pane.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/ext/object.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/ext/run_loop.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/button.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/content_display.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/control.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/editable.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/static_layout.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/mixins/validatable.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/panes/main.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/protocols/inline_editor_delegate.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/benchmark.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/error.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/locale.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/image_cache.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/json.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/page.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/ready.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/render_context.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/request.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/root_responder.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/routes.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/time.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/timer.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/user_defaults.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/system/utils.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/validator.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/credit_card.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/date.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/email.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/not_empty.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/number.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/validators/password.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/views/container.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/views/field.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/views/image.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/foundation/en/current/source/views/label.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/lproj/strings.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/core.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/system/drag.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/debug/drag.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/mixins/border.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/mixins/collection_group.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/mixins/collection_row_delegate.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/mixins/collection_view_delegate.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/mixins/scrollable.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/modal.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/panel.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/button.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/alert.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/palette.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/picker.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/separator.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/menu_item.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/menu.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/panes/sheet.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/protocols/drag_data_source.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/protocols/drag_source.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/protocols/drop_target.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/protocols/responder.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/system/key_bindings.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/system/root_responder.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/system/undo_manager.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/checkbox.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/list_item.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/collection.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/disclosure.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/text_field.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/form.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/list.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/grid.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/popup_button.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/progress.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/radio.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/scene.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/scroller.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/scroll.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/segmented.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/select_field.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/slider.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/source_list_group.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/source_list.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/split_divider.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/split.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/stacked.js?1244323413"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/tab.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/thumb.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/toolbar.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/desktop/en/current/source/views/web.js?1241509782"></script>
+  <script type="text/javascript" src="/static/sproutcore/en/current/source/license.js?1241509782"></script>
+  <script type="text/javascript" src="/static/klb/en/current/source/lproj/strings.js?1244324505"></script>
+  <script type="text/javascript" src="/static/klb/en/current/source/core.js?1244324505"></script>
+  <script type="text/javascript" src="/static/klb/en/current/source/fixtures/loan.js?1244325143"></script>
+  <script type="text/javascript" src="/static/klb/en/current/source/main.js?1244324505"></script>
+  <script type="text/javascript" src="/static/klb/en/current/source/models/loan.js?1244325143"></script>
+<script type="text/javascript">String.preferredLanguage = "en";</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+/** SC.PickerPane Support */
+
+.sc-pane.sc-panel.sc-picker .perfectRight {
+  background: url('/static/sproutcore/desktop/en/current/images/panels/sprite-x.png?1241509782') no-repeat 0px -30px;
+  position: absolute;
+  width: 25px;
+  height: 51px;
+  top: 20px;
+  left: -25px;
+}
+
+.sc-pane.sc-panel.sc-picker .perfectLeft {
+  background: url('/static/sproutcore/desktop/en/current/images/panels/sprite-x.png?1241509782') no-repeat -30px -30px;
+  position: absolute;
+  width: 25px;
+  height: 51px;
+  top: 20px;
+  right: -25px;
+}
+
+.sc-pane.sc-panel.sc-picker .perfectTop {
+  background: url('/static/sproutcore/desktop/en/current/images/panels/sprite-x.png?1241509782') no-repeat 0px -90px;
+  position: absolute;
+  width: 51px;
+  height: 25px;
+  bottom: -25px;
+  left: 50%;
+  margin-left: -25px;
+}
+
+.sc-pane.sc-panel.sc-picker .perfectBottom {
+  background: url('/static/sproutcore/desktop/en/current/images/panels/sprite-x.png?1241509782') no-repeat 0px 0px;
+  position: absolute;
+  width: 51px;
+  height: 25px;
+  top: -25px;
+  left: 50%;
+  margin-left: -25px;
+}

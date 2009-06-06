@@ -1,0 +1,1169 @@
+/* >>>>>>>>>> BEGIN source/button.css */
+/* @override 
+*/
+
+/* @group Button Core */
+
+.sc-theme .sc-button-view {
+  text-decoration: none ;
+  color: black ;
+  border: none ;
+  padding: 0;
+  display: inline-block ;
+}
+
+.sc-theme .sc-button-view.icon img.icon {
+  position: relative;
+  vertical-align: middle;
+  top: -2px;
+  margin-right: 2px;
+  height: 16px;
+  width: 16px;
+}
+
+
+/* @end */
+
+/* @group regular */
+
+/* @group basic */
+
+.sc-theme .sc-button-view.regular {
+  font-size: 13px;
+  height: 22px;
+  min-width: 32px;
+  text-align: center;
+}
+
+.sc-theme .sc-button-view.regular .sc-button-inner {
+  display: block ;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sc-theme .sc-button-view.regular .sc-button-label {
+  display: block ;
+  text-align: center;
+  line-height: 22px;
+  vertical-align: middle;
+  text-shadow: #f0f0f0 0px 1px 0px;
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  right: 12px;
+}
+
+/* @end */
+
+/* @group disabled */
+
+.sc-theme.blur .sc-button-view.regular,
+.sc-theme.focus .sc-button-view.regular.disabled {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -496px;
+}
+
+.sc-theme.blur .sc-button-view.regular .sc-button-inner,
+.sc-theme.focus .sc-button-view.regular.disabled .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -450px;
+}
+
+.sc-theme.blur .sc-button-view.regular .sc-button-label, 
+.sc-theme.focus .sc-button-view.regular.disabled .sc-button-label {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -473px;
+  color: #999;
+  text-shadow: none ;
+}
+
+
+.sc-theme.blur .sc-button-view.regular.sel, 
+.sc-theme.blur .sc-button-view.regular.def, 
+
+.sc-theme.focus .sc-button-view.regular.sel.disabled, 
+.sc-theme.focus .sc-button-view.regular.def.disabled {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -289px;
+}
+
+.sc-theme.blur .sc-button-view.regular.sel .sc-button-inner,
+.sc-theme.blur .sc-button-view.regular.def .sc-button-inner,
+
+.sc-theme.focus .sc-button-view.regular.sel.disabled .sc-button-inner,
+.sc-theme.focus .sc-button-view.regular.def.disabled .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -243px;
+}
+
+.sc-theme.blur .sc-button-view.regular.def .sc-button-label, 
+.sc-theme.blur .sc-button-view.regular.sel .sc-button-label, 
+
+.sc-theme.focus .sc-button-view.regular.def.disabled .sc-button-label, 
+.sc-theme.focus .sc-button-view.regular.sel.disabled .sc-button-label {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -266px;
+  color: #999;
+  text-shadow: none ;
+}
+
+/* @end */
+
+/* @group enabled */
+
+.sc-theme .sc-button-view.regular {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -358px;
+}
+
+.sc-theme .sc-button-view.regular .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -312px;
+}
+
+.sc-theme .sc-button-view.regular .sc-button-label {
+   background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x left -335px;
+}
+
+/* @end */
+
+/* @group sel - def */
+
+.sc-theme .sc-button-view.regular.sel, 
+.sc-theme .sc-button-view.regular.def {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -151px;
+}
+
+.sc-theme .sc-button-view.regular.sel .sc-button-inner, 
+.sc-theme .sc-button-view.regular.def .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -105px;
+}
+
+.sc-theme .sc-button-view.regular.sel .sc-button-label, 
+.sc-theme .sc-button-view.regular.def .sc-button-label {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -128px;
+  text-shadow: #dabec6 0px 1px 0px;
+}
+
+/* @end */
+
+/* @group sel.active - def.active */
+
+.sc-theme .sc-button-view.regular.sel.active, 
+.sc-theme .sc-button-view.regular.def.active {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -220px;
+}
+
+.sc-theme .sc-button-view.regular.sel.active .sc-button-inner, 
+.sc-theme .sc-button-view.regular.def.active .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -174px;
+}
+
+.sc-theme .sc-button-view.regular.sel.active .sc-button-label, 
+.sc-theme .sc-button-view.regular.def.active .sc-button-label {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -197px;
+  text-shadow: #b884a4 0px 1px 0px;
+}
+
+/* @end */
+
+/* @group active */
+
+.sc-theme .sc-button-view.regular.active {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -427px;
+}
+
+.sc-theme .sc-button-view.regular.active .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -381px;
+}
+
+.sc-theme .sc-button-view.regular.active .sc-button-label {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -404px;
+  text-shadow: #b8b8b8 0px 1px 0px;
+}
+
+/* @end */
+
+/* @group square theme */
+
+.sc-theme .sc-square-theme .sc-button-view.regular,
+.sc-theme .sc-square-theme .sc-button-view.regular.def {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -1150px;
+  text-shadow: #f0f0f0 0px 1px 0px;
+} 
+
+.sc-theme .sc-square-theme .sc-button-view.regular .sc-button-inner,
+.sc-theme .sc-square-theme .sc-button-view.regular.def .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat left -1104px; 
+} 
+
+.sc-theme .sc-square-theme .sc-button-view.regular .sc-button-label,
+.sc-theme .sc-square-theme .sc-button-view.regular.def .sc-button-label {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1127px;
+  text-shadow: #dabec6 0px 1px 0px;
+}
+
+.sc-theme .sc-square-theme .sc-button-view.regular.sel,
+.sc-theme .sc-square-theme .sc-button-view.regular.active {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -1219px;
+} 
+
+.sc-theme .sc-square-theme .sc-button-view.regular.sel .sc-button-inner,
+.sc-theme .sc-square-theme .sc-button-view.regular.active .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat left -1173px; 
+} 
+
+.sc-theme .sc-square-theme .sc-button-view.regular.sel .sc-button-label,
+.sc-theme .sc-square-theme .sc-button-view.regular.active .sc-button-label {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1196px;
+  text-shadow: #b884a4 0px 1px 0px;
+}
+
+.sc-theme.blur .sc-square-theme .sc-button-view.regular,
+.sc-theme .sc-square-theme .sc-button-view.regular.disabled {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -1288px;
+} 
+
+.sc-theme.blur .sc-square-theme .sc-button-view.regular .sc-button-inner,
+.sc-theme .sc-square-theme .sc-button-view.regular.disabled .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat left -1242px; 
+} 
+
+.sc-theme.blur .sc-square-theme .sc-button-view.regular .sc-button-label,
+.sc-theme .sc-square-theme .sc-button-view.regular.disabled .sc-button-label {
+  background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1265px;
+  text-shadow: none ;
+}
+
+/* @end */
+
+
+/* @end */
+
+/* @group square */
+
+/* @group basic */
+
+.sc-theme .sc-square-theme .sc-button-view.regular,
+.sc-theme .sc-square-theme .sc-button-view.regular.def,
+.sc-theme .sc-button-view.square {
+  font-size: 13px;
+  height: 21px;
+  text-shadow: #c0c0c0 0px 1px 0px;
+  text-align: center;
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x left -1397px;
+  border: 1px solid #625560;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.sc-theme .sc-square-theme .sc-button-view.regular .sc-button-inner,
+.sc-theme .sc-square-theme .sc-button-view.regular.def .sc-button-inner,
+.sc-theme .sc-button-view.square .sc-button-inner {
+  display: block ;
+  height: 21px;
+  max-height: 21px;
+}
+
+.sc-theme .sc-square-theme .sc-button-view.regular .sc-button-label,
+.sc-theme .sc-square-theme .sc-button-view.regular.def .sc-button-label,
+.sc-theme .sc-button-view.square .sc-button-label {
+  display: block ;
+  text-align: center;
+  padding: 0px 0px 7px 0px;
+  height: 14px;
+  margin-left: 8px;
+  margin-right: 8px;  
+  line-height: 22px;  
+}
+
+/* @end */
+
+/* @group sel - def */
+
+.sc-theme .sc-square-theme .sc-button-view.regular.sel,
+.sc-theme .sc-square-theme .sc-button-view.regular.active,
+.sc-theme .sc-button-view.square.sel, 
+.sc-theme .sc-button-view.square.active {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat left -1489px;
+  text-shadow: #a0a0a0 0px 1px 0px;
+}
+
+.sc-theme .sc-square-theme .sc-button-view.regular.sel .sc-button-inner,
+.sc-theme .sc-square-theme .sc-button-view.regular.active .sc-button-inner,
+.sc-theme .sc-button-view.square.sel .sc-button-inner, 
+.sc-theme .sc-button-view.square.active .sc-button-inner {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -1535px;
+}
+
+.sc-theme .sc-square-theme .sc-button-view.regular.sel .sc-button-label,
+.sc-theme .sc-square-theme .sc-button-view.regular.active .sc-button-label,
+.sc-theme .sc-button-view.square.sel .sc-button-label, 
+.sc-theme .sc-button-view.square.active .sc-button-label {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x right -1512px;
+}
+
+/* @end */
+
+/* @group disabled */
+
+.sc-theme.blur .sc-square-theme .sc-button-view.regular,
+.sc-theme .sc-square-theme .sc-button-view.regular.disabled,
+.sc-theme .sc-button-view.square.disabled {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x left -1420px;
+  color: #999;
+  text-shadow: none ;
+  border: 1px #999 solid;
+}
+
+.sc-theme.blur .sc-square-theme .sc-button-view.regular .sc-button-inner,
+.sc-theme .sc-square-theme .sc-button-view.regular.disabled .sc-button-inner ,
+.sc-theme .sc-button-view.square.disabled .sc-button-inner {
+  background: none ;
+}
+
+.sc-theme.blur .sc-square-theme .sc-button-view.regular .sc-button-label,
+.sc-theme .sc-square-theme .sc-button-view.regular.disabled .sc-button-label,
+.sc-theme .sc-button-view.square.disabled .sc-button-label {
+  background: none ;
+}
+
+/* @end */
+
+
+/* @end */
+
+/* @group basic : capsule */
+
+.sc-theme .sc-button-view.capsule {
+  font-size: 13px;
+  height: 21px;
+  text-shadow: #c0c0c0 0px 1px 0px;
+  text-align: center;
+	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -358px;
+}
+
+.sc-theme .sc-button-view.capsule .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -312px;
+  display: block ;
+  height: 21px;
+  max-height: 21px;
+}
+
+.sc-theme .sc-button-view.capsule .sc-button-label {
+ 	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x left -335px;
+  display: block ;
+  text-align: center;
+  padding: 0px 0px 7px 0px;
+  height: 14px;
+  margin-left: 8px;
+  margin-right: 8px;  
+  line-height: 22px;  
+}
+
+/* @end */
+
+/* @group sel - def */
+
+.sc-theme .sc-button-view.capsule.sel,
+.sc-theme .sc-button-view.capsule.def {
+	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -151px;
+}
+
+.sc-theme .sc-button-view.capsule.sel .sc-button-inner,
+.sc-theme .sc-button-view.capsule.def .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -105px;
+}
+
+.sc-theme .sc-button-view.capsule.sel .sc-button-label,
+.sc-theme .sc-button-view.capsule.def .sc-button-label {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -128px;
+	text-shadow: #dabec6 0px 1px 0px;
+}
+
+/* @end */
+
+/* @group disabled */
+
+.sc-theme .sc-button-view.capsule.disabled {
+	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -496px;
+}
+
+.sc-theme .sc-button-view.capsule.disabled .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -450px;
+}
+
+.sc-theme .sc-button-view.capsule.disabled .sc-button-label {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -473px;
+	color: #999;
+	text-shadow: none ;
+}
+
+/* @end */
+
+/* @group sel.disabled - def.disabled*/
+
+.sc-theme .sc-button-view.capsule.sel.disabled,
+.sc-theme .sc-button-view.capsule.def.disabled {
+	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -289px;
+}
+
+.sc-theme .sc-button-view.capsule.sel.disabled .sc-button-inner,
+.sc-theme .sc-button-view.capsule.def.disabled .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -243px;
+}
+
+.sc-theme .sc-button-view.capsule.sel.disabled .sc-button-label,
+.sc-theme .sc-button-view.capsule.def.disabled .sc-button-label {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -266px;
+	color: #999;
+	text-shadow: none ;
+}
+
+/* @end */
+
+/* @group sel.active - def.active */
+
+.sc-theme .sc-button-view.capsule.sel.active,
+.sc-theme .sc-button-view.capsule.def.active {
+	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -220px;
+}
+
+.sc-theme .sc-button-view.capsule.sel.active .sc-button-inner,
+.sc-theme .sc-button-view.capsule.def.active .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -174px;
+}
+
+.sc-theme .sc-button-view.capsule.sel.active .sc-button-label,
+.sc-theme .sc-button-view.capsule.def.active .sc-button-label {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -197px;
+	text-shadow: #b884a4 0px 1px 0px;
+}
+
+/* @end */
+
+/* @group active */
+
+.sc-theme .sc-button-view.capsule.active {
+	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat scroll right -427px;
+}
+
+.sc-theme .sc-button-view.capsule.active .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -381px;
+}
+
+.sc-theme .sc-button-view.capsule.active .sc-button-label {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0 -404px;
+	text-shadow: #b8b8b8 0px 1px 0px;
+}
+
+/* @end */
+
+
+/* >>>>>>>>>> BEGIN source/checkbox.css */
+/* SC.CheckboxView - sc-theme */
+
+.sc-theme .sc-checkbox-view {
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.sc-theme .sc-checkbox-view .label {
+	position: absolute ;
+	left: 20px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	line-height: 18px;
+}
+
+.sc-theme .sc-checkbox-view.icon img.icon {
+	position: relative;
+	vertical-align: middle;
+	top: -2px;
+	margin-left: 2px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+.sc-theme .sc-checkbox-view.disabled {
+	color: #999;
+}
+
+/* @group Checkbox Image */
+
+/* Set the opacity of the input to 0 so it will take hits but not appear. */
+.sc-theme .sc-checkbox-view input {
+	width: 16px;
+	height: 16px;
+	top:1px; 
+	left: 1px;
+	position: relative;
+	opacity:0.0;
+	vertical-align: middle ;
+	margin: 0;
+	margin-right: 3px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+
+.sc-theme .sc-checkbox-view img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -728px;
+	width: 16px;
+	height: 16px;
+	position: absolute ;
+	left: 1px; 
+	top: 0px;
+}
+
+.sc-theme .sc-checkbox-view.sel img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -728px;
+}
+
+.sc-theme .sc-checkbox-view.mixed img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -744px;
+}
+
+.sc-theme .sc-checkbox-view.disabled img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -760px;
+} 
+
+.sc-theme .sc-checkbox-view.sel.disabled img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -792px;
+}
+
+.sc-theme .sc-checkbox-view.mixed.disabled img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0 -760px;
+}
+
+.sc-theme .sc-checkbox-view.active img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -744px;
+} 
+
+.sc-theme .sc-checkbox-view.sel.active img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -728px;
+}
+
+.sc-theme .sc-checkbox-view.mixed.active img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -744px;
+}
+
+/* @end */
+
+
+/* >>>>>>>>>> BEGIN source/collection.css */
+/* @group SC.CollectionView */
+
+.sc-theme .sc-collection-view {
+	text-decoration: none ;
+	color: #000;
+	border-top: 1px white solid;
+}
+
+.sc-theme .sc-collection-view .sc-collection-item {
+	border-top: 1px solid white;
+}
+
+.sc-theme .sc-collection-view .sc-collection-item.sel {
+	background-color: #ddd;
+	border-top: 1px solid #eee;
+}
+
+.sc-theme.focus .sc-collection-view.focus .sc-collection-item.sel {
+	background-color: #40007e;
+	color: white ;
+	border-top: 1px solid #84788f;
+}
+
+/* @end */
+
+/* @group SC.ListView */
+
+.sc-theme .sc-list-view {
+	background-color: white ;
+}
+
+.sc-theme .sc-list-view .sc-collection-item {
+	display: block ;
+/*  padding: 0 6px;
+*/	line-height: 22px;
+}
+
+.sc-theme .sc-list-insertion-point {
+  overflow: visible;
+  background-color: #4e4977;
+	z-index: 1000;
+}
+
+.sc-theme .sc-list-insertion-point .anchor {
+  position: absolute ;
+  width: 8px;
+  top: -3px;
+  left: -3px;
+  height: 8px;
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -1040px;
+}
+
+/* @end */
+
+/* >>>>>>>>>> BEGIN source/core.css */
+/* 
+  This is the main SproutCore theme.  If you would prefer not to use this 
+  theme, just set the theme option in your sc-config to another theme name.
+*/
+
+/* Always use Helvetica and this background color. */
+body.sc-theme {
+	font: 13px/18px Helvetica, Verdana, sans-serif;
+	background-color: #f0f0f0 ;
+	padding: 0px;
+}
+
+
+body.sc-theme .sc-view.invalid {
+  outline: 2px red solid;
+}
+
+/* @group Border Styles */
+
+body.sc-theme .sc-view.sc-bezel-border {
+  border-left:   1px #999 solid;
+  border-top:    1px #666 solid;
+  border-bottom: 1px #fff solid;
+  border-right:  1px #fff solid;
+}
+
+body.sc-theme .sc-view.sc-black-border {
+  border: 1px black solid; 
+}
+
+body.sc-theme .sc-view.sc-gray-border {
+  border: 1px #888 solid; 
+}
+
+body.sc-theme .sc-view.sc-bottom-border {
+  border-bottom: 1px #888 solid; 
+}
+
+body.sc-theme .sc-view.sc-top-border {
+  border-top: 1px #888 solid; 
+}
+
+/* @end */
+
+.sc-theme div.sc-web-view {
+  background-color: white;
+}
+/* >>>>>>>>>> BEGIN source/disclosure.css */
+/* SC.DisclosureView - sc-theme */
+
+/* @group disclosure */
+
+/* @group basic */
+
+.sc-theme .sc-button-view.sc-disclosure-view img.button {
+	width: 12px;
+	height: 12px;
+	left: 0;
+	top: 3px;
+	background-image: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') ;
+} 
+
+
+.sc-theme .sc-button-view.sc-disclosure-view.sel img.button {
+	background-position: 0px -1008px ;
+}
+
+.sc-theme .sc-button-view.sc-disclosure-view img.button {
+	background-position: -16px -1025px ;
+}
+
+
+
+/* @end */
+
+/* @group disabled */
+
+.sc-theme .sc-button-view.sc-disclosure-view.sel.disabled img.button {
+	background-position: 0px -1024px ;
+}
+
+.sc-theme .sc-button-view.sc-disclosure-view.disabled img.button {
+	background-position: -16px -1041px ;
+}
+
+/* @end */
+
+/* @group active */
+
+.sc-theme .sc-button-view.sc-disclosure-view.sel.active img.button {
+	background-position: -16px -1008px ;
+}
+
+.sc-theme .sc-button-view.sc-disclosure-view.active img.button {
+	background-position: -0px -1041px ;
+}
+
+/* @end */
+
+
+
+/* @end */
+
+
+/* >>>>>>>>>> BEGIN source/label.css */
+/* @override http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1227685866/label.css */
+
+/* SC.LabelView - sc-theme support */
+
+.sc-theme .sc-label-view.sc-large-size {
+	font-size: 18px;
+	line-height: 24px;
+}
+
+.sc-theme .sc-label-view.sc-regular-size {
+	font-size: 13px;
+	line-height: 19px;
+}
+
+.sc-theme .sc-label-view.sc-small-size {
+	font-size: 11px;
+	line-height: 14px;
+}
+
+.sc-theme .sc-label-view.sc-tiny-size {
+	font-size: 9px;
+	line-height: 12px;
+}
+
+.sc-theme .sc-label-view.disabled {
+	color: #999;
+}
+
+.sc-theme .sc-label-view img.icon {
+	position: relative;
+	vertical-align: middle;
+	top: -2px;
+	margin-left: 2px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+/* >>>>>>>>>> BEGIN source/pane.css */
+.sc-theme .sc-dialog-pane {
+  z-index: 2000;
+  background: url('/static/sproutcore/standard_theme/en/current/panels/overlay.png?1241509782') repeat;
+}
+
+.sc-theme div.sc-ghost-view {
+  background: url('');
+}
+
+/* >>>>>>>>>> BEGIN source/progress.css */
+/* SC.ProgressView - sc-theme */
+
+/* @override http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1227986917/progress.css */
+
+.sc-theme .sc-progress-view {
+	border: 1px solid #625560;
+	background-color: #cfc8d0;
+}
+
+.sc-theme .sc-progress-view.disabled {
+	background-color: #e8e4e8;
+	border: 1px #9c939a solid;
+}
+
+.sc-theme .sc-progress-view .sc-inner {
+ 	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1130px;
+	border-right: 1px solid #625560;
+}
+
+.sc-theme .sc-progress-view.sc-indeterminate .sc-inner {
+ 	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1470px;
+}
+
+
+/* >>>>>>>>>> BEGIN source/radio.css */
+/* @override http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1227681631/radio.css */
+
+/* SC.RadioView - sc-theme */
+
+/* @group Layout */
+
+.sc-theme .sc-radio-view .sc-radio-button .sc-button-label {
+	position: relative ;
+}
+
+.sc-theme .sc-radio-view .sc-radio-button img.button {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle ;
+	position: relative ;
+	margin-right: 4px;
+	margin-top: -2px;
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -776px;
+}
+
+.sc-theme .sc-radio-view .sc-radio-button input {
+	width: 16px;
+	height: 16px;
+  position: absolute;
+	margin-left: -20px;
+	opacity: 0.0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+
+.sc-theme .sc-radio-view.sc-layout-vertical .sc-radio-button {
+	padding-left: 18px;
+	position: relative ;
+}
+
+.sc-theme .sc-radio-view.sc-layout-vertical .sc-radio-button img.button {
+	position: absolute ;
+	margin: 0;
+	left: 0;
+	top: 0;
+}
+
+.sc-theme .sc-radio-view.sc-layout-vertical .sc-radio-button input {
+	position: absolute ;
+	margin: 0;
+	left: 2px;
+	top: 1px;
+}
+
+.sc-theme .sc-radio-view.disabled .sc-radio-button,
+.sc-theme .sc-radio-view .sc-radio-button.disabled {
+	color: #999;
+}
+
+.sc-theme .sc-radio-view img.icon {
+	position: relative;
+	vertical-align: middle;
+	top: -2px;
+	margin-left: 2px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+/* @end */
+
+/* @group Image */
+
+.sc-theme .sc-radio-view .sc-radio-button img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -776px;
+}
+
+.sc-theme .sc-radio-view .sc-radio-button.sel img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -760px;
+}
+
+.sc-theme .sc-radio-view .sc-radio-button.mixed img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -776px;
+}
+
+.sc-theme .sc-radio-view .sc-radio-button.disabled img.button,
+.sc-theme .sc-radio-view.disabled .sc-radio-button img.button,
+.sc-theme .sc-radio-view.active .sc-radio-button.disabled:hover img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -792px;
+}
+
+.sc-theme .sc-radio-view.disabled .sc-radio-button.sel img.button,
+.sc-theme .sc-radio-view .sc-radio-button.sel.disabled img.button,
+.sc-theme .sc-radio-view.active .sc-radio-button.sel.disabled:hover img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -808px;
+}
+
+.sc-theme .sc-radio-view.disabled .sc-radio-button.mixed img.button,
+.sc-theme .sc-radio-view .sc-radio-button.mixed.disabled img.button,
+.sc-theme .sc-radio-view.active .sc-radio-button.mixed.disabled:hover img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -808px;
+}
+
+
+.sc-theme .sc-radio-view.active .sc-radio-button:hover img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -16px -776px;
+}
+
+.sc-theme .sc-radio-view.active .sc-radio-button.sel:hover img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat -32px -760px;
+}
+
+.sc-theme .sc-radio-view.active .sc-radio-button.mixed:hover img.button {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat 0px -792px;
+}
+
+/* @end */
+
+
+/* >>>>>>>>>> BEGIN source/segmented.css */
+/* @override 
+	http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1227701833/segmented.css
+	http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1227702837/segmented.css
+*/
+
+.sc-theme .sc-segmented-view {
+  display: block;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment {
+	text-decoration: none ;
+	color: black ;
+	text-align: center ;
+}
+
+.sc-theme a.sc-segment:active, a.sc-segment:focus {
+	outline: none;
+}
+
+.sc-theme a.sc-segment img.icon {
+	position: relative;
+	vertical-align: middle;
+	top: -2px;
+	margin-right: 2px;
+	height: 16px;
+	width: 16px;
+}
+
+/* @group Layout */
+
+.sc-theme .sc-segmented-view a.sc-segment {
+	display: block;
+	top: 0;
+	height: 21px;
+	line-height: 22px;
+	border-right: 1px #555 solid;
+	text-shadow: #b0b0b0 0px 1px 0px;
+}
+
+.sc-theme .sc-segmented-view .sc-button-inner {
+	display: block;
+	min-width: 20px;
+	min-height: 20px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment {
+	padding-left: 10px;
+}
+
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment .sc-button-inner {
+	padding-right: 10px;
+}
+.sc-theme .sc-segmented-view a.sc-segment.sc-middle-segment .sc-button-inner {
+	padding-left: 10px;
+	padding-right: 10px;
+  
+}
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment .sc-button-inner {
+	padding-left: 10px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment {
+	border:  none ;
+	padding-right: 10px;
+}
+
+/* @end */
+
+/* @group Basic Round */
+
+/* NORMAL */
+
+.sc-theme .sc-segmented-view a.sc-segment .sc-button-inner {
+ 	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1127px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment {
+ 	background: transparent url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -1150px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat left -1104px;
+}
+
+
+/* SELECTED */
+.sc-theme .sc-segmented-view a.sc-segment.active .sc-button-inner,
+.sc-theme .sc-segmented-view a.sc-segment.sel .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x right -1196px;
+	text-shadow: #909090 0px 1px 0px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment.sel,
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment.active {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat right -1219px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment.sel,
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment.active {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat left -1173px;
+}
+
+/* DISABLED */
+
+.sc-theme .sc-segmented-view a.sc-segment.disabled .sc-button-inner,
+.sc-theme .sc-segmented-view.disabled a.sc-segment .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x right -1265px;
+	color: #999;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment.disabled,
+.sc-theme .sc-segmented-view.disabled a.sc-segment.sc-last-segment {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x right -1288px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment.disabled,
+.sc-theme .sc-segmented-view.disabled a.sc-segment.sc-first-segment {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x left -1242px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sel .sc-button-inner.disabled,
+.sc-theme .sc-segmented-view.disabled a.sc-segment.sel .sc-button-inner {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x right -1265px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-last-segment.sel.disabled,
+.sc-theme .sc-segmented-view.disabled a.sc-segment.sc-last-segment.sel {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x right -1288px;
+}
+
+.sc-theme .sc-segmented-view a.sc-segment.sc-first-segment.sel.disabled,
+.sc-theme .sc-segmented-view.disabled a.sc-segment.sc-first-segment.sel {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x left -1242px;
+}
+
+
+
+/* @end */
+
+
+
+/* >>>>>>>>>> BEGIN source/slider.css */
+/* @override http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1228020574/slider.css */
+
+/* @group SC.SliderView */
+
+.sc-theme .sc-slider-view {
+	height: 21px;
+}
+
+.sc-theme.blur .sc-slider-view,
+.sc-theme.focus .sc-slider-view.disabled {
+}
+
+.sc-theme.focus .sc-slider-view {
+}
+
+/* sc-inner is the slider bar */
+.sc-theme .sc-slider-view .sc-inner {
+	position: absolute;
+	left: 8px;
+	right: 8px;
+	height: 5px;
+	top: 6px;
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x ;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.sc-theme.blur .sc-slider-view .sc-inner,
+.sc-theme.focus .sc-slider-view.disabled .sc-inner {
+	background-position: right -1428px ;
+	border: 1px #ccc solid;
+}
+
+.sc-theme.focus .sc-slider-view .sc-inner {
+	background-position: right -1450px ;
+	border: 1px #999 solid;
+}
+
+.sc-theme .sc-slider-view .sc-handle {
+	height: 18px;
+	width: 18px;
+	margin-left: -9px;
+	top: -6px;
+	position: absolute ;
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') no-repeat
+}
+
+.sc-theme.focus .sc-slider-view .sc-handle {
+	background-position: -24px -825px ;
+}
+
+.sc-theme.blur .sc-slider-view .sc-handle,
+.sc-theme.focus .sc-slider-view.disabled .sc-handle {
+	background-position: -24px -873px
+}
+
+.sc-theme.focus .sc-slider-view.active .sc-handle {
+	background-position: -24px -849px ;
+}
+
+/* @end */
+/* >>>>>>>>>> BEGIN source/split_view.css */
+/* @group SC.SplitView */
+
+.sc-theme .sc-split-view {
+  overflow: hidden !important;
+}
+
+.sc-theme .sc-split-view.horizontal > .sc-split-divider-view {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-ysprite.png?1241509782') repeat-y 0px top;
+/*  border-left: 1px #888 solid;
+  border-right: 1px #888 solid;
+*/	z-index: 5;
+}
+
+.sc-theme .sc-split-view.vertical > .sc-split-divider-view {
+	background: url('/static/sproutcore/standard_theme/en/current/images/sc-theme-sprite.png?1241509782') repeat-x 0px -1397px;
+/*  border-top: 1px #888 solid;
+  border-bottom: 1px #888 solid;
+*/	z-index: 5;
+}
+
+/*.sc-theme .sc-split-view.thin > .sc-split-divider-view {
+  border: 0;
+  background: 0;
+  background-color: #888;
+}
+*/
+/* @end */
+
+/* >>>>>>>>>> BEGIN source/tab.css */
+/* SC.TabView */
+
+.sc-tab-view > .sc-container-view {
+  border: 1px #888 solid;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  overflow: visible;
+}
+
+.sc-theme .sc-tab-view .sc-container-view .sc-segmented-view{
+  z-index:100;
+}
+/* >>>>>>>>>> BEGIN source/text_field.css */
+/* @override http://localhost:4020/static/sproutcore/en/desktop/_cache/sc.theme/1228026565/text_field.css */
+
+/* SC.TextFieldView - sc-theme */
+
+.sc-theme .sc-text-field-view input {
+	font-size: 13px;
+}
+
+.sc-theme .sc-text-field-view .sc-hint {
+  padding: 3px;
+	color: #aaa ;
+	font-size: 13px;
+}
+
+/* >>>>>>>>>> BEGIN source/toolbar.css */
+.sc-toolbar-view {
+  background: url('/static/sproutcore/standard_theme/en/current/images/sc-toolbar-view.png?1241509782') repeat-x top left; 
+  border: none;
+}
+

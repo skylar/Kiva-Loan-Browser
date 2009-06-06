@@ -1,0 +1,100 @@
+.sc-button-view.sc-menu-item {
+  position:relative;
+  background-color: #ffffff none repeat scroll 0 0;
+  border: none;
+  display:block;
+  font-size: 13px;
+  cursor:default;
+}
+
+.sc-menu-item a{
+  display: block;
+  top: 0;
+  line-height: 22px;
+  text-shadow: #b0b0b0 0px 1px 0px;
+  text-decoration: none ;
+  text-align: left;
+  color: black;
+  outline: none ;
+}
+
+.sc-menu-item.disabled a{
+  color:#A0A0A0;
+}
+
+.sc-menu-item.disabled{
+  background-color:#E0E0E0;
+  border:none;
+  color:#A0A0A0;
+}
+
+.sc-menu-item span.separator{
+  display: block;
+  height: 1px;
+  border-bottom: 2px #cccccc solid;
+}
+
+.sc-menu-item span.branch-visible{
+  left: 25px;
+}
+
+.sc-menu-item a.has-option {
+  
+}
+
+.sc-menu-item a img {
+  left: 25px;
+  bottom: 25%;
+  vertical-align: middle;
+  
+}
+
+/*for the shortcut keys*/
+.sc-menu-item a span.shortcut {
+  position:absolute;
+  right:5px;
+  margin-right:15px;
+  text-align:center;
+  font-size: 12px;
+}
+
+/*Hovering over menu items*/
+.sc-pane.sc-panel > .sc-view.sc-menu-item.focus, 
+.sc-menu-item a:hover {
+  background-color: #5A8EC6;
+}
+
+.sc-menu-item.disabled a:hover {
+  background-color: #E0E0E0;
+}
+/* @end */
+
+.sc-menu-item div.checkbox {
+  background-image: url('/static/sproutcore/desktop/en/current/images/icons/mini_454545.png?1241509782'); 
+  background-position: -66px -147px;
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  left: 6px;
+  top: 5px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+.sc-menu-item.disabled div.checkbox,
+.sc-menu-item div.checkbox.inactive {
+  background-image: url('/static/sproutcore/desktop/en/current/images/blank.gif?1241509782'); 
+}
+
+.sc-menu-item span.value {
+  text-align:center;
+  margin-left:30px;
+}
+
+.sc-menu-item span.hasBranch {
+  position:absolute;
+  text-align:center;
+  right:5px;
+}
+
