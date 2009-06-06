@@ -1,8 +1,0 @@
-.sc-theme .sc-dialog-pane {
-  z-index: 2000;
-  background: url('/static/sproutcore/standard_theme/en/current/panels/overlay.png?1241509782') repeat;
-}
-
-.sc-theme div.sc-ghost-view {
-  background: url('');
-}
