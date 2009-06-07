@@ -13,6 +13,8 @@
 //
 Klb.main = function main() {
 
+	Klb.store.from(Klb.KivaDataSource.create())
+
   // Step 1: Instantiate Your Views
   // The default code here will make the mainPane for your application visible
   // on screen.  If you app gets any level of complexity, you will probably 
