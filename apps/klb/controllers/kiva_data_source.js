@@ -14,7 +14,7 @@
 Klb.KivaDataSource = SC.DataSource.extend(
 /** @scope Klb.KivaDataSource.prototype */ {
 
-	fetchRequest: SC.Request.getUrl("http://127.0.0.1:4020/v1/loans/newest.json").set('isJSON', YES),
+	fetchRequest: SC.Request.getUrl("/v1/loans/newest.json").set('isJSON', YES),
 
 	fetch: function(store, fetchKey, params) {
 		var ret = [], url;
@@ -35,6 +35,8 @@ Klb.KivaDataSource = SC.DataSource.extend(
 		console.log("Fetch did complete.");
 	
 		var storeKeys = [], store, fetchKey;
+		console.log("1");
+		console.log(r);
 		var response = r.response();
 		
 		// { loans: Array, paging: {} }
@@ -52,6 +54,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
 			storeKeys = params.store.loadRecords(fetchKey, loans);
 			params.storeKeyArray.replace(0, 0, storeKeys);
 		}
+		console.log("END Fetch did complete.");
 		
 		return YES;
 	},
