@@ -16,20 +16,23 @@ Klb.Loan.FIXTURES = [
   //   firstName: "Michael",
   //   lastName: "Scott" },
   //
-  // { guid: 2,
-  //   firstName: "Dwight",
-  //   lastName: "Schrute" },
-  //
-  // { guid: 3,
-  //   firstName: "Jim",
-  //   lastName: "Halpert" },
-  //
-  // { guid: 4,
-  //   firstName: "Pam",
-  //   lastName: "Beesly" },
-  //
-  // { guid: 5,
-  //   firstName: "Ryan",
-  //   lastName: "Howard" }
+	{ guid:1,
+		name:"Loan One",
+		image_url:"http://s3.kiva.org/img/w325h250/325346.jpg",
+		loan_amount:500,
+		funded_amount:325
+		},
+	{ guid:2,
+		name:"Loan Two",
+		image_url:"http://s3.kiva.org/img/w325h250/325345.jpg",
+		loan_amount:500,
+		funded_amount:325
+		},
+	{ guid:3,
+		name:"Loan Three",
+		image_url:"http://s3.kiva.org/img/w325h250/325344.jpg",
+		loan_amount:500,
+		funded_amount:325
+		}
 
 ];

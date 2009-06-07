@@ -11,12 +11,29 @@ Klb.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   mainPane: SC.MainPane.design({
-    childViews: 'labelView'.w(),
-    
-    labelView: SC.LabelView.design({
-      layout: { centerX: 0, centerY: 0, width: 100, height: 18 },
-      tagName: "h1", value: "Hello World"
-    })
-  })
+	  childViews: 'topView middleView bottomView'.w(),
+
+	  topView: SC.View.design(SC.Border, {
+	    layout: { top: 0, left: 0, right: 0, height: 41 },
+	    borderStyle: SC.BORDER_BOTTOM
+	  }),
+
+	  middleView: SC.ScrollView.design({
+	    hasHorizontalScroller: NO,
+	    layout: { top: 42, bottom: 42, left: 0, right: 0 },
+	    backgroundColor: 'white',
+
+			contentView: SC.ListView.design({
+			  contentBinding: 'Klb.loansController.arrangedObjects',
+			  selectionBinding: 'Klb.loansController.selection',
+				contentValueKey: "name"
+			})
+	  }),
+
+	  bottomView: SC.View.design(SC.Border, {
+	    layout: { bottom: 0, left: 0, right: 0, height: 41 },
+	    borderStyle: SC.BORDER_TOP
+	  })
+	})
 
 });
