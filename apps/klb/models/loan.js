@@ -14,6 +14,4 @@
 Klb.Loan = SC.Record.extend(
 /** @scope Klb.Loan.prototype */ {
 
-  // TODO: Add your own code here.
-
 }) ;
