@@ -4,6 +4,8 @@
 // ==========================================================================
 /*globals Klb */
 
+sc_require('views/loan_listing');
+
 // This page describes the main user interface for your application.  
 Klb.mainPage = SC.Page.design({
 
@@ -15,12 +17,15 @@ Klb.mainPage = SC.Page.design({
 
 	  sidebarView: SC.View.design(SC.Border, {
 	    layout: { top: -1, left: -1, right: 0, width: 200 },
-	    borderStyle: SC.BORDER_GRAY
+	    borderStyle: SC.BORDER_NONE,
+			backgroundColor:'#ddffdd'
 	  }),
 
 	  mainView: SC.View.design({
 			layout: { top: 0, left: 201, right: 0 },
 			childViews: 'topView loanView'.w(),
+			backgroundColor:'#ddffdd',
+	    borderStyle: SC.BORDER_NONE,
 
 		  topView: SC.View.design(SC.Border, {
 		    layout: { top: 0, left: 0, right: 0, height: 60 },
@@ -34,11 +39,20 @@ Klb.mainPage = SC.Page.design({
 				      value:   '234 Loans Found'
 				    }),
 				
-				sortListView: SC.LabelView.design({
-				      layout: { centerY: 0, height: 24, right: 8, width: 200 },
-	            textAlign: SC.ALIGN_RIGHT,
-				      value:   'Sort results by Popularity'
-				    }),
+				sortListView: SC.View.design({
+					childViews: 'labelView popupView'.w(),
+					layout: {centerY:0, right: 8, width:200,height:50},
+					textAlign: SC.ALIGN_RIGHT,
+					
+					labelView: SC.LabelView.design({
+			      layout: { top:0, left:0 },
+			      value: 'Sort results by'
+			    }),
+					popupView: SC.SelectFieldView.design({
+						layout: {top:20},
+						value: 'Popularity'
+					})
+				})
 		  }),
 
 		  loanView: SC.ScrollView.design({
@@ -49,7 +63,9 @@ Klb.mainPage = SC.Page.design({
 				contentView: SC.ListView.design({
 				  contentBinding: 'Klb.loansController.arrangedObjects',
 				  selectionBinding: 'Klb.loansController.selection',
-					contentValueKey: "name"
+					contentValueKey: "name",
+					exampleView: Klb.LoanListingView,
+					rowHeight: 120
 				})
 		  })
 		})
