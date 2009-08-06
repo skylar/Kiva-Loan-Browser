@@ -1,6 +1,7 @@
 // ==========================================================================
 // Project:   Klb - mainPage
-// Copyright: ©2009 My Company, Inc.
+// Copyright: ©2009 Kiva Microfunds
+// Licensed under MIT License Terms (see license.js)
 // ==========================================================================
 /*globals Klb */
 
@@ -15,6 +16,8 @@ Klb.mainPage = SC.Page.design({
   appPane: SC.MainPane.design({
 	  childViews: 'sidebarView mainView'.w(),
 
+    defaultResponder: Klb,
+    
 	  sidebarView: SC.View.design(SC.Border, {
 	    layout: { top: -1, left: -1, right: 0, width: 200 },
 	    borderStyle: SC.BORDER_NONE,
@@ -30,7 +33,14 @@ Klb.mainPage = SC.Page.design({
 		  topView: SC.View.design(SC.Border, {
 		    layout: { top: 0, left: 0, right: 0, height: 60 },
 		    borderStyle: SC.BORDER_BOTTOM,
-				childViews: 'totalMatchesView sortListView'.w(),
+				childViews: 'checkoutButton totalMatchesView sortListView'.w(),
+				
+				checkoutButton: SC.ButtonView.design({
+				  layout: { left: 10, top: 10, width: 80, height: 24 },
+				  title: "Checkout",
+				  action: "checkout",
+				  isEnabledBinding: "Klb.loansController.canCheckout"
+				}),
 				
 				totalMatchesView: SC.LabelView.design({
 				      layout: { centerY: 0, height: 24, left: 8, width: 300 },

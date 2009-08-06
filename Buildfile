@@ -1,6 +1,6 @@
 # ===========================================================================
 # Project:   Klb
-# Copyright: ©2009 My Company, Inc.
+# Copyright: ©2009 Kiva Microfunds
 # ===========================================================================
 
 # Add initial buildfile information here

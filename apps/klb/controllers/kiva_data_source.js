@@ -1,6 +1,7 @@
 // ==========================================================================
 // Project:   Klb.kivaDataSource
-// Copyright: ©2009 My Company, Inc.
+// Copyright: ©2009 Kiva Microfunds
+// Licensed under MIT License Terms (see license.js)
 // ==========================================================================
 /*globals Klb */
 

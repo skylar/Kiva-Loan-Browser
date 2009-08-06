@@ -1,16 +1,17 @@
 // ==========================================================================
 // Project:   Klb
-// Copyright: ©2009 My Company, Inc.
+// Copyright: ©2009 Kiva Microfunds
+// Licensed under MIT License Terms (see license.js)
 // ==========================================================================
 /*globals Klb */
 
 /** @namespace
 
-  My cool new app.  Describe your application.
+  Kiva Loan Browser - browse them loans - fund them people!
   
-  @extends SC.Object
+  @extends SC.Application
 */
-Klb = SC.Object.create(
+Klb = SC.Application.create(
   /** @scope Klb.prototype */ {
 
   NAMESPACE: 'Klb',
@@ -21,8 +22,9 @@ Klb = SC.Object.create(
   // connect to a backend server.  The default setup below connects the store
   // to any fixtures you define.
   
-  store: SC.Store.create()
-  
-  // TODO: Add global constants or singleton objects needed by your app here.
+  store: SC.Store.create(),
+
+  // Activates responder tracing
+  trace: YES
 
 });
