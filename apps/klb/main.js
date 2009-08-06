@@ -1,6 +1,7 @@
 // ==========================================================================
 // Project:   Klb
-// Copyright: ©2009 My Company, Inc.
+// Copyright: ©2009 Kiva Microfunds
+// Licensed under MIT License Terms (see license.js)
 // ==========================================================================
 /*globals Klb */
 
@@ -30,7 +31,8 @@ Klb.main = function main() {
   // This will make your app come alive!
 	var loans = Klb.store.findAll(Klb.Loan);
 	Klb.loansController.set('content', loans);
-	
+
+	Klb.makeFirstResponder(Klb.START);
 } ;
 
 function main() { Klb.main(); }
