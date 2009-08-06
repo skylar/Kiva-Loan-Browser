@@ -7,27 +7,6 @@
 		<string>com.omnigroup.OmniGrafflePro</string>
 		<string>137.11.0.108132</string>
 	</array>
-	<key>ColorProfile</key>
-	<dict>
-		<key>cmykDigest</key>
-		<data>
-		1vdRq7/tWg7Bmz+2vusgXA==
-		</data>
-		<key>cmykName</key>
-		<string>Generic CMYK Profile</string>
-		<key>grayDigest</key>
-		<data>
-		BZ8MgfCIPCO6QjIwfz9Wng==
-		</data>
-		<key>grayName</key>
-		<string>Generic Gray Profile</string>
-		<key>rgbDigest</key>
-		<data>
-		S1ZP0uM2Ga2OskvYGL1VAQ==
-		</data>
-		<key>rgbName</key>
-		<string>Generic RGB Profile</string>
-	</dict>
 	<key>CreationDate</key>
 	<string>2009-08-03 20:17:24 -0700</string>
 	<key>Creator</key>
@@ -76,7 +55,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {2067.95, 1585.75}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -107,7 +86,7 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
-					<string>{{666.667, 747.333}, {345, 24}}</string>
+					<string>{{666.667, 747.333}, {345, 32}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -165,7 +144,7 @@
 						<integer>0</integer>
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
-{\fonttbl\f0\fnil\fcharset0 Univers-Condensed;}
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;\red170\green170\blue170;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qr\pardirnatural
 
@@ -283,7 +262,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 				<integer>32</integer>
 			</dict>
 			<key>HPages</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>KeepToScale</key>
 			<true/>
 			<key>Layers</key>
@@ -329,7 +308,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>UniqueID</key>
 			<integer>1</integer>
 			<key>VPages</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>ActiveLayerIndex</key>
@@ -339,7 +318,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -499,7 +478,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -686,24 +665,24 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKww8JURvY3VtZW50
 						JT6GhAJpSQEMkoSEhAxOU0RpY3Rp
-						b25hcnkAlIQBaQOShJaWEE5TUGFy
-						YWdyYXBoU3R5bGWGkoSEhBBOU1Bh
-						cmFncmFwaFN0eWxlAJSEBENDQFMB
-						AISEhAdOU0FycmF5AJSZDJKEhIQJ
-						TlNUZXh0VGFiAJSEAkNmAByGkoSf
-						ngA4hpKEn54AVIaShJ+eAHCGkoSf
-						ngCBjACGkoSfngCBqACGkoSfngCB
-						xACGkoSfngCB4ACGkoSfngCB/ACG
-						koSfngCBGAGGkoSfngCBNAGGkoSf
-						ngCBUAGGhgCGkoSWlgdOU0NvbG9y
-						hpKEhIQHTlNDb2xvcgCUhAFjBoQD
-						QEBAhJaWBlN5c3RlbYaElpYJdGV4
-						dENvbG9yhoStoAOEAmZmAAGGhpKE
-						lpYGTlNGb250hpKEhIQGTlNGb250
-						HpSZPIQFWzYwY10GAAAAMgAAAP/+
-						SABlAGwAdgBlAHQAaQBjAGEATgBl
-						AHUAZQAtAFUAbAB0AHIAYQBMAGkA
-						ZwBoAHQAAACEAWZAoACgAaAAoACG
+						b25hcnkAlIQBaQOShJaWBk5TRm9u
+						dIaShISEBk5TRm9udB6UmTyEBVs2
+						MGNdBgAAADIAAAD//kgAZQBsAHYA
+						ZQB0AGkAYwBhAE4AZQB1AGUALQBV
+						AGwAdAByAGEATABpAGcAaAB0AAAA
+						hAFmQIQBYwCdAZ0AnQCGkoSWlgdO
+						U0NvbG9yhpKEhIQHTlNDb2xvcgCU
+						nQaEA0BAQISWlgZTeXN0ZW2GhJaW
+						CXRleHRDb2xvcoaEnp0DhAJmZgAB
+						hoaShJaWEE5TUGFyYWdyYXBoU3R5
+						bGWGkoSEhBBOU1BhcmFncmFwaFN0
+						eWxlAJSEBENDQFMBAISEhAdOU0Fy
+						cmF5AJSZDJKEhIQJTlNUZXh0VGFi
+						AJSEAkNmAByGkoSopQA4hpKEqKUA
+						VIaShKilAHCGkoSopQCBjACGkoSo
+						pQCBqACGkoSopQCBxACGkoSopQCB
+						4ACGkoSopQCB/ACGkoSopQCBGAGG
+						koSopQCBNAGGkoSopQCBUAGGhgCG
 						hoY=
 						</data>
 						<key>Text</key>
@@ -771,9 +750,9 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 		</dict>
 	</array>
 	<key>ModificationDate</key>
-	<string>2009-08-05 19:14:13 -0700</string>
+	<string>2009-08-06 00:50:06 -0700</string>
 	<key>Modifier</key>
-	<string>Charles Jolley</string>
+	<string>Skylar Woodward</string>
 	<key>NotesVisible</key>
 	<string>NO</string>
 	<key>OriginVisible</key>
@@ -785,12 +764,12 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 		<key>NSBottomMargin</key>
 		<array>
 			<string>float</string>
-			<string>12.24</string>
+			<string>16.6</string>
 		</array>
 		<key>NSLeftMargin</key>
 		<array>
 			<string>float</string>
-			<string>11.94</string>
+			<string>18.6</string>
 		</array>
 		<key>NSOrientation</key>
 		<array>
@@ -805,17 +784,17 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 		<key>NSRightMargin</key>
 		<array>
 			<string>float</string>
-			<string>12.06</string>
+			<string>18.6</string>
 		</array>
 		<key>NSScalingFactor</key>
 		<array>
 			<string>float</string>
-			<string>0.75</string>
+			<string>0.73</string>
 		</array>
 		<key>NSTopMargin</key>
 		<array>
 			<string>float</string>
-			<string>12.24</string>
+			<string>16.6</string>
 		</array>
 	</dict>
 	<key>ReadOnly</key>
@@ -835,7 +814,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -1014,7 +993,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>HPages</key>
 			<integer>1</integer>
 			<key>KeepToScale</key>
-			<false/>
+			<true/>
 			<key>Layers</key>
 			<array>
 				<dict>
@@ -1046,7 +1025,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>MasterSheet</key>
 			<string>Title Page</string>
 			<key>Orientation</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>OutlineStyle</key>
 			<string>Basic</string>
 			<key>PrintOnePage</key>
@@ -1075,7 +1054,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -1322,7 +1301,7 @@ Add a copy of this page to separate sections in your design document.  The title
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -1623,7 +1602,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
 {\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
 {\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
 \f0\fs28 \cf1 230 loan results}</string>
 					</dict>
@@ -2316,8 +2295,6 @@ Add a copy of this page to separate sections in your design document.  The title
 \f0\fs28 \cf1 Basket 
 \b $250}</string>
 					</dict>
-					<key>TextRelativeArea</key>
-					<string>{{0, 0}, {1, 1}}</string>
 					<key>Wrap</key>
 					<string>NO</string>
 				</dict>
@@ -2496,10 +2473,10 @@ Add a copy of this page to separate sections in your design document.  The title
 						<key>Text</key>
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
 {\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
-{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
-\f0\fs28 \cf2 Kiva}</string>
+\f0\fs28 \cf1 Kiva}</string>
 						<key>VerticalPad</key>
 						<integer>2</integer>
 					</dict>
@@ -2587,7 +2564,7 @@ Add a copy of this page to separate sections in your design document.  The title
 									<integer>9270</integer>
 									<key>Points</key>
 									<array>
-										<string>{220.191, 368.581}</string>
+										<string>{220.192, 368.581}</string>
 										<string>{223.092, 371.523}</string>
 									</array>
 									<key>Style</key>
@@ -3267,10 +3244,10 @@ Add a copy of this page to separate sections in your design document.  The title
 								<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
 {\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
 {\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
 \f0\b\fs18 \cf0        
-\b0\fs22 \cf0 South America}</string>
+\b0\fs22 South America}</string>
 								<key>VerticalPad</key>
 								<integer>0</integer>
 							</dict>
@@ -5001,7 +4978,7 @@ Add a copy of this page to separate sections in your design document.  The title
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -6586,7 +6563,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						<string>{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
 {\fonttbl\f0\fnil\fcharset0 LucidaGrande;}
 {\colortbl;\red255\green255\blue255;}
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
 
 \f0\fs24 \cf0 Computer and Information Services}</string>
 					</dict>
@@ -10551,7 +10528,7 @@ Add a copy of this page to separate sections in your design document.  The title
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -10795,7 +10772,7 @@ Add a copy of this page to separate sections in your design document.  The title
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -11166,8 +11143,8 @@ Add a copy of this page to separate sections in your design document.  The title
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{778.5, 277.333}</string>
-						<string>{846.667, 278}</string>
+						<string>{778, 277.333}</string>
+						<string>{826.961, 290.342}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11209,7 +11186,7 @@ Add a copy of this page to separate sections in your design document.  The title
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{846.667, 263.333}, {154, 29.3331}}</string>
+							<string>{{826.961, 275.676}, {154, 29.3336}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11276,7 +11253,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{846.667, 292.667}, {154, 29.3335}}</string>
+							<string>{{826.961, 305.009}, {154, 29.3337}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11343,7 +11320,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{846.667, 322}, {154, 29.3335}}</string>
+							<string>{{826.961, 334.343}, {154, 29.3335}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11410,7 +11387,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{846.667, 351.334}, {154, 29.3332}}</string>
+							<string>{{826.961, 363.676}, {154, 29.3334}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11477,7 +11454,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{846.667, 380.667}, {154, 29.3332}}</string>
+							<string>{{826.961, 393.01}, {154, 29.3331}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11654,7 +11631,7 @@ Add a copy of this page to separate sections in your design document.  The title
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{624, 204}, {154, 29.3333}}</string>
+							<string>{{624, 204}, {154, 29.3331}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11721,7 +11698,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{624, 233.333}, {154, 29.3333}}</string>
+							<string>{{624, 233.333}, {154, 29.3335}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11788,7 +11765,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{624, 262.667}, {154, 29.3333}}</string>
+							<string>{{624, 262.667}, {154, 29.3337}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -12434,7 +12411,7 @@ Add a copy of this page to separate sections in your design document.  The title
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {1024, 783.36}}</string>
+				<string>{{0, 0}, {1033.97, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -12898,7 +12875,7 @@ Add a copy of this page to separate sections in your design document.  The title
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{627.832, 516.833}</string>
+						<string>{627.832, 517.333}</string>
 						<string>{627.832, 427.667}</string>
 					</array>
 					<key>Style</key>
@@ -14232,11 +14209,11 @@ checkout}</string>
 			<key>MasterSheet</key>
 			<string>Blank Page</string>
 			<key>Orientation</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>OutlineStyle</key>
 			<string>Basic</string>
 			<key>PrintOnePage</key>
-			<false/>
+			<true/>
 			<key>RowAlign</key>
 			<integer>1</integer>
 			<key>RowSpacing</key>
@@ -14262,9 +14239,9 @@ checkout}</string>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{0, 0}, {987, 698}}</string>
+		<string>{{68, 32}, {1103, 846}}</string>
 		<key>ListView</key>
-		<false/>
+		<true/>
 		<key>OutlineWidth</key>
 		<integer>142</integer>
 		<key>RightSidebar</key>
@@ -14276,15 +14253,15 @@ checkout}</string>
 		<key>SidebarWidth</key>
 		<integer>138</integer>
 		<key>VisibleRegion</key>
-		<string>{{-34, 13.3333}, {1093.33, 749.333}}</string>
+		<string>{{-134, -77}, {1301.37, 947.945}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
 		<array>
 			<array>
 				<string>Title Page</string>
+				<real>0.5</real>
 				<real>1</real>
-				<real>0.69784766435623169</real>
 			</array>
 			<array>
 				<string>Wireframes</string>
