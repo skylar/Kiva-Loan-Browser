@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Klb - mainPage
+// Project:   Klb
 // Copyright: ©2009 Kiva Microfunds
 // Licensed under MIT License Terms (see license.js)
 // ==========================================================================
@@ -21,17 +21,18 @@ Klb.mainPage = SC.Page.design({
     topbarView: SC.View.design({
 	    layout: { top: 0, left: 0, right: 0, height: 40 },
 	    childViews: 'kivaName checkoutButton'.w(),
+ 			classNames: 'klb-chrome'.w(),
       
 			kivaName: SC.LabelView.design({
-			  layout: { left: 10, top: 10, width: 80, height: 24 },
-			  value: "Kiva",
+			  layout: { left: 10, top: 10, width: 120, height: 24 },
+			  value: "_KlbTitle".loc(),
 			  controlSize: SC.LARGE_CONTROL_SIZE,
   			fontWeight: SC.BOLD_WEIGHT
 			}),
 			
 			checkoutButton: SC.ButtonView.design({
 			  layout: { right: 10, top: 10, width: 80, height: 24 },
-			  title: "Checkout",
+			  title: "_Checkout".loc(),
 			  action: "checkout",
 			  isEnabledBinding: "Klb.loansController.canCheckout"
 			})
@@ -62,36 +63,36 @@ Klb.mainPage = SC.Page.design({
         childViews: 'filterTitle searchField locationLabel genderLabel sectorLabel groupsLabel resetButton saveButton'.w(),
         filterTitle: SC.LabelView.design({
   			  layout: { left: 5, top: 5, right: 5, height: 15 },
-  			  value: "FILTER OPTIONS",
+  			  value: "_Filter Options".loc(),
   			  fontWeight: SC.BOLD_WEIGHT
   			}),
   			searchField: SC.TextFieldView.design({
   			  layout: { left: 5, top: 25, right: 5, height: 20 },
-  			  hint: "Search"
+  			  hint: "_Search".loc()
   			}),
   			locationLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 50, width: 80, height: 24 },
-  			  value: "Location:"
+  			  value: "_Country".loc() + ":"
   			}),
   			genderLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 65, width: 80, height: 24 },
-  			  value: "Gender:"
+  			  value: "_Gender".loc() + ":"
   			}),
   			sectorLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 80, width: 80, height: 24 },
-  			  value: "Sector:"
+  			  value: "_Sector".loc() + ":"
   			}),
   			groupsLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 95, width: 80, height: 24 },
-  			  value: "Groups:"
+  			  value: "_Groups".loc() + ":"
   			}),
   			resetButton: SC.ButtonView.design({
   			  layout: { left: 5, bottom: 5, width: 80, height: 24 },
-  			  title: "Reset"
+  			  title: "_Reset".loc()
   			}),
   			saveButton: SC.ButtonView.design({
   			  layout: { right: 5, bottom: 5, width: 80, height: 24 },
-  			  title: "Save"
+  			  title: "_Save".loc()
   			})
        })
 	  }),
@@ -116,27 +117,31 @@ Klb.mainPage = SC.Page.design({
 		  
 		  loanViewBar: SC.View.design({
   	    layout: { bottom: 0, left: 0, right: 0, height: 40 },
-  	    backgroundColor: '#999999',
   			childViews: 'resultsLabel sortLabel sortSelectView viewModeSegmentedView'.w(),
+ 				classNames: 'klb-subchrome'.w(),
 
   			resultsLabel: SC.LabelView.design({
+  				contentBinding: 'Klb.loansController.length',
   			  layout: { left: 10, top: 10, width: 180, height: 24 },
-  			  value: "24 loan results"
+  			  controlSize: SC.REGULAR_CONTROL_SIZE,
+	  			fontWeight: SC.BOLD_WEIGHT,
+  			  value: ""
   			}),
 
   			sortLabel: SC.LabelView.design({
-  			  layout: { right: 170, top: 10, width: 80, height: 24 },
-  			  value: "Sort by"
+  			  layout: { right: 205, top: 9, width: 80, height: 24 },
+  			  value: "_Sort by".loc()
   			}),
 
   			sortSelectView: SC.SelectFieldView.design({
-  			  layout: { right: 115, top: 10, width: 80, height: 24 },
-  			  objects:["regular","name","country","loan amount"]
+  			  layout: { right: 115, top: 10, width: 120, height: 24 },
+  			  objects:["_Popularity".loc(),"_Loan Amount".loc()
+  			  	,"_Amount Left".loc(),"_Expiring Soon".loc(),"_Most Recent".loc()]
   			}),
 
   			viewModeSegmentedView: SC.SegmentedView.design({
   			  layout: { right: 5, top: 5, width: 100, height: 24 },
-  			   items: "List Grid".w(),
+  			   items: "List Grid".w(), // these not to be localized - use icons
             value: "List"
   			})
   	  })

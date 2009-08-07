@@ -55,7 +55,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {2067.95, 1585.75}}</string>
+				<string>{{0, 0}, {2067.95, 792.877}}</string>
 				<key>Class</key>
 				<string>SolidGraphic</string>
 				<key>ID</key>
@@ -308,7 +308,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 			<key>UniqueID</key>
 			<integer>1</integer>
 			<key>VPages</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>ActiveLayerIndex</key>
@@ -665,16 +665,16 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 						hIQITlNPYmplY3QAhZKEhIQITlNT
 						dHJpbmcBlIQBKww8JURvY3VtZW50
 						JT6GhAJpSQEMkoSEhAxOU0RpY3Rp
-						b25hcnkAlIQBaQOShJaWBk5TRm9u
-						dIaShISEBk5TRm9udB6UmTyEBVs2
-						MGNdBgAAADIAAAD//kgAZQBsAHYA
-						ZQB0AGkAYwBhAE4AZQB1AGUALQBV
-						AGwAdAByAGEATABpAGcAaAB0AAAA
-						hAFmQIQBYwCdAZ0AnQCGkoSWlgdO
-						U0NvbG9yhpKEhIQHTlNDb2xvcgCU
-						nQaEA0BAQISWlgZTeXN0ZW2GhJaW
-						CXRleHRDb2xvcoaEnp0DhAJmZgAB
-						hoaShJaWEE5TUGFyYWdyYXBoU3R5
+						b25hcnkAlIQBaQOShJaWB05TQ29s
+						b3KGkoSEhAdOU0NvbG9yAJSEAWMG
+						hANAQECElpYGU3lzdGVthoSWlgl0
+						ZXh0Q29sb3KGhJubA4QCZmYAAYaG
+						koSWlgZOU0ZvbnSGkoSEhAZOU0Zv
+						bnQelJk8hAVbNjBjXQYAAAAyAAAA
+						//5IAGUAbAB2AGUAdABpAGMAYQBO
+						AGUAdQBlAC0AVQBsAHQAcgBhAEwA
+						aQBnAGgAdAAAAIQBZkCbAJsBmwCb
+						AIaShJaWEE5TUGFyYWdyYXBoU3R5
 						bGWGkoSEhBBOU1BhcmFncmFwaFN0
 						eWxlAJSEBENDQFMBAISEhAdOU0Fy
 						cmF5AJSZDJKEhIQJTlNUZXh0VGFi
@@ -750,7 +750,7 @@ Modified &lt;%ModificationDate%&gt; \'96 Prepared by &lt;%Modifier%&gt;}</string
 		</dict>
 	</array>
 	<key>ModificationDate</key>
-	<string>2009-08-06 00:50:06 -0700</string>
+	<string>2009-08-06 12:49:57 -0700</string>
 	<key>Modifier</key>
 	<string>Skylar Woodward</string>
 	<key>NotesVisible</key>
@@ -11143,8 +11143,8 @@ Add a copy of this page to separate sections in your design document.  The title
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{778, 277.333}</string>
-						<string>{826.961, 290.342}</string>
+						<string>{778.5, 277.334}</string>
+						<string>{826.961, 290.343}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11186,7 +11186,7 @@ Add a copy of this page to separate sections in your design document.  The title
 					<array>
 						<dict>
 							<key>Bounds</key>
-							<string>{{826.961, 275.676}, {154, 29.3336}}</string>
+							<string>{{826.961, 275.676}, {154, 29.3333}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11253,7 +11253,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{826.961, 305.009}, {154, 29.3337}}</string>
+							<string>{{826.961, 305.009}, {154, 29.3336}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11320,7 +11320,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{826.961, 334.343}, {154, 29.3335}}</string>
+							<string>{{826.961, 334.343}, {154, 29.3334}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11387,7 +11387,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{826.961, 363.676}, {154, 29.3334}}</string>
+							<string>{{826.961, 363.676}, {154, 29.3335}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11454,7 +11454,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{826.961, 393.01}, {154, 29.3331}}</string>
+							<string>{{826.961, 393.01}, {154, 29.3334}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11698,7 +11698,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{624, 233.333}, {154, 29.3335}}</string>
+							<string>{{624, 233.333}, {154, 29.3337}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -11765,7 +11765,7 @@ Add a copy of this page to separate sections in your design document.  The title
 						</dict>
 						<dict>
 							<key>Bounds</key>
-							<string>{{624, 262.667}, {154, 29.3337}}</string>
+							<string>{{624, 262.667}, {154, 29.334}}</string>
 							<key>Class</key>
 							<string>ShapedGraphic</string>
 							<key>FontInfo</key>
@@ -14235,7 +14235,7 @@ checkout}</string>
 	<key>WindowInfo</key>
 	<dict>
 		<key>CurrentSheet</key>
-		<integer>6</integer>
+		<integer>2</integer>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>

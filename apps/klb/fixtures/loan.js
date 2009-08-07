@@ -1,5 +1,5 @@
 // ==========================================================================
-// Project:   Klb.Loan Fixtures
+// Project:   Klb
 // Copyright: ©2009 Kiva Microfunds
 // Licensed under MIT License Terms (see license.js)
 // ==========================================================================

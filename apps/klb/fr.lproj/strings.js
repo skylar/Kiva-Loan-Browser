@@ -11,29 +11,13 @@
 // how your UI will look and you'll notice right away when something needs a
 // localized string added to this file!
 //
-SC.stringsFor('English', {
+SC.stringsFor('Français', {
   // "_String Key": "Localized String"
-
-	//// General
-	"_KlbTitle": "Loanr",
-
-	//// Chrome
-	"_Checkout": "Checkout",
-	// sort drop down
-  "_Sort by": "Sort by",
-	"_Popularity": "Popularity",
-	"_Loan Amount": "Loan Amount",
-  "_Amount Left": "Amount Left",
-  "_Expiring Soon": "Expiring Soon",
-  "_Most Recent": "Most Recent",
-
-	/// Sidebar
-	"_Filter Options":"Filter Options",
-	"_Search": "Search",
-  "_Country": "Country",
-  "_Gender": "Gender",
-  "_Sector": "Sector",
-  "_Groups": "Groups",
-  "_Reset": "Reset",
-  "_Save": "Save"
+  
+  // General
+  "_KlbTitle": "Loanr",
+  
+  /// Chrome
+  "_Checkout": "Achat",
+  "_Sort by": "Tri avec"
 }) ;
