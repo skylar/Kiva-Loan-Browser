@@ -7,14 +7,16 @@
 
 /** @class
 
-  (Document Your Controller Here)
+  (Document your Model here)
 
-  @extends SC.ArrayController
+  @extends SC.Record
+  @version 0.1
 */
-Klb.loansController = SC.ArrayController.create(
-/** @scope Klb.loansController.prototype */ {
-
-  // TODO: Add your own code here.
-  canCheckout: NO
+Klb.Country = SC.Record.extend(
+/** @scope Klb.Country.prototype */ {
   
+  name:SC.Record.attr(String),
+  iso_code:SC.Record.attr(String),
+	region_code:SC.Record.attr(String)
+
 }) ;

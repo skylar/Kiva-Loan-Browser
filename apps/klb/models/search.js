@@ -12,20 +12,16 @@
   @extends SC.Record
   @version 0.1
 */
-Klb.Loan = SC.Record.extend(
-/** @scope Klb.Loan.prototype */ {
+Klb.Search = SC.Record.extend(
+/** @scope Klb.Search.prototype */ {
   
-  borrower:SC.Record.toOne("Klb.Borrower"),
-  
-  status:SC.Record.attr(String),
-  fundedAmount:SC.Record.attr(Number,{key:"funded_amount",defaultValue:0}),
-  name:SC.Record.attr(String),
-  fundedName:function(){
-    return this.get('name') + ' ' + this.get('fundedAmount');
-    
-  }.property('name','fundedAmount').cacheable()
-  ,
-  
+  male: SC.Record.attr(Boolean),
+  female: SC.Record.attr(Boolean),
+	partnerRating: SC.Record.attr(Number),
+	borrowerCount: SC.Record.attr(Number),
+  queryString: SC.Record.attr(String),
+  countries: SC.Record.attr(SC.RecordSet),
+  sectors: SC.Record.attr(SC.RecordSet)
   
 /*
   id:SC.Record.attr(Integer),

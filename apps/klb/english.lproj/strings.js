@@ -16,7 +16,8 @@ SC.stringsFor('English', {
 
 	//// General
 	"_KlbTitle": "Loanr",
-
+	"_OK": "OK",
+	
 	//// Chrome
 	"_Checkout": "Checkout",
 	// sort drop down
@@ -35,5 +36,8 @@ SC.stringsFor('English', {
   "_Sector": "Sector",
   "_Groups": "Groups",
   "_Reset": "Reset",
-  "_Save": "Save"
+  "_Save": "Save",
+
+	// Countries Popup
+	"_Select Countries":"Select Countries"
 }) ;

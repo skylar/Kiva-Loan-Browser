@@ -51,7 +51,7 @@ Klb.mainPage = SC.Page.design({
       canCollapseViews: YES,
 
       topLeftMinThickness: 100,
-      topLeftMaxThickness: 500,
+      topLeftMaxThickness: 200,
       topLeftView: SC.LabelView.design({
         value: "top",
         backgroundColor: 'red'
@@ -60,7 +60,7 @@ Klb.mainPage = SC.Page.design({
       dividerView: SC.SplitDividerView,
       
        bottomRightView: SC.View.design({
-        childViews: 'filterTitle searchField locationLabel genderLabel sectorLabel groupsLabel resetButton saveButton'.w(),
+        childViews: 'filterTitle searchField locationLabel locationButton genderLabel sectorLabel groupsLabel resetButton saveButton'.w(),
         filterTitle: SC.LabelView.design({
   			  layout: { left: 5, top: 5, right: 5, height: 15 },
   			  value: "_Filter Options".loc(),
@@ -73,6 +73,12 @@ Klb.mainPage = SC.Page.design({
   			locationLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 50, width: 80, height: 24 },
   			  value: "_Country".loc() + ":"
+  			}),
+  			locationButton: SC.ButtonView.design({
+  			  layout: { left:100, top: 50, width: 80, height: 24 },
+  			  title: "_Country".loc(),
+	        action: "showCountryPicker",
+	        target: "Klb.searchController"
   			}),
   			genderLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 65, width: 80, height: 24 },
@@ -107,8 +113,8 @@ Klb.mainPage = SC.Page.design({
 		    backgroundColor: 'white',
 
 				contentView: SC.ListView.design({
-				  contentBinding: 'Klb.loansController.arrangedObjects',
-				  selectionBinding: 'Klb.loansController.selection',
+				  contentBinding: 'Klb.searchController.activeResults',
+//				  selectionBinding: 'Klb.loansController.selection',
 					contentValueKey: "name",
 					exampleView: Klb.LoanListingView,
 					rowHeight: 120
