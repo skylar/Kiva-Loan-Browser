@@ -11,15 +11,17 @@
 
   @extends SC.ArrayController
 */
-Klb.loansController = SC.ArrayController.create(
+Klb.detailController = SC.ObjectController.create(
 /** @scope Klb.loansController.prototype */ {
-
-  // TODO: Add your own code here.
-  canCheckout: NO,
   
-  stateDidChange: function() {
-     Klb.sendAction('targetsDidChange');
-   }.observes('state')
-  
+  largeImage: function() {
+    if(this.get('image')) return  'https://s3.amazonaws.com/s3.kiva.org/img/w450h360/'+this.get('image').id+'.jpg';
+    else return "";
+  }.property('image'),
+    
+  smallImage: function() {
+    if(this.get('image')) return  'https://s3.amazonaws.com/s3.kiva.org/img/w200h200/'+this.get('image').id+'.jpg';
+    else return "";
+  }.property()
   
 }) ;

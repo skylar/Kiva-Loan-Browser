@@ -26,13 +26,13 @@ Klb.main = function main() {
   // on screen.  If you app gets any level of complexity, you will probably 
   // create multiple pages and panes.  
   Klb.getPath('mainPage.appPane').append();
-
+Klb.makeFirstResponder(Klb.START);
   // Step 1. Set the content property on your primary controller.
   // This will make your app come alive!
 	var loans = Klb.store.findAll(Klb.Loan);
 	Klb.loansController.set('content', loans);
 
-	Klb.makeFirstResponder(Klb.START);
+	
 } ;
 
 function main() { Klb.main(); }

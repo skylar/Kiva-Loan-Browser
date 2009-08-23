@@ -25,6 +25,7 @@ Klb = SC.Application.create(
   store: SC.Store.create(),
 
   // Activates responder tracing
-  trace: YES
+  trace: YES,
+  currentScene : null
 
 });
