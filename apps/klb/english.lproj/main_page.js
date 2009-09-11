@@ -50,8 +50,8 @@ Klb.mainPage = SC.Page.design({
       autoresizeBehavior: SC.RESIZE_BOTTOM_RIGHT,
       canCollapseViews: YES,
 
-      topLeftMinThickness: 100,
-      topLeftMaxThickness: 200,
+      topLeftMinThickness: 0,
+      topLeftMaxThickness: 30,
       topLeftView: SC.LabelView.design({
         value: "top",
         backgroundColor: 'red'
