@@ -33,7 +33,7 @@ Klb.READY_LOADING = SC.Responder.create({
   },
   
   testsDidChange: function(sender) {
-    var tests = Klb.loansController;
+    var tests = Klb.searchController;
     if (tests.get('state') !== SC.Record.READY) return ;
     
     if (tests.get('length')===0) {

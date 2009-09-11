@@ -18,11 +18,11 @@ Klb.WELCOME = SC.Responder.create({
   nextResponder: Klb.READY,
   
   didBecomeFirstResponder: function() {
-    Klb.loansController.set('nowShowing', 'welcome');
+    Klb.searchController.set('nowShowing', 'welcome');
   },
   
   willLoseFirstResponder: function() {
-    Klb.loansController.set('nowShowing', null);
+    Klb.searchController.set('nowShowing', null);
   }
 
 });

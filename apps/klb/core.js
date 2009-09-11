@@ -26,6 +26,7 @@ Klb = SC.Application.create(
 
   // Activates responder tracing
   trace: YES,
-  currentScene : null
+  currentScene : null,
+	pickerPanes: {}
 
 });

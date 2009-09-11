@@ -17,7 +17,7 @@ Klb.READY = SC.Responder.create({
     Invoked when you select the test.
   */
   selectLoan: function(sender, loan) {
-    if (!Klb.loansController.get('hasContent')) return NO ;
+    if (!Klb.searchController.get('hasContent')) return NO ;
 
     if (loan && loan.isEnumerable) loan = loan.firstObject();
     Klb.detailController.set('content', loan);

@@ -20,7 +20,7 @@ Klb.READY_LIST = SC.Responder.create({
   */
   didBecomeFirstResponder: function() {
     Klb.set('currentScene', 'searchListView');
-    Klb.loansController.set('selection', null); // always empty sel
+    Klb.searchController.set('selection', null); // always empty sel
     //Klb.testsController.set('isShowingTests', YES);
 
     // var target = Klb.sourceController.get('selection').firstObject();

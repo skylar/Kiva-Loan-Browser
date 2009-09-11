@@ -28,7 +28,12 @@ Klb.START = SC.Responder.create({
     or not.
   */
   targetsDidChange: function() {
-    var l=Klb.loansController.get('content');
+    var l=Klb.searchController.activeResults;
+console.log("targets did change");
+console.log(l);
+console.log(l.getPath('state'));
+console.log(l.getPath('length'));
+
     if (l.getPath('state') !== SC.Record.READY) return NO;
     
     var hasTargets = l.getPath('length') >0;

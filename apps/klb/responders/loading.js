@@ -15,18 +15,18 @@
 Klb.LOADING = SC.Responder.create({
 
   didBecomeFirstResponder: function() {
-    Klb.loansController.set('nowShowing', 'loading');
+    Klb.searchController.set('nowShowing', 'loading');
   },
   
   willLoseFirstResponder: function() {
-    Klb.loansController.set('nowShowing', null);
+    Klb.searchController.set('nowShowing', null);
   },
 
   /** 
     Action to call when the load completes. 
   */
   loadSuccess: function() {
-    Klb.makeFirstResponder(Klb.WELCOME);    
+    Klb.makeFirstResponder(Klb.WELCOME);
   },
   
   /**

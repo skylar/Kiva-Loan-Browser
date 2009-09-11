@@ -14,11 +14,11 @@
 Klb.READY = SC.Responder.create({
 
   didBecomeFirstResponder: function() {
-    Klb.loansController.set('canCheckout', YES);
+    Klb.searchController.set('canCheckout', YES);
   },
   
   willLoseFirstResponder: function() {
-    Klb.loansController.set('canCheckout', NO);
+    Klb.searchController.set('canCheckout', NO);
   },
   
   // Happens when you want to checkout
