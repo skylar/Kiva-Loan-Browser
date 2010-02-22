@@ -31,10 +31,10 @@ Klb.START = SC.Responder.create({
     var l=Klb.searchController.activeResults;
 console.log("targets did change");
 console.log(l);
-console.log(l.getPath('state'));
+console.log(l.getPath('status'));
 console.log(l.getPath('length'));
 
-    if (l.getPath('state') !== SC.Record.READY) return NO;
+    if (!(l.getPath('status') & SC.Record.READY)) return NO;
     
     var hasTargets = l.getPath('length') >0;
     if (hasTargets) Klb.makeFirstResponder(Klb.READY_LIST);

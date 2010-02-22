@@ -12,10 +12,10 @@
   @extends SC.Object
 */
 
-Klb.KivaDataSource = SC.DataSource.extend(
+Klb.KivaDataSourceOld = SC.DataSource.extend(
 /** @scope Klb.KivaDataSource.prototype */ {
 
-	fetchRequest: SC.Request.getUrl("/v1/loans/newest.json").set('isJSON', YES),
+	fetchRequest: SC.Request.getUrl("/v1/loans/newest.json").json(),
 
 	fetch: function(store, fetchKey, params) {
 		var ret = [], url;

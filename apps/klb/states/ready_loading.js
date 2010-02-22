@@ -34,7 +34,7 @@ Klb.READY_LOADING = SC.Responder.create({
   
   testsDidChange: function(sender) {
     var tests = Klb.searchController;
-    if (tests.get('state') !== SC.Record.READY) return ;
+    if (! (tests.get('status') & SC.Record.READY)) return ;
     
     if (tests.get('length')===0) {
       Klb.makeFirstResponder(Klb.READY_NO_TESTS);

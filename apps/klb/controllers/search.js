@@ -30,18 +30,20 @@ Klb.searchController = SC.ObjectController.create({
 // Methods
 // TODO: Add your own code here.
 
-	// call this when you're ready to prime the search w/ data
 	init: function() {
 		// set up a self-observer for when loan results change
-		this.addObserver('activeResults', this, 'notifyResultsChange');
+		this.addObserver('activeResults.status', this, 'notifyResultsChange');
+	},
 
+	// call this when you're ready to prime the search w/ data
+	primeData: function() {
 		this.search();
-		var countries = Klb.store.findAll(Klb.Country);
+		var countries = Klb.store.find(Klb.Country);
 		this.set('availableCountries', countries);
 	},
 
-	search: function() {
-		var loans = Klb.store.findAll(Klb.Loan);
+	search: function() {	
+		var loans = Klb.store.find(Klb.Loan);
 		this.set('activeResults', loans);
 	},
 	
@@ -57,7 +59,8 @@ Klb.searchController = SC.ObjectController.create({
 	notifyResultsChange: function() {
 		// notify responder change of new search results by sending
 		//  this action
+		console.log("RESULTS CHANGED.");
 	   Klb.sendAction('targetsDidChange');
-	 }.observes('state')
+	 }.observes('status')
 	
 });
