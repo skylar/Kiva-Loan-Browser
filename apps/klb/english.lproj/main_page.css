@@ -1,21 +1,17 @@
-/* custom colors, styles for app chrome elements (eg, tool bars) */
-.klb-chrome, .klb-subchrome {background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); }
-.klb-subchrome { background-color: #999999;}
-
-/* legacy? styles from first attempt at loan custom view */
-.klb-llv-picture { position:absolute; top:10px; left:10px; height:100px; width: 100px; background: -webkit-gradient(radial, 100 64, 150, 50 44, 0, from(#8F8F8F), to(#CFCFCF), color-stop(.6,#B5B5B5)); }
-.klb-llv-name { position:absolute; top:7px; left:120px; height:25px; font-size:150%; font-weight:bold;}
-.klb-llv-sector { position:absolute; top:22px; left:120px; height:25px; }
-.klb-llv-amount { margin-top:10px; font-size:115%; font-weight:bold; color:#00ee00;}
-.klb-llv-loanNumbers { position:absolute; top:35px; right:40px; height:100px; width: 150px; text-align:center; vertical-align:middle;font-weight:bold;}
-.klb-llv-loanNumbers .bigNumber { font-size: 300%; }
-.klb-llv-loanUse {position:absolute; bottom:30px; left:120px; height:20px; }
-.klb-llv-country { position:absolute; bottom:5px; left:120px; height:20px; }
-.klb-llv-partner { position:absolute; bottom:5px; left:170px; height:20px; }
-
-.klb-sbv .sc-label-view { color: black; }
-.filter-subheader.sc-large-size  { font-size: 14px; }
-
 .sc-theme .sc-view .sc-button-view.align-left .sc-button-label {
   text-align: left;
 }
+
+.klb-sbv .sc-label-view {
+  color: black;
+}
+
+.filter-subheader.sc-large-size  {
+  font-size: 14px;
+}
+
+
+/* FIXME: cleanup those old styles */
+/* custom colors, styles for app chrome elements (eg, tool bars) */
+.klb-chrome, .klb-subchrome {background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); }
+.klb-subchrome { background-color: #999999;}
