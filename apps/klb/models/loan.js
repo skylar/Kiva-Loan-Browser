@@ -30,6 +30,14 @@ Klb.Loan = SC.Record.extend(
   fundedName:function(){
     return this.get('name') + ' ' + this.get('fundedAmount');
     
-  }.property('name','fundedAmount').cacheable()
+  }.property('name','fundedAmount').cacheable(),
+  
+  remainingAmount: function() {
+    return this.get('loanAmount') - this.get('fundedAmount');
+  }.property('fundedAmount', 'loanAmount').cacheable(),
+  
+  fundedPercentage: function() {
+      return 100 * this.get('fundedAmount') / this.get('loanAmount');
+  }.property('fundedAmount', 'loanAmount').cacheable()
   
 }) ;

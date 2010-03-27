@@ -1,6 +1,6 @@
 /*globals Klb */
 
-Klb.LoanListingView = SC.View.extend({
+Klb.GridView = SC.View.extend({
   
   createChildViews: function() {
     var content = this.get('content'),

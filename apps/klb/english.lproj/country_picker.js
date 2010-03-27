@@ -13,7 +13,7 @@ Klb.pickerPanes.countryPicker = SC.Page.design({
   mainPane: SC.PanelPane.design({
     layout: { width: 300, height: 300, centerX: 0, centerY: 0 },
     
-    contentView: Klb.LoanListingView.design({
+    contentView: Klb.GridView.design({
       layout: { top: 0, left: 0, bottom: 0, right: 0 },
       content: Klb.Country.FIXTURES
     })
