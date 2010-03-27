@@ -93,20 +93,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			locationContent: SC.LabelView.design({
   			  layout: { left: 10, top: 82, width: 200, height: 24 },
-  			  valueBinding: SC.Binding.transform(function(value) {
-
-  			  	var labelText = "", k, valueCount = value.get('length');
-  			  	for(k=0;k<valueCount && k<=2;k++) {
-  			  		if(k!=0) { labelText += ", "; }
-  			  		labelText += value.objectAt(k).name;
-  			  	}
-  			  	if(k<valueCount) {
-  			  		labelText += " +" + (valueCount-2) + " more";
-  			  	}
-//  			  	return labelText;
-
-return value.get('length') + ' countries';
-  			  }).from('Klb.searchController.activeSearch.countries')
+  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
 				}),
   			locationButton: SC.ButtonView.design({
   			  layout: { right:10, top: 82, width: 55, height: 18 },

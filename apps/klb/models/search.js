@@ -30,4 +30,11 @@ Klb.Search = SC.Record.extend(
 	image_url:SC.Record.attr(String)
 */
 
-}) ;
+  formattedCountries: function() {
+    var countries = this.get('countries'),
+        len = countries.get('length');
+        
+    return len === 0 ? 'None' : countries.mapProperty('name').sort().join(', ');
+  }.property('countries').cacheable()
+
+});

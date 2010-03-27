@@ -51,18 +51,18 @@ Klb.searchController = SC.ObjectController.create({
 	},
 	
 	chooseCountries: function(context) {
-		var options = context.getPath('parentView.buttonGridView.optionButtons');
-		var countries = this.activeSearch.get('countries');
-		
-		while(countries.popObject()) {}
+		var options = context.getPath('parentView.buttonGridView.optionButtons'),
+		    countries = this.getPath('activeSearch.countries'),
+		    newCountries = [];
+				
 		options.forEach(function(item) {
-			if(item.isSelected) {
-				countries.pushObject(item.get('content'));
+			if (item.isSelected) {
+				newCountries.push(item.get('content'));
 			}
-		});		
-		countries.notifyPropertyChange('[]');
-		console.log("SET DATA FOR " + countries.get('length') +" countries");
+		});
 		
+		countries.replace(0, countries.get('length'), newCountries);
+				
 		Klb.getPath('pickerPanes.countryPicker.mainPane').remove();
 	},
 	
