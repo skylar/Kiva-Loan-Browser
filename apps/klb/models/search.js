@@ -20,8 +20,9 @@ Klb.Search = SC.Record.extend(
 	partnerRating: SC.Record.attr(Number),
 	borrowerCount: SC.Record.attr(Number),
   queryString: SC.Record.attr(String),
-  countries: SC.Record.attr(SC.RecordSet),
-  sectors: SC.Record.attr(SC.RecordSet)
+  countries: SC.Record.toMany('Klb.Country'),
+//  countries: SC.Record.attr(Array),
+//  sectors: SC.Record.attr(Array)
   
 /*
   id:SC.Record.attr(Integer),

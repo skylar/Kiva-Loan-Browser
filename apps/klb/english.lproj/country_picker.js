@@ -11,12 +11,27 @@ require('views/grid');
 Klb.pickerPanes.countryPicker = SC.Page.design({
   
   mainPane: SC.PanelPane.design({
-    layout: { width: 300, height: 300, centerX: 0, centerY: 0 },
-    
-    contentView: Klb.LoanListingView.design({
-      layout: { top: 0, left: 0, bottom: 0, right: 0 },
-      content: Klb.Country.FIXTURES
-    })
-    
+		contentView: SC.View.design({
+	    layout: { width: 300, height: 300, centerX: 0, centerY: 0 },
+			childViews: 'selectButton label buttonGridView'.w(),
+
+			label: SC.LabelView.design({
+			 layout: { top: 20, left: 20, right: 20, height: 20 },
+			 value: "_Select Countries".loc() + ":"
+			}),
+			
+			buttonGridView: Klb.GridView.design({
+			 layout: { top: 18, left: 18, bottom: 18+24+18, right: 18 },
+			 contentBinding: 'Klb.searchController.availableCountries'
+			}),
+			
+      selectButton: SC.ButtonView.design({
+        layout: { centerX: 0, width: 150, height: 24, bottom: 18 },
+        title: "_OK".loc(),
+        isDefault: YES,
+        action: "chooseCountries",
+        target: "Klb.searchController"
+      })
+   	}) 
   })
 });

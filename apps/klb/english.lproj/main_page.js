@@ -45,11 +45,12 @@ Klb.mainPage = SC.Page.design({
     
 	  sidebarView: SC.SplitView.design({
 	    layout: { top: 41, left: 0, bottom: 41, width: 300 },
-	    backgroundColor: '#888888',
+	    backgroundColor: '#DDDDDD',
 	    layoutDirection: SC.LAYOUT_VERTICAL,
       defaultThickness: 0.5,
       autoresizeBehavior: SC.RESIZE_BOTTOM_RIGHT,
       canCollapseViews: YES,
+      classNames: 'klb-sbv',
 
       topLeftMinThickness: 10,
       topLeftMaxThickness: 100,
@@ -70,26 +71,51 @@ Klb.mainPage = SC.Page.design({
       dividerView: SC.SplitDividerView,
       
        bottomRightView: SC.View.design({
-        childViews: 'filterTitle searchField locationLabel locationButton genderLabel sectorLabel groupsLabel resetButton saveButton'.w(),
+        childViews: 'filterTitle searchField locationLabel locationContent locationButton'.w(),
+        
+// genderLabel sectorLabel groupsLabel resetButton saveButton
         filterTitle: SC.LabelView.design({
-  			  layout: { left: 5, top: 5, right: 5, height: 15 },
+  			  layout: { left: 5, top: 5, right: 5, height: 32 },
   			  value: "_Filter Options".loc(),
-  			  fontWeight: SC.BOLD_WEIGHT
+  			  fontWeight: SC.BOLD_WEIGHT,
+  			  controlSize: SC.LARGE_CONTROL_SIZE
   			}),
   			searchField: SC.TextFieldView.design({
-  			  layout: { left: 5, top: 25, right: 5, height: 20 },
+  			  layout: { left: 5, top: 35, right: 5, height: 20 },
   			  hint: "_Search".loc()
   			}),
   			locationLabel: SC.LabelView.design({
-  			  layout: { left: 5, top: 50, width: 80, height: 24 },
-  			  value: "_Country".loc() + ":"
+  			  layout: { left: 5, top: 60, width: 80, height: 22 },
+  			  value: "_Country".loc(),
+  			  fontWeight: SC.BOLD_WEIGHT,
+  			  controlSize: SC.LARGE_CONTROL_SIZE,
+  			  classNames: 'filter-subheader'
   			}),
+  			locationContent: SC.LabelView.design({
+  			  layout: { left: 10, top: 82, width: 200, height: 24 },
+  			  valueBinding: SC.Binding.transform(function(value) {
+
+  			  	var labelText = "", k, valueCount = value.get('length');
+  			  	for(k=0;k<valueCount && k<=2;k++) {
+  			  		if(k!=0) { labelText += ", "; }
+  			  		labelText += value.objectAt(k).name;
+  			  	}
+  			  	if(k<valueCount) {
+  			  		labelText += " +" + (valueCount-2) + " more";
+  			  	}
+//  			  	return labelText;
+
+return value.get('length') + ' countries';
+  			  }).from('Klb.searchController.activeSearch.countries')
+				}),
   			locationButton: SC.ButtonView.design({
-  			  layout: { left:100, top: 50, width: 80, height: 24 },
-  			  title: "_Country".loc(),
+  			  layout: { right:10, top: 82, width: 55, height: 18 },
+  			  title: "_Edit".loc(),
 	        action: "showCountryPicker",
-	        target: "Klb.searchController"
+	        target: "Klb.searchController",
+					controlSize: SC.SMALL_CONTROL_SIZE  			  
   			}),
+/*
   			genderLabel: SC.LabelView.design({
   			  layout: { left: 5, top: 65, width: 80, height: 24 },
   			  value: "_Gender".loc() + ":"
@@ -106,6 +132,7 @@ Klb.mainPage = SC.Page.design({
   			  layout: { centerX: -50, bottom: 5, width: 80, height: 24 },
   			  title: "_Reset".loc()
   			}),
+*/
   			saveButton: SC.ButtonView.design({
   			  layout: { centerX: 50, bottom: 5, width: 80, height: 24 },
   			  title: "_Save".loc()

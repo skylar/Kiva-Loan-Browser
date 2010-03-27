@@ -13,6 +13,8 @@
 .klb-llv-country { position:absolute; bottom:5px; left:120px; height:20px; }
 .klb-llv-partner { position:absolute; bottom:5px; left:170px; height:20px; }
 
+.klb-sbv .sc-label-view { color: black; }
+.filter-subheader.sc-large-size  { font-size: 14px; }
 
 .sc-theme .sc-view .sc-button-view.align-left .sc-button-label {
   text-align: left;

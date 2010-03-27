@@ -5,12 +5,9 @@
 // ==========================================================================
 /*globals Klb */
 
-/** @class
+require('models/search');
 
-  (Document Your Controller Here)
 
-  @extends SC.Controller
-*/
 Klb.searchController = SC.ObjectController.create({
 
 //////////////////////
@@ -30,19 +27,21 @@ Klb.searchController = SC.ObjectController.create({
 // Methods
 // TODO: Add your own code here.
 
-	init: function() {
+	init: function() {		
 		// set up a self-observer for when loan results change
 		this.addObserver('activeResults.status', this, 'notifyResultsChange');
 	},
 
 	// call this when you're ready to prime the search w/ data
-	primeData: function() {
+	primeData: function() {	
 		this.search();
 		var countries = Klb.store.find(Klb.Country);
 		this.set('availableCountries', countries);
 	},
 
-	search: function() {	
+	search: function() {
+		this.set('activeSearch', Klb.store.createRecord(Klb.Search, {}));
+
 		var loans = Klb.store.find(Klb.Loan);
 		this.set('activeResults', loans);
 	},
@@ -52,6 +51,18 @@ Klb.searchController = SC.ObjectController.create({
 	},
 	
 	chooseCountries: function(context) {
+		var options = context.getPath('parentView.buttonGridView.optionButtons');
+		var countries = this.activeSearch.get('countries');
+		
+		while(countries.popObject()) {}
+		options.forEach(function(item) {
+			if(item.isSelected) {
+				countries.pushObject(item.get('content'));
+			}
+		});		
+		countries.notifyPropertyChange('[]');
+		console.log("SET DATA FOR " + countries.get('length') +" countries");
+		
 		Klb.getPath('pickerPanes.countryPicker.mainPane').remove();
 	},
 	

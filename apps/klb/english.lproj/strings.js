@@ -17,6 +17,7 @@ SC.stringsFor('English', {
 	//// General
 	"_KlbTitle": "Loanr",
 	"_OK": "OK",
+	"_Edit": "Edit",
 	
 	//// Chrome
 	"_Checkout": "Checkout",
