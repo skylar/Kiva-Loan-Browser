@@ -12,3 +12,8 @@
 .klb-llv-loanUse {position:absolute; bottom:30px; left:120px; height:20px; }
 .klb-llv-country { position:absolute; bottom:5px; left:120px; height:20px; }
 .klb-llv-partner { position:absolute; bottom:5px; left:170px; height:20px; }
+
+
+.sc-theme .sc-view .sc-button-view.align-left .sc-button-label {
+  text-align: left;
+}
