@@ -1,18 +1,7 @@
 /*globals Klb */
 
 Klb.LoanListingView = SC.ListItemView.extend({
-  
-  didCreateLayer: function() {
-    var img = this.$('img');
-    if (img && img[0]) {
-      if (img[0].width > img[0].height) {
-        img.css('height', '100%');
-      } else {
-        img.css('width', '100%');
-      }
-    }
-  },
-  
+    
   render: function(context, firstTime) {
     var content = this.get('content'),
         percentage;
@@ -21,10 +10,14 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ top: 10, left: 10, width: 100, height: 100, overflow: 'hidden' })
-        .begin('img')
-          .attr('src', 'http://www.kiva.org/img/200/' + content.get('image').id + '.jpg')
-        .end()
+        .addStyle({
+          top: 10, left: 10, width: 100, height: 100,
+          backgroundImage: 'url(http://www.kiva.org/img/200/' + content.get('image').id + '.jpg)',
+          '-moz-background-size': 'cover',
+          '-webkit-background-size': 'cover',
+          '-moz-border-radius': 6,
+          '-webkit-border-radius': 6
+        })
       .end();
       
     // name
