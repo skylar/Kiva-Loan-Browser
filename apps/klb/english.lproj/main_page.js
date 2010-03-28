@@ -47,15 +47,15 @@ Klb.mainPage = SC.Page.design({
 	    layout: { top: 41, left: 0, bottom: 41, width: 300 },
 	    backgroundColor: '#DDDDDD',
 	    layoutDirection: SC.LAYOUT_VERTICAL,
-      defaultThickness: 0.5,
+      defaultThickness: 0,
       autoresizeBehavior: SC.RESIZE_BOTTOM_RIGHT,
       canCollapseViews: YES,
       classNames: 'klb-sbv',
 
-      topLeftMinThickness: 10,
+      topLeftMinThickness: 0,
       topLeftMaxThickness: 100,
       topLeftView: SC.ScrollView.design({
-        
+       	isVisible: NO,
         hasHorizontalScroller: NO, // disable horizontal scrolling
         contentView: SC.SourceListView.design({
           // contentBinding: "TestRunner.sourceController.arrangedObjects",
@@ -70,8 +70,8 @@ Klb.mainPage = SC.Page.design({
       
       dividerView: SC.SplitDividerView,
       
-       bottomRightView: SC.View.design({
-        childViews: 'filterTitle searchField locationLabel locationContent locationButton'.w(),
+      bottomRightView: SC.View.design({
+        childViews: 'filterTitle searchField genderLabel femaleCheckbox maleCheckbox partnerLabel partnerContent borrowerLabel borrowerContent locationLabel locationContent locationButton sectorLabel sectorContent sectorButton resetButton saveButton'.w(),
         
 // genderLabel sectorLabel groupsLabel resetButton saveButton
         filterTitle: SC.LabelView.design({
@@ -81,47 +81,103 @@ Klb.mainPage = SC.Page.design({
   			  controlSize: SC.LARGE_CONTROL_SIZE
   			}),
   			searchField: SC.TextFieldView.design({
-  			  layout: { left: 5, top: 35, right: 5, height: 20 },
+  			  layout: { left: 10, top: 37, right: 10, height: 22 },
   			  hint: "_Search".loc()
   			}),
+
+				// GENDER
+  			genderLabel: SC.LabelView.design({
+  			  layout: { left: 5, top: 65, right:5, height: 22 },
+  			  value: "_Gender".loc(),
+  			  fontWeight: SC.BOLD_WEIGHT,
+  			  controlSize: SC.LARGE_CONTROL_SIZE,
+  			  classNames: 'filter-subheader'
+  			}),
+  			femaleCheckbox: SC.CheckboxView.design({
+  			  layout: { left: 10, top: 90, width: 80, height: 24 },
+  			  title: "_Female".loc(),
+//  			  contentBinding: 'Klb.searchController.activeSearch.formattedCountries'
+				}),
+  			maleCheckbox: SC.CheckboxView.design({
+  			  layout: { left:100, top: 90, width: 80, height: 24 },
+  			  title: "_Male".loc(),
+  			}),
+
+				// PARTNER RATING
+  			partnerLabel: SC.LabelView.design({
+  			  layout: { left: 5, top: 65+(50*1), right:5, height: 22 },
+  			  value: "_Partner_Rating".loc(),
+  			  fontWeight: SC.BOLD_WEIGHT,
+  			  controlSize: SC.LARGE_CONTROL_SIZE,
+  			  classNames: 'filter-subheader'
+  			}),
+  			partnerContent: SC.SliderView.design({
+  			  layout: { left: 10, top: 90+(50*1), width: 200, height: 24 },
+  			  //valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
+				}),
+
+				// GROUP SIZE
+  			borrowerLabel: SC.LabelView.design({
+  			  layout: { left: 5, top: 65+(50*2), right:5, height: 22 },
+  			  value: "_Borrowers".loc(),
+  			  fontWeight: SC.BOLD_WEIGHT,
+  			  controlSize: SC.LARGE_CONTROL_SIZE,
+  			  classNames: 'filter-subheader'
+  			}),
+  			borrowerContent: SC.SliderView.design({
+  			  layout: { left: 10, top: 90+(50*2), width: 200, height: 24 },
+  			  //valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
+				}),
+
+  			// LOCATION
   			locationLabel: SC.LabelView.design({
-  			  layout: { left: 5, top: 60, width: 80, height: 22 },
-  			  value: "_Country".loc(),
+  			  layout: { left: 5, top: 65+(50*3), right:5, height: 22 },
+  			  value: "_Countries".loc(),
   			  fontWeight: SC.BOLD_WEIGHT,
   			  controlSize: SC.LARGE_CONTROL_SIZE,
   			  classNames: 'filter-subheader'
   			}),
   			locationContent: SC.LabelView.design({
-  			  layout: { left: 10, top: 82, width: 200, height: 24 },
-  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
+  			  layout: { left: 10, top: 90+(50*3), width: 200, height: 24 },
+  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries',
+//					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			locationButton: SC.ButtonView.design({
-  			  layout: { right:10, top: 82, width: 55, height: 18 },
+  			  layout: { right:10, top: 90+(50*3), width: 55, height: 18 },
   			  title: "_Edit".loc(),
 	        action: "showCountryPicker",
 	        target: "Klb.searchController",
-					controlSize: SC.SMALL_CONTROL_SIZE  			  
+					controlSize: SC.SMALL_CONTROL_SIZE,
   			}),
-/*
-  			genderLabel: SC.LabelView.design({
-  			  layout: { left: 5, top: 65, width: 80, height: 24 },
-  			  value: "_Gender".loc() + ":"
-  			}),
+
+  			// SECTOR
   			sectorLabel: SC.LabelView.design({
-  			  layout: { left: 5, top: 80, width: 80, height: 24 },
-  			  value: "_Sector".loc() + ":"
+  			  layout: { left: 5, top: 65+(50*4), right:5, height: 22 },
+  			  value: "_Sectors".loc(),
+  			  fontWeight: SC.BOLD_WEIGHT,
+  			  controlSize: SC.LARGE_CONTROL_SIZE,
+  			  classNames: 'filter-subheader'
   			}),
-  			groupsLabel: SC.LabelView.design({
-  			  layout: { left: 5, top: 95, width: 80, height: 24 },
-  			  value: "_Groups".loc() + ":"
+  			sectorContent: SC.LabelView.design({
+  			  layout: { left: 10, top: 90+(50*4), width: 200, height: 24 },
+  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries',
+//					needsEllipsis: YES 			  - ideally, added to SC
+				}),
+  			sectorButton: SC.ButtonView.design({
+  			  layout: { right:10, top: 90+(50*4), width: 55, height: 18 },
+  			  title: "_Edit".loc(),
+	        action: "showSectorPicker",
+	        target: "Klb.searchController",
+					controlSize: SC.SMALL_CONTROL_SIZE,
   			}),
+
+				// SAVE, etc.
   			resetButton: SC.ButtonView.design({
-  			  layout: { centerX: -50, bottom: 5, width: 80, height: 24 },
+  			  layout: { centerX: -50, bottom: 10, width: 80, height: 24 },
   			  title: "_Reset".loc()
   			}),
-*/
   			saveButton: SC.ButtonView.design({
-  			  layout: { centerX: 50, bottom: 5, width: 80, height: 24 },
+  			  layout: { centerX: 50, bottom: 10, width: 80, height: 24 },
   			  title: "_Save".loc()
   			})
        })
