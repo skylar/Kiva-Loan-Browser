@@ -7,7 +7,15 @@
 
 sc_require('views/loan_listing');
 
-// This page describes the main user interface for your application.  
+// This page describes the main user interface for your application.
+Klb.staticImagePath = 'flags_iso/32/fr.png';
+Klb.absStaticImagePath = sc_static('flags_iso/32/fr.png');
+Klb.imageByName = function(name) {
+	var prefix = Klb.absStaticImagePath.substring(0,
+		Klb.absStaticImagePath.indexOf(Klb.staticImagePath));
+	return prefix+name;
+}
+
 Klb.mainPage = SC.Page.design({
 
   // The main pane is made visible on screen as soon as your app is loaded.
@@ -160,7 +168,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			sectorContent: SC.LabelView.design({
   			  layout: { left: 10, top: 90+(50*4), width: 200, height: 24 },
-  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries',
+//  			  valueBinding: 'Klb.searchController.activeSearch.formattedSectors',
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			sectorButton: SC.ButtonView.design({

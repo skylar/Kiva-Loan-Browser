@@ -17,6 +17,11 @@ Klb.Country = SC.Record.extend(
   
   name:SC.Record.attr(String),
   iso_code:SC.Record.attr(String),
-	region_code:SC.Record.attr(String)
+	region_code:SC.Record.attr(String),
+	
+	iconBySize: function(size) {
+		return Klb.imageByName('flags_iso/%@/%@.png'.fmt(size, 
+			this.get('iso_code').toLowerCase()));
+	}
 
 }) ;
