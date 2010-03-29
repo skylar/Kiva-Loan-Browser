@@ -22,7 +22,7 @@ Klb.Search = SC.Record.extend(
   queryString: SC.Record.attr(String),
   countries: SC.Record.toMany('Klb.Country'),
 //  countries: SC.Record.attr(Array),
-//  sectors: SC.Record.attr(Array)
+	sectors: SC.Record.attr(Array),
   
 /*
   id:SC.Record.attr(Integer),
@@ -34,7 +34,14 @@ Klb.Search = SC.Record.extend(
     var countries = this.get('countries'),
         len = countries.get('length');
         
-    return len === 0 ? 'None' : countries.mapProperty('name').sort().join(', ');
-  }.property('countries').cacheable()
+    return len === 0 ? 'All' : countries.mapProperty('name').sort().join(', ');
+  }.property('countries').cacheable(),
+
+	formattedSectors: function() {
+	  var sectors = this.get('sectors'),
+	      len = sectors.get('length');
+	      
+	  return len === 0 ? 'All' : sectors.mapProperty('name').sort().join(', ');
+	}.property('sectors').cacheable()
 
 });

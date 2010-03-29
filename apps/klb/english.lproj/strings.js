@@ -46,5 +46,8 @@ SC.stringsFor('English', {
   "_Save": "Save",
 
 	// Countries Popup
-	"_Select Countries":"Select Countries"
+	"_Choose Countries":"Choose Countries",
+
+	// Sectors Popup
+	"_Choose Sectors":"Choose Sectors",
 }) ;

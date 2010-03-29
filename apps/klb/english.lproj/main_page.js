@@ -79,7 +79,7 @@ Klb.mainPage = SC.Page.design({
       dividerView: SC.SplitDividerView,
       
       bottomRightView: SC.View.design({
-        childViews: 'filterTitle searchField genderLabel femaleCheckbox maleCheckbox partnerLabel partnerContent borrowerLabel borrowerContent locationLabel locationContent locationButton sectorLabel sectorContent sectorButton resetButton saveButton'.w(),
+        childViews: 'filterTitle searchField genderLabel femaleCheckbox maleCheckbox partnerLabel partnerSlider partnerContent borrowerLabel borrowerSlider borrowerContent locationLabel locationContent locationButton sectorLabel sectorContent sectorButton resetButton saveButton'.w(),
         
 // genderLabel sectorLabel groupsLabel resetButton saveButton
         filterTitle: SC.LabelView.design({
@@ -104,11 +104,12 @@ Klb.mainPage = SC.Page.design({
   			femaleCheckbox: SC.CheckboxView.design({
   			  layout: { left: 10, top: 90, width: 80, height: 24 },
   			  title: "_Female".loc(),
-//  			  contentBinding: 'Klb.searchController.activeSearch.formattedCountries'
+  			  valueBinding: 'Klb.searchController.activeSearch.female'
 				}),
   			maleCheckbox: SC.CheckboxView.design({
   			  layout: { left:100, top: 90, width: 80, height: 24 },
   			  title: "_Male".loc(),
+  			  valueBinding: 'Klb.searchController.activeSearch.male'
   			}),
 
 				// PARTNER RATING
@@ -119,9 +120,16 @@ Klb.mainPage = SC.Page.design({
   			  controlSize: SC.LARGE_CONTROL_SIZE,
   			  classNames: 'filter-subheader'
   			}),
-  			partnerContent: SC.SliderView.design({
+  			partnerSlider: SC.SliderView.design({
   			  layout: { left: 10, top: 90+(50*1), width: 200, height: 24 },
-  			  //valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
+  			  minimum: 0,
+  			  maximum: 5.0,
+  			  step: 0.1,
+  			  valueBinding: 'Klb.searchController.activeSearch.partnerRating'
+				}),
+  			partnerContent: SC.LabelView.design({
+  			  layout: { right: 10, top: 90+(50*1), width: 30, height: 24 },
+  			  valueBinding: 'Klb.searchController.activeSearch.partnerRating'
 				}),
 
 				// GROUP SIZE
@@ -132,9 +140,16 @@ Klb.mainPage = SC.Page.design({
   			  controlSize: SC.LARGE_CONTROL_SIZE,
   			  classNames: 'filter-subheader'
   			}),
-  			borrowerContent: SC.SliderView.design({
+  			borrowerSlider: SC.SliderView.design({
   			  layout: { left: 10, top: 90+(50*2), width: 200, height: 24 },
-  			  //valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
+					minimum: 1,
+					maximum: 20,
+					step: 1.0,
+  			  valueBinding: 'Klb.searchController.activeSearch.borrowerCount'
+				}),
+				borrowerContent: SC.LabelView.design({
+				  layout: { right: 10, top: 90+(50*2), width: 30, height: 24 },
+				  valueBinding: 'Klb.searchController.activeSearch.borrowerCount'
 				}),
 
   			// LOCATION
@@ -168,7 +183,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			sectorContent: SC.LabelView.design({
   			  layout: { left: 10, top: 90+(50*4), width: 200, height: 24 },
-//  			  valueBinding: 'Klb.searchController.activeSearch.formattedSectors',
+  			  valueBinding: 'Klb.searchController.activeSearch.formattedSectors',
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			sectorButton: SC.ButtonView.design({
