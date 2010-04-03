@@ -5,14 +5,21 @@
 // ==========================================================================
 /*globals Klb */
 
-/** @class
+require('models/loan');
 
-  (Document Your Controller Here)
-
-  @extends SC.ArrayController
-*/
 Klb.loansController = SC.ArrayController.create(
 /** @scope Klb.loansController.prototype */ {
-
   
-}) ;
+  filterConditions: null,
+  
+  init: function() {
+    sc_super();
+    this.filterConditionsDidChange();
+  },
+  
+  filterConditionsDidChange: function() {
+    var filterConditions = this.get('filterConditions') || '';
+    this.set('content', Klb.store.find(SC.Query.local(Klb.Loan, filterConditions)));
+  }.observes('filterConditions')
+  
+});

@@ -15,8 +15,9 @@
 Klb.Loan = SC.Record.extend(
 /** @scope Klb.Loan.prototype */ {
   
-  borrower:SC.Record.toOne("Klb.Borrower"),
+  primaryKey: 'id',
   
+  borrower:SC.Record.toOne("Klb.Borrower"),
   status:SC.Record.attr(String),
   fundedAmount:SC.Record.attr(Number,{key:"funded_amount",defaultValue:0}),
   loanAmount:SC.Record.attr(Number,{key:"loan_amount",defaultValue:0}),

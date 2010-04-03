@@ -6,6 +6,7 @@
 /*globals Klb */
 
 sc_require('views/loan_listing');
+require('controllers/loans');
 
 // This page describes the main user interface for your application.
 Klb.staticImagePath = 'flags_iso/32/fr.png';
@@ -14,7 +15,7 @@ Klb.imageByName = function(name) {
 	var prefix = Klb.absStaticImagePath.substring(0,
 		Klb.absStaticImagePath.indexOf(Klb.staticImagePath));
 	return prefix+name;
-}
+};
 
 Klb.mainPage = SC.Page.design({
 
@@ -162,7 +163,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			locationContent: SC.LabelView.design({
   			  layout: { left: 10, top: 90+(50*3), width: 200, height: 24 },
-  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries',
+  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			locationButton: SC.ButtonView.design({
@@ -170,7 +171,7 @@ Klb.mainPage = SC.Page.design({
   			  title: "_Edit".loc(),
 	        action: "showCountryPicker",
 	        target: "Klb.searchController",
-					controlSize: SC.SMALL_CONTROL_SIZE,
+					controlSize: SC.SMALL_CONTROL_SIZE
   			}),
 
   			// SECTOR
@@ -183,7 +184,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			sectorContent: SC.LabelView.design({
   			  layout: { left: 10, top: 90+(50*4), width: 200, height: 24 },
-  			  valueBinding: 'Klb.searchController.activeSearch.formattedSectors',
+  			  valueBinding: 'Klb.searchController.activeSearch.formattedSectors'
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			sectorButton: SC.ButtonView.design({
@@ -191,7 +192,7 @@ Klb.mainPage = SC.Page.design({
   			  title: "_Edit".loc(),
 	        action: "showSectorPicker",
 	        target: "Klb.searchController",
-					controlSize: SC.SMALL_CONTROL_SIZE,
+					controlSize: SC.SMALL_CONTROL_SIZE
   			}),
 
 				// SAVE, etc.
@@ -370,7 +371,7 @@ Klb.mainPage = SC.Page.design({
 	    backgroundColor: 'white',
 
 			contentView: SC.ListView.design({
-			  contentBinding: 'Klb.searchController.activeResults',
+			  contentBinding: 'Klb.loansController.arrangedObjects',
 //			  selectionBinding: 'Klb.loansController.selection',
 				contentValueKey: "name",
 				exampleView: Klb.LoanListingView,
@@ -387,11 +388,10 @@ Klb.mainPage = SC.Page.design({
 			classNames: 'klb-subchrome'.w(),
 
 			resultsLabel: SC.LabelView.design({
-				contentBinding: 'Klb.searchController.activeResultsCount',
+				valueBinding: 'Klb.loansController.length',
 			  layout: { left: 10, top: 10, width: 180, height: 24 },
 			  controlSize: SC.REGULAR_CONTROL_SIZE,
-  			fontWeight: SC.BOLD_WEIGHT,
-			  value: ""
+  			fontWeight: SC.BOLD_WEIGHT
 			}),
 
 			sortLabel: SC.LabelView.design({

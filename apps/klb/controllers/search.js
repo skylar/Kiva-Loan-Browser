@@ -7,43 +7,19 @@
 
 require('models/search');
 require('array');
-
+require('controllers/loans');
 
 Klb.searchController = SC.ObjectController.create({
 
-//////////////////////
-// Properties
-	activeSearch: null,  // Klb.Search
-	activeResults: null,
 	availableCountries: null,
 	availableSectors:  null,
 	savedSearches:  null,
 	canCheckout: NO,
-	
-	activeResultCount: function() {
-		return 122;
-	}.property().cacheable(),
-		
-//////////////////////
-// Methods
-// TODO: Add your own code here.
-
-	init: function() {		
-		// set up a self-observer for when loan results change
-		this.addObserver('activeResults.status', this, 'notifyResultsChange');
-	},
 
 	// call this when you're ready to prime the search w/ data
 	primeData: function() {	
-		this.set('activeSearch', Klb.store.createRecord(Klb.Search, {}));
-		this.activeSearch.set('male', true);
-		this.activeSearch.set('female', true);
-		this.activeSearch.set('partnerRating', 3.5);
-		this.activeSearch.set('borrowerCount', 1);
-		this.activeSearch.set('sectors', []);
-		
-		// set up Sectors (for now, in english)
-		var sectors = [{'name':'Agriculture','isSelected':false},
+	  var sectors = [
+	    {'name':'Agriculture','isSelected':false},
 			{'name':'Transportation','isSelected':false},
 			{'name':'Services','isSelected':false},
 			{'name':'Clothing','isSelected':false},
@@ -59,18 +35,23 @@ Klb.searchController = SC.ObjectController.create({
 			{'name':'Personal Use','isSelected':false},
 			{'name':'Entertainment','isSelected':false},
 			{'name':'Green','isSelected':false},
-			{'name':'Food','isSelected':false}
-			];
+			{'name':'Food','isSelected':false}];
 		this.set('availableSectors',sectors);
 
-		this.search();
+		this.loadLoans();
 		var countries = Klb.store.find(Klb.Country);
 		this.set('availableCountries', countries);
 	},
 
-	search: function() {
-		var loans = Klb.store.find(Klb.Loan);
-		this.set('activeResults', loans);
+	loadLoans: function() {
+	  var remoteQuery, i;
+
+	  Klb.makeFirstResponder(Klb.READY_LIST);
+	  
+	  for (i = 1; i < 10; ++i) {
+	    remoteQuery = SC.Query.create({ location: SC.Query.REMOTE, recordType: 'Klb.Loan', parameters: { page: i } });
+	    Klb.store.find(remoteQuery);
+    }
 	},
 	
 	showCountryPicker: function(context) {
@@ -102,14 +83,6 @@ Klb.searchController = SC.ObjectController.create({
 		this.activeSearch.set('sectors', options);
 				
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
-	},
-	
-// implementing interfaces
-	notifyResultsChange: function() {
-		// notify responder change of new search results by sending
-		//  this action
-		console.log("RESULTS CHANGED.");
-	   Klb.sendAction('targetsDidChange');
-	 }.observes('status')
+	}
 	
 });

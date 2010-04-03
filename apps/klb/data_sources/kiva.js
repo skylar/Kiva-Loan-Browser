@@ -23,20 +23,30 @@ Klb.KivaDataSource = SC.DataSource.extend(
   // QUERY SUPPORT
   // 
 
-	fetchRequest: SC.Request.getUrl("/v1/loans/newest.json").json(),
+	requestForNewest: function(page) {
+	  page = page || 1;
+	  return SC.Request.getUrl("/v1/loans/newest.json?page=%@".fmt(page)).json();
+  },
 
   fetch: function(store, query) {
-
-    // TODO: Add handlers to fetch data for specific queries.  
-    // call store.dataSourceDidFetchQuery(query) when done.
-		if(1) { // for now, handle all queries the same 
-			this.fetchRequest
-				.notify(this, 'didFetchNewestLoans', store, query)
-				.send();
-			return YES;
-		}
-		
-    return NO ; // return YES if you handled the query
+    var page, params;
+    
+    if (query.get('isRemote') && query.get('recordType') === 'Klb.Loan') {
+      
+      // get a page number if passed in the parameters
+      params = query.get('parameters');
+      if (params && params['page']) {
+        page = params['page'];
+      }
+      
+      this.requestForNewest(page)
+          .notify(this, 'didFetchNewestLoans', store, query)
+          .send();
+      
+      return YES;
+    }
+    
+    return NO; // we didn't handle the query
   },
 
 	didFetchNewestLoans: function(response, store, query) {
