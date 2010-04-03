@@ -56,7 +56,6 @@ SC.stringsFor('English', {
 	"_Loan_Use":"Loan Use",
 	"_Country": "Country",
 	"_Rating": "Rating",
-	"_Needed_Out_Of":"needed out of";
+	"_Needed_Out_Of":"needed out of",
 	
-
 }) ;

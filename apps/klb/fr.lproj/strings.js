@@ -59,8 +59,4 @@ SC.stringsFor('Français', {
 	"_Rating": "Note",
 	"_Needed_Out_Of":"besoin total de",
 	
-	//sector list item
-	"Transportation":"Transports",
-	
-
 }) ;
