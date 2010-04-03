@@ -17,7 +17,6 @@ Klb.searchController = SC.ObjectController.create({
   availableSectors: null,
   selectedSectors: null,
 
-	savedSearches:  null,
 	canCheckout: NO,
 
 	// call this when you're ready to prime the search w/ data
