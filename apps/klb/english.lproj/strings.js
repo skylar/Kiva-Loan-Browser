@@ -22,13 +22,14 @@ SC.stringsFor('English', {
 	//// Chrome
 	"_Checkout": "Checkout",
 	// sort drop down
-  "_Sort by": "Sort by",
+	"_Sort by": "Sort by",
 	"_Popularity": "Popularity",
 	"_Loan Amount": "Loan Amount",
-  "_Amount Left": "Amount Left",
-  "_Expiring Soon": "Expiring Soon",
-  "_Most Recent": "Most Recent",
-
+	"_Amount Left": "Amount Left",
+	"_Expiring Soon": "Expiring Soon",
+	"_Most Recent": "Most Recent",
+	"_List_Grid":"List",
+	"_List":"List",
 	/// Sidebar
 	"_Filter Options":"Filter Options",
 	"_Search": "Search",
@@ -50,4 +51,12 @@ SC.stringsFor('English', {
 
 	// Sectors Popup
 	"_Choose Sectors":"Choose Sectors",
+	
+	//loan_list_item"
+	"_Loan_Use":"Loan Use",
+	"_Country": "Country",
+	"_Rating": "Rating",
+	"_Needed_Out_Of":"needed out of";
+	
+
 }) ;
