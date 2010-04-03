@@ -167,7 +167,7 @@ Klb.mainPage = SC.Page.design({
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			locationButton: SC.ButtonView.design({
-  			  layout: { right:10, top: 90+(50*3), width: 55, height: 18 },
+  			  layout: { right:10, top: 90+(50*3), width: 65, height: 18 },
   			  title: "_Edit".loc(),
 	        action: "showCountryPicker",
 	        target: "Klb.searchController",
@@ -188,7 +188,7 @@ Klb.mainPage = SC.Page.design({
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			sectorButton: SC.ButtonView.design({
-  			  layout: { right:10, top: 90+(50*4), width: 55, height: 18 },
+  			  layout: { right:10, top: 90+(50*4), width: 65, height: 18 },
   			  title: "_Edit".loc(),
 	        action: "showSectorPicker",
 	        target: "Klb.searchController",
@@ -197,11 +197,11 @@ Klb.mainPage = SC.Page.design({
 
 				// SAVE, etc.
   			resetButton: SC.ButtonView.design({
-  			  layout: { centerX: -50, bottom: 10, width: 80, height: 24 },
+  			  layout: { centerX: -50, bottom: 10, width: 90, height: 24 },
   			  title: "_Reset".loc()
   			}),
   			saveButton: SC.ButtonView.design({
-  			  layout: { centerX: 50, bottom: 10, width: 80, height: 24 },
+  			  layout: { centerX: 50, bottom: 10, width: 90, height: 24 },
   			  title: "_Save".loc()
   			})
        })
@@ -395,20 +395,20 @@ Klb.mainPage = SC.Page.design({
 			}),
 
 			sortLabel: SC.LabelView.design({
-			  layout: { right: 205, top: 9, width: 80, height: 24 },
+			  layout: { right: 220, top: 9, width: 80, height: 24 },
 			  value: "_Sort by".loc()
 			}),
 
 			sortSelectView: SC.SelectFieldView.design({
-			  layout: { right: 115, top: 10, width: 120, height: 24 },
+			  layout: { right: 115, top: 10, width: 130, height: 24 },
 			  objects:["_Popularity".loc(),"_Loan Amount".loc()
 			  	,"_Amount Left".loc(),"_Expiring Soon".loc(),"_Most Recent".loc()]
 			}),
 
 			viewModeSegmentedView: SC.SegmentedView.design({
 			  layout: { right: 5, top: 5, width: 100, height: 24 },
-			   items: "List Grid".w(), // these not to be localized - use icons
-          value: "List"
+			   items: "_List_Grid".loc().w(), // these not to be localized - use icons
+          value: "_List".loc()
 			})
 	  })
 	})

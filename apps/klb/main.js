@@ -32,7 +32,6 @@ Klb.main = function main() {
   // This will make your app come alive!
 	Klb.searchController.primeData();
 
-	
 } ;
 
 function main() { Klb.main(); }

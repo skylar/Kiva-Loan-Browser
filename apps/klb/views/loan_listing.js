@@ -41,7 +41,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
         .addClass('sc-view')
         .addStyle({ left: 120, top: 60, height: 18 })
-        .push('<span style="font-weight: bold;">Loan Use: </span>', content.get('use'))
+        .push('<span style="font-weight: bold;">','_Loan_Use'.loc(),': </span>', content.get('use'))
       .end();
       
     // country
@@ -49,7 +49,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
         .addClass('sc-view')
         .addStyle({ left: 120, top: 78, height: 18 })
-        .push('<span style="font-weight: bold;">Country: </span>', content.get('country').country)
+        .push('<span style="font-weight: bold;">','_Country'.loc(),': </span>', content.get('country').country)
       .end();
 
     // rating
@@ -57,7 +57,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
         .addClass('sc-view')
         .addStyle({ left: 120, top: 96, height: 18 })
-        .push('<span style="font-weight: bold;">Rating: </span>')
+        .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>')
       .end();
     
     // remaining amount  
@@ -73,7 +73,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
         .addClass('sc-view')
         .addStyle({ right: 10, top: 63, height: 18, width: 150, textAlign: 'right' })
-        .push('needed out of $', content.get('loanAmount'))
+        .push('_Needed_Out_Of'.loc(),' ', content.get('loanAmount'),'$')
       .end();
   
     // progress
