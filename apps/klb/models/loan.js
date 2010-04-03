@@ -24,7 +24,7 @@ Klb.Loan = SC.Record.extend(
   name:SC.Record.attr(String),
   use:SC.Record.attr(String),
   sector:SC.Record.attr(String),
-  partner_id:SC.Record.attr(Number,{key:"loan_amount",defaultValue:0}),
+  partner_id:SC.Record.attr(Number,{key:"partner_id",defaultValue:0}),
   country:SC.Record.attr(Object,{key:"location"}),
   image:SC.Record.attr(Object,{key:"image"}),
   
