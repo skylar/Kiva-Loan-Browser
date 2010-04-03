@@ -32,7 +32,7 @@ Klb.GridView = SC.View.extend({
 	      view = SC.ButtonView.create({
 	        layout: { top: top, left: left, width: width, height: 24 },
 	        classNames: 'align-left'.w(),
-	        icon: item.get('icon'),
+	        icon: item.iconBySize(32),
 	        title: country,
 	        buttonBehavior: SC.TOGGLE_BEHAVIOR,
 	        content: item

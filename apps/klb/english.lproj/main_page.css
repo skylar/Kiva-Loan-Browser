@@ -1,15 +1,22 @@
+/* for our "grid" view of buttons, left align text in the boxes */
 .sc-theme .sc-view .sc-button-view.align-left .sc-button-label {
   text-align: left;
 }
 
-.klb-sbv .sc-label-view {
+/****** FILTER PANE ***********/
+/* labels in the sidebar should be black & not wrap */
+.klb-sbv .sc-label-view, .klb-sbv .sc-checkbox-view .label {
   color: black;
+  white-space:nowrap;
+  text-overflow: ellipsis;
 }
-
+/* custom header size for Filter pane subheaders */
 .filter-subheader.sc-large-size  {
   font-size: 14px;
 }
-
+.sc-split-divider-view {
+	background-color: gray;
+}
 
 /* FIXME: cleanup those old styles */
 /* custom colors, styles for app chrome elements (eg, tool bars) */
