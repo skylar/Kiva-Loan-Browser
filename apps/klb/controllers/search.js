@@ -45,6 +45,8 @@ Klb.searchController = SC.ObjectController.create({
 		this.set('availableCountries', Klb.store.find(SC.Query.local(Klb.Country)));
 		
 		this.loadLoans();
+		
+		this.notifyPropertyChange('query');
 	},
 
 	loadLoans: function() {
@@ -74,6 +76,8 @@ Klb.searchController = SC.ObjectController.create({
 		
 		this.set('selectedCountries', countries);
 		Klb.getPath('pickerPanes.countryPicker.mainPane').remove();
+		
+		this.notifyPropertyChange('query');
 	},
 
 	showSectorPicker: function(context) {
@@ -84,6 +88,19 @@ Klb.searchController = SC.ObjectController.create({
 		var options = context.getPath('parentView.scrollView.contentView.selection');
 	  this.set('selectedSectors', options);
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
-	}
+	},
+	
+	query: function() {
+	  var ands = [],
+	      parameters = {},
+	      selectedCountries = this.get('selectedCountries');
+	  
+	  if (selectedCountries && selectedCountries.get('length') > 0) {
+	    ands.push("country ANY_COUNTRY {countries}");
+      parameters.countries = selectedCountries;
+	  }
+	  
+	  return { conditions: ands.join(' AND '), parameters: parameters };
+	}.property()
 	
 });

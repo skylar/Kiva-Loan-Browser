@@ -7,19 +7,37 @@
 
 require('models/loan');
 
+SC.Query.registerQueryExtension('ANY_COUNTRY', {
+  reservedWord:     true,
+  leftType:         'PRIMITIVE',
+  rightType:        'PRIMITIVE',
+  evalType:         'BOOLEAN',
+  evaluate:         function (r,w) {
+                      var prop   = this.leftSide.evaluate(r,w);
+                      var values = this.rightSide.evaluate(r,w);
+                      var found  = false;
+                      var i      = 0;
+                      while ( found===false && i<values.length ) {
+                        if ( prop.country_code === values[i].get('iso_code') ) found = true;
+                        i++;
+                      }
+                      return found;
+                    }
+});
+
 Klb.loansController = SC.ArrayController.create(
 /** @scope Klb.loansController.prototype */ {
-  
-  filterConditions: null,
-  
-  init: function() {
-    sc_super();
-    this.filterConditionsDidChange();
-  },
-  
-  filterConditionsDidChange: function() {
-    var filterConditions = this.get('filterConditions') || '';
-    this.set('content', Klb.store.find(SC.Query.local(Klb.Loan, filterConditions)));
-  }.observes('filterConditions')
+    
+  searchControllerQueryDidChange: function() {
+    var q = Klb.getPath('searchController.query');
+    
+    if (q) {      
+      this.set('content', Klb.store.find(SC.Query.create({
+        location: SC.Query.LOCAL,
+        recordType: Klb.Loan,
+        conditions: q.conditions,
+        parameters: q.parameters })));
+    }
+  }.observes('Klb.searchController.query')
   
 });
