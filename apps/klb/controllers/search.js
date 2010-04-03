@@ -80,7 +80,8 @@ Klb.searchController = SC.ObjectController.create({
 
 	chooseSectors: function(context) {
 		var options = context.getPath('parentView.scrollView.contentView.selection');
-		this.activeSearch.set('sectors', options);
+		
+		// TODO: tell the loansController sectors changed
 				
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
 	}
