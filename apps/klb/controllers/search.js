@@ -11,8 +11,12 @@ require('controllers/loans');
 
 Klb.searchController = SC.ObjectController.create({
 
-	availableCountries: null,
-	availableSectors:  null,
+  availableCountries: null,
+  selectedCountries: null,
+  
+  availableSectors: null,
+  selectedSectors: null,
+
 	savedSearches:  null,
 	canCheckout: NO,
 
@@ -38,9 +42,10 @@ Klb.searchController = SC.ObjectController.create({
 			{'name':'Food','isSelected':false}];
 		this.set('availableSectors',sectors);
 
+		Klb.store.loadRecords(Klb.Country, Klb.Country.FIXTURES);		
+		this.set('availableCountries', Klb.store.find(SC.Query.local(Klb.Country)));
+		
 		this.loadLoans();
-		var countries = Klb.store.find(Klb.Country);
-		this.set('availableCountries', countries);
 	},
 
 	loadLoans: function() {
@@ -60,17 +65,15 @@ Klb.searchController = SC.ObjectController.create({
 	
 	chooseCountries: function(context) {
 		var options = context.getPath('parentView.buttonGridView.optionButtons'),
-		    countries = this.getPath('activeSearch.countries'),
-		    newCountries = [];
+		    countries = [];
 				
 		options.forEach(function(item) {
 			if (item.isSelected) {
-				newCountries.push(item.get('content'));
+				countries.push(item.get('content'));
 			}
 		});
 		
-		countries.replace(0, countries.get('length'), newCountries);
-				
+		this.set('selectedCountries', countries);
 		Klb.getPath('pickerPanes.countryPicker.mainPane').remove();
 	},
 
@@ -80,9 +83,7 @@ Klb.searchController = SC.ObjectController.create({
 
 	chooseSectors: function(context) {
 		var options = context.getPath('parentView.scrollView.contentView.selection');
-		
-		// TODO: tell the loansController sectors changed
-				
+	  this.set('selectedSectors', options);
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
 	}
 	
