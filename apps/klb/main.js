@@ -18,8 +18,6 @@ Klb.main = function main() {
 	// Step 1: Initialize the data store
 	// -live data source
 	Klb.store.from(Klb.KivaDataSource.create());
-	// -fixtutes
-  //Klb.store.from(SC.Record.fixtures);
 
   // Step 2: Instantiate Your Views
   // The default code here will make the mainPane for your application visible

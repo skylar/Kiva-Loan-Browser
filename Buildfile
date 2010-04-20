@@ -6,4 +6,4 @@
 # Add initial buildfile information here
 config :all, :required => :sproutcore
 
-proxy '/v1', :to => 'api.kivaws.org'
+proxy '/proxy', :to => 'kivadevcamp.org'

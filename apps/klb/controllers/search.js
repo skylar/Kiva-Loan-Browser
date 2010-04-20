@@ -6,7 +6,6 @@
 /*globals Klb */
 
 require('models/search');
-require('array');
 require('controllers/loans');
 
 Klb.searchController = SC.ObjectController.create({
@@ -20,7 +19,8 @@ Klb.searchController = SC.ObjectController.create({
 	canCheckout: NO,
 
 	// call this when you're ready to prime the search w/ data
-	primeData: function() {	
+	primeData: function() {		
+		// init vars
 	  var sectors = [
 	    {'name':'Agriculture','isSelected':false},
 			{'name':'Transportation','isSelected':false},

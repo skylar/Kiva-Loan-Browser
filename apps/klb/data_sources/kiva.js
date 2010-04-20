@@ -25,7 +25,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
 
 	requestForNewest: function(page) {
 	  page = page || 1;
-	  return SC.Request.getUrl("/v1/loans/newest.json?page=%@".fmt(page)).json();
+	  return SC.Request.getUrl("/proxy/api_proxy.rb?page=%@".fmt(page)).json();
   },
 
   fetch: function(store, query) {

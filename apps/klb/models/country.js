@@ -20,8 +20,8 @@ Klb.Country = SC.Record.extend(
 	region_code:SC.Record.attr(String),
 	
 	iconBySize: function(size) {
-		return Klb.imageByName('flags_iso/%@/%@.png'.fmt(size, 
-			this.get('iso_code').toLowerCase()));
+		return 'http://socialology.org/static/flags_iso/%@/%@.png'.fmt(size, 
+			this.get('iso_code').toLowerCase());
 	}
 
 }) ;
