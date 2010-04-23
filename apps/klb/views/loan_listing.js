@@ -49,7 +49,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
         .addClass('sc-view')
         .addStyle({ left: 120, top: 78, height: 18 })
-        .push('<span style="font-weight: bold;">','_Country'.loc(),': </span>', content.get('country').country)
+        .push('<span style="font-weight: bold;">','_Country'.loc(),': </span>', content.get('country').get('name'))
       .end();
 
     // rating
@@ -57,7 +57,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
         .addClass('sc-view')
         .addStyle({ left: 120, top: 96, height: 18 })
-        .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>')
+        .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>' , content.get('partner').get('rating') )
       .end();
     
     // remaining amount  
@@ -81,7 +81,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ right: 10, top: 83, height: 6, width: 75, border: '1px solid #009500' })
+        .addStyle({ right: 10, top: 83, height: 6, width: 75, border: '1px solid #009500', backgroundColor: '#ffffff' })
         .begin('div')
           .addStyle({ position: 'relative', width: percentage, height: '100%', background: '#0f0' })
         .end()

@@ -15,6 +15,8 @@
 Klb.Country = SC.Record.extend(
 /** @scope Klb.Country.prototype */ {
   
+  primaryKey: 'iso_code',
+  
   name:SC.Record.attr(String),
   iso_code:SC.Record.attr(String),
 	region_code:SC.Record.attr(String),

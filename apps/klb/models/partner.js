@@ -15,17 +15,19 @@
 Klb.Partner = SC.Record.extend(
 /** @scope Klb.Country.prototype */ {
   
-  name:SC.Record.attr(String),
-  partner_id:SC.Record.attr(Number),
-	region_code:SC.Record.attr(String),
-	countries:SC.Record.toMany('Klb.Country'),
-	start_date:SC.Record.attr(SC.DateTime),
-	image_url:SC.Record.attr(String),
+	primaryKey: 'id',
 
-	star_rating:SC.Record.attr(Number),
+  id:SC.Record.attr(Number),
+  name:SC.Record.attr(String),
+	partnerStatus:SC.Record.attr(String,{key:'status'}),
+//	countries:SC.Record.toMany('Klb.Country'),
+	start_date:SC.Record.attr(SC.DateTime),
+	imageUrl:SC.Record.attr(String),
+
+	rating:SC.Record.attr(Number),
 	delinquency_rate:SC.Record.attr(Number),
 	default_rate:SC.Record.attr(Number),
-	amount_raised:SC.Record.attr(Number),
+	amount_raised:SC.Record.attr(Number,{key:'total_amount_raised'}),
 	loans_posted:SC.Record.attr(Number),
 	
 }) ;

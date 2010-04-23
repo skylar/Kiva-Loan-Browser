@@ -28,7 +28,7 @@ Klb.START = SC.Responder.create({
     or not.
   */
   targetsDidChange: function() {
-    var l=Klb.searchController.activeResults;
+    var l=Klb.searchController.availablePartners;
 console.log("targets did change");
 console.log(l);
 console.log(l.getPath('status'));

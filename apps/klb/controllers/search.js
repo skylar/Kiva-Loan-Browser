@@ -10,14 +10,35 @@ require('controllers/loans');
 
 Klb.searchController = SC.ObjectController.create({
 
+///////////////////////////////////////
+// Properties
   availableCountries: null,
   selectedCountries: null,
   
   availableSectors: null,
   selectedSectors: null,
+  
+  availablePartners: null,
 
 	canCheckout: NO,
 
+	query: function() {
+	  var ands = [],
+	      parameters = {},
+	      selectedCountries = this.get('selectedCountries');
+	  
+	  if (selectedCountries && selectedCountries.get('length') > 0) {
+	    ands.push("country ANY_COUNTRY {countries}");
+	    parameters.countries = selectedCountries;
+	  }
+	  
+	  return { conditions: ands.join(' AND '), parameters: parameters };
+	}.property(),
+
+	
+///////////////////////////////////////
+// Methods
+	
 	// call this when you're ready to prime the search w/ data
 	primeData: function() {		
 		// init vars
@@ -41,24 +62,24 @@ Klb.searchController = SC.ObjectController.create({
 			{'name':'Food','isSelected':false}];
 		this.set('availableSectors',sectors);
 
-		Klb.store.loadRecords(Klb.Country, Klb.Country.FIXTURES);		
-		this.set('availableCountries', Klb.store.find(SC.Query.local(Klb.Country)));
+		// TODO: move from Fixtures to a localized resource hash...
+		Klb.store.loadRecords(Klb.Country, Klb.COUNTRIES_ISO);
+		this.set('availableCountries', Klb.store.find(SC.Query.local(Klb.Country)));		
+		this.set('availablePartners', Klb.store.find(Klb.AVAILABLE_PARTNERS_QUERY));
 		
-		this.loadLoans();
+		// Though results handled, this triggers the data store to fetch loans...
+		Klb.store.find(Klb.AVAILABLE_LOANS_QUERY);
 		
+		// The actual query that drives loan serach results
 		this.notifyPropertyChange('query');
 	},
 
-	loadLoans: function() {
-	  var remoteQuery, i;
-
-	  Klb.makeFirstResponder(Klb.READY_LIST);
-	  
-	  for (i = 1; i < 10; ++i) {
-	    remoteQuery = SC.Query.create({ location: SC.Query.REMOTE, recordType: 'Klb.Loan', parameters: { page: i } });
-	    Klb.store.find(remoteQuery);
-    }
-	},
+	availablePartnersDidChange: function(key) {
+	// for now, we wait until we have partner data to load activate the display
+		if(this.get('availablePartners').get('length') > 0) {
+			Klb.makeFirstResponder(Klb.READY_LIST);
+		}
+	}.observes('*availablePartners.length'),
 	
 	showCountryPicker: function(context) {
 		Klb.getPath('pickerPanes.countryPicker.mainPane').append();
@@ -89,18 +110,5 @@ Klb.searchController = SC.ObjectController.create({
 	  this.set('selectedSectors', options);
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
 	},
-	
-	query: function() {
-	  var ands = [],
-	      parameters = {},
-	      selectedCountries = this.get('selectedCountries');
-	  
-	  if (selectedCountries && selectedCountries.get('length') > 0) {
-	    ands.push("country ANY_COUNTRY {countries}");
-      parameters.countries = selectedCountries;
-	  }
-	  
-	  return { conditions: ands.join(' AND '), parameters: parameters };
-	}.property()
-	
+		
 });

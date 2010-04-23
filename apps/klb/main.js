@@ -16,9 +16,15 @@
 Klb.main = function main() {
 
 	// Step 1: Initialize the data store
-	// -live data source
-	Klb.store.from(Klb.KivaDataSource.create());
-
+	// NOTE: use this nifty test to swap to fixtures if the network is down
+	if( window.location.hash.toString().match('fixtures') ) {
+		// - fixtures
+		Klb.store.from(SC.Record.fixtures);
+	} else {
+		// -live data source
+		Klb.store.from('Klb.KivaDataSource');
+	}
+	
   // Step 2: Instantiate Your Views
   // The default code here will make the mainPane for your application visible
   // on screen.  If you app gets any level of complexity, you will probably 

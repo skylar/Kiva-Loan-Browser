@@ -8,7 +8,6 @@
 sc_require('models/search');
 
 Klb.Search.FIXTURES = [
-
 	{ guid:1,
 		male: false,
 		female: true,

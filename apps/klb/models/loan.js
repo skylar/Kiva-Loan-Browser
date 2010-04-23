@@ -17,16 +17,18 @@ Klb.Loan = SC.Record.extend(
   
   primaryKey: 'id',
   
-  borrower:SC.Record.toOne("Klb.Borrower"),
-  status:SC.Record.attr(String),
+  // borrower might need to be a complex property
+  //borrower:SC.Record.toOne("Klb.Borrower"),
+  loanStatus:SC.Record.attr(String,{key:"status"}),
   fundedAmount:SC.Record.attr(Number,{key:"funded_amount",defaultValue:0}),
   loanAmount:SC.Record.attr(Number,{key:"loan_amount",defaultValue:0}),
   name:SC.Record.attr(String),
   use:SC.Record.attr(String),
   sector:SC.Record.attr(String),
-  partner_id:SC.Record.attr(Number,{key:"partner_id",defaultValue:0}),
-  country:SC.Record.attr(Object,{key:"location"}),
+  partner:SC.Record.toOne('Klb.Partner',{key:"partner_id",defaultValue:0}),
+  country:SC.Record.toOne('Klb.Country',{key:"loc_country_code",defaultValue:'XX'}),
   image:SC.Record.attr(Object,{key:"image"}),
+  postedDate: SC.Record.attr(String, {key:"posted_date"}),
   
   fundedName:function(){
     return this.get('name') + ' ' + this.get('fundedAmount');

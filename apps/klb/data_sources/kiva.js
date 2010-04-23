@@ -12,9 +12,6 @@
 */
 
 sc_require('models/loan');
-Klb.NEWEST_LOANS_QUERY = SC.Query.local(Klb.Loans,
-		{ orderBy: 'name' }
-	);
 
 Klb.KivaDataSource = SC.DataSource.extend(
 /** @scope Klb.KivaDataSource.prototype */ {
@@ -23,28 +20,32 @@ Klb.KivaDataSource = SC.DataSource.extend(
   // QUERY SUPPORT
   // 
 
-	requestForNewest: function(page) {
-	  page = page || 1;
-	  return SC.Request.getUrl("/proxy/api_proxy.rb?page=%@".fmt(page)).json();
-  },
-
   fetch: function(store, query) {
-    var page, params;
+    var page;
     
-    if (query.get('isRemote') && query.get('recordType') === 'Klb.Loan') {
-      
-      // get a page number if passed in the parameters
-      params = query.get('parameters');
-      if (params && params['page']) {
-        page = params['page'];
-      }
-      
-      this.requestForNewest(page)
-          .notify(this, 'didFetchNewestLoans', store, query)
-          .send();
-      
-      return YES;
-    }
+		if(query === Klb.AVAILABLE_PARTNERS_QUERY) {
+			// partners come all-at-once in a giant page of data
+		 	SC.Request.getUrl("/v1/partners.json").json()
+		 		.notify(this, 'didFetchPartners', store, query)
+		 		.send();
+		 	
+		 	return YES;
+		}
+		else if(query === Klb.AVAILABLE_LOANS_QUERY) {
+			// since we can only load a page at a time we initially fire off
+			// a batch of requests for this. Eventually, we should trigger one
+			// fetch and slowly pull more until we have the complete data set
+			// in memory...
+			for(page=0;page<=10;page++) {
+				SC.Request.getUrl("/proxy/api_proxy.rb?page=%@".fmt(page)).json()
+					.notify(this, 'didFetchNewestLoans', store, query)
+					.send();
+				
+				// do this to prevent notifying store more than once on query complete
+				query=null;
+			}
+			return YES;
+		}
     
     return NO; // we didn't handle the query
   },
@@ -53,16 +54,34 @@ Klb.KivaDataSource = SC.DataSource.extend(
 		console.log("NEW LOANS fetch did complete.");
 		
 		if(SC.ok(response)) {
+			// copy country_code to top-level for easy modelling
+			response.get('body').loans.forEach( 
+				function(item, index, enm) {
+					item.loc_country_code = item.location.country_code;
+				});
+		
 			store.loadRecords(Klb.Loan, response.get('body').loans);
-			store.dataSourceDidFetchQuery(query);
-			
-			// or, for remote results (storeKeys is result from loadRecords() ):
-			// store.loadQueryResults(query, storeKeys);
+			if(query) {
+				store.dataSourceDidFetchQuery(query);
+			}
 		}
 		else {
 			store.dataSourceDidErrorQuery(query, response);
 		}
 		console.log("END didFetchNewestLoans.");
+	},
+
+	didFetchPartners: function(response, store, query) {
+		console.log("PARTNERS fetch did complete.");
+		
+		if(SC.ok(response)) {
+			store.loadRecords(Klb.Partner, response.get('body').partners);
+			store.dataSourceDidFetchQuery(query);
+		}
+		else {
+			store.dataSourceDidErrorQuery(query, response);
+		}
+		console.log("END didFetchPartners.");
 	},
 
   // ..........................................................

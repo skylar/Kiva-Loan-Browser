@@ -17,16 +17,21 @@ Klb = SC.Application.create(
   NAMESPACE: 'Klb',
   VERSION: '0.1.0',
 
-  // This is your application store.  You will use this store to access all
-  // of your model data.  You can also set a data source on this store to
-  // connect to a backend server.  The default setup below connects the store
-  // to any fixtures you define.
-  
+  // Define app store  
   store: SC.Store.create(),
 
   // Activates responder tracing
   trace: YES,
   currentScene : null,
-	pickerPanes: {}
+	pickerPanes: {},
 
 });
+
+///////////////////////////////////////
+// Queries
+
+Klb.AVAILABLE_LOANS_QUERY = SC.Query.local(Klb.Loan, 
+	{conditions: 'loanStatus = "fundraising"', orderBy: ['postedDate']}),
+Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.local(Klb.Partners, 
+	{conditions: 'rating > 0'}),
+

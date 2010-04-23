@@ -214,19 +214,19 @@ Klb.mainPage = SC.Page.design({
     })
 	}),
 	
-	  loansLoading: SC.View.design({
-      childViews: "labelView".w(),
+  loansLoading: SC.View.design({
+    childViews: "labelView".w(),
 
-      labelView: SC.LabelView.design({
-        layout: { centerX: 0, centerY: 0, height: 24, width: 200 },
-        textAlign: SC.ALIGN_CENTER,
-        controlSize: SC.HUGE_CONTROL_SIZE,
-        classNames: "center-label",
-        controlSize: SC.LARGE_CONTROL_SIZE,
-        fontWeight: SC.BOLD_WEIGHT,
-        value: "Loading Loans"
-      })
-    }),
+    labelView: SC.LabelView.design({
+      layout: { centerX: 0, centerY: 0, height: 24, width: 200 },
+      textAlign: SC.ALIGN_CENTER,
+      controlSize: SC.HUGE_CONTROL_SIZE,
+      classNames: "center-label",
+      controlSize: SC.LARGE_CONTROL_SIZE,
+      fontWeight: SC.BOLD_WEIGHT,
+      value: "Loading Loans"
+    })
+  }),
   
   loanDetail: SC.View.design({
     childViews: "navigationView detailView".w(),
@@ -242,7 +242,6 @@ Klb.mainPage = SC.Page.design({
         title: "« Back",
         action: "back"
       })
-      
     }),
     
     detailView: SC.View.design({
