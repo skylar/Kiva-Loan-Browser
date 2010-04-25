@@ -20,7 +20,7 @@ Klb.Partner = SC.Record.extend(
   id:SC.Record.attr(Number),
   name:SC.Record.attr(String),
 	partnerStatus:SC.Record.attr(String,{key:'status'}),
-//	countries:SC.Record.toMany('Klb.Country'),
+	countries:SC.Record.toMany('Klb.Country', {key:'country_codes'}),
 	start_date:SC.Record.attr(SC.DateTime),
 	imageUrl:SC.Record.attr(String),
 

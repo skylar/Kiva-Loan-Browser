@@ -18,7 +18,7 @@ SC.Query.registerQueryExtension('ANY_COUNTRY', {
                       var found  = false;
                       var i      = 0;
                       while ( found===false && i<values.length ) {
-                        if ( prop.country_code === values[i].get('iso_code') ) found = true;
+                        if ( prop === values[i] ) found = true;
                         i++;
                       }
                       return found;

@@ -19,6 +19,7 @@ Klb.main = function main() {
 	// NOTE: use this nifty test to swap to fixtures if the network is down
 	if( window.location.hash.toString().match('fixtures') ) {
 		// - fixtures
+		console.log('USING FIXTURES STORE!');
 		Klb.store.from(SC.Record.fixtures);
 	} else {
 		// -live data source

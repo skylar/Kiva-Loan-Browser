@@ -12,13 +12,13 @@ Klb.searchController = SC.ObjectController.create({
 
 ///////////////////////////////////////
 // Properties
-  availableCountries: null,
-  selectedCountries: null,
+  availableCountries: [],
+  selectedCountries: [],
   
-  availableSectors: null,
-  selectedSectors: null,
+  availableSectors: [],
+  selectedSectors: [],
   
-  availablePartners: null,
+  availablePartners: [],
 
 	canCheckout: NO,
 
@@ -35,6 +35,30 @@ Klb.searchController = SC.ObjectController.create({
 	  return { conditions: ands.join(' AND '), parameters: parameters };
 	}.property(),
 
+	availableCountries: function() {
+		var partners = this.get('availablePartners');
+		var countries = [];
+		partners.forEach( function(item, index, enm) {
+			countries.pushObjects(item.get('countries'));
+		});
+		
+		return countries.uniq().sortProperty('name');
+	}.property('availablePartners').cacheable(),
+
+	// FORMATTED PROPERTIES for views
+  formattedCountries: function() {
+    var countries = this.get('selectedCountries'),
+        len = countries.get('length');
+        
+    return len === 0 ? 'All' : countries.mapProperty('name').sort().join(', ');
+  }.property('selectedCountries').cacheable(),
+
+	formattedSectors: function() {
+	  var sectors = this.get('selectedSectors'),
+	      len = sectors.get('length');
+	      
+	  return len === 0 ? 'All' : sectors.mapProperty('name').sort().join(', ');
+	}.property('availableSectors').cacheable(),
 	
 ///////////////////////////////////////
 // Methods
@@ -62,7 +86,6 @@ Klb.searchController = SC.ObjectController.create({
 			{'name':'Food','isSelected':false}];
 		this.set('availableSectors',sectors);
 
-		// TODO: move from Fixtures to a localized resource hash...
 		Klb.store.loadRecords(Klb.Country, Klb.COUNTRIES_ISO);
 		this.set('availableCountries', Klb.store.find(SC.Query.local(Klb.Country)));		
 		this.set('availablePartners', Klb.store.find(Klb.AVAILABLE_PARTNERS_QUERY));
@@ -75,11 +98,14 @@ Klb.searchController = SC.ObjectController.create({
 	},
 
 	availablePartnersDidChange: function(key) {
+		var len = this.get('availablePartners').get('length');
+		console.log("Observed availablePartners change w/ "+len);
+		
 	// for now, we wait until we have partner data to load activate the display
 		if(this.get('availablePartners').get('length') > 0) {
 			Klb.makeFirstResponder(Klb.READY_LIST);
 		}
-	}.observes('*availablePartners.length'),
+	}.observes('*availablePartners.length'), // something not quite right w/ this
 	
 	showCountryPicker: function(context) {
 		Klb.getPath('pickerPanes.countryPicker.mainPane').append();
@@ -99,6 +125,7 @@ Klb.searchController = SC.ObjectController.create({
 		Klb.getPath('pickerPanes.countryPicker.mainPane').remove();
 		
 		this.notifyPropertyChange('query');
+		this.notifyPropertyChange('formattedCountries');
 	},
 
 	showSectorPicker: function(context) {
@@ -109,6 +136,5 @@ Klb.searchController = SC.ObjectController.create({
 		var options = context.getPath('parentView.scrollView.contentView.selection');
 	  this.set('selectedSectors', options);
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
-	},
-		
+	},		
 });

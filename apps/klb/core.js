@@ -30,8 +30,7 @@ Klb = SC.Application.create(
 ///////////////////////////////////////
 // Queries
 
+Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.local(Klb.Partner,
+	{conditions: 'rating > 0'});
 Klb.AVAILABLE_LOANS_QUERY = SC.Query.local(Klb.Loan, 
-	{conditions: 'loanStatus = "fundraising"', orderBy: ['postedDate']}),
-Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.local(Klb.Partners, 
-	{conditions: 'rating > 0'}),
-
+	{conditions: 'loanStatus = "fundraising"', orderBy: ['postedDate']});

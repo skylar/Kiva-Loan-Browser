@@ -163,7 +163,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			locationContent: SC.LabelView.design({
   			  layout: { left: 10, top: 90+(50*3), width: 200, height: 24 },
-  			  valueBinding: 'Klb.searchController.activeSearch.formattedCountries'
+  			  valueBinding: 'Klb.searchController.formattedCountries'
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			locationButton: SC.ButtonView.design({
@@ -171,6 +171,7 @@ Klb.mainPage = SC.Page.design({
   			  title: "_Edit".loc(),
 	        action: "showCountryPicker",
 	        target: "Klb.searchController",
+	        classNames: 'picker-button',
 					controlSize: SC.SMALL_CONTROL_SIZE
   			}),
 
@@ -184,7 +185,7 @@ Klb.mainPage = SC.Page.design({
   			}),
   			sectorContent: SC.LabelView.design({
   			  layout: { left: 10, top: 90+(50*4), width: 200, height: 24 },
-  			  valueBinding: 'Klb.searchController.activeSearch.formattedSectors'
+  			  valueBinding: 'Klb.searchController.formattedSectors'
 //					needsEllipsis: YES 			  - ideally, added to SC
 				}),
   			sectorButton: SC.ButtonView.design({
@@ -192,6 +193,7 @@ Klb.mainPage = SC.Page.design({
   			  title: "_Edit".loc(),
 	        action: "showSectorPicker",
 	        target: "Klb.searchController",
+	        classNames: 'picker-button',
 					controlSize: SC.SMALL_CONTROL_SIZE
   			}),
 

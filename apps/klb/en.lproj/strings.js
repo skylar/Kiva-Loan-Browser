@@ -28,7 +28,7 @@ SC.stringsFor('English', {
 	"_Amount Left": "Amount Left",
 	"_Expiring Soon": "Expiring Soon",
 	"_Most Recent": "Most Recent",
-	"_List_Grid":"List",
+	"_List_Grid":"List Grid",
 	"_List":"List",
 	/// Sidebar
 	"_Filter Options":"Filter Options",

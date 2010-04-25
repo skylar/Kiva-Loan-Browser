@@ -14,6 +14,13 @@
 .filter-subheader.sc-large-size  {
   font-size: 14px;
 }
+.picker-button {
+ /* unfortunately, most of this fails to style the button b/c of theme override.. */
+	border: 1px solid black;
+	background-color: #fffff;
+	padding: 5px;
+	color: gray;
+}
 .sc-split-divider-view {
 	background-color: gray;
 }

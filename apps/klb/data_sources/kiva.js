@@ -57,6 +57,10 @@ Klb.KivaDataSource = SC.DataSource.extend(
 			// copy country_code to top-level for easy modelling
 			response.get('body').loans.forEach( 
 				function(item, index, enm) {
+					if(item.location.country === "South Sudan") {
+//						console.log('plugged one SS entry for ' + item.name);
+						item.location.country_code = '_S';
+					}
 					item.loc_country_code = item.location.country_code;
 				});
 		
@@ -75,6 +79,16 @@ Klb.KivaDataSource = SC.DataSource.extend(
 		console.log("PARTNERS fetch did complete.");
 		
 		if(SC.ok(response)) {
+			// copy country_code to top-level for easy modelling
+			response.get('body').partners.forEach( 
+				function(item, index, enm) {
+					if(item.countries[0].name === "South Sudan") {
+						console.log('plugged one SS entry for ' + item.name);
+						item.countries[0].iso_code = '_S';
+					}
+					item.country_codes = item.countries.mapProperty('iso_code');
+			});
+			
 			store.loadRecords(Klb.Partner, response.get('body').partners);
 			store.dataSourceDidFetchQuery(query);
 		}

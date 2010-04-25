@@ -99,3 +99,8 @@ Klb.Loan.FIXTURES = [
   {"id":128001,"name":"Muon Sokin","status":"fundraising","loan_amount":200,"funded_amount":25,"basket_amount":0,"borrower_count":1,"image":{"id":367278,"template_id":1},"activity":"Transportation","sector":"Transportation","use":"To buy a used motorcar ","location":{"country_code":"KH","country":"Cambodia","town":"Kompong Cham","geo":{"level":"town","pairs":"12 105.5","type":"point"}},"partner_id":106,"posted_date":"2009-08-10T07:40:05Z","description":{"languages":["en"]}
   }
 ];
+
+// simulate the post-feed preocessing done by the Kiva Data Store
+Klb.Loan.FIXTURES.forEach( function(item, index, enm) {
+	item.loc_country_code = item.location.country_code;
+});
