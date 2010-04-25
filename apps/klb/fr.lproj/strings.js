@@ -14,9 +14,8 @@
 SC.stringsFor('Français', {
   // "_String Key": "Localized String"
   
-  // General
-  "_KlbTitle": "Loanr",
-	"_KlbTitle": "Loanr",
+  //// General
+	"_KlbTitle": "Kiva en Français",
 	"_OK": "OK",
 	"_Edit": "Modifier",
 	

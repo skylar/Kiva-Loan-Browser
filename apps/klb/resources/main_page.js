@@ -33,7 +33,7 @@ Klb.mainPage = SC.Page.design({
  			classNames: 'klb-chrome'.w(),
       
 			kivaName: SC.LabelView.design({
-			  layout: { left: 10, top: 10, width: 120, height: 24 },
+			  layout: { left: 10, top: 10, width: 320, height: 24 },
 			  value: "_KlbTitle".loc(),
 			  controlSize: SC.LARGE_CONTROL_SIZE,
   			fontWeight: SC.BOLD_WEIGHT

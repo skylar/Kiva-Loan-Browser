@@ -34,3 +34,8 @@ Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.local(Klb.Partner,
 	{conditions: 'rating > 0'});
 Klb.AVAILABLE_LOANS_QUERY = SC.Query.local(Klb.Loan, 
 	{conditions: 'loanStatus = "fundraising"', orderBy: ['postedDate']});
+
+// try this query for weird stuff
+//Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.local(Klb.Partner);
+// try this fix by martoche (seems to be the same behavior)
+//Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.create({location: SC.Query.LOCAL, recordType: Klb.Partner});
