@@ -22,14 +22,14 @@ SC.stringsFor('English', {
 	//// Chrome
 	"_Checkout": "Checkout",
 	// sort drop down
-	"_Sort by": "Sort by",
-	"_Popularity": "Popularity",
-	"_Loan Amount": "Loan Amount",
-	"_Amount Left": "Amount Left",
-	"_Expiring Soon": "Expiring Soon",
-	"_Most Recent": "Most Recent",
+	"_Sort_by": "Sort by",
+	"_Loan_Amount": "Loan Amount",
+	"_Amount_Remaining": "Amount Remaining",
+	"_Expiring_Soon": "Expiring Soon",
+	"_Most_Recent": "Most Recent",
 	"_List_Grid":"List Grid",
 	"_List":"List",
+	
 	/// Sidebar
 	"_Filter Options":"Filter Options",
 	"_Search": "Search",
@@ -58,4 +58,7 @@ SC.stringsFor('English', {
 	"_Rating": "Rating",
 	"_Needed_Out_Of":"needed out of",
 	
+	// Countries
+	"_CAMBODIA":"Cambodia",
+	"_AZERBAIJAN":"Azerbaijan",
 }) ;

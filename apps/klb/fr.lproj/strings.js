@@ -23,11 +23,10 @@ SC.stringsFor('Français', {
 	"_Checkout": "Finaliser",
 	// sort drop down
   "_Sort by": "Trier par",
-	"_Popularity": "Popularité",
-	"_Loan Amount": "Montant du prêt",
-	"_Amount Left": "Restant à financer",
-	"_Expiring Soon": "Date d'expiration",
-	"_Most Recent": "Les plus récents",
+	"_Loan_Amount": "Montant du prêt",
+	"_Amount_Remaining": "Restant à financer",
+	"_Expiring_Soon": "Date d'expiration",
+	"_Most_Recent": "Les plus récents",
 	"_List_Grid":"Liste Grille",
 	"_List":"Liste",
 	/// Sidebar

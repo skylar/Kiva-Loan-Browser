@@ -17,11 +17,11 @@ Klb.Search = SC.Record.extend(
   
   male: SC.Record.attr(Boolean),
   female: SC.Record.attr(Boolean),
+  groups: SC.Record.attr(Boolean),
 	partnerRating: SC.Record.attr(Number),
 	borrowerCount: SC.Record.attr(Number),
   queryString: SC.Record.attr(String),
   countries: SC.Record.toMany('Klb.Country'),
-//  countries: SC.Record.attr(Array),
 	sectors: SC.Record.attr(Array),
   
 /*

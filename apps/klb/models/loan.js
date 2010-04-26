@@ -29,6 +29,8 @@ Klb.Loan = SC.Record.extend(
   country:SC.Record.toOne('Klb.Country',{key:"loc_country_code",defaultValue:'XX'}),
   image:SC.Record.attr(Object,{key:"image"}),
   postedDate: SC.Record.attr(String, {key:"posted_date"}),
+  borrowerCount: SC.Record.attr(String, {key:"borrower_count"}),
+  gender: SC.Record.attr(String, {key:"gender"}),
   
   fundedName:function(){
     return this.get('name') + ' ' + this.get('fundedAmount');

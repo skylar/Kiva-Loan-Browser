@@ -36,7 +36,8 @@ Klb.loansController = SC.ArrayController.create(
         location: SC.Query.LOCAL,
         recordType: Klb.Loan,
         conditions: q.conditions,
-        parameters: q.parameters })));
+        parameters: q.parameters,
+        orderBy: q.orderBy })));
     }
   }.observes('Klb.searchController.query')
   

@@ -19,21 +19,60 @@ Klb.searchController = SC.ObjectController.create({
   selectedSectors: [],
   
   availablePartners: [],
+	showMales: true,
+	showFemales: true,
+	showGroups: true,
+	
+	sortOptions: [
+		{"name":"_Most_Recent".loc(), "value":"postedDate DESC"},
+		{"name":"_Amount_Remaining".loc(), "value":"remainingAmount"},
+		{"name":"_Loan_Amount".loc(), "value":"loanAmount"},
+		{"name":"_Sector".loc(), "value":"sector"},
+		{"name":"_Expiring_Soon".loc(), "value":"postedDate ASC"}
+	],
+	currentSortOption: 'postedDate DESC',
 
 	canCheckout: NO,
 
 	query: function() {
 	  var ands = [],
 	      parameters = {},
-	      selectedCountries = this.get('selectedCountries');
+	      iFemale, iMale, gQuery,
+	      selectedCountries = this.get('selectedCountries'),
+	      selectedSectors = this.get('selectedSectors');
 	  
 	  if (selectedCountries && selectedCountries.get('length') > 0) {
 	    ands.push("country ANY_COUNTRY {countries}");
 	    parameters.countries = selectedCountries;
 	  }
 	  
-	  return { conditions: ands.join(' AND '), parameters: parameters };
-	}.property(),
+	  if (selectedSectors && selectedSectors.get('length') > 0) {
+	  	ands.push('sector ANY {sectors}');
+	  	parameters.sectors = selectedSectors.getEach('name');
+	  }
+	  
+	  // gender/groups
+	  iMale = "(borrowerCount=1 AND gender='male')";
+	  iFemale = "(borrowerCount=1 AND gender='female')";
+	 	if (this.get('showMales') && this.get('showFemales')) {
+	 		if(!this.get('showGroups')) {
+		 		ands.push("borrowerCount = 1");
+		 	} // else, do nothing
+	 	} 
+	 	else if (this.get('showGroups')) {
+	 		gQuery = "(borrowerCount > 2";
+	 		if(this.get('showMales')) { gQuery += " OR " + iMale; }
+	 		else if(this.get('showFemales')) { gQuery += " OR " + iFemale; }
+	 		gQuery += ")";
+	 		ands.push(gQuery);
+	 	}
+	 	else if (this.get('showMales')) { ands.push(iMale); }
+	 	else if (this.get('showFemales')) { ands.push(iFemale); }
+	  
+//	  console.log("MY JOINS: " + ands.join(' AND '));
+	  return { conditions: ands.join(' AND '), parameters: parameters,
+	  	 orderBy: this.get('currentSortOption') };
+	}.property('showMales','showFemales','showGroups','currentSortOption'),
 
 	availableCountries: function() {
 		var partners = this.get('availablePartners');
@@ -136,5 +175,9 @@ Klb.searchController = SC.ObjectController.create({
 		var options = context.getPath('parentView.scrollView.contentView.selection');
 	  this.set('selectedSectors', options);
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
+
+		console.log("PICKED SECTOR COUNT: " + this.get('selectedSectors').get('length'));
+		this.notifyPropertyChange('query');
+		this.notifyPropertyChange('formattedSectors');
 	},		
 });
