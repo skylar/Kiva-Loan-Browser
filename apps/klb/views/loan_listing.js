@@ -48,15 +48,17 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ left: 120, top: 78, height: 18 })
-        .push('<span style="font-weight: bold;">','_Country'.loc(),': </span>', content.get('country').get('name'))
+        .addStyle({ left: 120, top: 78, height: 24 })
+        .push(
+        	'<img style="display:inline;" height="24" width="24" src="', content.get('country').iconBySize(24),'" /> ',
+        	 '<div style="margin:0 0 7px 3px; display:inline;">',content.get('country').get('name'),'</div>')
       .end();
 
     // rating
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ left: 120, top: 96, height: 18 })
+        .addStyle({ left: 120+250, top: 78, height: 18 })
         .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>',  content.get('partner').get('rating'))
       .end();
     

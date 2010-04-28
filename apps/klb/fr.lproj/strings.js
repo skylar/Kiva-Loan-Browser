@@ -22,7 +22,7 @@ SC.stringsFor('Français', {
 	//// Chrome
 	"_Checkout": "Finaliser",
 	// sort drop down
-  "_Sort by": "Trier par",
+  "_Sort_by": "Trier par",
 	"_Loan_Amount": "Montant du prêt",
 	"_Amount_Remaining": "Restant à financer",
 	"_Expiring_Soon": "Date d'expiration",

@@ -403,7 +403,7 @@ Klb.mainPage = SC.Page.design({
 
 			sortLabel: SC.LabelView.design({
 			  layout: { right: 220, top: 9, width: 80, height: 24 },
-			  value: "_Sort by".loc()
+			  value: "_Sort_by".loc()
 			}),
 
 			sortSelectView: SC.SelectFieldView.design({

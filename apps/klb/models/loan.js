@@ -28,7 +28,7 @@ Klb.Loan = SC.Record.extend(
   partner:SC.Record.toOne('Klb.Partner',{key:"partner_id",defaultValue:0}),
   country:SC.Record.toOne('Klb.Country',{key:"loc_country_code",defaultValue:'XX'}),
   image:SC.Record.attr(Object,{key:"image"}),
-  postedDate: SC.Record.attr(String, {key:"posted_date"}),
+  postedDate: SC.Record.attr(SC.DateTime, {key:"posted_date"}),
   borrowerCount: SC.Record.attr(String, {key:"borrower_count"}),
   gender: SC.Record.attr(String, {key:"gender"}),
   

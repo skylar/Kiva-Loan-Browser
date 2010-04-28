@@ -25,7 +25,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
     
 		if(query === Klb.AVAILABLE_PARTNERS_QUERY) {
 			// partners come all-at-once in a giant page of data
-		 	SC.Request.getUrl("/v1/partners.json").json()
+		 	SC.Request.getUrl("/proxy/api_proxy.rb?method=partners").json()
 		 		.notify(this, 'didFetchPartners', store, query)
 		 		.send();
 		 	
@@ -37,7 +37,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
 			// fetch and slowly pull more until we have the complete data set
 			// in memory...
 			for(page=0;page<=10;page++) {
-				SC.Request.getUrl("/proxy/api_proxy.rb?page=%@".fmt(page)).json()
+				SC.Request.getUrl("/proxy/api_proxy.rb?method=loans&page=%@".fmt(page)).json()
 					.notify(this, 'didFetchNewestLoans', store, query)
 					.send();
 				
