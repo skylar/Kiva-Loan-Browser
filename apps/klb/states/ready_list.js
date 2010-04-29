@@ -19,7 +19,7 @@ Klb.READY_LIST = SC.Responder.create({
     Show laoding targets view.
   */
   didBecomeFirstResponder: function() {
-    Klb.set('currentScene', 'searchListView');
+    Klb.lendingController.set('currentScene', 'searchListView');
     Klb.searchController.set('selection', null); // always empty sel
     //Klb.testsController.set('isShowingTests', YES);
 

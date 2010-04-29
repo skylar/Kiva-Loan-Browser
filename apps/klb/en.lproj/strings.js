@@ -19,6 +19,11 @@ SC.stringsFor('English', {
 	"_OK": "OK",
 	"_Edit": "Edit",
 	
+	//// Primary Sections
+	"_Choose_A_Loan": "Choose A Loan",
+	"_Learn_More": "Learn More",
+	"_About": "About",
+	
 	//// Chrome
 	"_Checkout": "Checkout",
 	// sort drop down

@@ -15,12 +15,11 @@ Klb.START = SC.Responder.create({
     Show loading loans view.
   */
   didBecomeFirstResponder: function() {
-    Klb.set('currentScene', 'loansLoading');
-  //  Klb.targetsController.reload(); // load the targets.
+  	// temp step until we actually get a "loading/status" view ready
+    Klb.mainController.set('currentSection','Klb.prehomePage.mainView');
   },
   
   willLoseFirstResponder: function() {
-    Klb.set('currentScene', null);
   },
       
 });

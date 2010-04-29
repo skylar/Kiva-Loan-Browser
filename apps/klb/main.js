@@ -28,8 +28,8 @@ Klb.main = function main() {
 	
   // Step 2: Instantiate Your Views
   // The default code here will make the mainPane for your application visible
-  // on screen.  If you app gets any level of complexity, you will probably 
-  // create multiple pages and panes.  
+  // on screen.  If your app grows to any level of complexity, you will probably 
+  // create multiple pages and panes.
   Klb.getPath('mainPage.appPane').append();
 	Klb.makeFirstResponder(Klb.START);
   

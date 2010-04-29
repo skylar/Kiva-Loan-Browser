@@ -142,7 +142,7 @@ Klb.searchController = SC.ObjectController.create({
 		
 	// for now, we wait until we have partner data to load activate the display
 		if(this.get('availablePartners').get('length') > 0) {
-			Klb.makeFirstResponder(Klb.READY_LIST);
+			Klb.lendingController.set('currentScene','searchListView');
 		}
 	}.observes('*availablePartners.length'), // something not quite right w/ this
 	

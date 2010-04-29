@@ -10,9 +10,6 @@
   Initial state of application before it has loaded targets.
 */
 Klb.READY = SC.Responder.create({
-  
-  
-
   /**
     Invoked when you select the test.
   */

@@ -24,8 +24,15 @@
 .sc-split-divider-view {
 	background-color: gray;
 }
+.klb-header {
+	border-bottom: 2px solid #009900;
+}
+.klb-chrome { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); color: white;}
 
-/* FIXME: cleanup those old styles */
-/* custom colors, styles for app chrome elements (eg, tool bars) */
-.klb-chrome, .klb-subchrome {background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); }
-.klb-subchrome { background-color: #999999;}
+
+/*******************/
+/* THEME OVERRIDES */
+.sc-theme .sc-main.sc-pane { 
+	background: white;
+	color: black;
+}

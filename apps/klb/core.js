@@ -22,10 +22,19 @@ Klb = SC.Application.create(
 
   // Activates responder tracing
   trace: YES,
-  currentScene : null,
+  currentPane : null,
 	pickerPanes: {},
 
 });
+
+// Bonus add-in
+Klb.staticImagePath = 'flags_iso/32/fr.png';
+Klb.absStaticImagePath = sc_static('flags_iso/32/fr.png');
+Klb.imageByName = function(name) {
+	var prefix = Klb.absStaticImagePath.substring(0,
+		Klb.absStaticImagePath.indexOf(Klb.staticImagePath));
+	return prefix+name;
+};
 
 ///////////////////////////////////////
 // Queries
