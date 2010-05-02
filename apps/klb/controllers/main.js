@@ -8,17 +8,5 @@
 Klb.mainController = SC.ObjectController.create({
 	
 	currentSection: null,
-	
-	chooseALoan : function() {
-		Klb.makeFirstResponder(Klb.LENDING_ENTRY);
-	},
-	
-	learnMore : function() {
-		Klb.makeFirstResponder(Klb.LEARN_MORE);
-	},
-	
-	about: function() {
-		Klb.makeFirstResponder(Klb.ABOUT);
-	},
-	
+		
 });

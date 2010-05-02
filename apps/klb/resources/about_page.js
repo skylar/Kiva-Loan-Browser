@@ -5,28 +5,20 @@
 // ==========================================================================
 /*globals Klb */
 
+require('views/static_content');
+
 // This page describes the main user interface for your application.
 Klb.aboutPage = SC.Page.design({
 
 	mainView: SC.ScrollView.design({
 		hasHorizontalScroller: NO,
-		backgroundColor: '#dddddd',
-		
-		contentView: SC.View.design({
-			layout: { top: 0,  left: 0, right: 0, height:800 },
-			childViews: 'labelView'.w(),
-
-		  labelView: SC.LabelView.design({
-		    layout: { centerX: 0, centerY: 0, height: 24, width: 200 },
-		    textAlign: SC.ALIGN_CENTER,
-		    controlSize: SC.HUGE_CONTROL_SIZE,
-		    classNames: "center-label",
-		    fontWeight: SC.BOLD_WEIGHT,
-		    value: "We will tell you about Kiva here!"
-		  })
+		layout: {top:0,bottom:0,left:0,right:0},
+			
+		contentView: Klb.StaticContentView.design({
+			content: '<div class="klb-static-content">'
+				+ '<h1>' + "_What_is_Kiva?".loc() + '</h1>'
+				+ '<img style="float:left;margin-right:25px;margin-bottom:20px" src="http://l3-1.kiva.org/r21681/images/logoLeafy3.gif" height="60" width="113" />'
+				+ '*aboutContent'.loc() + '</div>',
 		}),
-
 	}),
-	
-
 });

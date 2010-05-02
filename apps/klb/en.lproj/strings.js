@@ -20,9 +20,11 @@ SC.stringsFor('English', {
 	"_Edit": "Edit",
 	
 	//// Primary Sections
+	"_About": "About",
 	"_Choose_A_Loan": "Choose A Loan",
 	"_Learn_More": "Learn More",
-	"_About": "About",
+	"_Register": "Register",
+	"_Demo": "Demo",
 	
 	//// Chrome
 	"_Checkout": "Checkout",
@@ -66,4 +68,8 @@ SC.stringsFor('English', {
 	// Countries
 	"_CAMBODIA":"Cambodia",
 	"_AZERBAIJAN":"Azerbaijan",
+	
+	// ABOUT
+	"_What_is_Kiva?":"What is Kiva?",
+	"*aboutContent": '<p>Kiva‘s mission is to connect people, through lending, for the sake of alleviating poverty.</p>\n\n<p>Kiva empowers individuals to lend to an entrepreneur across the globe. By combining microfinance with the internet, Kiva is creating a global community of people connected through lending.</p>\n\n<div class=\'kiva-figureRight\'>\n	    		<a  href="http://www.kiva.org/lend/23303" target="_blank" ><img  border="0" src="http://www.kiva.org/images/Pendo.jpg" class="scaled" /></a>\n\n<p><a href="http://www.kiva.org/lend/23303">Pendo Luisi</a>, 27 years old, borrowed $175 to open a cafe in Dar es Salaam, Tanzania.</p>\n  </div>\n\n<p>Kiva was born of the following beliefs:\n<ul>\n<li>People are by nature generous, and will help others if given the opportunity to do so in a transparent, accountable way.</li>\n<li>The poor are highly motivated and can be very successful when given an opportunity.</li>\n<li>By connecting people we can create relationships beyond financial transactions, and build a global community expressing support and encouragement of one another.</li>\n</ul>\n</p>\n\n<p>Kiva promotes:\n<ul>\n<li>Dignity: &nbsp; Kiva encourages partnership relationships as opposed to benefactor relationships. Partnership relationships are characterized by mutual dignity and respect.</li>\n<li>Accountability: &nbsp; Loans encourage more accountability than donations where repayment is not expected.</li><br/>\n<li>Transparency: &nbsp; The Kiva website is an open platform where communication can flow freely around the world.</li>\n</ul>\n</p>\n\n<p>As of November 2009, Kiva has facilitated over $100 million in loans.</p>',
 }) ;

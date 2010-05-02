@@ -34,13 +34,14 @@ Klb.lendingPage = SC.Page.design({
     layout: { top: 0, left: 0, bottom: 41, width: 300 },
     backgroundColor: '#DDDDDD',
     layoutDirection: SC.LAYOUT_VERTICAL,
-    defaultThickness: 0,
-    autoresizeBehavior: SC.RESIZE_BOTTOM_RIGHT,
+    defaultThickness: 260, // for bottom right view
+    autoresizeBehavior: SC.RESIZE_TOP_LEFT,
     canCollapseViews: YES,
     classNames: 'klb-sbv',
 
-    topLeftMinThickness: 0,
-    topLeftMaxThickness: 100,
+    topLeftMinThickness: 200,
+    topLeftMaxThickness: 800,
+    
     topLeftView: SC.ScrollView.design({
      	isVisible: NO,
       hasHorizontalScroller: NO, // disable horizontal scrolling

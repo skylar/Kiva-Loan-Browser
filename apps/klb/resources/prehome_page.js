@@ -17,6 +17,7 @@ Klb.prehomePage = SC.Page.design({
 	
 	sceneOne: SC.View.design({
 	  childViews: "labelView".w(),
+	  backgroundColor: 'gray',
 	
 	  labelView: SC.LabelView.design({
 	    layout: { centerX: 0, centerY: 0, height: 24, width: 200 },

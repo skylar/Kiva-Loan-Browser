@@ -29,43 +29,33 @@ Klb.mainPage = SC.Page.design({
 			}),
 			
 			buttonBar: SC.SegmentedView.design({
-				layout: { left: 180, top: 20, width: 150*3, height: 60 },
+				layout: { left: 180, top: 20, width: 140*5, height: 60 },
 				itemTitleKey: 'title',
 				valueBinding: 'Klb.mainController.currentSection',
 				itemWidthKey: 'width',
 				itemValueKey: 'value',
 				items: [
+					{	title: "_About".loc(),
+						value: "Klb.aboutPage.mainView",
+						width: 120,
+					},
 					{	title: "_Choose_A_Loan".loc(),
 						value: "Klb.lendingPage.mainView",
-						width: 140,
+						width: 120,
 					},
 					{	title: "_Learn_More".loc(),
 						value: "Klb.prehomePage.mainView",
-						width: 140,
+						width: 120,
 					},
-					{	title: "_About".loc(),
-						value: "Klb.aboutPage.mainView",
-						width: 140,
-					}
+					{	title: "_Register".loc(),
+						value: "Klb.registerPage.mainView",
+						width: 120,
+					},
+					{	title: "_Demo".loc(),
+						value: "Klb.demoPage.mainView",
+						width: 120,
+					},
 				],
-			}),
-			
-			button1: SC.ButtonView.design({
-			  layout: { left: 160, top: 20, width: 140, height: 40 },
-			  title: "_Choose_A_Loan".loc(),
-			  action: "chooseALoan",
-			}),
-
-			button2: SC.ButtonView.design({
-			  layout: { left: 320, top: 20, width: 140, height: 40 },
-			  title: "_Learn_More".loc(),
-			  action: "learnMore",
-			}),
-			
-			button3: SC.ButtonView.design({
-			  layout: { left: 320+160, top: 20, width: 140, height: 40 },
-			  title: "_About".loc(),
-			  action: "about",
 			}),
 	  }),
     
