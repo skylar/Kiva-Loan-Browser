@@ -16,7 +16,7 @@ Klb.START = SC.Responder.create({
   */
   didBecomeFirstResponder: function() {
   	// temp step until we actually get a "loading/status" view ready
-    Klb.mainController.set('currentSection','Klb.prehomePage.mainView');
+    Klb.mainController.set('currentSection','Klb.lendingPage.mainView');
   },
   
   willLoseFirstResponder: function() {

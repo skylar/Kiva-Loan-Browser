@@ -24,7 +24,7 @@ Klb.mainPage = SC.Page.design({
 	    classNames: 'klb-header'.w(),
       
 			logoView: SC.ImageView.design({
-			  layout: { left: 10, top: 10, width: 122, height: 60 },
+			  layout: { left: 10, top: 5, width: 120, height: 70 },
 			  value: sc_static('kef_logo.png'),
 			}),
 			
@@ -43,10 +43,10 @@ Klb.mainPage = SC.Page.design({
 						value: "Klb.lendingPage.mainView",
 						width: 120,
 					},
-					{	title: "_Learn_More".loc(),
-						value: "Klb.prehomePage.mainView",
-						width: 120,
-					},
+//					{	title: "_Learn_More".loc(),
+//						value: "Klb.prehomePage.mainView",
+//						width: 120,
+//					},
 					{	title: "_Register".loc(),
 						value: "Klb.registerPage.mainView",
 						width: 120,

@@ -33,7 +33,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .begin('div')
       .addClass('sc-view')
       .addStyle({ left: 120, top: 32, height: 18 })
-        .push(content.get('sector'))
+        .push(('_'+content.get('activity')).loc())
       .end();
       
     // loan use
