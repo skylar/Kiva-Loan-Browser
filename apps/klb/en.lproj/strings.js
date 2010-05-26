@@ -281,7 +281,7 @@ SC.stringsFor('English', {
 	"_SYRIAN_ARAB REPUBLIC":"Syrian Arab Republic",
 	"_TAIWAN,_PROVINCE OF CHINA":"Taiwan",
 	"_TAJIKISTAN":"Tajikistan",
-	"_TANZANIA,_UNITED REPUBLIC OF":"Tanzania",
+	"_TANZANIA,_UNITED_REPUBLIC_OF":"Tanzania",
 	"_THAILAND":"Thailand",
 	"_TIMOR-LESTE":"Timor-Leste",
 	"_TOGO":"Togo",

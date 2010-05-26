@@ -20,7 +20,7 @@ Klb.GridView = SC.View.extend({
 	    margin = 0,
 	    left = margin,
 	    top = margin,
-	    width = 100,
+	    width = 190,
 	    maxWidth = this.get('frame').width,
 	    i, item, country;
 		  
@@ -30,9 +30,9 @@ Klb.GridView = SC.View.extend({
 	      item = content.objectAt(i);
 	      country = item.get('name');
 	      view = SC.ButtonView.create({
-	        layout: { top: top, left: left, width: width, height: 24 },
+	        layout: { top: top, left: left, width: width, height: 36 },
 	        classNames: 'align-left'.w(),
-	        icon: item.iconBySize(32),
+	        icon: item.iconBySize(24),
 	        title: country,
 	        buttonBehavior: SC.TOGGLE_BEHAVIOR,
 	        content: item
@@ -40,10 +40,10 @@ Klb.GridView = SC.View.extend({
 	      childViews.push(view);
 	      this.optionButtons.push(view);
 	      
-	      left += width + 6;      
+	      left += width + 16;      
 	      if (left + width + margin > maxWidth) {
 	        left = margin;
-	        top += 24 + 6;
+	        top += 25 + 16;
 	      }
 	    }
 		  

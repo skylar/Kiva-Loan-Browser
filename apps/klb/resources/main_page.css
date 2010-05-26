@@ -51,6 +51,51 @@
 	height: 289px;
 }
 
+/****** COUNTRY PICKER PANE ***********/
+.sc-theme .buttonGridView .sc-button-view.sc-regular-size.square {
+	border: 2px solid #8bc8cd;
+	background: white;
+	font-weight: normal;
+	font-size: 14px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	max-height:30px;
+}
+
+.buttonGridView .sc-button-view.sc-regular-size.square .sc-button-inner{
+	margin-top: 3px;
+}
+
+.buttonGridView .sc-button-view.sc-regular-size.square .sc-button-inner,
+.buttonGridView .sc-button-view.sc-regular-size.square .sc-button-inner .sc-button-label,
+.buttonGridView .sc-button-view.sc-regular-size.square.active .sc-button-inner,
+.buttonGridView .sc-button-view.sc-regular-size.square.active .sc-button-label,
+.buttonGridView .sc-button-view.sc-regular-size.square.sel .sc-button-inner,
+.buttonGridView .sc-button-view.sc-regular-size.square.sel .sc-button-label,
+.buttonGridView .sc-button-view.sc-regular-size.square.sel.active .sc-button-inner,
+.buttonGridView .sc-button-view.sc-regular-size.square.sel.active .sc-button-label {
+	background: none;
+	text-shadow: none;
+	color: black;
+}
+
+.buttonGridView .sc-button-view.sc-regular-size.square.active,
+.buttonGridView .sc-button-view.sc-regular-size.square.sel.active {	
+	background: #dcfefa;
+}
+
+.buttonGridView .sc-button-view.sc-regular-size.square.sel {
+	background: #8bc8cd;
+}
+.buttonGridView .sc-button-view.sc-regular-size.square.sel .sc-button-label {
+	color: white;
+}
+
+.buttonGridView .sc-button-view.icon img.icon {
+	margin-right: 4px;
+	height: 24px;
+	width: 24px;
+}
 /*******************/
 /* THEME OVERRIDES */
 .sc-theme .sc-main.sc-pane { 
