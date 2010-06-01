@@ -20,7 +20,7 @@ SC.stringsFor('Français', {
 	"_Edit": "Modifier",
 	
 	//// Primary Sections
-	"_About": "À Propose",
+	"_About": "À Propos",
 	"_Choose_A_Loan": "Choisir un Projet",
 	"_Learn_More": "En Savoir Plus",
 	"_Register": "S'inscrire",

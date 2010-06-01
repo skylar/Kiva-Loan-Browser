@@ -7,6 +7,6 @@
 
 Klb.mainController = SC.ObjectController.create({
 	
-	currentSection: null,
-		
+	currentSection: null,	
+	
 });

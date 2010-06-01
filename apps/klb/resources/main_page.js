@@ -20,7 +20,7 @@ Klb.mainPage = SC.Page.design({
     
     topbarView: SC.View.design({
 	    layout: { top: 0, left: 0, right: 0, height: 80 },
-	    childViews: 'logoView buttonBar'.w(),
+	    childViews: 'logoView buttonBar basket'.w(),
 	    classNames: 'klb-header'.w(),
       
 			logoView: SC.ImageView.design({
@@ -29,7 +29,7 @@ Klb.mainPage = SC.Page.design({
 			}),
 			
 			buttonBar: SC.SegmentedView.design({
-				layout: { left: 180, top: 20, width: 140*5, height: 60 },
+				layout: { left: 120, top: 20, width: 140*5, height: 60 },
 				itemTitleKey: 'title',
 				valueBinding: 'Klb.mainController.currentSection',
 				itemWidthKey: 'width',
@@ -57,6 +57,16 @@ Klb.mainPage = SC.Page.design({
 					},
 				],
 			}),
+		
+			basket: SC.LabelView.design({
+				layout: {top:10,right:10,width:120,height:50},
+				value: 'BASKET'.loc()
+			}),
+//			prehomeButton: SC.ButtonView.design({
+//				layout: {right:200, bottom:0, height:24, width:150},
+//				title: "_Learn_More".loc(),
+//				action: "learnMore"
+//			})
 	  }),
     
     mainPaneView: SC.ContainerView.design({
