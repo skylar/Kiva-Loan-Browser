@@ -5,12 +5,17 @@
 // ==========================================================================
 /*globals Klb */
 
-Klb.mainController = SC.ObjectController.create({
-	
-	currentSection: null,	
-	
-	showPrehome: function() { this.set('currentSection', Klb.getPath('prehomePage.mainView')); },
-	
-	showLending: function() { this.set('currentSection', Klb.getPath('lendingPage.mainView')); },
-	
-});
+/** @class
+
+  (Document your Model here)
+
+  @extends SC.Record
+  @version 0.1
+*/
+Klb.Demo = SC.Record.extend(
+/** @scope Klb.Country.prototype */ {
+  
+  primaryKey: 'id',
+  
+  name:SC.Record.attr(String),
+}) ;

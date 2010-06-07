@@ -5,6 +5,9 @@
 // ==========================================================================
 /*globals Klb */
 
+//sc_require('views/simple_button');
+sc_require('views/display_text');
+
 // This page describes the main user interface for your application.
 Klb.prehomePage = SC.Page.design({
 
@@ -14,11 +17,18 @@ Klb.prehomePage = SC.Page.design({
 			childViews: 'introSlides dividerBar inFigures'.w(),
 			
 			introSlides: SC.View.design({
-				layout:{top:40,height:600,width:950,centerX:0},
-				childViews: 'slidesNav slidesContent'.w(),
+				layout:{top:15,height:650,width:800,centerX:0},
+				childViews: 'caption slidesContent'.w(),
 				
+				caption: SC.LabelView.design({
+					layout:{top:0,height:24,centerX:0,width:760},
+					value: "_Kiva. Make a loan, change a life.".loc(),
+					classNames: 'prehomeCaption',
+					controlSize: SC.LARGE_CONTROL_SIZE,
+				}),
+
 				slidesContent: SC.View.design({
-					layout:{left:170,right:0,top:0,bottom:0},
+					layout:{top:24,bottom:0,centerX:0,width:763},
 					childViews: 'placeholderGraphic'.w(),
 					
 					placeholderGraphic: SC.ImageView.design({
@@ -63,35 +73,133 @@ Klb.prehomePage = SC.Page.design({
 			}),
 			
 			dividerBar: SC.View.design({
-				layout: {left:0,right:0,top:650,height:50},
+				layout: {top:650,height:70,centerX:0,width:800},
 				backgroundColor: '#006600',
-				childViews: 'caption emailCollect'.w(),
+				childViews: 'caption chooseCta'.w(),
 				
 				caption: SC.LabelView.design({
-					layout:{width:950,centerX:0,top:10,bottom:10},
+					layout:{left:20,width:400,top:10,bottom:10},
 					color: 'white',
-					value: 'Kiva connects people through lending for the sake of alleviating poverty.'
+					value: 'Get started now by finding an entrepreneur and making a loan!'.loc(),
+					classNames: 'primaryCtaCaption',
+					controlSize: SC.LARGE_CONTROL_SIZE,
 				}),
 				
-				emailCollect: SC.View.design({}),
+				chooseCta: SC.ButtonView.design({
+					layout: {top:20,height:30,right:20,width:200},
+					classNames: 'ctaButton ctaMain'.w(),
+					controlSize: SC.LARGE_CONTROL_SIZE,
+					title: "_Choose_A_Loan".loc(),
+					target: 'Klb.mainController',
+					action: 'showLending',
+				}),
 			}),
 			
 			inFigures: SC.View.design({
-				layout: {top:700, width:950, centerX:0},
+				layout: {top:720, width:800, centerX:0},
 				childViews:'mission figures'.w(),
 				
 				mission: SC.LabelView.design({
-					layout:{top:40, right:20, left:20, height:35},
-					value: "_The_Mission".loc(),
+					layout:{top:40, left:0, right:0, height:35},
+					value: "_The Situation".loc(),
 					controlSize: SC.LARGE_CONTROL_SIZE,
 					fontWeight: SC.BOLD_WEIGHT
 				}),
-				figures: SC.LabelView.design({
-					layout:{top:300, right:20, left:20, height:35},
-					value: "_Progress_In_Figures".loc(),
-					controlSize: SC.LARGE_CONTROL_SIZE,
-					fontWeight: SC.BOLD_WEIGHT
-				})
+				figures: SC.View.design({
+						layout: {top:200,left:0,right:0},
+						childViews: 'header data1 data2 data3 data4'.w(),
+						
+						header: Klb.DisplayTextView.design({
+							layout: {top:0,height:30,left:0,right:0},
+							value: "_In Numbers".loc(),
+							controlSize: SC.LARGE_CONTROL_SIZE,
+							fontWeight: SC.BOLD_WEIGHT
+						}),
+						
+						data1: SC.View.design({
+							layout:{top:30,height:100,right:175,width:175},
+							childViews: 'figure label'.w(),
+							classNames: 'dataFigureHolder',
+							
+							figure: Klb.DisplayTextView.design({
+								layout:{top:0,height:50},
+								classNames: 'dataFigure',
+								value:'56',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+							label: Klb.DisplayTextView.design({
+								layout:{top:40,height:24},
+								classNames: 'dataFigureLabel',
+								value:'countries',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+						}),
+
+						data2: SC.View.design({
+							layout:{top:30,height:100,right:0,width:175},
+							childViews: 'figure label'.w(),
+							classNames: 'dataFigureHolder',
+							
+							figure: Klb.DisplayTextView.design({
+								layout:{top:0,height:50},
+								classNames: 'dataFigure',
+								value:'116',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+							label: Klb.DisplayTextView.design({
+								layout:{top:40,height:24},
+								classNames: 'dataFigureLabel',
+								value:'partners',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+						}),
+						
+						data3: SC.View.design({
+							layout:{top:30,height:100,left:0,width:200},
+							childViews: 'figure label'.w(),
+							classNames: 'dataFigureHolder',
+							
+							figure: Klb.DisplayTextView.design({
+								layout:{top:0,height:50},
+								classNames: 'dataFigure',
+								value:'345,978',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+							label: Klb.DisplayTextView.design({
+								layout:{top:40,height:24},
+								classNames: 'dataFigureLabel',
+								value:'entrepreneurs helped',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+						}),
+
+						data4: SC.View.design({
+							layout:{top:30,height:100,left:200,width:300},
+							childViews: 'figure label'.w(),
+							classNames: 'dataFigureHolder',
+							
+							figure: Klb.DisplayTextView.design({
+								layout:{top:0,height:50},
+								classNames: 'dataFigure',
+								value:'$138,323,264',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+							label: Klb.DisplayTextView.design({
+								layout:{top:40,height:24},
+								classNames: 'dataFigureLabel',
+								value:'in loans',
+								fontWeight: SC.BOLD_WEIGHT,
+								textAlign:SC.ALIGN_CENTER,
+							}),
+						}),
+				}),
 			
 			}),		
 		}),

@@ -26,6 +26,9 @@ SC.stringsFor('English', {
 	"_Register": "Register",
 	"_Demo": "Demo",
 	
+	// Pre-home
+	"_Kiva. Make a loan, change a life.":"Kiva. Make a loan, change a life.",
+	
 	//// Chrome
 	"_Checkout": "Checkout",
 	// sort drop down
@@ -482,7 +485,42 @@ SC.stringsFor('English', {
 	"_Transportation":"Transportation",
 	"_Wholesale":"Wholesale",
 	
+
+	//////////////////////////////////////////////
+	// PREHOME
+	
+	// Headers
+	'_The Situation':'The Situation',
+	'_In Numbers':'In Numbers',
+	
+	// Captions
+	'_something about why to click the browse CTA':'',
+	'_Kiva. Make a loan, change a life.':'Kiva. Make a loan, change a life.',
+	
+	//////////////////////////////////////////////
 	// ABOUT
-	"_What_is_Kiva?":"What is Kiva?",
-	"*aboutContent": '<p>Kiva‘s mission is to connect people, through lending, for the sake of alleviating poverty.</p>\n\n<p>Kiva empowers individuals to lend to an entrepreneur across the globe. By combining microfinance with the internet, Kiva is creating a global community of people connected through lending.</p>\n\n<div class=\'kiva-figureRight\'>\n	    		<a  href="http://www.kiva.org/lend/23303" target="_blank" ><img  border="0" src="http://www.kiva.org/images/Pendo.jpg" class="scaled" /></a>\n\n<p><a href="http://www.kiva.org/lend/23303">Pendo Luisi</a>, 27 years old, borrowed $175 to open a cafe in Dar es Salaam, Tanzania.</p>\n  </div>\n\n<p>Kiva was born of the following beliefs:\n<ul>\n<li>People are by nature generous, and will help others if given the opportunity to do so in a transparent, accountable way.</li>\n<li>The poor are highly motivated and can be very successful when given an opportunity.</li>\n<li>By connecting people we can create relationships beyond financial transactions, and build a global community expressing support and encouragement of one another.</li>\n</ul>\n</p>\n\n<p>Kiva promotes:\n<ul>\n<li>Dignity: &nbsp; Kiva encourages partnership relationships as opposed to benefactor relationships. Partnership relationships are characterized by mutual dignity and respect.</li>\n<li>Accountability: &nbsp; Loans encourage more accountability than donations where repayment is not expected.</li><br/>\n<li>Transparency: &nbsp; The Kiva website is an open platform where communication can flow freely around the world.</li>\n</ul>\n</p>\n\n<p>As of November 2009, Kiva has facilitated over $100 million in loans.</p>',
+	
+	// Headers
+	'_How Microfinance Began':'How Microfinance Began',
+	'_What Is Kiva?':'What Is Kiva?',
+	'_Why Kiva en Français?':'Why Kiva en Français?',
+
+	// Captions
+	'_Kiva connects people through lending to alleviate poverty.':'Kiva connects people through lending to alleviate poverty.',
+	'_give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…':'give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…',
+
+	'*mfHow_para_1':"Microfinance was developed in Bangladesh by economics professor Muhammad Yunus, recipient of the 2006 Nobel Peace Prize.",
+	'*mfHow_para_2':"The concept is to make small loans available to entrepreneurs who are not able to access loans from traditional banks.",
+	'*mfHow_para_3':"It has allowed millions of people in developing countries to lift themselves out of poverty, making their proposed projects a reality and creating wealth.",
+	'*mfHow_para_4':"This grand social innovation is now spreading itself to other developing countries and areas of simlar transition.",
+	
+	'*kivaWhat_para_1':"Kiva.org is the first online microfinance organization in the world, financing loans for over 500 projects a day.",
+	'*kivaWhat_para_2':"This success story, founded in San Francisco in 2005, has already raised over 100M€ in loans in over 55 different countries.",
+	'*kivaWhat_para_3':"Kiva has rigourously selected over 100 microfinance institutions (MFI) who are its partners in the field and together have an average repayment rate of over 98%.",
+	'*kivaWhat_para_4':"Over the course of the loan, the lenders are repaid which allows them to withdraw this money or reinvest it in new projects.",
+
+	'*kefWhy_para_1':"The idea is to promote microfinance thanks to the fancophile community, creating a website in French allowing the selection of projects to finance on Kiva",
+	'*kefWhy_para_2':"The creators of the french website are friends and alumni of Kiva who wish to share their enthusiasm.",
+	'*kefWhy_para_3':"Once you select the rpojects you wish to support, your loan is finalized on the Kiva website.",
+
 }) ;

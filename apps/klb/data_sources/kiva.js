@@ -53,7 +53,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
 	didFetchNewestLoans: function(response, store, query) {
 		console.log("NEW LOANS fetch did complete.");
 		
-		if(SC.ok(response)) {
+		if(SC.ok(response) && response.get('body').loans) {
 			// copy country_code to top-level for easy modelling
 			response.get('body').loans.forEach( 
 				function(item, index, enm) {

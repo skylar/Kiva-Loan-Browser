@@ -5,12 +5,13 @@
 // ==========================================================================
 /*globals Klb */
 
-Klb.mainController = SC.ObjectController.create({
-	
-	currentSection: null,	
-	
-	showPrehome: function() { this.set('currentSection', Klb.getPath('prehomePage.mainView')); },
-	
-	showLending: function() { this.set('currentSection', Klb.getPath('lendingPage.mainView')); },
-	
+sc_require('models/demo');
+
+
+Klb.demosController = SC.ArrayController.create({		
+		primeData: function() {
+			Klb.store.loadRecords(Klb.Demo, Klb.Demo.FIXTURES);
+			Klb.demosController.set('content', Klb.store.find(SC.Query.local(Klb.Demo)));		
+		}	
 });
+

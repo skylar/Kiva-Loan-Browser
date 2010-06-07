@@ -1,0 +1,43 @@
+.aboutSection .sc-label-view.sc-regular-size {
+	font-weight:normal;
+	font-size: 16px;
+	font-family: 'Helvetica',sans-serif;
+	line-height:19px;
+}
+
+.sc-label-view.sc-regular-size.aboutSectionHeader {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.aboutSection .sc-label-view.sc-regular-size.caption {
+	font-style: italic;
+	font-size: 22px;
+	font-family: 'Georgia',serif;
+}
+
+.dataFigureHolder {
+	text-align:center;
+}
+.sc-label-view.sc-regular-size.dataFigure {
+	font-size: 32px;
+	color: #004400;
+	line-height:normal;
+}
+.sc-label-view.sc-regular-size.dataFigureLabel {
+	font-size: 18px;
+	text-align:center;
+	color: black;
+	line-height:normal;
+}
+
+.aboutSection .separator {
+	border-bottom: 1px solid gray;
+}
+
+div.clearfloat {
+/* force hasLayout for IE, clear floats contained in this div class */
+/*	height:100%;
+	overflow: auto;
+*/
+}

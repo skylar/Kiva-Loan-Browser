@@ -1,0 +1,25 @@
+.sc-label-view.sc-large-size.prehomeCaption {
+	font-size: 24px;
+	color: #777777;
+	font-family: 'AmericanTypewriter',monospace;
+}
+
+.sc-label-view.sc-large-size.primaryCtaCaption {
+	color: white;
+	font-style: italic;
+	font-family: 'Times New Roman',sans-serif;
+	font-size: 20px;
+	line-height:25px;
+}
+
+.sc-button-view.sc-large-size.square.ctaButton {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color: #8ac542;
+	color: white;
+	font-size:20px;
+	font-weight:bold;
+}
+.sc-button-view.sc-large-size.square.ctaButton label {
+	padding: 4px;
+}

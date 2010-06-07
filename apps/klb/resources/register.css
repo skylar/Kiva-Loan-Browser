@@ -1,0 +1,30 @@
+.regSidebarHeader {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.regSidebarCaption {
+	font-weight: bold;
+}
+
+.regSidebar ol li {
+	list-style: decimal outside;
+	margin: 7px 0;
+}
+
+.regSidebar ol {
+	position: absolute;
+	margin: 0px 5px 0px 20px;	
+}
+
+.sc-label-view.sc-regular-size.center-label {
+	line-height: 14px;
+}
+
+.regTopView {
+	border-bottom: 1px solid #006600;
+}
+
+.regSidebar {
+	border-right: 1px solid gray;
+}

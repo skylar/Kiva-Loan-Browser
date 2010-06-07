@@ -481,7 +481,59 @@ SC.stringsFor('Français', {
 	"_Transportation":"Transports",
 	"_Wholesale":"Vente de Gros",
 
+
+	//////////////////////////////////////////////
+	// PREHOME
+	
+	// Headers
+	'_The Situation':'La situation',
+	'_In Numbers':'Les chiffres',
+	
+	// Captions
+	'_something about why to click the browse CTA':'',
+	'_Kiva. Make a loan, change a life.':'Kiva. Faites un pret, changez une vie.',
+	
+
+	//////////////////////////////////////////////
 	// ABOUT
-	"_What_is_Kiva?":"Qu’est Kiva?",
-	"*aboutContent":'<p>La mission de Kiva est de mettre en relation des personnes par l’intermédiaire d’emprunts afin de réduire la pauvreté dans le monde.</p>\n\n<p>Kiva permet aux individus de prêter de l’argent à un microentrepreneur à l’autre bout du monde. En combinant la microfinance et l’Internet, Kiva est en train de créer une communauté mondiale de personnes liées par des prêts.</p>\n\n<div class=\'kiva-figureRight\'>\n	    		<a  href="http://www.kiva.org/lend/23303" target="_blank" ><img  border="0" src="http://www.kiva.org/images/Pendo.jpg" class="scaled" /></a>\n\n<p><a href="http://www.kiva.org/lend/23303">Pendo Luisi</a>, 27 years old, borrowed $175 to open a cafe in Dar es Salaam, Tanzania.</p>\n  </div>\n\n<p>Kiva est né des convictions suivantes:\n<ul>\n<li>les personnes sont par nature généreuses et vont aider d’autres personnes si l’opportunité de le faire de manière transparente et responsable leur est offerte</li>\n<li>Les personnes démunies sont très motivées et peuvent donc réussir si l’opportunité de le faire leur est offerte</li>\n<li>En connectant les personnes les unes avec les autres, on peut créer des relations qui vont au-delà de la transaction financière, et on peut construire une communauté globale de soutien et d’encouragement pour chacun</li>\n</ul>\n</p>\n\n<p>Kiva promeut:\n<ul>\n<li>Dignité: Kiva encourage la création de relation de partenariat, plutôt que de bienfaiteur. Les relations en partenariat sont caractérisées par dignité et respect mutuels</li>\n<li>Responsabilité: Les prêts encouragent plus la prise de responsabilité que les donations, qui ne demandent pas à être remboursées</li>\n<li>Transparence: Le site web de Kiva est une plateforme ouverte où la communication peut se faire librement partout dans le monde</li>\n</ul>\n</p>',
+	
+	// Headers
+	'_How Microfinance Began':'D‘où vient la micro-finance?',
+		'_What Is Kiva?':'Kiva, qu‘est-ce que c‘est?',
+	'_Why Kiva en Français?':'Pourquoi Kiva en Français?',
+
+	// Captions
+//	'_Kiva connects people through lending to alleviate poverty.':'Kiva connects people through lending to alleviate poverty.',
+//	'_give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…':'give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…',
+	
+	'*mfHow_para_1':"Le micro-credit a été développé au Bangladesh par le professeur d'économie Muhammad Yunus, Prix Nobel de la Paix 2006.",
+	'*mfHow_para_2':"C'est l'attribution de prêts de faible montant à des porteurs de projets qui ne peuvent accéder aux prêts bancaires classiques.",
+	'*mfHow_para_3':"Il a permis à des millions de gens dans les pays en développement de sortir de la pauvreté, en concrétisant des projets favorisant l'activité et la création de richesse.",
+	'*mfHow_para_4':"Cette grande innovation sociale se répand aujourd'hui aussi dans les pays développés ou en transition.",
+	
+	'*kivaWhat_para_1':"kiva.org est la première ONG au monde de micro-crédit en ligne, finançant près de 500 projets par jour.",
+	'*kivaWhat_para_2':"Cette success story, fondée par Matt Flanery et Premal Shah à San Francisco en 2005 a réuni depuis environ 100M€ de prêts, à destination de 55 pays différents.",
+	'*kivaWhat_para_3':"kiva.org a rigoureusement selectionné 90 institutions de micro-finance (IMF) qui sont ses relais sur le terrain, et atteint un taux de remboursement de 98,5%",
+	'*kivaWhat_para_4':"Au fil des mois, les prêteurs sont remboursés de leur prêt qu'ils peuvent récupérer ou réinvestir dans de nouveaux projets.",
+
+	'*kefWhy_para_1':"L'idée est de faire progresser le micro-crédit grâce à la communauté francophone en créant un site web en français permettant de choisir des projets à financer sur kiva.org",
+	'*kefWhy_para_2':"Les créateurs de ce site web en français sont des anciens de Kiva souhaitant faire partager leur enthousiasme.",
+	'*kefWhy_para_3':"Une fois sélectionnés les projets que vous souhaitez soutenir, votre prêt est finalisé sur le site web de l'ONG Kiva.",
+
+	//////////////////////////////////////////////
+	// REGISTER
+	
+	'*reg_disclaimer_text1':'Pour valider votre investissement, vous devez avoir un compte d’utilisateur Kiva. Ce processus est en anglais mais un accompagnement en français est à votre disposition à gauche de l’écran. Une fois votre compte ouvert, vous serez redirigé sur kiva.org pour compléter votre paiement.',
+	'*reg_disclaimer_text2':'Si vous possédez déjà un compte kiva, vous serez redirigé sur le site kiva.org où vous pourrez vous connecter à votre compte pour compléter votre paiement.',
+	
+	'_Help':'Aide',
+	'_Use of the english site':'Utilisation du site en anglais',
+	
+	'_Enter your first name':'Entrez votre prénom',
+	'_Enter your last name':'Entrez votre nom',
+	'_Enter your email address':'Entrez votre adresse email',
+	'_Re-enter your email address':'Confirmez votre adresse email',
+	'_Choose a password between 6 and 12 characters':'Choisissez un mot de passe entre 6 et 12 caractères',
+	'_Confirm the password you chose':'Confirmez le mot de passe choisi',
+	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'Si un ou une amie vous a recommandé de faire un prêt sur Kiva, merci d‘indiquer son adresse email pour que Kiva le ou la remercie!',
 }) ;

@@ -207,7 +207,6 @@ loansLoading: SC.View.design({
   labelView: SC.LabelView.design({
     layout: { centerX: 0, centerY: 0, height: 24, width: 200 },
     textAlign: SC.ALIGN_CENTER,
-    controlSize: SC.HUGE_CONTROL_SIZE,
     classNames: "center-label",
     controlSize: SC.LARGE_CONTROL_SIZE,
     fontWeight: SC.BOLD_WEIGHT,

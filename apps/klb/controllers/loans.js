@@ -31,7 +31,7 @@ Klb.loansController = SC.ArrayController.create(
   searchControllerQueryDidChange: function() {
     var q = Klb.getPath('searchController.query');
     
-    if (q) {      
+    if (q) {
       this.set('content', Klb.store.find(SC.Query.create({
         location: SC.Query.LOCAL,
         recordType: Klb.Loan,
