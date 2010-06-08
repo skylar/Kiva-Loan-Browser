@@ -30,13 +30,21 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 .filter-subheader.sc-large-size  {
   font-size: 14px;
 }
-.picker-button {
+.sc-theme .sc-button-view.picker-button {
  /* unfortunately, most of this fails to style the button b/c of theme override.. */
-	border: 1px solid black;
+	border: 1px solid gray;
 	background-color: #ffffff;
-	padding: 5px;
-	color: gray;
+	color: #656565;
+	font-size:11px;
 }
+.sc-theme .sc-button-view.picker-button.active {
+	color: white;
+	background-color:#656565;
+}
+.picker-button.sc-button-view label {
+	line-height: 18px;
+}
+
 .sc-split-divider-view {
 	background-color: gray;
 }

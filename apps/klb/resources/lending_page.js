@@ -158,7 +158,8 @@ Klb.lendingPage = SC.Page.design({
         action: "showCountryPicker",
         target: "Klb.searchController",
         classNames: 'picker-button',
-				controlSize: SC.SMALL_CONTROL_SIZE
+				controlSize: SC.SMALL_CONTROL_SIZE,
+				titleMinWidth: 40,
 			}),
 
 			// SECTOR
@@ -180,7 +181,8 @@ Klb.lendingPage = SC.Page.design({
         action: "showSectorPicker",
         target: "Klb.searchController",
         classNames: 'picker-button',
-				controlSize: SC.SMALL_CONTROL_SIZE
+				controlSize: SC.SMALL_CONTROL_SIZE,
+				titleMinWidth: 40,
 			}),
 
 			// SAVE, etc.

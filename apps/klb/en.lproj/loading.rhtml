@@ -4,6 +4,10 @@
    # caching and startup very fast, so your users will often only see this 
    # content for a brief moment on their first app load, if at all.
 %>
-<p class="loading">Loading...<p>
+<div class="header">
+	<p><img src="<%= sc_static('images/kef_logo.png') %>" /></p>
+</div>
+
+<p class="loading"><img src="<%= sc_static('images/animated_loader.gif') %>"/>Loading... just a moment!</p>
 
 <% end %>

@@ -1,5 +1,36 @@
 /*******************/
 /* THEME OVERRIDES */
+body.sc-theme #loading {
+	background: none white;
+}
+
+#loading .header {
+	top: 0px;
+	height: 70px;
+	border-bottom: 3px solid #006600;
+	padding: 5px 10px;
+}
+
+.sc-theme #loading p.loading {
+	background-color: white;
+	color: #444444;
+	text-align:center;
+	top: 50%;
+	right: auto;
+	left: 50%;
+	margin-left:-150px;
+	width: 300px;
+	height: 200px;
+	font-size:18px;
+	font-weight:bold;
+	border: none;
+}
+
+.sc-theme #loading p.loading img {
+	margin: 0 auto 10px auto;
+	display: block;
+}
+
 .sc-theme .sc-main.sc-pane { 
 	background: white;
 	color: black;

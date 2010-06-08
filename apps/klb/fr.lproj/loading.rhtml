@@ -1,4 +1,13 @@
 <% content_for :loading do %>
-<p class="loading">Chargement...<p>
+<% # Any HTML in this file will be visible on screen while your page loads
+   # its application JavaScript.  SproutCore applications are optimized for 
+   # caching and startup very fast, so your users will often only see this 
+   # content for a brief moment on their first app load, if at all.
+%>
+<div class="header">
+	<p><img src="<%= sc_static('images/kef_logo.png') %>" /></p>
+</div>
+
+<p class="loading"><img src="<%= sc_static('images/animated_loader.gif') %>"/>Chargement... juste un moment!</p>
 
 <% end %>
