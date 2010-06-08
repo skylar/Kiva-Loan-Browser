@@ -13,7 +13,7 @@ Klb.lendingPage = SC.Page.design({
 
  mainView: SC.View.design({
 
-  childViews: 'bottombarView sidebarView resultsView'.w(),
+  childViews: 'sidebarView resultsView'.w(),
 
   defaultResponder: Klb,
       
@@ -31,13 +31,13 @@ Klb.lendingPage = SC.Page.design({
   }),
   
   sidebarView: SC.SplitView.design({
-    layout: { top: 0, left: 0, bottom: 41, width: 300 },
+    layout: { top: 0, left: 0, bottom: 0, width: 300 },
     backgroundColor: '#DDDDDD',
     layoutDirection: SC.LAYOUT_VERTICAL,
     defaultThickness: 260, // for bottom right view
     autoresizeBehavior: SC.RESIZE_TOP_LEFT,
     canCollapseViews: YES,
-    classNames: 'klb-sbv',
+    classNames: 'lendingSidebar',
 
     topLeftMinThickness: 200,
     topLeftMaxThickness: 800,
@@ -45,6 +45,7 @@ Klb.lendingPage = SC.Page.design({
     topLeftView: SC.ScrollView.design({
      	isVisible: NO,
       hasHorizontalScroller: NO, // disable horizontal scrolling
+      classNames: 'no-border',
       contentView: SC.SourceListView.design({
         // contentBinding: "TestRunner.sourceController.arrangedObjects",
         //           selectionBinding: "TestRunner.sourceController.selection",
@@ -195,7 +196,7 @@ Klb.lendingPage = SC.Page.design({
   }),
   
   resultsView: SC.SceneView.design({
-    layout: { top: 0, bottom: 41, left: 301, right: 0 },
+    layout: { top: 0, bottom: 0, left: 301, right: 0 },
     scenes: "searchListView loanDetail".w(),
     nowShowingBinding: "Klb.lendingController.currentScene"
   })
@@ -231,7 +232,6 @@ loanDetail: SC.View.design({
   }),
   
   detailView: SC.View.design({
-
      layout: { top: 31, left: 0, right: 0, bottom: 0 },
     childViews: "name picture posted statusLabel status loanAmountLabel loanAmount fundedAmountLabel fundedAmount borrowerCountLabel borrowerCount activityLabel activity sectorLabel sectorLabel sector useLabel use loanLabel loan countryLabel country partnerLabel partner".w(),
     
@@ -352,9 +352,11 @@ searchListView: SC.View.design({
   loanView: SC.ScrollView.design({
     hasHorizontalScroller: NO,
     layout: { top: 0, bottom: 41, left: 0, right: 0 },
+    classNames: 'no-border',
     backgroundColor: 'white',
 
 		contentView: SC.ListView.design({
+			classNames: 'loanListView',
 		  contentBinding: 'Klb.loansController.arrangedObjects',
 //			  selectionBinding: 'Klb.loansController.selection',
 			contentValueKey: "name",
@@ -368,7 +370,7 @@ searchListView: SC.View.design({
   loanViewBar: SC.View.design({
     layout: { bottom: 0, left: 0, right: 0, height: 40 },
 		childViews: 'resultsLabel sortLabel sortSelectView viewModeSegmentedView'.w(),
-		classNames: 'klb-chrome'.w(),
+		classNames: 'klb-chrome lendingLoanListBar'.w(),
 
 		resultsLabel: SC.LabelView.design({
 			valueBinding: 'Klb.loansController.length',

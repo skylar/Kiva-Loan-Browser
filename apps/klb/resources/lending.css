@@ -1,11 +1,27 @@
-/* for our "grid" view of buttons, left align text in the boxes */
-.sc-theme .sc-view .sc-button-view.align-left .sc-button-label {
-  text-align: left;
+/********** ITEMS LIST ***********/
+
+.sc-theme.focus .sc-collection-view.loanListView.focus .sc-collection-item.sel {
+	background-color: #ddeedd;
+	color: black;
+}
+
+body.sc-theme .sc-view.sc-gray-border.no-border {
+	border: none;
+}
+
+.lendingLoanListBar {
+	border-top: 1px solid gray;
+	background-color: #f0f0f4;
 }
 
 /****** FILTER PANE ***********/
+
+.lendingSidebar {	
+	border-right: 1px solid gray;
+}
+
 /* labels in the sidebar should be black & not wrap */
-.klb-sbv .sc-label-view, .klb-sbv .sc-checkbox-view .label {
+.lendingSidebar .sc-label-view, .lendingSidebar .sc-checkbox-view .label {
   color: black;
   white-space:nowrap;
   text-overflow: ellipsis;
@@ -17,7 +33,7 @@
 .picker-button {
  /* unfortunately, most of this fails to style the button b/c of theme override.. */
 	border: 1px solid black;
-	background-color: #fffff;
+	background-color: #ffffff;
 	padding: 5px;
 	color: gray;
 }
@@ -27,7 +43,7 @@
 .klb-header {
 	border-bottom: 2px solid #009900;
 }
-.klb-chrome { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); color: white;}
+/*.klb-chrome { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); color: white;}*/
 .klb-static-content {
 	margin: 20px auto;
 	width: 800px;
@@ -52,6 +68,11 @@
 }
 
 /****** COUNTRY PICKER PANE ***********/
+/* for our "grid" view of buttons, left align text in the boxes */
+.sc-theme .sc-view .sc-button-view.align-left .sc-button-label {
+  text-align: left;
+}
+
 .sc-theme .buttonGridView .sc-button-view.sc-regular-size.square {
 	border: 2px solid #8bc8cd;
 	background: white;
