@@ -28,7 +28,7 @@
 */
 
 Klb.DisplayTextView = SC.LabelView.extend({
-  isTextSelectable: YES,
+  isTextSelectable: YES
 });
 
 Klb.DisplayTextView.classNames = ['sc-view','sc-display-text-view'];

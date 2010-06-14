@@ -16,7 +16,7 @@ Klb.READY_LIST = SC.Responder.create({
   nextResponder: Klb.READY,
   
   /**
-    Show laoding targets view.
+    Show loading targets view.
   */
   didBecomeFirstResponder: function() {
     Klb.lendingController.set('currentScene', 'searchListView');
@@ -36,6 +36,12 @@ Klb.READY_LIST = SC.Responder.create({
   willLoseFirstResponder: function() {
     Klb.set('currentScene', null);
     //Klb.testsController.set('isShowingTests', NO);
+  },
+  
+  updateStateForResultCount: function() {
+  	if(Klb.loansController.get('length') <= 0) {
+  		Klb.makeFirstResponder(Klb.NO_LOANS);
+  	}
   }
   
 });

@@ -11,6 +11,15 @@ body.sc-theme #loading {
 	padding: 5px 10px;
 }
 
+.contentBackdrop {
+	background-color: #737167;
+}
+.contentPage {
+	-webkit-box-shadow: 5px 5px 10px #010;
+	-moz-box-shadow: 5px 5px 10px #010;
+	background-color:white;
+}
+
 .sc-theme #loading p.loading {
 	background-color: white;
 	color: #444444;

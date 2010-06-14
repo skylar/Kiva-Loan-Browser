@@ -51,6 +51,7 @@ SC.stringsFor('Français', {
   "_Groups": "Groupes",
   "_Reset": "Reset",
   "_Save": "Enregistrer",
+  "_All": "Tous",
 
 	// Countries Popup
 	"_Choose Countries":"Choisir le pays",
@@ -63,6 +64,7 @@ SC.stringsFor('Français', {
 	"_Country": "Pays",
 	"_Rating": "Note",
 	"_Needed_Out_Of":"besoin total de",
+	"_Lend $25":"Prêtez $25",
 	
 	// Countries
 	"_AFGHANISTAN":"Afghanistan",
@@ -372,6 +374,7 @@ SC.stringsFor('Français', {
 	"_Food Production/Sales":"Produits Alimentaires/Ventes",
 	"_Food Stall":"Echoppe",
 	"_Fruits and Vegetables":"Fruits et Légumes",
+	"_Fruits & Vegetables":"Fruits et Légumes",
 	"_Fuel/Firewood":"Carburant/Bois à Brûler",
 	"_Funeral Expenses":"Dépenses pour des Obsèques",
 	"_Furniture Making":"Furniture Making",
@@ -491,7 +494,7 @@ SC.stringsFor('Français', {
 	
 	// Captions
 	'_something about why to click the browse CTA':'',
-	'_Kiva. Make a loan, change a life.':'Kiva. Faites un pret, changez une vie.',
+	'_Kiva. Make a loan, change a life.':'Kiva. Faites un prêt, changez une vie.',
 	
 
 	//////////////////////////////////////////////
@@ -499,12 +502,16 @@ SC.stringsFor('Français', {
 	
 	// Headers
 	'_How Microfinance Began':'D‘où vient la micro-finance?',
-		'_What Is Kiva?':'Kiva, qu‘est-ce que c‘est?',
+	'_What Is Kiva?':'Kiva, qu‘est-ce que c‘est?',
 	'_Why Kiva en Français?':'Pourquoi Kiva en Français?',
+	'_Contact':'Contact',
+	'_Our Partners':'Nos partenaires',
 
 	// Captions
-//	'_Kiva connects people through lending to alleviate poverty.':'Kiva connects people through lending to alleviate poverty.',
-//	'_give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…':'give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…',
+	'_Kiva connects people through lending to alleviate poverty.':'Kiva connecte des personnes par des prêts et participe à réduire la pauvreté.',
+	
+	'*about_captionYunus1':'«Donnez un poisson à un homme, il mangera un jour… Apprenez-lui à pêcher, il mangera toujours.»',
+	'*about_captionYunus2':'Et s’il sait pêcher mais ne peut simplement pas s’acheter un filet?',
 	
 	'*mfHow_para_1':"Le micro-credit a été développé au Bangladesh par le professeur d'économie Muhammad Yunus, Prix Nobel de la Paix 2006.",
 	'*mfHow_para_2':"C'est l'attribution de prêts de faible montant à des porteurs de projets qui ne peuvent accéder aux prêts bancaires classiques.",
@@ -535,5 +542,5 @@ SC.stringsFor('Français', {
 	'_Re-enter your email address':'Confirmez votre adresse email',
 	'_Choose a password between 6 and 12 characters':'Choisissez un mot de passe entre 6 et 12 caractères',
 	'_Confirm the password you chose':'Confirmez le mot de passe choisi',
-	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'Si un ou une amie vous a recommandé de faire un prêt sur Kiva, merci d‘indiquer son adresse email pour que Kiva le ou la remercie!',
+	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'Si un ou une amie vous a recommandé de faire un prêt sur Kiva, merci d‘indiquer son adresse email pour que Kiva le ou la remercie!'
 }) ;

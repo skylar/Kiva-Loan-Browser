@@ -7,6 +7,6 @@
 
 Klb.lendingController = SC.ObjectController.create({
 	
-	currentScene: 'loansLoading',
+	currentScene: 'loansLoading'
 		
 });

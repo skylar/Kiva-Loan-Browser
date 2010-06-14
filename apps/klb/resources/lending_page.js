@@ -208,15 +208,33 @@ loansLoading: SC.View.design({
   childViews: "labelView".w(),
 
   labelView: SC.LabelView.design({
-    layout: { centerX: 0, centerY: 0, height: 24, width: 200 },
+    layout: { centerX: 0, centerY: 0, height: 24, width: 300 },
     textAlign: SC.ALIGN_CENTER,
     classNames: "center-label",
     controlSize: SC.LARGE_CONTROL_SIZE,
     fontWeight: SC.BOLD_WEIGHT,
-    value: "Loading Loans"
+    value: "_Finding Available Loans".loc()
   })
 }),
-  
+
+noTargets: SC.View.design({
+  childViews: "labelView sublabelView".w(),
+
+  labelView: SC.LabelView.design({
+    layout: { centerX: 0, centerY: -24, height: 24, width: 300 },
+    textAlign: SC.ALIGN_CENTER,
+    classNames: "center-label",
+    controlSize: SC.LARGE_CONTROL_SIZE,
+    fontWeight: SC.BOLD_WEIGHT,
+    value: "_No Loans Matched Your Criteria".loc()    
+  }),
+	sublabelView: SC.LabelView.design({
+	  layout: { centerX: 0, centerY: 0, height: 24, width: 400 },
+	  textAlign: SC.ALIGN_CENTER,
+	  value: "_Please choose another filter or change your filter options.".loc()    
+	})
+}),
+
 loanDetail: SC.View.design({
   childViews: "navigationView detailView".w(),
 
@@ -364,30 +382,30 @@ searchListView: SC.View.design({
 			contentValueKey: "name",
 			exampleView: Klb.LoanListingView,
 			rowHeight: 120,
-			actOnSelect: YES,
+			actOnSelect: NO,
       action: "selectLoan"
 		})
   }),
   
   loanViewBar: SC.View.design({
     layout: { bottom: 0, left: 0, right: 0, height: 40 },
-		childViews: 'resultsLabel sortLabel sortSelectView viewModeSegmentedView'.w(),
+		childViews: 'resultsLabel sortLabel sortSelectView'.w(),
 		classNames: 'klb-chrome lendingLoanListBar'.w(),
 
 		resultsLabel: SC.LabelView.design({
-			valueBinding: 'Klb.loansController.length',
+			valueBinding: 'Klb.loansController.lengthNamedForDisplay',
 		  layout: { left: 10, top: 10, width: 180, height: 24 },
 		  controlSize: SC.REGULAR_CONTROL_SIZE,
 			fontWeight: SC.BOLD_WEIGHT
 		}),
 
 		sortLabel: SC.LabelView.design({
-		  layout: { right: 220, top: 9, width: 80, height: 24 },
+		  layout: { right: 115, top: 9, width: 80, height: 24 },
 		  value: "_Sort_by".loc()
 		}),
 
 		sortSelectView: SC.SelectFieldView.design({
-		  layout: { right: 115, top: 10, width: 130, height: 24 },
+		  layout: { right: 5, top: 10, width: 130, height: 24 },
 		  nameKey: 'name',
 		  valueKey: 'value',
 		  objects: Klb.searchController.get('sortOptions'),

@@ -15,14 +15,14 @@
 Klb.Search = SC.Record.extend(
 /** @scope Klb.Search.prototype */ {
   
-  male: SC.Record.attr(Boolean),
-  female: SC.Record.attr(Boolean),
-  groups: SC.Record.attr(Boolean),
+	male: SC.Record.attr(Boolean),
+	female: SC.Record.attr(Boolean),
+	groups: SC.Record.attr(Boolean),
 	partnerRating: SC.Record.attr(Number),
 	borrowerCount: SC.Record.attr(Number),
-  queryString: SC.Record.attr(String),
-  countries: SC.Record.toMany('Klb.Country'),
-	sectors: SC.Record.attr(Array),
+	queryString: SC.Record.attr(String),
+	countries: SC.Record.toMany('Klb.Country'),
+	sectors: SC.Record.attr(Array)
   
 /*
   id:SC.Record.attr(Integer),

@@ -11,15 +11,21 @@
 */
 Klb.NO_LOANS = SC.Responder.create({
   
+  nextResponder: Klb.READY,
   /**
     Show laoding loan view.
   */
   didBecomeFirstResponder: function() {
-    Klb.set('currentScene', 'noTargets');
+    Klb.lendingController.set('currentScene', 'noTargets');
   },
   
   willLoseFirstResponder: function() {
-    Klb.set('currentScene', null);
-  }
+    Klb.lendingController.set('currentScene', null);
+  },
     
+	updateStateForResultCount: function() {
+		if(Klb.loansController.get('length') > 0) {
+			Klb.makeFirstResponder(Klb.READY_LIST);
+		}
+	}
 });

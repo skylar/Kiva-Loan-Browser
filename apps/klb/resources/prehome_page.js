@@ -13,12 +13,18 @@ Klb.prehomePage = SC.Page.design({
 
 	mainView: SC.ScrollView.design({
 		contentView: SC.View.design({
-			layout: {top:0,height:1300,right:0,left:0},
+			layout: {top:0,height:1180,right:0,left:0},
+			childViews: 'pageView'.w(),
+			classNames: 'contentBackdrop',
+
+			pageView: SC.View.design({
+			layout: {top:0,bottom:50,centerX:0,width:800},
 			childViews: 'introSlides dividerBar inFigures'.w(),
+			classNames: 'contentPage',
 			
 			introSlides: SC.View.design({
-				layout:{top:15,height:650,width:800,centerX:0},
-				childViews: 'caption slidesContent'.w(),
+				layout:{top:10,height:600,width:800,centerX:0},
+				childViews: 'slidesContent'.w(),
 				
 				caption: SC.LabelView.design({
 					layout:{top:0,height:24,centerX:0,width:760},
@@ -28,52 +34,17 @@ Klb.prehomePage = SC.Page.design({
 				}),
 
 				slidesContent: SC.View.design({
-					layout:{top:24,bottom:0,centerX:0,width:763},
+					layout:{top:0,bottom:0,centerX:0,width:734},
 					childViews: 'placeholderGraphic'.w(),
 					
 					placeholderGraphic: SC.ImageView.design({
 						value: sc_static('images/prehome-illustration.png')
 					}),
-				}),
-				
-				slidesNav: SC.View.design({
-					layout:{top:0,left:0,width:150,bottom:0},
-					classNames: 'intro-slides-nav',
-					childViews: 'one two three'.w(),
-					
-					one: SC.View.design({
-						layout:{top:0,left:0,right:0,height:50},
-						childViews: 'label'.w(),
-						backgroundColor:'gray',
-						
-						label: SC.LabelView.design({
-							layout: {top:10,left:5,right:5},
-							value: '_What_is_Microfinance?'.loc(),
-						}),
-					}),
-					two: SC.View.design({
-						childViews: 'label'.w(),
-						layout:{top:1*50,left:0,right:0,height:50},
-						
-						label: SC.LabelView.design({
-							layout: {top:10,left:5,right:5},
-							value: '_What_is_Kiva?'.loc(),
-						})
-					}),
-					three: SC.View.design({
-						childViews: 'label'.w(),
-						layout:{top:2*50,left:0,right:0,height:50},
-						
-						label: SC.LabelView.design({
-							layout: {top:10,left:5,right:5},
-							value: '_Why_Kiva_en_Français?'.loc(),
-						}),
-					}),
-				}),
+				}),				
 			}),
 			
 			dividerBar: SC.View.design({
-				layout: {top:650,height:70,centerX:0,width:800},
+				layout: {top:630,height:70,centerX:0,width:800},
 				backgroundColor: '#006600',
 				childViews: 'caption chooseCta'.w(),
 				
@@ -96,17 +67,69 @@ Klb.prehomePage = SC.Page.design({
 			}),
 			
 			inFigures: SC.View.design({
-				layout: {top:720, width:800, centerX:0},
+				layout: {top:720, width:740, centerX:0},
 				childViews:'mission figures'.w(),
 				
-				mission: SC.LabelView.design({
-					layout:{top:40, left:0, right:0, height:35},
-					value: "_The Situation".loc(),
-					controlSize: SC.LARGE_CONTROL_SIZE,
-					fontWeight: SC.BOLD_WEIGHT
+				mission: SC.View.design({
+					childViews: 'header step1 step2 step3'.w(),
+					header: SC.LabelView.design({
+						layout:{top:0, left:0, right:0, height:35},
+						value: "_The Situation".loc(),
+						controlSize: SC.LARGE_CONTROL_SIZE,
+						fontWeight: SC.BOLD_WEIGHT
+					}),
+					
+					step1: SC.View.design({
+						layout:{top:40, height:210, left:0, width:240},
+						childViews: 'diagram caption'.w(),
+						
+						diagram: SC.ImageView.design({
+							layout:{top:0, height:144, centerX:0, width:165},
+							value: sc_static('images/situation_step1.png'),
+						}),
+						caption: Klb.DisplayTextView.design({
+							layout:{bottom:0, height:50, centerX:0, width:230},
+							classNames:'situationStepCaption',
+							value: '_3 billion people live on less than $2.50 per day'.loc(),
+//							fontWeight: SC.BOLD_WEIGHT
+								textAlign:SC.ALIGN_CENTER,
+						}),
+					}),
+					step2: SC.View.design({
+						layout:{top:40, height:210, left:240, width:240},
+						childViews: 'diagram caption'.w(),
+						
+						diagram: SC.ImageView.design({
+							layout:{top:0, height:144, centerX:0, width:165},
+							value: sc_static('images/situation_step2.png'),
+						}),
+						caption: Klb.DisplayTextView.design({
+							layout:{bottom:0, height:50, centerX:0, width:230},
+							classNames:'situationStepCaption',
+							value: '_Half of these people run small businesses in need of a loan'.loc(),
+//							fontWeight: SC.BOLD_WEIGHT
+								textAlign:SC.ALIGN_CENTER,
+						}),
+					}),
+					step3: SC.View.design({
+						layout:{top:40, height:210, left:480, width:240},
+						childViews: 'diagram caption'.w(),
+						
+						diagram: SC.ImageView.design({
+							layout:{top:0, height:144, centerX:0, width:165},
+							value: sc_static('images/situation_step3.png'),
+						}),
+						caption: Klb.DisplayTextView.design({
+							layout:{bottom:0, height:50, centerX:0, width:200},
+							classNames:'situationStepCaption',
+							value: '_Today there are enough loans to help only 10%'.loc(),
+//							fontWeight: SC.BOLD_WEIGHT
+								textAlign:SC.ALIGN_CENTER,
+						}),
+					}),
 				}),
 				figures: SC.View.design({
-						layout: {top:200,left:0,right:0},
+						layout: {top:280,left:0,right:0},
 						childViews: 'header data1 data2 data3 data4'.w(),
 						
 						header: Klb.DisplayTextView.design({
@@ -117,7 +140,7 @@ Klb.prehomePage = SC.Page.design({
 						}),
 						
 						data1: SC.View.design({
-							layout:{top:30,height:100,right:175,width:175},
+							layout:{top:40,height:100,right:140,width:175},
 							childViews: 'figure label'.w(),
 							classNames: 'dataFigureHolder',
 							
@@ -138,7 +161,7 @@ Klb.prehomePage = SC.Page.design({
 						}),
 
 						data2: SC.View.design({
-							layout:{top:30,height:100,right:0,width:175},
+							layout:{top:40,height:100,right:0,width:175},
 							childViews: 'figure label'.w(),
 							classNames: 'dataFigureHolder',
 							
@@ -159,7 +182,7 @@ Klb.prehomePage = SC.Page.design({
 						}),
 						
 						data3: SC.View.design({
-							layout:{top:30,height:100,left:0,width:200},
+							layout:{top:40,height:100,left:0,width:200},
 							childViews: 'figure label'.w(),
 							classNames: 'dataFigureHolder',
 							
@@ -180,7 +203,7 @@ Klb.prehomePage = SC.Page.design({
 						}),
 
 						data4: SC.View.design({
-							layout:{top:30,height:100,left:200,width:300},
+							layout:{top:40,height:100,left:200,width:230},
 							childViews: 'figure label'.w(),
 							classNames: 'dataFigureHolder',
 							
@@ -202,7 +225,7 @@ Klb.prehomePage = SC.Page.design({
 				}),
 			
 			}),		
-		}),
+		}),}),
 	}),
 });
 

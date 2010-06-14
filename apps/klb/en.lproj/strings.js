@@ -25,12 +25,10 @@ SC.stringsFor('English', {
 	"_Learn_More": "Learn More",
 	"_Register": "Register",
 	"_Demo": "Demo",
-	
-	// Pre-home
-	"_Kiva. Make a loan, change a life.":"Kiva. Make a loan, change a life.",
-	
+		
 	//// Chrome
 	"_Checkout": "Checkout",
+
 	// sort drop down
 	"_Sort_by": "Sort by",
 	"_Loan_Amount": "Loan Amount",
@@ -55,6 +53,7 @@ SC.stringsFor('English', {
   "_Groups": "Groups",
   "_Reset": "Reset",
   "_Save": "Save",
+  "_All": "All",
 
 	// Countries Popup
 	"_Choose Countries":"Choose Countries",
@@ -62,11 +61,20 @@ SC.stringsFor('English', {
 	// Sectors Popup
 	"_Choose Sectors":"Choose Sectors",
 	
+	// Results area
+	"_loans found":"loans found",
+	"_loan found":"loan found",
+
+	"_Finding Available Loans":"Finding Available Loans",
+	"_No Loans Matched Your Criteria":"No Loans Matched Your Criteria",
+	"_Please choose another filter or change your filter options.":"Please choose another filter or change your filter options.",
+	
 	//loan_list_item"
 	"_Loan_Use":"Loan Use",
 	"_Country": "Country",
 	"_Rating": "Rating",
 	"_Needed_Out_Of":"needed out of",
+	"_Lend $25":"Lend $25",
 	
 	// Countries
 	"_AFGHANISTAN":"Afghanistan",
@@ -496,6 +504,10 @@ SC.stringsFor('English', {
 	// Captions
 	'_something about why to click the browse CTA':'',
 	'_Kiva. Make a loan, change a life.':'Kiva. Make a loan, change a life.',
+
+	'_3 billion people live on less than $2.50 per day':'3 billion people live on less than $2.50 per day',
+	'_Half of these people run small businesses in need of a loan':'Half of these people run small businesses in need of a loan',
+	'_Today there are enough loans to help only 10%':'Today there are enough loans to help only 10%',
 	
 	//////////////////////////////////////////////
 	// ABOUT
@@ -504,10 +516,13 @@ SC.stringsFor('English', {
 	'_How Microfinance Began':'How Microfinance Began',
 	'_What Is Kiva?':'What Is Kiva?',
 	'_Why Kiva en Français?':'Why Kiva en Français?',
+	'_Contact':'Contact',
+	'_Our Partners':'Our Partners',
 
 	// Captions
 	'_Kiva connects people through lending to alleviate poverty.':'Kiva connects people through lending to alleviate poverty.',
-	'_give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…':'give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…',
+	'*about_captionYunus1':'“Give a man a fish, you feed him for a day… Teach a man to fish and you feed him for a lifetime.”',
+	'*about_captionYunus2':'But, what if he can‘t afford a net?',
 
 	'*mfHow_para_1':"Microfinance was developed in Bangladesh by economics professor Muhammad Yunus, recipient of the 2006 Nobel Peace Prize.",
 	'*mfHow_para_2':"The concept is to make small loans available to entrepreneurs who are not able to access loans from traditional banks.",
@@ -521,6 +536,6 @@ SC.stringsFor('English', {
 
 	'*kefWhy_para_1':"The idea is to promote microfinance thanks to the fancophile community, creating a website in French allowing the selection of projects to finance on Kiva",
 	'*kefWhy_para_2':"The creators of the french website are friends and alumni of Kiva who wish to share their enthusiasm.",
-	'*kefWhy_para_3':"Once you select the rpojects you wish to support, your loan is finalized on the Kiva website.",
+	'*kefWhy_para_3':"Once you select the rpojects you wish to support, your loan is finalized on the Kiva website."
 
 }) ;

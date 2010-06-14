@@ -89,14 +89,14 @@ Klb.searchController = SC.ObjectController.create({
     var countries = this.get('selectedCountries'),
         len = countries.get('length');
         
-    return len === 0 ? 'All' : countries.mapProperty('name').sort().join(', ');
+    return len === 0 ? '_All'.loc() : countries.mapProperty('name').sort().join(', ');
   }.property('selectedCountries').cacheable(),
 
 	formattedSectors: function() {
 	  var sectors = this.get('selectedSectors'),
 	      len = sectors.get('length');
 	      
-	  return len === 0 ? 'All' : sectors.mapProperty('name').sort().join(', ');
+	  return len === 0 ? '_All'.loc() : sectors.mapProperty('name').sort().join(', ');
 	}.property('availableSectors').cacheable(),
 	
 ///////////////////////////////////////
@@ -142,7 +142,8 @@ Klb.searchController = SC.ObjectController.create({
 		
 	// for now, we wait until we have partner data to load activate the display
 		if(this.get('availablePartners').get('length') > 0) {
-			Klb.lendingController.set('currentScene','searchListView');
+		//	Klb.lendingController.set('currentScene','searchListView');
+			Klb.makeFirstResponder(Klb.READY_LIST);
 		}
 	}.observes('*availablePartners.length'), // something not quite right w/ this
 	
@@ -179,5 +180,38 @@ Klb.searchController = SC.ObjectController.create({
 		console.log("PICKED SECTOR COUNT: " + this.get('selectedSectors').get('length'));
 		this.notifyPropertyChange('query');
 		this.notifyPropertyChange('formattedSectors');
-	},		
+	},
+	
+	lendNow: function(context) {
+//		console.log(context);
+		var loanId = context.parentView.get('content').get('id'), 
+			form, loansInput, donationInput, appIdInput;
+		
+		// consider the user a repeat visitor at this point...
+		Klb.mainController.setPrehomeBypassCookie();
+		
+		form = document.createElement('FORM');
+		form.setAttribute('action','http://www.kiva.org/basket/set/');
+		form.setAttribute('method','post');
+		form.setAttribute('id','kivaBasketPostForm');
+		form.setAttribute('target','_kivaBasketFrame');
+		
+		loansInput = document.createElement('INPUT');
+		loansInput.setAttribute('name','loans');
+		loansInput.setAttribute('value','[{"id":' + loanId + ', "amount":25}]');
+
+		donationInput = document.createElement('INPUT');
+		donationInput.setAttribute('name','donation');
+		donationInput.setAttribute('value','2.5');
+		
+		appIdInput = document.createElement('INPUT');
+		appIdInput.setAttribute('name','app_id');
+		appIdInput.setAttribute('value','org.kivaenfrancais');
+		
+		form.appendChild(loansInput);
+		form.appendChild(donationInput);
+		form.appendChild(appIdInput);
+		
+		form.submit();
+	}
 });

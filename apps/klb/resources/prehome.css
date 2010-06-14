@@ -12,6 +12,13 @@
 	line-height:25px;
 }
 
+.sc-label-view.sc-regular-size.situationStepCaption {
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'Impact',sans-serif;
+	line-height:24px;
+}
+
 .sc-button-view.sc-large-size.square.ctaButton {
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;

@@ -16,13 +16,22 @@ Klb.aboutPage = SC.Page.design({
 		layout: {top:0,bottom:0,left:0,right:0},
 		
 		contentView: SC.View.design({
-			layout: {centerX:0,width:800,top:0,height:1700},
-			childViews: 'mfHow sep1 kivaWhat sep2 kefWhy'.w(),
-			classNames: 'aboutSection',
+			layout: {left:0,right:0,top:0,height:2300},
+			childViews: 'pageView'.w(),
+			classNames: 'contentBackdrop',
+
+			pageView: SC.View.design({
+			layout: {top:0,bottom:50,centerX:0,width:800},
+			childViews: 'pageContent'.w(),
+			classNames: 'contentPage aboutSection'.w(),
+			
+			pageContent: SC.View.design({
+			layout: {top:20,bottom:20,left:30,right:30},
+			childViews: 'mfHow sep1 kivaWhat sep2 kefWhy sep3 contacts sep4 partners'.w(),
 			
 			mfHow: SC.View.design({
-				layout: {top:20,height:500,left:0,right:0},
-				childViews: 'title content'.w(),
+				layout: {top:20,height:640,left:0,right:0},
+				childViews: 'title photo content'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
@@ -30,44 +39,52 @@ Klb.aboutPage = SC.Page.design({
 					classNames: 'aboutSectionHeader',
 					fontWeight: SC.BOLD_WEIGHT,
 				}),
+
+				photo: SC.ImageView.design({
+					layout: {top:20,height:507,right:0,width:400},
+					value: sc_static('images/muhammad_yunus.jpg'),
+				}),
+				
 				content: SC.View.design({
 					layout: {top:40,left:0,right:0},
-					childViews: 'detailText caption photo'.w(),
+					childViews: 'detailText caption1 caption2'.w(),
 					
 					detailText: SC.View.design({
-						layout: {top:0,left:0,width:400},
+						layout: {top:0,left:0,width:300},
 						childViews: 'para1 para2 para3 para4'.w(),
 						
 						para1: Klb.DisplayTextView.design({
-							layout: {top:70*0}, value: '*mfHow_para_1'.loc() }),
+							layout: {top:90*0}, value: '*mfHow_para_1'.loc() }),
 						para2: Klb.DisplayTextView.design({
-							layout: {top:70*1}, value: '*mfHow_para_2'.loc() }),
+							layout: {top:90*1}, value: '*mfHow_para_2'.loc() }),
 						para3: Klb.DisplayTextView.design({
-							layout: {top:70*2}, value: '*mfHow_para_3'.loc() }),
+							layout: {top:90*2}, value: '*mfHow_para_3'.loc() }),
 						para4: Klb.DisplayTextView.design({
-							layout: {top:70*3}, value: '*mfHow_para_4'.loc() }),							
+							layout: {top:90*3+20}, value: '*mfHow_para_4'.loc() }),							
 					}),
 					
-					photo: SC.ImageView.design({
-						layout: {top:0,height:400,left:450,width:350},
-						value: sc_static('images/yunus_headshot.jpg'),
-					}),
-					
-					caption: Klb.DisplayTextView.design({
-						layout: {top:280,height:80,left:0,width:400},
+					caption1: Klb.DisplayTextView.design({
+						layout: {top:390,height:100,left:0,width:300},
 						classNames: 'caption',
-						value: '_give a man a fish, you feed him for a day; teach a man to fish and you feed him for a lifetime…'.loc(),
+						value: '*about_captionYunus1'.loc(),
 					}),					
+
+					caption2: Klb.DisplayTextView.design({
+						layout: {top:510,height:80,left:0,width:300},
+						classNames: 'caption',
+						value: '*about_captionYunus2'.loc(),
+					}),					
+					
 				}),
 			}),
 			
 			sep1: SC.View.design({
-				layout: {top:490,height:25,centerX:0,width:680},
+				layout: {top:620,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 				
 			kivaWhat: SC.View.design({
-				layout: {top:550,left:0,right:0},
+				layout: {top:680,left:0,right:0},
 				childViews: 'title content'.w(),
 				
 				title: Klb.DisplayTextView.design({
@@ -81,11 +98,11 @@ Klb.aboutPage = SC.Page.design({
 					childViews: 'infographic detailText caption graphicBox'.w(),
 					
 					infographic: SC.View.design({
-						layout:{top:0,height:460,centerX:0,width:763},
+						layout:{top:0,height:430,centerX:0,width:763},
 						childViews: 'clipview'.w(),
 										
 						clipview: SC.ImageView.design({
-							layout:{top:0,height:591,centerX:0,width:763},
+							layout:{top:-35,height:591,centerX:0,width:763},
 							value: sc_static('images/prehome-illustration.png'),
 						})
 					}),
@@ -111,7 +128,7 @@ Klb.aboutPage = SC.Page.design({
 					}),
 					
 					graphicBox: SC.View.design({
-						layout: {top:490,left:450,width:350},
+						layout: {top:490,right:0,width:350},
 						childViews: 'logo data1 data2 data3 data4'.w(),
 						
 						logo: SC.ImageView.design({
@@ -208,12 +225,12 @@ Klb.aboutPage = SC.Page.design({
 			}),
 			
 			sep2: SC.View.design({
-				layout: {top:1400,height:25,centerX:0,width:680},
+				layout: {top:1550,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 			
 			kefWhy: SC.View.design({
-				layout: {top:1450,left:0,right:0},
+				layout: {top:1600,left:0,right:0},
 				childViews: 'title content'.w(),
 				
 				title: Klb.DisplayTextView.design({
@@ -239,13 +256,63 @@ Klb.aboutPage = SC.Page.design({
 					}),
 					
 					logo: SC.ImageView.design({
-						layout: {top:14,height:70*2,left:20,width:120*2},
+						layout: {top:14,height:70*1.7,left:30,width:120*1.7},
 						value: sc_static('images/kef_logo.png'),
 					}),
 				}),
 			}),
 			
-		}),
+			sep3: SC.View.design({
+				layout: {top:1815,height:25,centerX:0,width:680},
+				classNames: 'separator',
+			}),
+			
+			contacts: SC.View.design({
+				layout: {top:1865,left:0,right:0},
+				childViews: 'title addresses'.w(),
+				
+				title: Klb.DisplayTextView.design({
+					layout: {top:0,height:30,left:0,right:0},
+					value: '_Contact'.loc(),
+					classNames: 'aboutSectionHeader',
+					fontWeight: SC.BOLD_WEIGHT,
+				}),
+				addresses: Klb.DisplayTextView.design({
+					layout: {top:40,height:30,left:0,right:0},
+					value: 'info@kivaenfrancais.org'.loc(),
+				}),
+			}),
+
+			sep4: SC.View.design({
+				layout: {top:1940,height:25,centerX:0,width:680},
+				classNames: 'separator',
+			}),
+			
+			partners: SC.View.design({
+				layout: {top:1980,left:0,right:0},
+				childViews: 'title logo1 logo2 logo3'.w(),
+				
+				title: Klb.DisplayTextView.design({
+					layout: {top:0,height:30,left:0,right:0},
+					value: '_Our Partners'.loc(),
+					classNames: 'aboutSectionHeader',
+					fontWeight: SC.BOLD_WEIGHT,
+				}),
+				logo1: SC.ImageView.design({
+					layout: {top:50,height:53,centerX:0,width:449},
+					value: sc_static('partner_danoneCommunities.png'),
+				}),
+				logo2: SC.ImageView.design({
+					layout: {top:115,height:81,left:120,width:183},
+					value: sc_static('partner_laser.png'),
+				}),
+				logo3: SC.ImageView.design({
+					layout: {top:120,height:70,right:120,width:224},
+					value: sc_static('partner_greenwichConsulting.png'),
+				}),
+			}),
+		
+		}),}),}),
 	}),
 });
 

@@ -37,8 +37,16 @@ Klb.loansController = SC.ArrayController.create(
         recordType: Klb.Loan,
         conditions: q.conditions,
         parameters: q.parameters,
-        orderBy: q.orderBy })));
+        orderBy: q.orderBy })));      
     }
-  }.observes('Klb.searchController.query')
+  }.observes('Klb.searchController.query'),
   
+	searchResultsCountDidChange: function() {
+		Klb.sendAction('updateStateForResultCount', this, null);
+	}.observes('Klb.loansController.length'),
+	
+	lengthNamedForDisplay: function() {
+		return this.get('length') + ' ' + '_loans found'.loc();
+	}.property('length').cacheable(),
+	
 });

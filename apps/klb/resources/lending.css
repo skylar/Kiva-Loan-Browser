@@ -1,3 +1,19 @@
+/********** GENERAL ***********/
+.sc-theme .sc-button-view.picker-button {
+ /* unfortunately, most of this fails to style the button b/c of theme override.. */
+	border: 1px solid gray;
+	background-color: #ffffff;
+	color: #656565;
+	font-size:11px;
+}
+.sc-theme .sc-button-view.picker-button.active {
+	color: white;
+	background-color:#656565;
+}
+.picker-button.sc-button-view label {
+	line-height: 18px;
+}
+
 /********** ITEMS LIST ***********/
 
 .sc-theme.focus .sc-collection-view.loanListView.focus .sc-collection-item.sel {
@@ -12,6 +28,15 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 .lendingLoanListBar {
 	border-top: 1px solid gray;
 	background-color: #f0f0f4;
+}
+
+.sc-theme .sc-button-view.picker-button.lendButton {
+	color: white;
+	background-color:#009900;
+	border:1px solid #003300;
+}
+.sc-theme .sc-button-view.picker-button.active.lendButton {
+	background-color:#005500;
 }
 
 /****** FILTER PANE ***********/
@@ -29,20 +54,6 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 /* custom header size for Filter pane subheaders */
 .filter-subheader.sc-large-size  {
   font-size: 14px;
-}
-.sc-theme .sc-button-view.picker-button {
- /* unfortunately, most of this fails to style the button b/c of theme override.. */
-	border: 1px solid gray;
-	background-color: #ffffff;
-	color: #656565;
-	font-size:11px;
-}
-.sc-theme .sc-button-view.picker-button.active {
-	color: white;
-	background-color:#656565;
-}
-.picker-button.sc-button-view label {
-	line-height: 18px;
 }
 
 .sc-split-divider-view {

@@ -36,5 +36,5 @@ Klb.RegSidebarView = SC.View.extend({
 				.begin('li').push('_Confirm the password you chose'.loc()).end()
 				.begin('li').push('_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!'.loc()).end()
 			.end();
-		},
+		}
 });

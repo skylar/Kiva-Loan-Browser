@@ -28,6 +28,6 @@ Klb.Partner = SC.Record.extend(
 	delinquency_rate:SC.Record.attr(Number),
 	default_rate:SC.Record.attr(Number),
 	amount_raised:SC.Record.attr(Number,{key:'total_amount_raised'}),
-	loans_posted:SC.Record.attr(Number),
+	loans_posted:SC.Record.attr(Number)
 	
 }) ;

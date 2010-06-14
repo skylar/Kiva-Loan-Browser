@@ -6,6 +6,6 @@ Klb.WebView = SC.WebView.extend({
 	    SC.Event.add(f, 'load', this, this.iframeDidLoad);
 	  },
 	  
-	iframeDidLoad: function() {},
+	iframeDidLoad: function() {}
 	
 });

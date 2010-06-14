@@ -1,10 +1,21 @@
 /*globals Klb */
 
 Klb.LoanListingView = SC.ListItemView.extend({
-    
+  
+  childViews: 'lendButton'.w(),
+  
+  lendButton: SC.ButtonView.design({
+  	layout:{bottom:15,height:20,right:10,width:65},
+  	title:'_Lend $25'.loc(),
+		action: "lendNow",
+		target: "Klb.searchController",
+		classNames: 'picker-button lendButton'.w(),
+		controlSize: SC.SMALL_CONTROL_SIZE,
+		titleMinWidth: 40
+  }),
+  
   render: function(context, firstTime) {
-    var content = this.get('content'),
-        percentage;
+    var content = this.get('content'),percentage,rating,ratingContext,fullStars,emptyStars,remainder,k;
     
     // photo
     context
@@ -12,7 +23,8 @@ Klb.LoanListingView = SC.ListItemView.extend({
         .addClass('sc-view')
         .addStyle({
           top: 10, left: 10, width: 100, height: 100,
-          backgroundImage: 'url(http://www.kiva.org/img/200/' + content.get('image').id + '.jpg)',
+          'backgroundColor':'#dddddd',
+          backgroundImage: 'url(http://www.kiva.org/img/w200h200/' + content.get('image').id + '.jpg)',
           '-moz-background-size': 'cover',
           '-webkit-background-size': 'cover',
           '-moz-border-radius': 6,
@@ -40,7 +52,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ left: 120, top: 60, height: 18 })
+        .addStyle({ left: 120, top: 60, height: 18, right:180 })
         .push('<span style="font-weight: bold;">','_Loan_Use'.loc(),': </span>', content.get('use'))
       .end();
       
@@ -48,10 +60,10 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ left: 120, top: 78, height: 24 })
+        .addStyle({ left: 120, width: 230, top: 78, height: 24 })
         .begin('div')
         	.addStyle({
-        		background: 'url(' + content.get('country').iconBySize(24)+ ') no-repeat',
+        		background: 'url(' + content.get('country').iconBySize(24)+ ') no-repeat'
         	})
         	.push('<div style="padding:5px 0 3px 30px">',
         	content.get('country').get('name'),'</div>')
@@ -59,18 +71,46 @@ Klb.LoanListingView = SC.ListItemView.extend({
       .end();
 
     // rating
-    context
-      .begin('div')
-        .addClass('sc-view')
-        .addStyle({ left: 120+250, top: 83, height: 18 })
-        .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>',  content.get('partner').get('rating'))
-      .end();
+		ratingContext = context
+		  .begin('div')
+		    .addClass('sc-view')
+		    .addStyle({ left: 120+240, width:50+(17*5), top: 83, height: 18 })
+		    .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>');
+
+    rating = content.get('partner').get('rating');
+    fullStars = Math.floor(rating);
+    remainder = rating - fullStars;
+    emptyStars = 5 - fullStars;
+    
+    for(k=0;k<fullStars;k++) {
+    	ratingContext.begin('div').addClass('sc-view')
+    		.addStyle({left:50 + (k*17),width:17,bottom:0,height:17,
+    			border:'0px',
+    			backgroundImage:'url('+Klb.imageByName('images/ratingStar_full.png')+')'})
+    	.end();
+    }
+		if(remainder*10 > 5.4) {
+			ratingContext.begin('div').addClass('sc-view')
+				.addStyle({left:50 + fullStars*17,width:17,bottom:0,height:17,
+    			border:'0px',
+					backgroundImage:'url('+Klb.imageByName('images/ratingStar_half.png')+')'})
+			.end();
+			fullStars++;
+		}
+		for(k=0;k<emptyStars;k++) {
+			ratingContext.begin('div').addClass('sc-view')
+				.addStyle({left:50+(fullStars+k)*17,width:17,bottom:0,height:17,
+    			border:'0px',
+					backgroundImage:'url('+Klb.imageByName('images/ratingStar_empty.png')+')'})
+			.end();
+		}
+    ratingContext.end();
     
     // remaining amount  
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ right: 10, top: 31, height: 34, width: 150, fontSize: '24px', textAlign: 'right' })
+        .addStyle({ right: 10, top: 10, height: 34, width: 150, fontSize: '24px', textAlign: 'right' })
         .push('$', content.get('remainingAmount'))
       .end();
       
@@ -78,7 +118,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ right: 10, top: 63, height: 18, width: 150, textAlign: 'right' })
+        .addStyle({ right: 10, top: 43, height: 18, width: 150, textAlign: 'right' })
         .push('_Needed_Out_Of'.loc(),' ','$', content.get('loanAmount'))
       .end();
   
@@ -87,12 +127,13 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ right: 10, top: 83, height: 6, width: 75, border: '1px solid #009500', backgroundColor: '#ffffff' })
+        .addStyle({ right: 10, top: 63, height: 6, width: 75, border: '1px solid #009500', backgroundColor: '#ffffff' })
         .begin('div')
           .addStyle({ position: 'relative', width: percentage, height: '100%', background: '#0f0' })
         .end()
       .end();
-      
+  	
+  	return this.renderChildViews(context,YES);
   }
   
 });

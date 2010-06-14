@@ -21,6 +21,8 @@ Klb.READY = SC.Responder.create({
     
     if (loan) Klb.makeFirstResponder(Klb.READY_DETAIL);
     else Klb.makeFirstResponder(Klb.READY_LIST);
+
+	return null;
   },
   
   back: function() {
