@@ -20,7 +20,7 @@ Klb.GridView = SC.View.extend({
 	    margin = 0,
 	    left = margin,
 	    top = margin,
-	    width = 190,
+	    width = 180,
 	    maxWidth = this.get('frame').width,
 	    i, item, country;
 		  

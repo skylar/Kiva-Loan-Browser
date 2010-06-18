@@ -269,7 +269,7 @@ Klb.aboutPage = SC.Page.design({
 			
 			contacts: SC.View.design({
 				layout: {top:1865,left:0,right:0},
-				childViews: 'title addresses'.w(),
+				childViews: 'title email twitter'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
@@ -277,19 +277,25 @@ Klb.aboutPage = SC.Page.design({
 					classNames: 'aboutSectionHeader',
 					fontWeight: SC.BOLD_WEIGHT,
 				}),
-				addresses: Klb.DisplayTextView.design({
-					layout: {top:40,height:30,left:0,right:0},
-					value: 'info@kivaenfrancais.org'.loc(),
+				email: Klb.DisplayTextView.design({
+					layout: {top:40,height:30,left:10,right:0},
+					escapeHTML:NO,
+					value: 'Email: <a href="mailto:info@kivaenfrancais.org">info@kivaenfrancais.org</a>'.loc(),
+				}),
+				twitter: Klb.DisplayTextView.design({
+					layout: {top:40,height:30,left:300,right:0},
+					escapeHTML:NO,
+					value: 'Twitter: <a href="http://twitter.com/kivaenfrancais" target="_blank">@kivaenfrancais</a>'.loc(),
 				}),
 			}),
 
 			sep4: SC.View.design({
-				layout: {top:1940,height:25,centerX:0,width:680},
+				layout: {top:1930,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 			
 			partners: SC.View.design({
-				layout: {top:1980,left:0,right:0},
+				layout: {top:1970,left:0,right:0},
 				childViews: 'title logo1 logo2 logo3'.w(),
 				
 				title: Klb.DisplayTextView.design({

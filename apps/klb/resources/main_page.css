@@ -4,6 +4,10 @@ body.sc-theme #loading {
 	background: none white;
 }
 
+.kef-branded-font,.tk-museo-slab{
+font-weight:500;
+}
+
 #loading .header {
 	top: 0px;
 	height: 70px;
@@ -47,6 +51,11 @@ body.sc-theme #loading {
 
 /*********************************************/
 /* HEADER */
+
+.simulatedLogoButton {
+	cursor:pointer;
+}
+
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment,
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment .sc-button-inner,
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment label,
@@ -83,6 +92,7 @@ body.sc-theme #loading {
 	color: #006600;
 	font-size: 16px;
 	text-shadow: none;
+	cursor:pointer;
 }
 
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment,

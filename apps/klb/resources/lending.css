@@ -34,6 +34,7 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 	color: white;
 	background-color:#009900;
 	border:1px solid #003300;
+	font-size: 14px;
 }
 .sc-theme .sc-button-view.picker-button.active.lendButton {
 	background-color:#005500;
@@ -96,7 +97,7 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 	border: 2px solid #8bc8cd;
 	background: white;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 13px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	max-height:30px;

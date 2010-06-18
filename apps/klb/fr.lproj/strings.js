@@ -21,10 +21,12 @@ SC.stringsFor('Français', {
 	
 	//// Primary Sections
 	"_About": "À Propos",
-	"_Choose_A_Loan": "Choisir un Projet",
+	"_Projects": "Projets",
 	"_Learn_More": "En Savoir Plus",
 	"_Register": "S'inscrire",
 	"_Demo": "Demo",
+
+	"_Choose_A_Loan": "Choisir un Projet",
 	
 	//// Chrome
 	"_Checkout": "Finaliser",
@@ -36,7 +38,15 @@ SC.stringsFor('Français', {
 	"_Most_Recent": "Les plus récents",
 	"_List_Grid":"Liste Grille",
 	"_List":"Liste",
+
 	/// Sidebar
+	'_Getting Started':'Commencer',
+	'_Browse All Loans':'Tous les prêts',
+	'_Sample Filters':'Exemples de filtres',
+	'_African Farmers':'Fermiers africains',
+	'_Group Loans in South Asia':'Prêts à des groupes d‘Asie du Sud-Est',
+	'_Francophone Countries':'Pays Francophones',
+
 	"_Filter Options":"Recherche Avancée",
 	"_Search": "Recherche",
   "_Countries": "Pays",
@@ -58,6 +68,14 @@ SC.stringsFor('Français', {
 
 	// Sectors Popup
 	"_Choose Sectors":"Choisir un secteur",
+
+	// Results area
+	"_loans found":"prêts trouvés",
+	"_loan found":"prêt trouvé",
+
+	"_Finding Available Loans":"Recherche des prêts en cours",
+	"_No Loans Matched Your Criteria":"Aucun prêt ne correspond à ces criteres",
+	"_Please choose another filter or change your filter options.":"Choisissez d‘autres filtres svp",
 	
 	//loan_list item"
 	"_Loan_Use":"But",
@@ -282,7 +300,7 @@ SC.stringsFor('Français', {
 	"_SYRIAN_ARAB REPUBLIC":"Syrie",
 	"_TAIWAN,_PROVINCE OF CHINA":"Taïwan",
 	"_TAJIKISTAN":"Tadjikistan",
-	"_TANZANIA,_UNITED REPUBLIC OF":"Tanzanie",
+	"_TANZANIA,_UNITED_REPUBLIC_OF":"Tanzanie",
 	"_THAILAND":"Thaïlande",
 	"_TIMOR-LESTE":"Timor-Leste",
 	"_TOGO":"Togo",
@@ -504,8 +522,14 @@ SC.stringsFor('Français', {
 	'_How Microfinance Began':'D‘où vient la micro-finance?',
 	'_What Is Kiva?':'Kiva, qu‘est-ce que c‘est?',
 	'_Why Kiva en Français?':'Pourquoi Kiva en Français?',
-	'_Contact':'Contact',
+	'_Contact':'Nous contacter',
 	'_Our Partners':'Nos partenaires',
+
+	// Figures
+	'_in loans':'prêtés',
+	'_entrepreneurs helped':'entrepreneurs aidés',
+	'_countries':'pays',
+	'_partners':'partenaires',
 
 	// Captions
 	'_Kiva connects people through lending to alleviate poverty.':'Kiva connecte des personnes par des prêts et participe à réduire la pauvreté.',
@@ -530,9 +554,10 @@ SC.stringsFor('Français', {
 	//////////////////////////////////////////////
 	// REGISTER
 	
-	'*reg_disclaimer_text1':'Pour valider votre investissement, vous devez avoir un compte d’utilisateur Kiva. Ce processus est en anglais mais un accompagnement en français est à votre disposition à gauche de l’écran. Une fois votre compte ouvert, vous serez redirigé sur kiva.org pour compléter votre paiement.',
+	'*reg_disclaimer_text1':'Pour valider votre prêt, vous devez avoir un compte d’utilisateur Kiva. Ce processus est en anglais mais un accompagnement en français est à votre disposition à gauche de l’écran. Une fois votre compte ouvert, vous serez redirigé sur kiva.org pour compléter le paiement.',
 	'*reg_disclaimer_text2':'Si vous possédez déjà un compte kiva, vous serez redirigé sur le site kiva.org où vous pourrez vous connecter à votre compte pour compléter votre paiement.',
 	
+	'_Loading Kiva Website':'Le site de Kiva est en cours de chargement…',
 	'_Help':'Aide',
 	'_Use of the english site':'Utilisation du site en anglais',
 	

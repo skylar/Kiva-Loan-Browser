@@ -34,25 +34,28 @@ Klb.lendingPage = SC.Page.design({
     layout: { top: 0, left: 0, bottom: 0, width: 300 },
     backgroundColor: '#DDDDDD',
     layoutDirection: SC.LAYOUT_VERTICAL,
-    defaultThickness: 260, // for bottom right view
+    defaultThickness: 230, // for bottom right view
     autoresizeBehavior: SC.RESIZE_TOP_LEFT,
     canCollapseViews: YES,
     classNames: 'lendingSidebar',
 
     topLeftMinThickness: 200,
     topLeftMaxThickness: 800,
-    
+   
     topLeftView: SC.ScrollView.design({
      	isVisible: NO,
       hasHorizontalScroller: NO, // disable horizontal scrolling
       classNames: 'no-border',
       contentView: SC.SourceListView.design({
-        // contentBinding: "TestRunner.sourceController.arrangedObjects",
-        //           selectionBinding: "TestRunner.sourceController.selection",
-        //           contentValueKey: "displayName",
-                  hasContentIcon: YES
-        // contentIconKey:  "targetIcon",
-        
+        contentBinding: 'Klb.filtersController.arrangedObjects',
+        selectionBinding: 'Klb.filtersController.selection',
+        contentValueKey: 'title',
+        actOnSelect: YES,
+        action: 'selectSidebarItem',
+        target: 'Klb.searchController',
+        selectionDelegate: Klb.filtersController,
+        // hasContentIcon: NO
+        // contentIconKey:  "targetIcon",        
         // action: 'selectTarget'
       })
     }),
@@ -60,10 +63,8 @@ Klb.lendingPage = SC.Page.design({
     dividerView: SC.SplitDividerView,
     
     bottomRightView: SC.View.design({
-      childViews: 'filterTitle searchField genderLabel femaleCheckbox maleCheckbox groupCheckbox locationLabel locationContent locationButton sectorLabel sectorContent sectorButton resetButton saveButton'.w(),
+      childViews: 'filterTitle searchField genderLabel femaleCheckbox maleCheckbox groupCheckbox locationLabel locationContent locationButton sectorLabel sectorContent sectorButton'.w(),
 
-// partnerLabel partnerSlider partnerContent borrowerLabel borrowerSlider borrowerContent         
-// genderLabel sectorLabel groupsLabel resetButton saveButton
       filterTitle: SC.LabelView.design({
 			  layout: { left: 5, top: 5, right: 5, height: 32 },
 			  value: "_Filter Options".loc(),
@@ -382,7 +383,7 @@ searchListView: SC.View.design({
 			contentValueKey: "name",
 			exampleView: Klb.LoanListingView,
 			rowHeight: 120,
-			actOnSelect: NO,
+			actOnSelect: YES,
       action: "selectLoan"
 		})
   }),
@@ -391,6 +392,7 @@ searchListView: SC.View.design({
     layout: { bottom: 0, left: 0, right: 0, height: 40 },
 		childViews: 'resultsLabel sortLabel sortSelectView'.w(),
 		classNames: 'klb-chrome lendingLoanListBar'.w(),
+		layerId:'id-lendingLoanListBar',
 
 		resultsLabel: SC.LabelView.design({
 			valueBinding: 'Klb.loansController.lengthNamedForDisplay',

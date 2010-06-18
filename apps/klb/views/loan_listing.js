@@ -5,7 +5,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
   childViews: 'lendButton'.w(),
   
   lendButton: SC.ButtonView.design({
-  	layout:{bottom:15,height:20,right:10,width:65},
+  	layout:{bottom:15,height:20,right:10,width:100},
   	title:'_Lend $25'.loc(),
 		action: "lendNow",
 		target: "Klb.searchController",
@@ -17,6 +17,10 @@ Klb.LoanListingView = SC.ListItemView.extend({
   render: function(context, firstTime) {
     var content = this.get('content'),percentage,rating,ratingContext,fullStars,emptyStars,remainder,k;
     
+	//	if(firstTime === YES) {
+		 this.renderChildViews(context,YES);
+	//	}
+		
     // photo
     context
       .begin('div')
@@ -133,7 +137,6 @@ Klb.LoanListingView = SC.ListItemView.extend({
         .end()
       .end();
   	
-  	return this.renderChildViews(context,YES);
   }
   
 });

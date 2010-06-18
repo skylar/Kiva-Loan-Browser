@@ -11,7 +11,7 @@ Klb.pickerPanes.countryPicker = SC.Page.design({
   
   mainPane: SC.PanelPane.design({
 		contentView: SC.View.design({
-	    layout: { width: 850, height: 550, centerX: 0, centerY: 0 },
+	    layout: { width: 1010, height: 550, centerX: 0, centerY: 0 },
 			childViews: 'selectButton label buttonGridView'.w(),
 			
 			label: SC.LabelView.design({

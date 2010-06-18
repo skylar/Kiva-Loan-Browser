@@ -11,11 +11,15 @@
   
   @extends SC.Application
 */
+
+sc_require('typekit');
+try{Typekit.load();}catch(e){ console.log("TYPEKIT failed to load.");}
+
 Klb = SC.Application.create(
   /** @scope Klb.prototype */ {
 
   NAMESPACE: 'Klb',
-  VERSION: '0.1.0',
+  VERSION: '0.5.0',
 
   // Define app store  
   store: SC.Store.create(),

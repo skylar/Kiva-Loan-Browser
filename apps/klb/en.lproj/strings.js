@@ -21,12 +21,14 @@ SC.stringsFor('English', {
 	
 	//// Primary Sections
 	"_About": "About",
-	"_Choose_A_Loan": "Choose A Loan",
+	"_Projects": "Projects",
 	"_Learn_More": "Learn More",
 	"_Register": "Register",
 	"_Demo": "Demo",
+
+	"_Choose_A_Loan": "Choose A Loan",
 		
-	//// Chrome
+	//// Basket
 	"_Checkout": "Checkout",
 
 	// sort drop down
@@ -39,6 +41,13 @@ SC.stringsFor('English', {
 	"_List":"List",
 	
 	/// Sidebar
+	'_Getting Started':'Getting Started',
+	'_Browse All Loans':'Browse All Loans',
+	'_Sample Filters':'Sample Filters',
+	'_African Farmers':'African Farmers',
+	'_Group Loans in South Asia':'Group Loans in South Asia',
+	'_Francophone Countries':'Francophone Countries',
+	
 	"_Filter Options":"Filter Options",
 	"_Search": "Search",
   "_Countries": "Countries",
@@ -519,6 +528,12 @@ SC.stringsFor('English', {
 	'_Contact':'Contact',
 	'_Our Partners':'Our Partners',
 
+	// Figures
+	'_in loans':'prêtés',
+	'_entrepreneurs helped':'entrepreneurs aidés',
+	'_countries':'pays',
+	'_partners':'partenaires',
+
 	// Captions
 	'_Kiva connects people through lending to alleviate poverty.':'Kiva connects people through lending to alleviate poverty.',
 	'*about_captionYunus1':'“Give a man a fish, you feed him for a day… Teach a man to fish and you feed him for a lifetime.”',
@@ -536,6 +551,23 @@ SC.stringsFor('English', {
 
 	'*kefWhy_para_1':"The idea is to promote microfinance thanks to the fancophile community, creating a website in French allowing the selection of projects to finance on Kiva",
 	'*kefWhy_para_2':"The creators of the french website are friends and alumni of Kiva who wish to share their enthusiasm.",
-	'*kefWhy_para_3':"Once you select the rpojects you wish to support, your loan is finalized on the Kiva website."
+	'*kefWhy_para_3':"Once you select the rpojects you wish to support, your loan is finalized on the Kiva website.",
 
+	//////////////////////////////////////////////
+	// REGISTER
+	
+	'*reg_disclaimer_text1':'Pour valider votre investissement, vous devez avoir un compte d’utilisateur Kiva. Ce processus est en anglais mais un accompagnement en français est à votre disposition à gauche de l’écran. Une fois votre compte ouvert, vous serez redirigé sur kiva.org pour compléter votre paiement.',
+	'*reg_disclaimer_text2':'Si vous possédez déjà un compte kiva, vous serez redirigé sur le site kiva.org où vous pourrez vous connecter à votre compte pour compléter votre paiement.',
+	
+	'_Loading Kiva Website':'Loading Kiva Website…',
+	'_Help':'Help',
+	'_Use of the english site':'Use of the english site',
+	
+	'_Enter your first name':'Enter your first name',
+	'_Enter your last name':'Enter your last name',
+	'_Enter your email address':'Enter your email address',
+	'_Re-enter your email address':'Re-enter your email address',
+	'_Choose a password between 6 and 12 characters':'Choose a password between 6 and 12 characters',
+	'_Confirm the password you chose':'Confirm the password you chose',
+	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!'
 }) ;

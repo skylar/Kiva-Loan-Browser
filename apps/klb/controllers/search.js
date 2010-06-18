@@ -99,6 +99,69 @@ Klb.searchController = SC.ObjectController.create({
 	  return len === 0 ? '_All'.loc() : sectors.mapProperty('name').sort().join(', ');
 	}.property('availableSectors').cacheable(),
 	
+	// this is a bit of hack for a moment as we create a static 
+	// data tree for the filterController
+	currentFilters: SC.Object.extend({
+
+	  treeItemIsExpanded: YES,		  
+	  title: "Root",
+	  isSelectable: YES,
+	  
+	  treeItemChildren: function() {
+	    var idx, ret = [];
+	    
+//	    ret.push(Klb.searchController.currentFilters.create({
+//	    	title: '_Getting Started'.loc(),
+//	    	value: 'start',
+//	    	treeItemIsExpanded:NO,
+//	    	treeItemChildren: null,
+//	    }));
+			ret.push(Klb.searchController.currentFilters.create({
+				title: '_Browse All Loans'.loc(),
+				value: 'all',
+				treeItemIsExpanded:NO,
+				treeItemChildren: null,
+			}));
+			ret.push(Klb.searchController.sampleFilters.create());
+			
+	    return ret;
+	  }.property().cacheable()
+
+	}),
+	sampleFilters: SC.Object.extend({
+
+	  treeItemIsExpanded: YES,		  
+	  title: "_Sample Filters".loc(),
+	  isEnabled: NO,
+	  isSelectable: NO,
+	  
+	  treeItemChildren: function() {
+	    var idx, ret = [];
+	    
+	    ret.push(Klb.searchController.currentFilters.create({
+	    	title: '_African Farmers'.loc(),
+	    	value: 'af',
+	    	treeItemIsExpanded:NO,
+	    	treeItemChildren: null,
+	    }));
+			ret.push(Klb.searchController.currentFilters.create({
+				title: '_Group Loans in South Asia'.loc(),
+				value: 'glsa',
+				treeItemIsExpanded:NO,
+				treeItemChildren: null,
+			}));
+			ret.push(Klb.searchController.currentFilters.create({
+				title: '_Francophone Countries'.loc(),
+				value: 'fc',
+				treeItemIsExpanded:NO,
+				treeItemChildren: null,
+			}));
+			
+	    return ret;
+	  }.property().cacheable()
+
+	}),
+	
 ///////////////////////////////////////
 // Methods
 	
@@ -129,11 +192,19 @@ Klb.searchController = SC.ObjectController.create({
 		this.set('availableCountries', Klb.store.find(SC.Query.local(Klb.Country)));		
 		this.set('availablePartners', Klb.store.find(Klb.AVAILABLE_PARTNERS_QUERY));
 		
+		// set up the left nav w/ filter options
+		Klb.filtersController.set('content', Klb.searchController.currentFilters.create());
+
 		// Though results handled, this triggers the data store to fetch loans...
 		Klb.store.find(Klb.AVAILABLE_LOANS_QUERY);
 		
 		// The actual query that drives loan serach results
 		this.notifyPropertyChange('query');
+	},
+
+	selectSidebarItem: function(collectionView) {
+		var itemValue = collectionView.get('selection').firstObject().get('value');
+		console.log("found value: "+itemValue);
 	},
 
 	availablePartnersDidChange: function(key) {
@@ -183,7 +254,7 @@ Klb.searchController = SC.ObjectController.create({
 	},
 	
 	lendNow: function(context) {
-//		console.log(context);
+		console.log('LENDING NOW.');
 		var loanId = context.parentView.get('content').get('id'), 
 			form, loansInput, donationInput, appIdInput;
 		
@@ -212,6 +283,9 @@ Klb.searchController = SC.ObjectController.create({
 		form.appendChild(donationInput);
 		form.appendChild(appIdInput);
 		
+		document.getElementById('invisible_form_view').appendChild(form);
+		
 		form.submit();
+		console.log('DID LENDING!!!');
 	}
 });

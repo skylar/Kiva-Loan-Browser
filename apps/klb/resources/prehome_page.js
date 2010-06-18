@@ -13,13 +13,13 @@ Klb.prehomePage = SC.Page.design({
 
 	mainView: SC.ScrollView.design({
 		contentView: SC.View.design({
-			layout: {top:0,height:1180,right:0,left:0},
+			layout: {top:0,height:750,right:0,left:0},
 			childViews: 'pageView'.w(),
 			classNames: 'contentBackdrop',
 
 			pageView: SC.View.design({
 			layout: {top:0,bottom:50,centerX:0,width:800},
-			childViews: 'introSlides dividerBar inFigures'.w(),
+			childViews: 'introSlides dividerBar'.w(),
 			classNames: 'contentPage',
 			
 			introSlides: SC.View.design({

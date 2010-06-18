@@ -12,29 +12,31 @@ Klb.demoPage = SC.Page.design({
 
 	mainView: SC.View.design({
 		layout: {top:0,bottom:0,left:0,right:0},
-		childViews: 'selectionList displayArea'.w(),
+		childViews: 'displayArea'.w(),
 
-		selectionList: SC.ScrollView.design({   
-			hasHorizontalScroller: NO,
-	    layout: { top: 0, bottom: 0, left: 0, width:250 },
-	    backgroundColor: 'white',
-	
-			contentView: SC.ListView.design({
-			  contentBinding: 'Klb.demosController.arrangedObjects',
+//		selectionList: SC.ScrollView.design({   
+//			hasHorizontalScroller: NO,
+//	    layout: { top: 0, bottom: 0, left: 0, width:250 },
+//	    backgroundColor: 'white',
+//	
+//			contentView: SC.ListView.design({
+//			  contentBinding: 'Klb.demosController.arrangedObjects',
 	//			  selectionBinding: 'Klb.loansController.selection',
-				contentValueKey: "name",
-				rowHeight: 50,
-				actOnSelect: YES,
-	      action: "selectDemo"
-			})
-		}),
+//				contentValueKey: "name",
+//				rowHeight: 50,
+//				actOnSelect: YES,
+//	      action: "selectDemo"
+//			})
+//		}),
 		
 		displayArea: SC.View.design({
-	    layout: { top: 0, bottom: 0, left: 250, right:0 },
+	    layout: { top: 10, bottom: 0, centerX:0, width:800 },
 			childViews: 'videoView'.w(),
 			
 			videoView: Klb.StaticContentView.design({
-				content: '<div class="klb-static-content" ><center>' +
+				content: '<p><p>Demos coming soon... for now, enjoy these videos in English:</p>'+
+					'<div class="klb-static-content"><center>' +
+					'<h2>The Pedro Story</h2><p>'+
 					'<object width="600" height="338" style="border:1px solid gray;"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=11053283&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed style="http://vimeo.com/moogaloop.swf?clip_id=11053283&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="338"></embed></object>' + '</center></div>',
 			}),
 		}),			

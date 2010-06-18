@@ -14,18 +14,19 @@ Klb.mainPage = SC.Page.design({
   // Add childViews to this pane for views to display immediately on page 
   // load.
   appPane: SC.MainPane.design({
-	  childViews: 'topbarView mainPaneView'.w(),
+	  childViews: 'topbarView mainPaneView invisibleFormView'.w(),
 
     defaultResponder: Klb.mainController,
     
     topbarView: SC.View.design({
 	    layout: { top: 0, left: 0, right: 0, height: 80 },
-	    childViews: 'logoView buttonBar basket'.w(),
+	    childViews: 'logoView buttonBar'.w(),
 	    classNames: 'klb-header'.w(),
       
 			logoView: SC.ImageView.extend(SCUI.SimpleButton).design({
 			  layout: { left: 10, top: 5, width: 120, height: 70 },
 			  value: sc_static('images/kef_logo.png'),
+			  classNames: 'simulatedLogoButton',
 			  target: 'Klb.mainController',
 			  action: 'showPrehome',
 			}),
@@ -36,15 +37,15 @@ Klb.mainPage = SC.Page.design({
 				valueBinding: 'Klb.mainController.currentSection',
 				itemWidthKey: 'width',
 				itemValueKey: 'value',
-				classNames: 'mainNav',
+				classNames: 'mainNav kef-branded-font',
 				items: [
 					{	title: "_About".loc(),
 						value: "Klb.aboutPage.mainView",
-						width: 135,
+						width: 120,
 					},
-					{	title: "_Choose_A_Loan".loc(),
+					{	title: "_Projects".loc(),
 						value: "Klb.lendingPage.mainView",
-//						width: 140,
+						width: 120,
 					},
 //					{	title: "_Learn_More".loc(),
 //						value: "Klb.prehomePage.mainView",
@@ -52,29 +53,31 @@ Klb.mainPage = SC.Page.design({
 //					},
 					{	title: "_Register".loc(),
 						value: "Klb.registerPage.mainView",
-						width: 135,
+						width: 120,
 					},
 					{	title: "_Demo".loc(),
 						value: "Klb.demoPage.mainView",
-						width: 135,
-					},
+						width: 120,
+					}
 				],
 			}),
 		
-			basket: SC.LabelView.design({
-				layout: {top:10,right:10,width:120,height:50},
-				value: 'BASKET'.loc()
-			}),
-//			prehomeButton: SC.ButtonView.design({
-//				layout: {right:200, bottom:0, height:24, width:150},
-//				title: "_Learn_More".loc(),
-//				action: "learnMore"
-//			})
+//			basket: SC.LabelView.design({
+//				layout: {top:10,right:10,width:120,height:50},
+//				value: 'BASKET'.loc()
+//			}),
 	  }),
     
     mainPaneView: SC.ContainerView.design({
 	    layout: { bottom: 0, left: 0, right: 0, top: 82 },
 			nowShowingBinding: "Klb.mainController.currentSection"
 	  }),
+	  
+	  invisibleFormView: SC.View.design({
+	  	layout:{top:-20,height:5,left:0,right:0},
+	  	layerId:'invisible_form_view',
+	  	isVisible: NO 	
+	  }),
+
 	})
 });

@@ -31,6 +31,8 @@ Klb.READY_LIST = SC.Responder.create({
     //       else Klb.updateRoute(target, null, YES);
     //     } 
     
+    // select the 'browse all loans' option by default
+		Klb.filtersController.selectObject(Klb.filtersController.get('arrangedObjects').objectAt(0));
   },
   
   willLoseFirstResponder: function() {
