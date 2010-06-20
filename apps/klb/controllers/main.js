@@ -9,7 +9,9 @@ Klb.mainController = SC.ObjectController.create({
 	
 	currentSection: null,	
 	
-	showPrehome: function() { this.set('currentSection', Klb.getPath('prehomePage.mainView')); },
+	showPrehome: function() { 
+		this.set('currentSection', Klb.getPath('prehomePage.mainView'));
+	},
 	
 	showLending: function() { this.set('currentSection', Klb.getPath('lendingPage.mainView')); },
 	
@@ -21,11 +23,25 @@ Klb.mainController = SC.ObjectController.create({
 	},
 	
 	checkPrehomeBypassCookie: function() {
-		var pvCookieValue = this.getCookie('pv');
-		if(pvCookieValue) { return true; }
+		var pvCookie = SC.Cookie.find('pv');
+		if(pvCookie && pvCookie.get('value')) { return true; }
 		
 		return false;
 	},
+	
+	checkSectionStatus: function() {
+		var showPromo = NO;
+		
+		// set the prehome no-show cookie
+		if(this.get('currentSection') === Klb.getPath('lendingPage.mainView') && !this.checkPrehomeBypassCookie()) {
+			this.setPrehomeBypassCookie();
+		}
+		// check if we should show the promo button
+		if(this.get('currentSection') === Klb.getPath('prehomePage.mainView')) {
+			showPromo = YES;
+		}
+		Klb.getPath('mainPage.appPane.topbarView.rightPromo').set('isVisible',showPromo);		
+	}.observes('currentSection'),
 	
 	getCookie: function(name) {
 		// first we'll split this cookie up into name/value pairs

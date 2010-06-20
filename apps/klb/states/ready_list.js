@@ -20,7 +20,6 @@ Klb.READY_LIST = SC.Responder.create({
   */
   didBecomeFirstResponder: function() {
     Klb.lendingController.set('currentScene', 'searchListView');
-    Klb.searchController.set('selection', null); // always empty sel
     //Klb.testsController.set('isShowingTests', YES);
 
     // var target = Klb.sourceController.get('selection').firstObject();
@@ -29,14 +28,11 @@ Klb.READY_LIST = SC.Responder.create({
     //       var test = Klb.computeRouteTest();
     //       if (test) Klb.sendAction('selectTest', this, test);
     //       else Klb.updateRoute(target, null, YES);
-    //     } 
-    
-    // select the 'browse all loans' option by default
-		Klb.filtersController.selectObject(Klb.filtersController.get('arrangedObjects').objectAt(0));
+    //     }     
   },
   
   willLoseFirstResponder: function() {
-    Klb.set('currentScene', null);
+    Klb.lendingController.set('currentScene', null);
     //Klb.testsController.set('isShowingTests', NO);
   },
   

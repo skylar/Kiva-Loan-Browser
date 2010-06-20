@@ -25,13 +25,14 @@ SC.Query.registerQueryExtension('ANY_COUNTRY', {
                     }
 });
 
-Klb.loansController = SC.ArrayController.create(
+Klb.loansController = SC.ArrayController.create(SC.CollectionViewDelegate,
 /** @scope Klb.loansController.prototype */ {
     
   searchControllerQueryDidChange: function() {
     var q = Klb.getPath('searchController.query');
-    
     if (q) {
+    	console.log("current query");
+	    SC.Logger.dir(q);
       this.set('content', Klb.store.find(SC.Query.create({
         location: SC.Query.LOCAL,
         recordType: Klb.Loan,
@@ -49,4 +50,7 @@ Klb.loansController = SC.ArrayController.create(
 		return this.get('length') + ' ' + '_loans found'.loc();
 	}.property('length').cacheable(),
 	
+	collectionViewShouldSelectIndexes: function (view, indexes, extend) {
+	  return null; 
+	},
 });

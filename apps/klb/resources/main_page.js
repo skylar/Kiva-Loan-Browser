@@ -19,64 +19,79 @@ Klb.mainPage = SC.Page.design({
     defaultResponder: Klb.mainController,
     
     topbarView: SC.View.design({
-	    layout: { top: 0, left: 0, right: 0, height: 80 },
-	    childViews: 'logoView buttonBar'.w(),
+	    layout: { top: 0, left: 0, right: 0, height: 74 },
+	    childViews: 'logoView buttonBar rightPromo'.w(),
 	    classNames: 'klb-header'.w(),
       
 			logoView: SC.ImageView.extend(SCUI.SimpleButton).design({
-			  layout: { left: 10, top: 5, width: 120, height: 70 },
-			  value: sc_static('images/kef_logo.png'),
+			  layout: { left: 5, top: 5, width: 123, height: 64 },
+			  value: sc_static('images/kef_logo_150.png'),
 			  classNames: 'simulatedLogoButton',
 			  target: 'Klb.mainController',
 			  action: 'showPrehome',
 			}),
 			
 			buttonBar: SC.SegmentedView.design({
-				layout: { left: 140, top: 20, width: 140*5, height: 60 },
+				layout: { top: 5, height: 65, left: 150, width: 102*4},
 				itemTitleKey: 'title',
 				valueBinding: 'Klb.mainController.currentSection',
 				itemWidthKey: 'width',
 				itemValueKey: 'value',
-				classNames: 'mainNav kef-branded-font',
+				classNames: 'mainNav',
 				items: [
 					{	title: "_About".loc(),
-						value: "Klb.aboutPage.mainView",
-						width: 120,
+						value: Klb.getPath('aboutPage.mainView'),
+						width: 90,
 					},
 					{	title: "_Projects".loc(),
-						value: "Klb.lendingPage.mainView",
-						width: 120,
+						value:  Klb.getPath('lendingPage.mainView'),
+						width: 90,
 					},
-//					{	title: "_Learn_More".loc(),
-//						value: "Klb.prehomePage.mainView",
-//						width: 120,
-//					},
 					{	title: "_Register".loc(),
-						value: "Klb.registerPage.mainView",
-						width: 120,
+						value: 'Klb.registerPage.mainView',
+						width: 90,
 					},
 					{	title: "_Demo".loc(),
-						value: "Klb.demoPage.mainView",
-						width: 120,
+						value:  'Klb.demoPage.mainView',
+						width: 90,
 					}
 				],
 			}),
-		
-//			basket: SC.LabelView.design({
-//				layout: {top:10,right:10,width:120,height:50},
-//				value: 'BASKET'.loc()
-//			}),
+			
+			rightPromo: SC.View.design({
+				layout: {centerY:0,height:60,right:20,width:250},
+				childViews: 'caption cta'.w(),	
+				classNames: 'brandedFontContent ctaPromo',			
+				isVisible: YES,
+				
+				caption: Klb.DisplayTextView.design({
+					layout:{top:0,height:30,left:10,right:10},
+					color: 'white',
+					value: '_Get started now by finding an entrepreneur and making a loan!'.loc(),
+					classNames: 'primaryCtaCaption',
+					textAlign: SC.ALIGN_CENTER,
+				}),
+				
+				cta: SC.ButtonView.design({
+					layout:{bottom:0,height:30,left:0,right:0},
+					classNames: 'ctaButton primaryCta'.w(),
+					title: "_Choose_A_Loan".loc(),
+					target: 'Klb.mainController',
+					action: 'showLending',
+					controlSize: SC.LARGE_CONTROL_SIZE					
+				})
+			})						
 	  }),
     
     mainPaneView: SC.ContainerView.design({
-	    layout: { bottom: 0, left: 0, right: 0, top: 82 },
+	    layout: { bottom: 0, left: 0, right: 0, top: 76 },
 			nowShowingBinding: "Klb.mainController.currentSection"
 	  }),
 	  
 	  invisibleFormView: SC.View.design({
 	  	layout:{top:-20,height:5,left:0,right:0},
 	  	layerId:'invisible_form_view',
-	  	isVisible: NO 	
+	  	isVisible: NO
 	  }),
 
 	})

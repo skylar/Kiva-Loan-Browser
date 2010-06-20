@@ -1,32 +1,18 @@
-.sc-label-view.sc-large-size.prehomeCaption {
-	font-size: 24px;
-	color: #777777;
-	font-family: 'AmericanTypewriter',monospace;
+.sc-label-view.sc-regular-size.prehomeCaption {
+	font-size: 21px;
+	color: #86B300;
+	font-weight:500;
 }
 
-.sc-label-view.sc-large-size.primaryCtaCaption {
-	color: white;
-	font-style: italic;
-	font-family: 'Times New Roman',sans-serif;
-	font-size: 20px;
-	line-height:25px;
+.lenderStoryBox {
+	background-color: #F7F3DE;
+	border:dotted 1px #b3b3b3;
 }
-
-.sc-label-view.sc-regular-size.situationStepCaption {
-	font-size: 18px;
-	font-weight: bold;
-	font-family: 'Impact',sans-serif;
-	line-height:24px;
+.lenderPointsCaption {
+	font-weight:500;
 }
-
-.sc-button-view.sc-large-size.square.ctaButton {
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	background-color: #8ac542;
-	color: white;
-	font-size:20px;
-	font-weight:bold;
+.lenderPoints {
+	background-image: sc_static('images/circle_digits.png');
 }
-.sc-button-view.sc-large-size.square.ctaButton label {
-	padding: 4px;
-}
+.lenderPoints.itemTwo { background-position: -22px 0px; }
+.lenderPoints.itemThree { background-position: -44px 0px; }

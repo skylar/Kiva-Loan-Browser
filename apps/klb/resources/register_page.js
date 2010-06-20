@@ -11,6 +11,7 @@ Klb.registerPage = SC.Page.design({
 	mainView: SC.View.design({
 		layout: { top: 0,  left: 0, right: 0, bottom:0 },
 		childViews: 'rightView sidebarView'.w(),
+		classNames: 'brandedFontContent',
 		
 		sidebarView: Klb.RegSidebarView.design({
 			layout: { top:0, bottom:0, left:0, right:950,minWidth:120 },
@@ -46,7 +47,7 @@ Klb.registerPage = SC.Page.design({
 			
 			topView: SC.View.design({
 				layout: {top:0, left:0, height:80, right: 0},
-				backgroundColor: '#aaddaa',
+				backgroundColor: '#F7F3DE',
 				classNames: 'regTopView',
 				childViews: 'note1 note2'.w(),
 

@@ -60,10 +60,6 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 .sc-split-divider-view {
 	background-color: gray;
 }
-.klb-header {
-	border-bottom: 2px solid #009900;
-}
-/*.klb-chrome { background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6E7EA1), to(#424C61), color-stop(.6,#3B4457)); color: white;}*/
 .klb-static-content {
 	margin: 20px auto;
 	width: 800px;

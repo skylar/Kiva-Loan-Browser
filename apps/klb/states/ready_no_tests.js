@@ -17,15 +17,15 @@ Klb.READY_NO_LOANS = SC.Responder.create({
     Show laoding targets view.
   */
   didBecomeFirstResponder: function() {
-    Klb.set('currentScene', 'noLoans');
+    Klb.lendingController.set('currentScene', 'noTargets');
 
     // this is always the final route since we can't load any tests
-    var target = Klb.sourceController.get('selection').firstObject();
+    //var target = Klb.sourceController.get('selection').firstObject();
    // Klb.updateRoute(target, null, YES);
   },
   
   willLoseFirstResponder: function() {
-    Klb.set('currentScene', null);
+    Klb.lendingController.set('currentScene', null);
   }
     
 });

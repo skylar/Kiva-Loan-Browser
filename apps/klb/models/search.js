@@ -12,22 +12,24 @@
   @extends SC.Record
   @version 0.1
 */
-Klb.Search = SC.Record.extend(
+Klb.Search = SC.Object.extend(
 /** @scope Klb.Search.prototype */ {
   
-	male: SC.Record.attr(Boolean),
-	female: SC.Record.attr(Boolean),
-	groups: SC.Record.attr(Boolean),
-	partnerRating: SC.Record.attr(Number),
-	borrowerCount: SC.Record.attr(Number),
-	queryString: SC.Record.attr(String),
-	countries: SC.Record.toMany('Klb.Country'),
-	sectors: SC.Record.attr(Array)
-  
+  id: '_none',
+	male: true,
+	female: true,
+	groups: true,
+	queryString: '',
+	countries: [],
+	sectors: [],
+	sortOrder: 'postedDate DESC'  
+
 /*
   id:SC.Record.attr(Integer),
 	name:SC.Record.attr(String),
 	image_url:SC.Record.attr(String)
+	partnerRating: SC.Record.attr(Number),
+	borrowerCount: SC.Record.attr(Number),
 */
 
 });

@@ -19,7 +19,7 @@ Klb.READY_DETAIL = SC.Responder.create({
     Show laoding targets view.
   */
   didBecomeFirstResponder: function() {
-    Klb.set('currentScene', 'loanDetail');
+    Klb.lendingController.set('currentScene', 'loanDetail');
     
     // var target = Klb.sourceController.get('selection').firstObject();
     //   var test   = Klb.detailController.get('content');
@@ -27,7 +27,7 @@ Klb.READY_DETAIL = SC.Responder.create({
   },
   
   willLoseFirstResponder: function() {
-    Klb.set('currentScene', null);
+    Klb.lendingController.set('currentScene', null);
   },
   
   /**

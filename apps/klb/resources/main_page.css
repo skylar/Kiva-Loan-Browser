@@ -4,17 +4,18 @@ body.sc-theme #loading {
 	background: none white;
 }
 
-.kef-branded-font,.tk-museo-slab{
-font-weight:500;
-}
-
 #loading .header {
 	top: 0px;
-	height: 70px;
-	border-bottom: 3px solid #006600;
-	padding: 5px 10px;
+	height: 65px;
+	padding: 5px 5px;
 }
-
+#loading .header, .klb-header {
+	border-bottom: 2px solid rgb(133,177,0);
+}
+#loading .header img {
+	height: 64px; width: 123px;
+}
+ 
 .contentBackdrop {
 	background-color: #737167;
 }
@@ -22,6 +23,16 @@ font-weight:500;
 	-webkit-box-shadow: 5px 5px 10px #010;
 	-moz-box-shadow: 5px 5px 10px #010;
 	background-color:white;
+}
+.contentPage .sc-label-view.sc-regular-size, 
+.brandedFontContent .sc-view{
+	font-family: 'Museo Slab','Arial',sans-serif;
+	font-weight:300;
+}
+
+.contentPage .sc-label-view.sc-regular-size {
+	font-size:14px;
+	color: #4D4D4D;
 }
 
 .sc-theme #loading p.loading {
@@ -55,6 +66,38 @@ font-weight:500;
 .simulatedLogoButton {
 	cursor:pointer;
 }
+.ctaButton.sc-button-view {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	cursor:pointer;
+}
+.ctaButton.sc-button-view .sc-button-inner {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	cursor:pointer;
+}
+.primaryCta.sc-button-view {
+	background-color:rgb(115, 188, 205);
+	border: solid 2px rgb(48,140,152);
+}
+.primaryCta.sc-button-view .sc-button-inner {
+	border: solid 3px rgb(101,166,181);
+	height:24px;
+}
+.primaryCta.sc-button-view.active {
+	background-color:rgb(101,166,181);
+}
+.ctaButton.sc-button-view label {
+	padding: 2px 0 0 0;
+	font-weight:500;
+	font-size:16px;
+	color: #333;
+}
+.ctaPromo .sc-view.sc-label-view {
+	line-height: 12px;
+	font-weight: 500;
+	color: black;
+}
 
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment,
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment .sc-button-inner,
@@ -87,31 +130,44 @@ font-weight:500;
 .sc-segmented-view.mainNav a.sc-segment.active.sel.sc-last-segment,
 .sc-segmented-view.mainNav a.sc-segment.active.sel.sc-last-segment label
 {
-	background-image:none;
-	background:azimuth;
-	color: #006600;
-	font-size: 16px;
+	background:none;
+ 	color: white;
+	font-family: 'Museo Slab','Arial',sans-serif;
+	font-size: 15px;
 	text-shadow: none;
 	cursor:pointer;
+	font-weight:300;
+}
+
+.sc-segmented-view.mainNav a.sc-segment.sc-first-segment {
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+}
+.sc-segmented-view.mainNav a.sc-segment.sc-last-segment {
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+}
+
+.sc-segmented-view.mainNav a.sc-segment.sc-first-segment,
+.sc-segmented-view.mainNav a.sc-segment.sc-middle-segment {
+	border-right:1px dotted #f2f2f2;
+	margin-right:1px;
 }
 
 .sc-segmented-view.mainNav a.sc-segment.sc-first-segment,
 .sc-segmented-view.mainNav a.sc-segment.sc-middle-segment,
 .sc-segmented-view.mainNav a.sc-segment.sc-last-segment
 {
-	background-color:white;
-	border: #006600 solid 2px;
-	height: 30px;
-	margin: 0 10px;
+ height: 64px;
 }
 
-.sc-segmented-view.mainNav a.sc-segment.sc-first-segment label,
-.sc-segmented-view.mainNav a.sc-segment.sc-middle-segment label,
-.sc-segmented-view.mainNav a.sc-segment.sc-last-segment label
-{
-	margin: 3px 0;
-}
-
+.sc-segmented-view.mainNav a.sc-segment.sc-first-segment,
+.sc-segmented-view.mainNav a.sc-segment.sc-middle-segment,
+.sc-segmented-view.mainNav a.sc-segment.sc-last-segment,
 .sc-segmented-view.mainNav a.sc-segment.sel.sc-first-segment,
 .sc-segmented-view.mainNav a.sc-segment.sel.sc-middle-segment,
 .sc-segmented-view.mainNav a.sc-segment.sel.sc-last-segment,
@@ -119,15 +175,33 @@ font-weight:500;
 .sc-segmented-view.mainNav a.sc-segment.active.sel.sc-middle-segment,
 .sc-segmented-view.mainNav a.sc-segment.active.sel.sc-last-segment
 {
-	background-color:#8ac542;
-	color: white;
+	background: #828076; /* for non-css3 browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a19c8e', endColorstr='#828076'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from(#a19c8e), to(#828076)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #a19c8e,  #828076);
+	text-decoration:none;
 }
+
+.sc-segmented-view.mainNav a.sc-segment.sel.sc-first-segment label,
+.sc-segmented-view.mainNav a.sc-segment.sel.sc-middle-segment label,
+.sc-segmented-view.mainNav a.sc-segment.sel.sc-last-segment label
+{
+	text-decoration:underline;
+}
+
+.sc-segmented-view.mainNav a.sc-segment.sc-first-segment label,
+.sc-segmented-view.mainNav a.sc-segment.sc-middle-segment label,
+.sc-segmented-view.mainNav a.sc-segment.sc-last-segment label
+{
+	margin: 35px 0 0 0;
+}
+
 
 .sc-segmented-view.mainNav a.sc-segment.active.sc-first-segment,
 .sc-segmented-view.mainNav a.sc-segment.active.sc-middle-segment,
 .sc-segmented-view.mainNav a.sc-segment.active.sc-last-segment
 {
-	background-color: #ddffdd;
+	background-color: #a19c8e;
 }
 
 .sc-segmented-view.mainNav a.sc-segment.sel.sc-first-segment label,

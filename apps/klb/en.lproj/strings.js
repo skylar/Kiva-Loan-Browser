@@ -27,6 +27,7 @@ SC.stringsFor('English', {
 	"_Demo": "Demo",
 
 	"_Choose_A_Loan": "Choose A Loan",
+	'_Get started now by finding an entrepreneur and making a loan!':'Get started now by finding an entrepreneur and making a loan!',
 		
 	//// Basket
 	"_Checkout": "Checkout",
@@ -49,7 +50,7 @@ SC.stringsFor('English', {
 	'_Francophone Countries':'Francophone Countries',
 	
 	"_Filter Options":"Filter Options",
-	"_Search": "Search",
+	"_Search": "Search (coming soon)",
   "_Countries": "Countries",
   "_Sectors": "Sectors",
   "_Gender": "Gender",
@@ -74,7 +75,7 @@ SC.stringsFor('English', {
 	"_loans found":"loans found",
 	"_loan found":"loan found",
 
-	"_Finding Available Loans":"Finding Available Loans",
+	"_Finding Available Loans":"Finding Available Loans…",
 	"_No Loans Matched Your Criteria":"No Loans Matched Your Criteria",
 	"_Please choose another filter or change your filter options.":"Please choose another filter or change your filter options.",
 	
@@ -514,9 +515,15 @@ SC.stringsFor('English', {
 	'_something about why to click the browse CTA':'',
 	'_Kiva. Make a loan, change a life.':'Kiva. Make a loan, change a life.',
 
-	'_3 billion people live on less than $2.50 per day':'3 billion people live on less than $2.50 per day',
-	'_Half of these people run small businesses in need of a loan':'Half of these people run small businesses in need of a loan',
-	'_Today there are enough loans to help only 10%':'Today there are enough loans to help only 10%',
+	// Borrower Story
+	'_An entrepreneur needs a loan to grow her business':'An entrepreneur needs a loan to grow her business',
+	'_Kiva works with local partners who specialize in microcredit':'Kiva works with local partners who specialize in microcredit',
+	'_People from all over the world become lenders, helping in big ways with small amounts of money':'People from all over the world become lenders, helping in big ways with small amounts of money',
+
+	// Lender Story
+	'_Make the choice to change a life':'Make the choice to change a life',
+	'_Get repaid':'Get repaid',
+	'_Become part of the Kiva community':'Become part of the Kiva community',
 	
 	//////////////////////////////////////////////
 	// ABOUT

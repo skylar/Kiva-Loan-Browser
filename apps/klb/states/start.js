@@ -15,12 +15,14 @@ Klb.START = SC.Responder.create({
     Show loading loans view.
   */
   didBecomeFirstResponder: function() {
-  	var initialSection = 'Klb.prehomePage.mainView';
+  	var initialSection = Klb.getPath('prehomePage.mainView');
 
 		if(Klb.mainController.checkPrehomeBypassCookie()) {
-			initialSection = 'Klb.lendingPage.mainView';
+			initialSection = Klb.getPath('lendingPage.mainView');
 	  }	  
   	Klb.mainController.set('currentSection',initialSection);
+
+		Klb.makeFirstResponder(Klb.READY_LOADING);
   },
   
   willLoseFirstResponder: function() {

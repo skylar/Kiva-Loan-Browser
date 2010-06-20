@@ -16,28 +16,27 @@ Klb.aboutPage = SC.Page.design({
 		layout: {top:0,bottom:0,left:0,right:0},
 		
 		contentView: SC.View.design({
-			layout: {left:0,right:0,top:0,height:2300},
+			layout: {left:0,right:0,top:0,height:2370},
 			childViews: 'pageView'.w(),
 			classNames: 'contentBackdrop',
 
 			pageView: SC.View.design({
-			layout: {top:0,bottom:50,centerX:0,width:800},
+			layout: {top:0,bottom:50,centerX:0,width:840},
 			childViews: 'pageContent'.w(),
 			classNames: 'contentPage aboutSection'.w(),
 			
 			pageContent: SC.View.design({
-			layout: {top:20,bottom:20,left:30,right:30},
+			layout: {top:20,bottom:20,left:20,right:20},
 			childViews: 'mfHow sep1 kivaWhat sep2 kefWhy sep3 contacts sep4 partners'.w(),
 			
 			mfHow: SC.View.design({
-				layout: {top:20,height:640,left:0,right:0},
+				layout: {top:20,height:640,left:20,right:20},
 				childViews: 'title photo content'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_How Microfinance Began'.loc(),
 					classNames: 'aboutSectionHeader',
-					fontWeight: SC.BOLD_WEIGHT,
 				}),
 
 				photo: SC.ImageView.design({
@@ -50,27 +49,31 @@ Klb.aboutPage = SC.Page.design({
 					childViews: 'detailText caption1 caption2'.w(),
 					
 					detailText: SC.View.design({
-						layout: {top:0,left:0,width:300},
-						childViews: 'para1 para2 para3 para4'.w(),
+						layout: {top:0,left:0,width:330},
+						childViews: 'paraText'.w(),
 						
-						para1: Klb.DisplayTextView.design({
-							layout: {top:90*0}, value: '*mfHow_para_1'.loc() }),
-						para2: Klb.DisplayTextView.design({
-							layout: {top:90*1}, value: '*mfHow_para_2'.loc() }),
-						para3: Klb.DisplayTextView.design({
-							layout: {top:90*2}, value: '*mfHow_para_3'.loc() }),
-						para4: Klb.DisplayTextView.design({
-							layout: {top:90*3+20}, value: '*mfHow_para_4'.loc() }),							
+						paraText: Klb.DisplayTextView.design({
+							layout: {top:0,left:0,right:0}, 
+							value: '<div>'
+								+'*mfHow_para_1'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*mfHow_para_2'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*mfHow_para_3'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*mfHow_para_4'.loc()
+								+'</div>'
+						})
 					}),
 					
 					caption1: Klb.DisplayTextView.design({
-						layout: {top:390,height:100,left:0,width:300},
+						layout: {top:395,height:100,left:0,width:330},
 						classNames: 'caption',
 						value: '*about_captionYunus1'.loc(),
 					}),					
 
 					caption2: Klb.DisplayTextView.design({
-						layout: {top:510,height:80,left:0,width:300},
+						layout: {top:480,height:80,left:0,width:330},
 						classNames: 'caption',
 						value: '*about_captionYunus2'.loc(),
 					}),					
@@ -79,56 +82,81 @@ Klb.aboutPage = SC.Page.design({
 			}),
 			
 			sep1: SC.View.design({
-				layout: {top:620,height:25,centerX:0,width:680},
+				layout: {top:590,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 				
 			kivaWhat: SC.View.design({
-				layout: {top:680,left:0,right:0},
+				layout: {top:650,left:0,right:0},
 				childViews: 'title content'.w(),
 				
 				title: Klb.DisplayTextView.design({
-					layout: {top:0,height:30,left:0,right:0},
+					layout: {top:0,height:30,left:20,right:20},
 					value: '_What Is Kiva?'.loc(),
 					classNames: 'aboutSectionHeader',
-					fontWeight: SC.BOLD_WEIGHT,
 				}),
 				content: SC.View.design({
 					layout: {top:40,left:0,right:0},
 					childViews: 'infographic detailText caption graphicBox'.w(),
 					
 					infographic: SC.View.design({
-						layout:{top:0,height:430,centerX:0,width:763},
-						childViews: 'clipview'.w(),
+						layout:{top:0,height:480,centerX:0,width:785},
+						childViews: 'diagram borrowerStory'.w(),
 										
-						clipview: SC.ImageView.design({
-							layout:{top:-35,height:591,centerX:0,width:763},
-							value: sc_static('images/prehome-illustration.png'),
-						})
+						diagram: SC.ImageView.design({
+							layout:{top:0,height:385,centerX:0,width:785},
+							value: sc_static('images/prehome-illustration.jpg'),
+						}),
+						borrowerStory: SC.View.design({
+							layout: {top:385,height:100,centerX:0,width:765},
+							childViews: 'step1 step2 step3'.w(),
+							
+							step1: Klb.DisplayTextView.design({
+								layout: {top:10,left:15,width:225},
+								value: '_An entrepreneur needs a loan to grow her business'.loc(),
+								textAlign: SC.ALIGN_CENTER,
+							}),
+							
+							step2: Klb.DisplayTextView.design({
+								layout: {top:10,centerX:0,width:225},
+								value: '_Kiva works with local partners who specialize in microcredit'.loc(),
+								textAlign: SC.ALIGN_CENTER,
+							}),
+							
+							step3: Klb.DisplayTextView.design({
+								layout: {top:10,right:10,width:225},
+								value: '_People from all over the world become lenders, helping in big ways with small amounts of money'.loc(),
+								textAlign: SC.ALIGN_CENTER,
+							}),							
+						}),						
 					}),
 					
 					caption: Klb.DisplayTextView.design({
-						layout: {top:490,height:80,left:0,width:400},
+						layout: {top:500,height:80,left:20,width:400},
 						classNames: 'caption',
 						value: '_Kiva connects people through lending to alleviate poverty.'.loc(),
 					}),
 					
 					detailText: SC.View.design({
-						layout: {top:555,left:0,width:400},
-						childViews: 'para1 para2 para3 para4'.w(),
+						layout: {top:575,left:20,width:400},
+						childViews: 'paraText'.w(),
 						
-						para1: Klb.DisplayTextView.design({
-							layout: {top:0}, value: '*kivaWhat_para_1'.loc() }),
-						para2: Klb.DisplayTextView.design({
-							layout: {top:50}, value: '*kivaWhat_para_2'.loc() }),
-						para3: Klb.DisplayTextView.design({
-							layout: {top:70+50}, value: '*kivaWhat_para_3'.loc() }),
-						para4: Klb.DisplayTextView.design({
-							layout: {top:70*2+50}, value: '*kivaWhat_para_4'.loc() }),							
+						paraText: Klb.DisplayTextView.design({
+							layout: {top:0}, 
+							value: '<div>'
+								+'*kivaWhat_para_1'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*kivaWhat_para_2'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*kivaWhat_para_3'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*kivaWhat_para_4'.loc()
+								+'</div>'
+						})
 					}),
-					
+										
 					graphicBox: SC.View.design({
-						layout: {top:490,right:0,width:350},
+						layout: {top:520,right:20,width:350},
 						childViews: 'logo data1 data2 data3 data4'.w(),
 						
 						logo: SC.ImageView.design({
@@ -144,15 +172,13 @@ Klb.aboutPage = SC.Page.design({
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'56',
-								fontWeight: SC.BOLD_WEIGHT,
+								value:'53',
 								textAlign:SC.ALIGN_CENTER,
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'countries',
-								fontWeight: SC.BOLD_WEIGHT,
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
@@ -165,57 +191,51 @@ Klb.aboutPage = SC.Page.design({
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'116',
-								fontWeight: SC.BOLD_WEIGHT,
+								value:'119',
 								textAlign:SC.ALIGN_CENTER,
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'partners',
-								fontWeight: SC.BOLD_WEIGHT,
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
 						
 						data3: SC.View.design({
-							layout:{top:180,height:100,centerX:0,width:350},
+							layout:{top:190,height:100,centerX:0,width:350},
 							childViews: 'figure label'.w(),
 							classNames: 'dataFigureHolder',
 							
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'345,978',
-								fontWeight: SC.BOLD_WEIGHT,
+								value:'368,007',
 								textAlign:SC.ALIGN_CENTER,
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'entrepreneurs helped',
-								fontWeight: SC.BOLD_WEIGHT,
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
 
 						data4: SC.View.design({
-							layout:{top:260,height:100,centerX:0,width:350},
+							layout:{top:270,height:100,centerX:0,width:350},
 							childViews: 'figure label'.w(),
 							classNames: 'dataFigureHolder',
 							
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'$138,323,264',
-								fontWeight: SC.BOLD_WEIGHT,
+								value:'$142,920,635',
 								textAlign:SC.ALIGN_CENTER,
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'in loans',
-								fontWeight: SC.BOLD_WEIGHT,
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
@@ -225,84 +245,85 @@ Klb.aboutPage = SC.Page.design({
 			}),
 			
 			sep2: SC.View.design({
-				layout: {top:1550,height:25,centerX:0,width:680},
+				layout: {top:1570,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 			
 			kefWhy: SC.View.design({
-				layout: {top:1600,left:0,right:0},
+				layout: {top:1620,left:20,right:20},
 				childViews: 'title content'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_Why Kiva en Français?'.loc(),
 					classNames: 'aboutSectionHeader',
-					fontWeight: SC.BOLD_WEIGHT,
 				}),
 				content: SC.View.design({
-					layout: {top:40,left:0,right:0},
+					layout: {top:30,height:250,left:0,right:0},
 					childViews: 'detailText logo'.w(),
 					
 					detailText: SC.View.design({
-						layout: {top:0,left:300,right:0},
-						childViews: 'para1 para2 para3'.w(),
+						layout: {top:0,bottom:0,left:300,right:0},
+						childViews: 'paraText'.w(),
 						
-						para1: Klb.DisplayTextView.design({
-							layout: {top:70*0}, value: '*kefWhy_para_1'.loc() }),
-						para2: Klb.DisplayTextView.design({
-							layout: {top:70*1}, value: '*kefWhy_para_2'.loc() }),
-						para3: Klb.DisplayTextView.design({
-							layout: {top:70+50}, value: '*kefWhy_para_3'.loc() }),
+						paraText: Klb.DisplayTextView.design({
+							layout: {top:0}, 
+							value: '<div>'
+								+'*kefWhy_para_1'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*kefWhy_para_2'.loc()
+								+'</div><div>&nbsp;</div><div>'
+								+'*kefWhy_para_3'.loc()
+								+'</div>'
+						})
 					}),
 					
 					logo: SC.ImageView.design({
-						layout: {top:14,height:70*1.7,left:30,width:120*1.7},
-						value: sc_static('images/kef_logo.png'),
+						layout: {centerY:-30,height:250*.4,left:30,width:500*.4},
+						value: sc_static('images/kef_logo_500.png'),
 					}),
 				}),
 			}),
 			
 			sep3: SC.View.design({
-				layout: {top:1815,height:25,centerX:0,width:680},
+				layout: {top:1900,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 			
 			contacts: SC.View.design({
-				layout: {top:1865,left:0,right:0},
+				layout: {top:1950,left:20,right:20},
 				childViews: 'title email twitter'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_Contact'.loc(),
 					classNames: 'aboutSectionHeader',
-					fontWeight: SC.BOLD_WEIGHT,
 				}),
 				email: Klb.DisplayTextView.design({
 					layout: {top:40,height:30,left:10,right:0},
-					escapeHTML:NO,
+					classNames: 'aboutContactLink',
 					value: 'Email: <a href="mailto:info@kivaenfrancais.org">info@kivaenfrancais.org</a>'.loc(),
 				}),
 				twitter: Klb.DisplayTextView.design({
 					layout: {top:40,height:30,left:300,right:0},
-					escapeHTML:NO,
+					classNames: 'aboutContactLink',
 					value: 'Twitter: <a href="http://twitter.com/kivaenfrancais" target="_blank">@kivaenfrancais</a>'.loc(),
 				}),
 			}),
 
 			sep4: SC.View.design({
-				layout: {top:1930,height:25,centerX:0,width:680},
+				layout: {top:2020,height:25,centerX:0,width:680},
 				classNames: 'separator',
 			}),
 			
 			partners: SC.View.design({
-				layout: {top:1970,left:0,right:0},
+				layout: {top:2070,left:20,right:20},
 				childViews: 'title logo1 logo2 logo3'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_Our Partners'.loc(),
 					classNames: 'aboutSectionHeader',
-					fontWeight: SC.BOLD_WEIGHT,
 				}),
 				logo1: SC.ImageView.design({
 					layout: {top:50,height:53,centerX:0,width:449},

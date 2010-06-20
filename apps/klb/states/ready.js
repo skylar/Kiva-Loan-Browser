@@ -26,7 +26,7 @@ Klb.READY = SC.Responder.create({
   },
   
   selectSidebarItem: function(sender, loan) {
-  	console.log("ITEM WAS SELECTED!");
+  	// console.log("ITEM WAS SELECTED!");
   },
   
   back: function() {

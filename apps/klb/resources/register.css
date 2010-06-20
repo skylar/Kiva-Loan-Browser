@@ -1,10 +1,14 @@
-.regSidebarHeader {
-	font-size: 24px;
-	font-weight: bold;
+.regSidebar.sc-view {
+	font-size: 13px;
 }
 
-.regSidebarCaption {
-	font-weight: bold;
+.regSidebarHeader.sc-view {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.regSidebarCaption.sc-view {
+	font-weight: 500;
 }
 
 .regSidebar ol li {
@@ -22,7 +26,7 @@
 }
 
 .regTopView {
-	border-bottom: 1px solid #006600;
+	border-bottom: 1px solid gray;
 }
 
 .regSidebar {

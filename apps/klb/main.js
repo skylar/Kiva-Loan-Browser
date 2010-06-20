@@ -35,7 +35,7 @@ Klb.main = function main() {
 	// Step 1. Set the content property on your primary controller.
   // This will make your app come alive!
 	Klb.searchController.primeData();
-	Klb.demosController.primeData();
+//	Klb.demosController.primeData();
 } ;
 
 function main() { Klb.main(); }

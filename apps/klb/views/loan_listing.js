@@ -52,19 +52,19 @@ Klb.LoanListingView = SC.ListItemView.extend({
         .push(('_'+content.get('activity')).loc())
       .end();
       
-    // loan use
-    context
-      .begin('div')
-        .addClass('sc-view')
-        .addStyle({ left: 120, top: 60, height: 18, right:180 })
-        .push('<span style="font-weight: bold;">','_Loan_Use'.loc(),': </span>', content.get('use'))
-      .end();
+     /* loan use */
+//    context
+//      .begin('div')
+//        .addClass('sc-view')
+//        .addStyle({ left: 120, top: 60, height: 18, right:180 })
+//        .push('<span style="font-weight: bold;">','_Loan_Use'.loc(),': </span>', content.get('use'))
+//      .end();
       
     // country
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ left: 120, width: 230, top: 78, height: 24 })
+        .addStyle({ left: 120, width: 330, top: 78, height: 24 })
         .begin('div')
         	.addStyle({
         		background: 'url(' + content.get('country').iconBySize(24)+ ') no-repeat'
@@ -78,7 +78,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
 		ratingContext = context
 		  .begin('div')
 		    .addClass('sc-view')
-		    .addStyle({ left: 120+240, width:50+(17*5), top: 83, height: 18 })
+		    .addStyle({ left: 120+340, width:50+(17*5), top: 83, height: 18 })
 		    .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>');
 
     rating = content.get('partner').get('rating');

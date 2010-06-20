@@ -12,7 +12,7 @@ require('controllers/lending');
 Klb.lendingPage = SC.Page.design({
 
  mainView: SC.View.design({
-
+	layout: {top:0,bottom:0,left:0,right:0},
   childViews: 'sidebarView resultsView'.w(),
 
   defaultResponder: Klb,
@@ -53,7 +53,7 @@ Klb.lendingPage = SC.Page.design({
         actOnSelect: YES,
         action: 'selectSidebarItem',
         target: 'Klb.searchController',
-        selectionDelegate: Klb.filtersController,
+        selectionDelegate: Klb.filtersController
         // hasContentIcon: NO
         // contentIconKey:  "targetIcon",        
         // action: 'selectTarget'
@@ -73,7 +73,9 @@ Klb.lendingPage = SC.Page.design({
 			}),
 			searchField: SC.TextFieldView.design({
 			  layout: { left: 10, top: 37, right: 10, height: 22 },
-			  hint: "_Search".loc()
+			  hint: "_Search".loc(),
+			  valueBinding: 'Klb.searchController.currentQueryString',
+			  isEnabled:NO
 			}),
 
 			// GENDER
@@ -87,12 +89,12 @@ Klb.lendingPage = SC.Page.design({
 			femaleCheckbox: SC.CheckboxView.design({
 			  layout: { left: 10, top: 90, width: 80, height: 24 },
 			  title: "_Female".loc(),
-			  valueBinding: 'Klb.searchController.showFemales'
+			  valueBinding: 'Klb.searchController.showFemale'
 			}),
 			maleCheckbox: SC.CheckboxView.design({
 			  layout: { left:100, top: 90, width: 80, height: 24 },
 			  title: "_Male".loc(),
-			  valueBinding: 'Klb.searchController.showMales'
+			  valueBinding: 'Klb.searchController.showMale'
 			}),
 			groupCheckbox: SC.CheckboxView.design({
 			  layout: { left:190, top: 90, width: 80, height: 24 },
@@ -160,7 +162,7 @@ Klb.lendingPage = SC.Page.design({
         target: "Klb.searchController",
         classNames: 'picker-button',
 				controlSize: SC.SMALL_CONTROL_SIZE,
-				titleMinWidth: 40,
+				titleMinWidth: 40
 			}),
 
 			// SECTOR
@@ -179,11 +181,11 @@ Klb.lendingPage = SC.Page.design({
 			sectorButton: SC.ButtonView.design({
 			  layout: { right:10, top: 90+(50*2), width: 65, height: 18 },
 			  title: "_Edit".loc(),
-        action: "showSectorPicker",
-        target: "Klb.searchController",
-        classNames: 'picker-button',
+		        action: "showSectorPicker",
+		        target: "Klb.searchController",
+		        classNames: 'picker-button',
 				controlSize: SC.SMALL_CONTROL_SIZE,
-				titleMinWidth: 40,
+				titleMinWidth: 40
 			}),
 
 			// SAVE, etc.
@@ -206,9 +208,11 @@ Klb.lendingPage = SC.Page.design({
 }),
 	
 loansLoading: SC.View.design({
-  childViews: "labelView".w(),
+  layout: { top: 0, bottom: 0, left: 0, right: 0 },
+  childViews: "loadingLabelView".w(),
+  backgroundColor: 'white',
 
-  labelView: SC.LabelView.design({
+  loadingLabelView: SC.LabelView.design({
     layout: { centerX: 0, centerY: 0, height: 24, width: 300 },
     textAlign: SC.ALIGN_CENTER,
     classNames: "center-label",
@@ -219,10 +223,13 @@ loansLoading: SC.View.design({
 }),
 
 noTargets: SC.View.design({
+  layout: { top: 0, bottom: 0, left: 0, right: 0 },
   childViews: "labelView sublabelView".w(),
+  backgroundColor: 'white',
 
   labelView: SC.LabelView.design({
     layout: { centerX: 0, centerY: -24, height: 24, width: 300 },
+    backgroundColor: 'white',
     textAlign: SC.ALIGN_CENTER,
     classNames: "center-label",
     controlSize: SC.LARGE_CONTROL_SIZE,
@@ -380,6 +387,7 @@ searchListView: SC.View.design({
 			classNames: 'loanListView',
 		  contentBinding: 'Klb.loansController.arrangedObjects',
 //			  selectionBinding: 'Klb.loansController.selection',
+      selectionDelegate: 'Klb.loansController',
 			contentValueKey: "name",
 			exampleView: Klb.LoanListingView,
 			rowHeight: 120,
@@ -402,7 +410,8 @@ searchListView: SC.View.design({
 		}),
 
 		sortLabel: SC.LabelView.design({
-		  layout: { right: 115, top: 9, width: 80, height: 24 },
+		  layout: { right: 140, top: 9, width: 80, height: 24 },
+		  textAlign: SC.ALIGN_RIGHT,
 		  value: "_Sort_by".loc()
 		}),
 
@@ -411,8 +420,8 @@ searchListView: SC.View.design({
 		  nameKey: 'name',
 		  valueKey: 'value',
 		  objects: Klb.searchController.get('sortOptions'),
-		  valueBinding: 'Klb.searchController.currentSortOption',
-		  disableSort: true,
+		  valueBinding: 'Klb.searchController.currentSortOrder',
+		  disableSort: true
 		}),
 
 		viewModeSegmentedView: SC.SegmentedView.design({

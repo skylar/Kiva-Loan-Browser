@@ -27,6 +27,7 @@ SC.stringsFor('Français', {
 	"_Demo": "Demo",
 
 	"_Choose_A_Loan": "Choisir un Projet",
+	'_Get started now by finding an entrepreneur and making a loan!':'Essayez tout de suite. Choisissez un entrepreneur et faites un prêt!',
 	
 	//// Chrome
 	"_Checkout": "Finaliser",
@@ -48,7 +49,7 @@ SC.stringsFor('Français', {
 	'_Francophone Countries':'Pays Francophones',
 
 	"_Filter Options":"Recherche Avancée",
-	"_Search": "Recherche",
+	"_Search": "Recherche (arriver bientôt)",
   "_Countries": "Pays",
   "_Sectors": "Secteurs",
   "_Gender": "Sexe",
@@ -73,7 +74,7 @@ SC.stringsFor('Français', {
 	"_loans found":"prêts trouvés",
 	"_loan found":"prêt trouvé",
 
-	"_Finding Available Loans":"Recherche des prêts en cours",
+	"_Finding Available Loans":"Recherche des prêts en cours…",
 	"_No Loans Matched Your Criteria":"Aucun prêt ne correspond à ces criteres",
 	"_Please choose another filter or change your filter options.":"Choisissez d‘autres filtres svp",
 	
@@ -134,8 +135,8 @@ SC.stringsFor('Français', {
 	"_COCOS_(KEELING)_ISLANDS":"Cocos Islands",
 	"_COLOMBIA":"Colombie",
 	"_COMOROS":"Comores",
-	"_CONGO":"Congo",
-	"_CONGO,_THE DEMOCRATIC REPUBLIC OF THE":"République du Congo",
+	"_CONGO":"République du Congo",
+	"_CONGO,_THE DEMOCRATIC REPUBLIC OF THE":"République Démocratique du Congo",
 	"_COOK_ISLANDS":"Iles Cook",
 	"_COSTA_RICA":"Costa Rica",
 	"_CÔTE_D'IVOIRE":"Côte d'Ivoire",
@@ -514,6 +515,15 @@ SC.stringsFor('Français', {
 	'_something about why to click the browse CTA':'',
 	'_Kiva. Make a loan, change a life.':'Kiva. Faites un prêt, changez une vie.',
 	
+	// Borrower Story
+	'_An entrepreneur needs a loan to grow her business':'Un microentrepreneur a besoin d’un prêt pour développer son activité',
+	'_Kiva works with local partners who specialize in microcredit':'Kiva travaille avec un réseau de partenaires locaux spécialisés dans le micro crédit',
+	'_People from all over the world become lenders, helping in big ways with small amounts of money':'Il existe partout dans le monde des personnes qui contribuent à changer des vies en décidant de prêter des petites sommes',
+	
+	// Lender story
+	'_Make the choice to change a life':'Faites le choix de change une vie',
+	'_Get repaid':'Recevez vos remboursements régulièrement',
+	'_Become part of the Kiva community':'Rejoignez la communauté Kiva',
 
 	//////////////////////////////////////////////
 	// ABOUT
@@ -537,19 +547,19 @@ SC.stringsFor('Français', {
 	'*about_captionYunus1':'«Donnez un poisson à un homme, il mangera un jour… Apprenez-lui à pêcher, il mangera toujours.»',
 	'*about_captionYunus2':'Et s’il sait pêcher mais ne peut simplement pas s’acheter un filet?',
 	
-	'*mfHow_para_1':"Le micro-credit a été développé au Bangladesh par le professeur d'économie Muhammad Yunus, Prix Nobel de la Paix 2006.",
-	'*mfHow_para_2':"C'est l'attribution de prêts de faible montant à des porteurs de projets qui ne peuvent accéder aux prêts bancaires classiques.",
-	'*mfHow_para_3':"Il a permis à des millions de gens dans les pays en développement de sortir de la pauvreté, en concrétisant des projets favorisant l'activité et la création de richesse.",
-	'*mfHow_para_4':"Cette grande innovation sociale se répand aujourd'hui aussi dans les pays développés ou en transition.",
+	'*mfHow_para_1':"Le micro-crédit a été développé au Bangladesh par le professeur d’économie Muhammad Yunus, Prix Nobel de la Paix 2006.",
+	'*mfHow_para_2':"C’est l’attribution de prêts de faible montant à des porteurs de projets qui ne peuvent accéder aux prêts bancaires classiques. Il permet aux plus défavorisés d’avoir accès à du crédit dans un environnement sûr et contrôlé par l’intermédiaire d’une institution de microfinance.",
+	'*mfHow_para_3':"La microfinance a permis à des millions de gens  dans les pays en développement de sortir de la pauvreté, en concrétisant des projets favorisant l’activité et la création de richesse.",
+	'*mfHow_para_4':"Cette grande innovation sociale se répand aujourd’hui aussi dans les pays développés ou en transition.",
 	
 	'*kivaWhat_para_1':"kiva.org est la première ONG au monde de micro-crédit en ligne, finançant près de 500 projets par jour.",
-	'*kivaWhat_para_2':"Cette success story, fondée par Matt Flanery et Premal Shah à San Francisco en 2005 a réuni depuis environ 100M€ de prêts, à destination de 55 pays différents.",
-	'*kivaWhat_para_3':"kiva.org a rigoureusement selectionné 90 institutions de micro-finance (IMF) qui sont ses relais sur le terrain, et atteint un taux de remboursement de 98,5%",
-	'*kivaWhat_para_4':"Au fil des mois, les prêteurs sont remboursés de leur prêt qu'ils peuvent récupérer ou réinvestir dans de nouveaux projets.",
+	'*kivaWhat_para_2':"Cette success story, fondée à San Francisco en 2005, a réuni depuis plus de 110M€ de prêts, à destination de plus de 50 pays différents.",
+	'*kivaWhat_para_3':"kiva.org a rigoureusement sélectionné 116 institutions de microfinance (IMF) qui sont ses relais sur le terrain, et atteint un taux de remboursement de 98,5%.",
+	'*kivaWhat_para_4':"Au fil des mois, les prêteurs sont remboursés de leur prêt qu'ils peuvent récupérer ou réinvestir dans de nouveaux projets. Ces prêteurs constituent une véritable communauté, qui réinvestit très majoritairement leurs remboursements, et pendant des années.",
 
-	'*kefWhy_para_1':"L'idée est de faire progresser le micro-crédit grâce à la communauté francophone en créant un site web en français permettant de choisir des projets à financer sur kiva.org",
-	'*kefWhy_para_2':"Les créateurs de ce site web en français sont des anciens de Kiva souhaitant faire partager leur enthousiasme.",
-	'*kefWhy_para_3':"Une fois sélectionnés les projets que vous souhaitez soutenir, votre prêt est finalisé sur le site web de l'ONG Kiva.",
+	'*kefWhy_para_1':"L'idée est de permettre à la communauté francophone dans le monde d’aider elle aussi des microentrepreneurs dans les pays en développement par l’intermédiaire de Kiva et de faire progresser le micro-crédit dans son impact économique et social.",
+	'*kefWhy_para_2':"Ce site a pour objectif de vous accompagner dans la sélection du ou des projets que vous souhaitez soutenir. Une fois que vous aurez fait votre choix de projet(s), votre prêt est finalisé en dollars sur le site web de l'ONG kiva.org (en anglais).",
+	'*kefWhy_para_3':"Les créateurs de ce site web en français sont des passionnés de kiva.org basés en France, ainsi que des anciens de kiva.org souhaitant faire partager leur enthousiasme.",
 
 	//////////////////////////////////////////////
 	// REGISTER
