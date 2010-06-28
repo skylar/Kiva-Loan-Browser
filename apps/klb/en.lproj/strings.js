@@ -536,10 +536,10 @@ SC.stringsFor('English', {
 	'_Our Partners':'Our Partners',
 
 	// Figures
-	'_in loans':'prêtés',
-	'_entrepreneurs helped':'entrepreneurs aidés',
-	'_countries':'pays',
-	'_partners':'partenaires',
+	'_in loans':'in loans',
+	'_entrepreneurs helped':'entrepreneurs helped',
+	'_countries':'countries',
+	'_partners':'partners',
 
 	// Captions
 	'_Kiva connects people through lending to alleviate poverty.':'Kiva connects people through lending to alleviate poverty.',
@@ -576,5 +576,12 @@ SC.stringsFor('English', {
 	'_Re-enter your email address':'Re-enter your email address',
 	'_Choose a password between 6 and 12 characters':'Choose a password between 6 and 12 characters',
 	'_Confirm the password you chose':'Confirm the password you chose',
-	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!'
+	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!',
+
+//////////////////////////////////////////////
+// DEMOS
+
+	'_The Pedro Story':'The Pedro Story',
+	'_Demos coming soon… for now, enjoy this introduction to Kiva through the story of Pedro, a farmer in Boliva:':'Demos coming soon… for now, enjoy this introduction to Kiva through the story of Pedro, a farmer in Boliva:'
+
 }) ;

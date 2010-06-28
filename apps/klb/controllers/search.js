@@ -170,7 +170,13 @@ Klb.searchController = SC.ObjectController.create({
 			ret.push(Klb.searchController.currentFilters.create({
 				title: '_Francophone Countries'.loc(),
 				value: Klb.Search.create({
-					countries:['SN','CG','TG','RW']
+					countries:[
+						{'id':'GH'}
+//						SC.Object.create({'id':'SN'}),
+//						SC.Object.create({'id':'CG'}),
+//						SC.Object.create({'id':'TG'}),
+//						SC.Object.create({'id':'RW'})
+					]
 				}),
 				treeItemIsExpanded:NO,
 				treeItemChildren: null,

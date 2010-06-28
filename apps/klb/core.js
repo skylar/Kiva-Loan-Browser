@@ -12,7 +12,8 @@
   @extends SC.Application
 */
 
-sc_require('typekit');
+sc_require('utils/ga_loader');
+sc_require('utils/typekit');
 try{Typekit.load();}catch(e){ console.log("TYPEKIT failed to load.");}
 
 Klb = SC.Application.create(

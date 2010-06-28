@@ -34,11 +34,16 @@ Klb.demoPage = SC.Page.design({
 			childViews: 'videoView'.w(),
 			
 			videoView: Klb.StaticContentView.design({
-				content: '<p><p>Demos coming soon... for now, enjoy these videos in English:</p>'+
+				content: '<p><p>'+
+					'_Demos coming soon… for now, enjoy this introduction to Kiva through the story of Pedro, a farmer in Boliva:'.loc() +
+					'</p>'+
 					'<div class="klb-static-content"><center>' +
-					'<h2>The Pedro Story</h2><p>'+
-					'<object width="600" height="338" style="border:1px solid gray;"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=11053283&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /><embed style="http://vimeo.com/moogaloop.swf?clip_id=11053283&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="338"></embed></object>' + '</center></div>',
-			}),
-		}),			
-	}),
+					'<h2>' +
+					'_The Pedro Story'.loc() +
+					'</h2><p>'+
+					'<object width="601" height="338" style="border:1px solid gray;"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=12893084&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=85B100&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=12893084&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=85B100&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="601" height="338"></embed></object>' + 
+					'</center></div>'
+			})
+		})
+	})
 });

@@ -178,7 +178,7 @@ Klb.aboutPage = SC.Page.design({
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
-								value:'countries',
+								value:'_countries'.loc(),
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
@@ -197,7 +197,7 @@ Klb.aboutPage = SC.Page.design({
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
-								value:'partners',
+								value:'_partners'.loc(),
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
@@ -216,7 +216,7 @@ Klb.aboutPage = SC.Page.design({
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
-								value:'entrepreneurs helped',
+								value:'_entrepreneurs helped'.loc(),
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),
@@ -235,7 +235,7 @@ Klb.aboutPage = SC.Page.design({
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
-								value:'in loans',
+								value:'_in loans'.loc(),
 								textAlign:SC.ALIGN_CENTER,
 							}),
 						}),

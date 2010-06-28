@@ -521,7 +521,7 @@ SC.stringsFor('Français', {
 	'_People from all over the world become lenders, helping in big ways with small amounts of money':'Il existe partout dans le monde des personnes qui contribuent à changer des vies en décidant de prêter des petites sommes',
 	
 	// Lender story
-	'_Make the choice to change a life':'Faites le choix de change une vie',
+	'_Make the choice to change a life':'Faites le choix de changer une vie',
 	'_Get repaid':'Recevez vos remboursements régulièrement',
 	'_Become part of the Kiva community':'Rejoignez la communauté Kiva',
 
@@ -577,5 +577,12 @@ SC.stringsFor('Français', {
 	'_Re-enter your email address':'Confirmez votre adresse email',
 	'_Choose a password between 6 and 12 characters':'Choisissez un mot de passe entre 6 et 12 caractères',
 	'_Confirm the password you chose':'Confirmez le mot de passe choisi',
-	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'Si un ou une amie vous a recommandé de faire un prêt sur Kiva, merci d‘indiquer son adresse email pour que Kiva le ou la remercie!'
+	'_If your friend recommended you to loan on Kiva, please enter their email address so that Kiva can thank them!':'Si un ou une amie vous a recommandé de faire un prêt sur Kiva, merci d‘indiquer son adresse email pour que Kiva le ou la remercie!',
+
+//////////////////////////////////////////////
+// DEMOS
+
+	'_The Pedro Story':'L‘histoire de Pedro',
+	'_Demos coming soon… for now, enjoy this introduction to Kiva through the story of Pedro, a farmer in Boliva:':'Les demos arriveront bientôt… en attendant, regardez la video de Pedro, un planteur du café en Boliva:'
+
 }) ;
