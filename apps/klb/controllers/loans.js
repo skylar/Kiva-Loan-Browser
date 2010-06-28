@@ -50,7 +50,7 @@ Klb.loansController = SC.ArrayController.create(SC.CollectionViewDelegate,
 		return this.get('length') + ' ' + '_loans found'.loc();
 	}.property('length').cacheable(),
 	
-	collectionViewShouldSelectIndexes: function (view, indexes, extend) {
+	collectionViewShouldSelectIndexes: function(view, indexes, extend) {
 	  return null; 
-	},
+	}
 });

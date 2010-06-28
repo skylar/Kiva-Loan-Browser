@@ -27,17 +27,17 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 
 .lendingLoanListBar {
 	border-top: 1px solid gray;
-	background-color: #f0f0f4;
+	background-color: #f4f4f4;
 }
 
 .sc-theme .sc-button-view.picker-button.lendButton {
 	color: white;
-	background-color:#009900;
-	border:1px solid #003300;
+	background-color: rgb(134,179,0);
+	border:1px solid rgb(98,133,37);
 	font-size: 14px;
 }
 .sc-theme .sc-button-view.picker-button.active.lendButton {
-	background-color:#005500;
+	background-color: rgb(98,133,37);
 }
 
 /****** FILTER PANE ***********/

@@ -26,6 +26,9 @@ Klb.START = SC.Responder.create({
   },
   
   willLoseFirstResponder: function() {
+  	// ANALYTICS: equivalent to tracking successful page views (?)
+  	_gaq.push(['_trackEvent', 'navigation', 'beginVisit']);
+  	Klb.mainController.set('shouldTrackNavigation',true);
   },
       
 });

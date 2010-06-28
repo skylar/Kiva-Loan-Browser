@@ -8,12 +8,18 @@
 Klb.mainController = SC.ObjectController.create({
 	
 	currentSection: null,	
+	shouldTrackNavigation: false,
 	
 	showPrehome: function() { 
 		this.set('currentSection', Klb.getPath('prehomePage.mainView'));
 	},
 	
-	showLending: function() { this.set('currentSection', Klb.getPath('lendingPage.mainView')); },
+	showLending: function() { 
+		this.set('currentSection', Klb.getPath('lendingPage.mainView'));
+
+		// ANALYTICS: track the cta-clicks (promo conversion)
+		_gaq.push(['_trackEvent', 'conversion', 'cta-ChooseProject']);
+	},
 	
 	setPrehomeBypassCookie: function() {
 		var expireDate, today = new Date();
@@ -30,17 +36,35 @@ Klb.mainController = SC.ObjectController.create({
 	},
 	
 	checkSectionStatus: function() {
-		var showPromo = NO;
+		var showPromo = NO,
+			currentSection = this.get('currentSection'),
+			sectionLabel = '(unknown)';
 		
 		// set the prehome no-show cookie
-		if(this.get('currentSection') === Klb.getPath('lendingPage.mainView') && !this.checkPrehomeBypassCookie()) {
+		if(currentSection === Klb.getPath('lendingPage.mainView') && !this.checkPrehomeBypassCookie()) {
 			this.setPrehomeBypassCookie();
 		}
 		// check if we should show the promo button
-		if(this.get('currentSection') === Klb.getPath('prehomePage.mainView')) {
+		if(currentSection === Klb.getPath('prehomePage.mainView')) {
 			showPromo = YES;
 		}
-		Klb.getPath('mainPage.appPane.topbarView.rightPromo').set('isVisible',showPromo);		
+		Klb.getPath('mainPage.appPane.topbarView.rightPromo').set('isVisible',showPromo);
+		
+		// ANALYTICS: track navigation between sections...
+		if(this.get('shouldTrackNavigation') && currentSection !== null) {
+			if(currentSection === Klb.getPath('lendingPage.mainView')) {
+				sectionLabel = 'lending';
+			} else if(currentSection === Klb.getPath('aboutPage.mainView')) {
+				sectionLabel = 'about';
+			} else if(currentSection === Klb.getPath('prehomePage.mainView')) {
+				sectionLabel = 'prehome';
+			} else if(currentSection === Klb.getPath('registerPage.mainView')) {
+				sectionLabel = 'register';
+			} else if(currentSection === Klb.getPath('demoPage.mainView')) {
+				sectionLabel = 'demo';
+			}
+			_gaq.push(['_trackEvent', 'navigation', sectionLabel]);		
+		}
 	}.observes('currentSection'),
 	
 	getCookie: function(name) {

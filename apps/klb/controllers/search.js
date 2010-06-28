@@ -28,7 +28,7 @@ Klb.searchController = SC.ObjectController.create({
 		{"name":"_Amount_Remaining".loc(), "value":"remainingAmount"},
 		{"name":"_Loan_Amount".loc(), "value":"loanAmount"},
 		{"name":"_Sector".loc(), "value":"sector"},
-		{"name":"_Expiring_Soon".loc(), "value":"postedDate ASC"}
+		{"name":"_sb:Expiring Soon".loc(), "value":"postedDate ASC"}
 	],
 	currentSortOrder: 'postedDate DESC',
 	currentSearch: Klb.Search.create(),
@@ -53,7 +53,7 @@ Klb.searchController = SC.ObjectController.create({
 	  selectedSectors = cSearch.get('sectors');
 	  
 	  if (selectedCountries && selectedCountries.get('length') > 0) {
-	    ands.push("country ANY_COUNTRY {countries}");
+	    ands.push("loc_country_code ANY {countries}");
 	    parameters.countries = selectedCountries;
 	  }
 	  
@@ -65,7 +65,7 @@ Klb.searchController = SC.ObjectController.create({
 	  // gender/groups
 	  iMale = "(borrowerCount=1 AND gender='male')";
 	  iFemale = "(borrowerCount=1 AND gender='female')";
-	 	if (cSearch.get('male') && cSearch.get('female')) {
+	 	if (/*cSearch.get('male') &&*/ cSearch.get('female')) {
 	 		if(!cSearch.get('groups')) {
 		 		ands.push("borrowerCount = 1");
 		 	} // else, do nothing
@@ -76,9 +76,11 @@ Klb.searchController = SC.ObjectController.create({
 	 		else if(cSearch.get('female')) { gQuery += " OR " + iFemale; }
 	 		gQuery += ")";
 	 		ands.push(gQuery);
+	 	} else {
+	 		ands.push("borrowerCount = 0");
 	 	}
-	 	else if (cSearch.get('male')) { ands.push(iMale); }
-	 	else if (cSearch.get('female')) { ands.push(iFemale); }
+//	 	else if (cSearch.get('male')) { ands.push(iMale); }
+//	 	else if (cSearch.get('female')) { ands.push(iFemale); }
 	  
 	  console.log("MY JOINS: " + ands.join(' AND '));
 	  return { conditions: ands.join(' AND '), parameters: parameters,
@@ -97,10 +99,19 @@ Klb.searchController = SC.ObjectController.create({
 
 	// FORMATTED PROPERTIES for views
   formattedCountries: function() {
-    var countries = this.get('currentSearch').get('countries'),
-        len = countries.get('length');
-        
-    return len === 0 ? '_All'.loc() : countries.mapProperty('name').sort().join(', ');
+    var countryCodes = this.get('currentSearch').get('countries'),
+        len = countryCodes.get('length'),
+        countries;
+       
+    if(len === 0) { return '_All'.loc();}
+    countries = Klb.store.find(SC.Query.create({
+      location: SC.Query.LOCAL,
+      recordType: Klb.Country,
+      conditions: 'id ANY {country}',
+      parameters: {'country':countryCodes},
+      orderBy: 'name' }));
+      
+    return countries.mapProperty('name').sort().join(', ');
   }.property('currentSearch','currentSearch.countries').cacheable(),
 
 	formattedSectors: function() {
@@ -153,30 +164,24 @@ Klb.searchController = SC.ObjectController.create({
 	    ret.push(Klb.searchController.currentFilters.create({
 	    	title: '_African Farmers'.loc(),
 				value: Klb.Search.create({
-//					countries:['KE','SN','CG','ET','TG','NG','RW'],
+					countries:['BJ','BI','CM','GH','ML','MZ','UG','EC','NG','CD','CG','_S','RW','SN','TG','TD','CI','SL','TZ'],
 					sectors:[{'name':'_Agriculture'.loc(),'value':'Agriculture','isSelected':false}]
 				}),
 	    	treeItemIsExpanded:NO,
 	    	treeItemChildren: null,
 	    }));
 			ret.push(Klb.searchController.currentFilters.create({
-				title: '_Group Loans in South Asia'.loc(),
+				title: '_Francophone Countries'.loc(),
 				value: Klb.Search.create({
-					male:false,female:false
+					countries:['BJ','BI','CM','HT','LB','ML','CD','CG','RW','SN','TG','TD','CI']
 				}),
 				treeItemIsExpanded:NO,
 				treeItemChildren: null,
 			}));
 			ret.push(Klb.searchController.currentFilters.create({
-				title: '_Francophone Countries'.loc(),
+				title: '_Expiring Soon'.loc(),
 				value: Klb.Search.create({
-					countries:[
-						{'id':'GH'}
-//						SC.Object.create({'id':'SN'}),
-//						SC.Object.create({'id':'CG'}),
-//						SC.Object.create({'id':'TG'}),
-//						SC.Object.create({'id':'RW'})
-					]
+					'sortOrder':'postedDate ASC'
 				}),
 				treeItemIsExpanded:NO,
 				treeItemChildren: null,
@@ -271,7 +276,7 @@ Klb.searchController = SC.ObjectController.create({
 				
 		options.forEach(function(item) {
 			if (item.isSelected) {
-				countries.push(item.get('content'));
+				countries.push(item.get('content').get('id'));
 			}
 		});
 		
@@ -297,7 +302,6 @@ Klb.searchController = SC.ObjectController.create({
 	},
 	
 	lendNow: function(context) {
-		console.log('LENDING NOW.');
 		var loanId = context.parentView.get('content').get('id'), 
 			form, loansInput, donationInput, appIdInput;
 		
@@ -326,6 +330,8 @@ Klb.searchController = SC.ObjectController.create({
 		document.getElementById('invisible_form_view').appendChild(form);
 		
 		form.submit();
-		console.log('DID LENDING!!!');
+		
+		//	ANALYTICS: track a click-through to Kiva (lender conversion)
+		_gaq.push(['_trackEvent', 'conversion', 'lendOne','loan_id:' + loanId]);
 	}
 });

@@ -21,7 +21,7 @@ Klb.COUNTRIES_ISO = [
 {"iso_code":"DZ",
 "iso_name":"ALGERIA",
 "name":"_ALGERIA".loc(),
-"region":"xx"},
+"region":"af"},
 {"iso_code":"AS",
 "iso_name":"AMERICAN SAMOA",
 "name":"_AMERICAN_SAMOA".loc(),

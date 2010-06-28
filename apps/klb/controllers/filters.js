@@ -6,7 +6,7 @@
 
 Klb.filtersController = SC.TreeController.create(SC.CollectionViewDelegate,{
 
-	collectionViewShouldSelectIndexes: function (view, indexes, extend) {
+	collectionViewShouldSelectIndexes: function(view, indexes, extend) {
 		var contentItem = view.get('content').objectAt(indexes.firstObject());
 		if(contentItem && contentItem.get('isSelectable')) {
 			return indexes;

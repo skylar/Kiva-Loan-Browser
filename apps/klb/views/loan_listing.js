@@ -131,9 +131,9 @@ Klb.LoanListingView = SC.ListItemView.extend({
     context
       .begin('div')
         .addClass('sc-view')
-        .addStyle({ right: 10, top: 63, height: 6, width: 75, border: '1px solid #009500', backgroundColor: '#ffffff' })
+        .addStyle({ right: 10, top: 63, height: 6, width: 75, border: '1px solid #555', backgroundColor: '#ffffff' })
         .begin('div')
-          .addStyle({ position: 'relative', width: percentage, height: '100%', background: '#0f0' })
+          .addStyle({ position: 'relative', width: percentage, height: '100%', background: 'rgb(98,133,37)' })
         .end()
       .end();
   	
