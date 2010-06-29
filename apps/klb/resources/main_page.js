@@ -28,7 +28,7 @@ Klb.mainPage = SC.Page.design({
 			  value: sc_static('images/kef_logo_150.png'),
 			  classNames: 'simulatedLogoButton',
 			  target: 'Klb.mainController',
-			  action: 'showPrehome',
+			  action: 'showPrehome'
 			}),
 			
 			buttonBar: SC.SegmentedView.design({
@@ -41,21 +41,21 @@ Klb.mainPage = SC.Page.design({
 				items: [
 					{	title: "_About".loc(),
 						value: Klb.getPath('aboutPage.mainView'),
-						width: 90,
+						width: 90
 					},
 					{	title: "_Projects".loc(),
 						value:  Klb.getPath('lendingPage.mainView'),
-						width: 90,
+						width: 90
 					},
 					{	title: "_Register".loc(),
 						value: 'Klb.registerPage.mainView',
-						width: 90,
+						width: 90
 					},
 					{	title: "_Demo".loc(),
 						value:  'Klb.demoPage.mainView',
-						width: 90,
+						width: 90
 					}
-				],
+				]
 			}),
 			
 			rightPromo: SC.View.design({
@@ -69,7 +69,7 @@ Klb.mainPage = SC.Page.design({
 					color: 'white',
 					value: '_Get started now by finding an entrepreneur and making a loan!'.loc(),
 					classNames: 'primaryCtaCaption',
-					textAlign: SC.ALIGN_CENTER,
+					textAlign: SC.ALIGN_CENTER
 				}),
 				
 				cta: SC.ButtonView.design({
@@ -92,7 +92,6 @@ Klb.mainPage = SC.Page.design({
 	  	layout:{top:-20,height:5,left:0,right:0},
 	  	layerId:'invisible_form_view',
 	  	isVisible: NO
-	  }),
-
+	  })
 	})
 });

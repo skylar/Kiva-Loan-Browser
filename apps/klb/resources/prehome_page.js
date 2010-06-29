@@ -32,8 +32,8 @@ Klb.prehomePage = SC.Page.design({
 						
 						placeholderGraphic: SC.ImageView.design({
 							value: sc_static('images/prehome-illustration.jpg')
-						}),
-					}),
+						})
+					})
 				}),
 			
 				borrowerStory: SC.View.design({
@@ -43,20 +43,20 @@ Klb.prehomePage = SC.Page.design({
 					step1: Klb.DisplayTextView.design({
 						layout: {top:10,left:15,width:225},
 						value: '_An entrepreneur needs a loan to grow her business'.loc(),
-						textAlign: SC.ALIGN_CENTER,
+						textAlign: SC.ALIGN_CENTER
 					}),
 					
 					step2: Klb.DisplayTextView.design({
 						layout: {top:10,centerX:0,width:225},
 						value: '_Kiva works with local partners who specialize in microcredit'.loc(),
-						textAlign: SC.ALIGN_CENTER,
+						textAlign: SC.ALIGN_CENTER
 					}),
 					
 					step3: Klb.DisplayTextView.design({
 						layout: {top:10,right:10,width:225},
 						value: '_People from all over the world become lenders, helping in big ways with small amounts of money'.loc(),
-						textAlign: SC.ALIGN_CENTER,
-					}),				
+						textAlign: SC.ALIGN_CENTER
+					})
 				}),
 				
 				lenderStory: SC.View.design({
@@ -67,7 +67,7 @@ Klb.prehomePage = SC.Page.design({
 					caption: Klb.DisplayTextView.design({
 						layout:{top:10,height:24,left:10,right:10},
 						value: '_Kiva. Make a loan, change a life.'.loc(),
-						classNames: 'prehomeCaption',
+						classNames: 'prehomeCaption'
 					}),
 					
 					step1: SC.View.design({
@@ -84,8 +84,8 @@ Klb.prehomePage = SC.Page.design({
 								+"_Make the choice to change a life".loc()
 								+"</div><div style='line-height:5px'>&nbsp;</div><div class=''>"
 								+"Choisissez un micro entrepreneur. Prêtez. Aidez le à créer son activité tout en améliorant ses conditions de vie.".loc()
-								+"</div/>",
-						}),
+								+"</div/>"
+						})
 					}),
 					step2: SC.View.design({
 						layout: {top:50,centerX:0,width:240},
@@ -101,8 +101,8 @@ Klb.prehomePage = SC.Page.design({
 								+"_Get repaid".loc()
 								+"</div><div style='line-height:5px'>&nbsp;</div><div class=''>"
 								+"98% des emprunts sont remboursés. Vous avez ensuite le choix de réinvestir votre argent dans d'autres projets.".loc()
-								+"</div/>",
-						}),
+								+"</div/>"
+						})
 					}),
 					step3: SC.View.design({
 						layout: {top:50,right:10,width:240},
@@ -118,8 +118,8 @@ Klb.prehomePage = SC.Page.design({
 								+"_Become part of the Kiva community".loc()
 								+"</div><div style='line-height:5px'>&nbsp;</div><div class=''>"
 								+"Rencontrez et interagissez avec d’autres prêteurs dans le monde entier. Invitez votre entourage à contribuer à leur tour à changer des vies.".loc()
-								+"</div/>",
-						}),						
+								+"</div/>"
+						})
 					}),
 					cta: SC.View.design({
 						layout: {bottom:20,height:38,left:10,width:720},
@@ -132,7 +132,7 @@ Klb.prehomePage = SC.Page.design({
 							color: 'white',
 							value: '_Get started now by finding an entrepreneur and making a loan!'.loc(),
 							classNames: 'primaryCtaCaption',
-							textAlign: SC.ALIGN_RIGHT,
+							textAlign: SC.ALIGN_RIGHT
 						}),
 						
 						cta: SC.ButtonView.design({

@@ -36,12 +36,12 @@ Klb.aboutPage = SC.Page.design({
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_How Microfinance Began'.loc(),
-					classNames: 'aboutSectionHeader',
+					classNames: 'aboutSectionHeader'
 				}),
 
 				photo: SC.ImageView.design({
 					layout: {top:20,height:507,right:0,width:400},
-					value: sc_static('images/muhammad_yunus.jpg'),
+					value: sc_static('images/muhammad_yunus.jpg')
 				}),
 				
 				content: SC.View.design({
@@ -69,21 +69,20 @@ Klb.aboutPage = SC.Page.design({
 					caption1: Klb.DisplayTextView.design({
 						layout: {top:395,height:100,left:0,width:330},
 						classNames: 'caption',
-						value: '*about_captionYunus1'.loc(),
+						value: '*about_captionYunus1'.loc()
 					}),					
 
 					caption2: Klb.DisplayTextView.design({
 						layout: {top:480,height:80,left:0,width:330},
 						classNames: 'caption',
-						value: '*about_captionYunus2'.loc(),
-					}),					
-					
-				}),
+						value: '*about_captionYunus2'.loc()
+					})					
+				})
 			}),
 			
 			sep1: SC.View.design({
 				layout: {top:590,height:25,centerX:0,width:680},
-				classNames: 'separator',
+				classNames: 'separator'
 			}),
 				
 			kivaWhat: SC.View.design({
@@ -93,7 +92,7 @@ Klb.aboutPage = SC.Page.design({
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:20,right:20},
 					value: '_What Is Kiva?'.loc(),
-					classNames: 'aboutSectionHeader',
+					classNames: 'aboutSectionHeader'
 				}),
 				content: SC.View.design({
 					layout: {top:40,left:0,right:0},
@@ -105,7 +104,7 @@ Klb.aboutPage = SC.Page.design({
 										
 						diagram: SC.ImageView.design({
 							layout:{top:0,height:385,centerX:0,width:785},
-							value: sc_static('images/prehome-illustration.jpg'),
+							value: sc_static('images/prehome-illustration.jpg')
 						}),
 						borrowerStory: SC.View.design({
 							layout: {top:385,height:100,centerX:0,width:765},
@@ -114,27 +113,27 @@ Klb.aboutPage = SC.Page.design({
 							step1: Klb.DisplayTextView.design({
 								layout: {top:10,left:15,width:225},
 								value: '_An entrepreneur needs a loan to grow her business'.loc(),
-								textAlign: SC.ALIGN_CENTER,
+								textAlign: SC.ALIGN_CENTER
 							}),
 							
 							step2: Klb.DisplayTextView.design({
 								layout: {top:10,centerX:0,width:225},
 								value: '_Kiva works with local partners who specialize in microcredit'.loc(),
-								textAlign: SC.ALIGN_CENTER,
+								textAlign: SC.ALIGN_CENTER
 							}),
 							
 							step3: Klb.DisplayTextView.design({
 								layout: {top:10,right:10,width:225},
 								value: '_People from all over the world become lenders, helping in big ways with small amounts of money'.loc(),
-								textAlign: SC.ALIGN_CENTER,
-							}),							
-						}),						
+								textAlign: SC.ALIGN_CENTER
+							})							
+						})				
 					}),
 					
 					caption: Klb.DisplayTextView.design({
 						layout: {top:500,height:80,left:20,width:400},
 						classNames: 'caption',
-						value: '_Kiva connects people through lending to alleviate poverty.'.loc(),
+						value: '_Kiva connects people through lending to alleviate poverty.'.loc()
 					}),
 					
 					detailText: SC.View.design({
@@ -161,7 +160,7 @@ Klb.aboutPage = SC.Page.design({
 						
 						logo: SC.ImageView.design({
 							layout: {top:0,height:90,centerX:0,width:170},
-							value: 'http://l3-1.kiva.org/r23214/images/logoLeafy3.gif',
+							value: 'http://l3-1.kiva.org/r23214/images/logoLeafy3.gif'
 						}),
 						
 						data1: SC.View.design({
@@ -173,14 +172,14 @@ Klb.aboutPage = SC.Page.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
 								value:'53',
-								textAlign:SC.ALIGN_CENTER,
+								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'_countries'.loc(),
-								textAlign:SC.ALIGN_CENTER,
-							}),
+								textAlign:SC.ALIGN_CENTER
+							})
 						}),
 
 						data2: SC.View.design({
@@ -192,14 +191,14 @@ Klb.aboutPage = SC.Page.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
 								value:'119',
-								textAlign:SC.ALIGN_CENTER,
+								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'_partners'.loc(),
-								textAlign:SC.ALIGN_CENTER,
-							}),
+								textAlign:SC.ALIGN_CENTER
+							})
 						}),
 						
 						data3: SC.View.design({
@@ -211,14 +210,14 @@ Klb.aboutPage = SC.Page.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
 								value:'368,007',
-								textAlign:SC.ALIGN_CENTER,
+								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'_entrepreneurs helped'.loc(),
-								textAlign:SC.ALIGN_CENTER,
-							}),
+								textAlign:SC.ALIGN_CENTER
+							})
 						}),
 
 						data4: SC.View.design({
@@ -230,23 +229,22 @@ Klb.aboutPage = SC.Page.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
 								value:'$142,920,635',
-								textAlign:SC.ALIGN_CENTER,
+								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
 								layout:{top:40,height:24},
 								classNames: 'dataFigureLabel',
 								value:'_in loans'.loc(),
-								textAlign:SC.ALIGN_CENTER,
-							}),
-						}),
-												
-					}),
-				}),
+								textAlign:SC.ALIGN_CENTER
+							})
+						})												
+					})
+				})
 			}),
 			
 			sep2: SC.View.design({
 				layout: {top:1570,height:25,centerX:0,width:680},
-				classNames: 'separator',
+				classNames: 'separator'
 			}),
 			
 			kefWhy: SC.View.design({
@@ -256,7 +254,7 @@ Klb.aboutPage = SC.Page.design({
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_Why Kiva en Français?'.loc(),
-					classNames: 'aboutSectionHeader',
+					classNames: 'aboutSectionHeader'
 				}),
 				content: SC.View.design({
 					layout: {top:30,height:250,left:0,right:0},
@@ -279,15 +277,15 @@ Klb.aboutPage = SC.Page.design({
 					}),
 					
 					logo: SC.ImageView.design({
-						layout: {centerY:-30,height:250*.4,left:30,width:500*.4},
-						value: sc_static('images/kef_logo_500.png'),
-					}),
-				}),
+						layout: {centerY:-30,height:250*0.4,left:30,width:500*0.4},
+						value: sc_static('images/kef_logo_500.png')
+					})
+				})
 			}),
 			
 			sep3: SC.View.design({
 				layout: {top:1900,height:25,centerX:0,width:680},
-				classNames: 'separator',
+				classNames: 'separator'
 			}),
 			
 			contacts: SC.View.design({
@@ -297,23 +295,23 @@ Klb.aboutPage = SC.Page.design({
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_Contact'.loc(),
-					classNames: 'aboutSectionHeader',
+					classNames: 'aboutSectionHeader'
 				}),
 				email: Klb.DisplayTextView.design({
 					layout: {top:40,height:30,left:10,right:0},
 					classNames: 'aboutContactLink',
-					value: 'Email: <a href="mailto:info@kivaenfrancais.org">info@kivaenfrancais.org</a>'.loc(),
+					value: 'Email: <a href="mailto:info@kivaenfrancais.org">info@kivaenfrancais.org</a>'.loc()
 				}),
 				twitter: Klb.DisplayTextView.design({
 					layout: {top:40,height:30,left:300,right:0},
 					classNames: 'aboutContactLink',
-					value: 'Twitter: <a href="http://twitter.com/kivaenfrancais" target="_blank">@kivaenfrancais</a>'.loc(),
-				}),
+					value: 'Twitter: <a href="http://twitter.com/kivaenfrancais" target="_blank">@kivaenfrancais</a>'.loc()
+				})
 			}),
 
 			sep4: SC.View.design({
 				layout: {top:2020,height:25,centerX:0,width:680},
-				classNames: 'separator',
+				classNames: 'separator'
 			}),
 			
 			partners: SC.View.design({
@@ -323,24 +321,24 @@ Klb.aboutPage = SC.Page.design({
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
 					value: '_Our Partners'.loc(),
-					classNames: 'aboutSectionHeader',
+					classNames: 'aboutSectionHeader'
 				}),
 				logo1: SC.ImageView.design({
 					layout: {top:50,height:53,centerX:0,width:449},
-					value: sc_static('partner_danoneCommunities.png'),
+					value: sc_static('partner_danoneCommunities.png')
 				}),
 				logo2: SC.ImageView.design({
 					layout: {top:115,height:81,left:120,width:183},
-					value: sc_static('partner_laser.png'),
+					value: sc_static('partner_laser.png')
 				}),
 				logo3: SC.ImageView.design({
 					layout: {top:120,height:70,right:120,width:224},
-					value: sc_static('partner_greenwichConsulting.png'),
-				}),
-			}),
+					value: sc_static('partner_greenwichConsulting.png')
+				})
+			})
 		
-		}),}),}),
-	}),
+		})})})
+	})
 });
 
 //contentView: Klb.StaticContentView.design({

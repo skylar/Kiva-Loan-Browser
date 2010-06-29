@@ -26,7 +26,7 @@ body.sc-theme #loading {
 }
 .contentPage .sc-label-view.sc-regular-size, 
 .brandedFontContent .sc-view{
-	font-family: 'Museo Slab','Arial',sans-serif;
+	font-family: 'museo-slab-1','Arial',sans-serif;
 	font-weight:300;
 }
 
@@ -132,7 +132,7 @@ body.sc-theme #loading {
 {
 	background:none;
  	color: white;
-	font-family: 'Museo Slab','Arial',sans-serif;
+	font-family: 'museo-slab-1','Arial',sans-serif;
 	font-size: 15px;
 	text-shadow: none;
 	cursor:pointer;

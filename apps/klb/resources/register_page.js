@@ -14,7 +14,7 @@ Klb.registerPage = SC.Page.design({
 		classNames: 'brandedFontContent',
 		
 		sidebarView: Klb.RegSidebarView.design({
-			layout: { top:0, bottom:0, left:0, right:950,minWidth:120 },
+			layout: { top:0, bottom:0, left:0, right:950,minWidth:120 }
 //			childViews: 'header instructionCaption instructionItems'.w(),
 //			
 //			header: Klb.DisplayTextView.design({
@@ -55,25 +55,25 @@ Klb.registerPage = SC.Page.design({
 				  layout: { top:5, centerX:0, width: 900 },
 				  textAlign: SC.ALIGN_CENTER,
 				  classNames: "center-label",
-				  value: '*reg_disclaimer_text1'.loc(),
+				  value: '*reg_disclaimer_text1'.loc()
 				}),
 
 				note2: SC.LabelView.design({
 				  layout: { top:40, centerX:0, width: 600 },
 				  textAlign: SC.ALIGN_CENTER,
 				  classNames: "center-label",
-				  value: '*reg_disclaimer_text2'.loc(),
-				}),
+				  value: '*reg_disclaimer_text2'.loc()
+				})
 			}),
 			
 			kivaRegLoading: SC.View.design({
 				layout: {top:81, left:0, bottom:0, right: 0},
-			  childViews: "loadingMeter labelView".w(),
-			  backgroundColor: '#dddddd',
+				childViews: "loadingMeter labelView".w(),
+				backgroundColor: '#dddddd',
 				
 				loadingMeter: SC.ImageView.design({
 				  layout: { centerX: 0, centerY: -32, height: 32, width: 32 },
-				  value: sc_static('images/animated_loader.gif'),
+				  value: sc_static('images/animated_loader.gif')
 				}),
 
 			  labelView: SC.LabelView.design({
@@ -90,8 +90,8 @@ Klb.registerPage = SC.Page.design({
 				layout: {top:81, left:0, bottom:0, right: 0},
 				value: 'http://www.kiva.org/register',
 				
-				iframeDidLoad: function() { Klb.registerPage.mainView.rightView.kivaRegLoading.set('isVisible',NO); },
-			}),
-		}),
-	}),
+				iframeDidLoad: function() { Klb.registerPage.mainView.rightView.kivaRegLoading.set('isVisible',NO); }
+			})
+		})
+	})
 });

@@ -58,13 +58,17 @@ Klb.mainController = SC.ObjectController.create({
 				sectionLabel = 'about';
 			} else if(currentSection === Klb.getPath('prehomePage.mainView')) {
 				sectionLabel = 'prehome';
-			} else if(currentSection === Klb.getPath('registerPage.mainView')) {
+			} else if(currentSection === Klb.getPath('registerPage.mainView') || currentSection === 'Klb.registerPage.mainView') {
 				sectionLabel = 'register';
-			} else if(currentSection === Klb.getPath('demoPage.mainView')) {
+			} else if(currentSection === Klb.getPath('demoPage.mainView') || currentSection === 'Klb.demoPage.mainView') {
 				sectionLabel = 'demo';
 			}
 			_gaq.push(['_trackEvent', 'navigation', sectionLabel]);		
 		}
+		
+		// reset content section scrollers for any section change (more elegant way to do this?)
+		Klb.getPath('aboutPage.mainView').set('verticalScrollOffset',0);
+		Klb.getPath('prehomePage.mainView').set('verticalScrollOffset',0);
 	}.observes('currentSection'),
 	
 	getCookie: function(name) {

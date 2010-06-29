@@ -6,8 +6,11 @@
 # Add initial buildfile information here
 config :all, :required => :sproutcore, :title => 'Kiva en Français'
 
-#disable minify for now... causing bugs?
+# Disable minify, if necessary (sometimes this causes bugs)
 #config :all, :minify => false
+
+# Configure lanugages to build
+config :all, :languages => [:fr, :en]
 
 # Set up some proxies for dev/debug mode
 proxy '/proxy', :to => 'kivadevcamp.org'

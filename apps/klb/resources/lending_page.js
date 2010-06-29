@@ -6,8 +6,10 @@
 /*globals Klb */
 
 sc_require('views/loan_listing');
-require('controllers/loans');
-require('controllers/lending');
+sc_require('views/filter_item');
+sc_require('views/group_filter_item');
+sc_require('controllers/loans');
+sc_require('controllers/lending');
 
 Klb.lendingPage = SC.Page.design({
 
@@ -53,10 +55,11 @@ Klb.lendingPage = SC.Page.design({
         actOnSelect: YES,
         action: 'selectSidebarItem',
         target: 'Klb.searchController',
-        selectionDelegate: Klb.filtersController
-        // hasContentIcon: NO
+        selectionDelegate: Klb.filtersController,
+        // hasContentIcon: NO,
         // contentIconKey:  "targetIcon",        
-        // action: 'selectTarget'
+        // action: 'selectTarget',
+        exampleView: Klb.FilterItemView
       })
     }),
     
@@ -68,8 +71,8 @@ Klb.lendingPage = SC.Page.design({
       filterTitle: SC.LabelView.design({
 			  layout: { left: 5, top: 5, right: 5, height: 32 },
 			  value: "_Filter Options".loc(),
-			  fontWeight: SC.BOLD_WEIGHT,
-			  controlSize: SC.LARGE_CONTROL_SIZE
+			  controlSize: SC.LARGE_CONTROL_SIZE,
+			  classNames: 'filter-header'
 			}),
 			searchField: SC.TextFieldView.design({
 			  layout: { left: 10, top: 37, right: 10, height: 22 },
@@ -82,7 +85,6 @@ Klb.lendingPage = SC.Page.design({
 			genderLabel: SC.LabelView.design({
 			  layout: { left: 5, top: 65, right:5, height: 22 },
 			  value: "_Borrowers".loc(),  //"_Gender".loc(),
-			  fontWeight: SC.BOLD_WEIGHT,
 			  controlSize: SC.LARGE_CONTROL_SIZE,
 			  classNames: 'filter-subheader'
 			}),
@@ -147,7 +149,6 @@ Klb.lendingPage = SC.Page.design({
 			locationLabel: SC.LabelView.design({
 			  layout: { left: 5, top: 65+(50*1), right:5, height: 22 },
 			  value: "_Countries".loc(),
-			  fontWeight: SC.BOLD_WEIGHT,
 			  controlSize: SC.LARGE_CONTROL_SIZE,
 			  classNames: 'filter-subheader'
 			}),
@@ -170,7 +171,6 @@ Klb.lendingPage = SC.Page.design({
 			sectorLabel: SC.LabelView.design({
 			  layout: { left: 5, top: 65+(50*2), right:5, height: 22 },
 			  value: "_Sectors".loc(),
-			  fontWeight: SC.BOLD_WEIGHT,
 			  controlSize: SC.LARGE_CONTROL_SIZE,
 			  classNames: 'filter-subheader'
 			}),

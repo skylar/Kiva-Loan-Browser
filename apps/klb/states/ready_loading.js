@@ -21,6 +21,6 @@ Klb.READY_LOADING = SC.Responder.create({
   
   willLoseFirstResponder: function() {
     Klb.lendingController.set('currentScene', null);
-  },
+  }
   
 });

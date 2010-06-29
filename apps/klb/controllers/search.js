@@ -127,8 +127,24 @@ Klb.searchController = SC.ObjectController.create({
 
 	  treeItemIsExpanded: YES,		  
 	  title: "Root",
-	  isSelectable: YES,
+	  isEnabled: YES,
 	  value: null,
+	  
+	  treeItemChildren: function() {
+	    var idx, ret = [];
+	    
+			ret.push(Klb.searchController.browseFilters.create());
+			ret.push(Klb.searchController.sampleFilters.create());
+			
+	    return ret;
+	  }.property().cacheable()
+
+	}),
+	browseFilters: SC.Object.extend({
+
+	  treeItemIsExpanded: YES,		  
+	  title: "_Explore".loc(),
+	  isEnabled: NO,
 	  
 	  treeItemChildren: function() {
 	    var idx, ret = [];
@@ -143,20 +159,17 @@ Klb.searchController = SC.ObjectController.create({
 				title: '_Browse All Loans'.loc(),
 				value: Klb.Search.create(),
 				treeItemIsExpanded:NO,
-				treeItemChildren: null,
+				treeItemChildren: null
 			}));
-			ret.push(Klb.searchController.sampleFilters.create());
 			
 	    return ret;
 	  }.property().cacheable()
-
 	}),
 	sampleFilters: SC.Object.extend({
 
 	  treeItemIsExpanded: YES,		  
 	  title: "_Sample Filters".loc(),
 	  isEnabled: NO,
-	  isSelectable: NO,
 	  
 	  treeItemChildren: function() {
 	    var idx, ret = [];
@@ -168,7 +181,7 @@ Klb.searchController = SC.ObjectController.create({
 					sectors:[{'name':'_Agriculture'.loc(),'value':'Agriculture','isSelected':false}]
 				}),
 	    	treeItemIsExpanded:NO,
-	    	treeItemChildren: null,
+	    	treeItemChildren: null
 	    }));
 			ret.push(Klb.searchController.currentFilters.create({
 				title: '_Francophone Countries'.loc(),
@@ -176,7 +189,7 @@ Klb.searchController = SC.ObjectController.create({
 					countries:['BJ','BI','CM','HT','LB','ML','CD','CG','RW','SN','TG','TD','CI']
 				}),
 				treeItemIsExpanded:NO,
-				treeItemChildren: null,
+				treeItemChildren: null
 			}));
 			ret.push(Klb.searchController.currentFilters.create({
 				title: '_Expiring Soon'.loc(),
@@ -184,7 +197,7 @@ Klb.searchController = SC.ObjectController.create({
 					'sortOrder':'postedDate ASC'
 				}),
 				treeItemIsExpanded:NO,
-				treeItemChildren: null,
+				treeItemChildren: null
 			}));
 			
 	    return ret;
@@ -224,7 +237,7 @@ Klb.searchController = SC.ObjectController.create({
 		// set up the left nav w/ filter options
 		Klb.filtersController.set('content', Klb.searchController.currentFilters.create());
 		// select the 'browse all loans' option by default
-		Klb.filtersController.selectObject(Klb.filtersController.get('arrangedObjects').objectAt(0));
+		Klb.filtersController.selectObject(Klb.filtersController.get('arrangedObjects').objectAt(1));
 
 		// set a default search object (to avoid issues w/ null for now)
 		this.set('currentSearch',Klb.Search.create());
@@ -237,7 +250,7 @@ Klb.searchController = SC.ObjectController.create({
 	},
 
 	selectSidebarItem: function(collectionView) {
-		var newSearch = collectionView.get('selection').firstObject().get('value');
+		var newSearch = collectionView.get('selection').firstObject().get('value').copy();
 		this.set('currentSearch',newSearch);
 		this.notifyPropertyChange('query');
 		this.notifyPropertyChange('formattedSectors');
@@ -254,7 +267,7 @@ Klb.searchController = SC.ObjectController.create({
 			Klb.makeFirstResponder(Klb.READY_LIST);
 		}
 	}.observes('*availablePartners.length'), // something not quite right w/ this
-			
+	
 	updateLocalBindingsForNewCurrentSearch: function() {
 		var cSearch = this.get('currentSearch');
 		
@@ -282,6 +295,7 @@ Klb.searchController = SC.ObjectController.create({
 		
 		this.get('currentSearch').set('countries', countries);
 		Klb.getPath('pickerPanes.countryPicker.mainPane').remove();
+		Klb.filtersController.set('selection',SC.SelectionSet.EMPTY);
 		
 		this.notifyPropertyChange('query');
 		this.notifyPropertyChange('formattedCountries');
@@ -295,8 +309,9 @@ Klb.searchController = SC.ObjectController.create({
 		var options = context.getPath('parentView.scrollView.contentView.selection');
 	  this.get('currentSearch').set('sectors', options);
 		Klb.getPath('pickerPanes.sectorPicker.mainPane').remove();
+		Klb.filtersController.set('selection',SC.SelectionSet.EMPTY);
 
-		console.log("PICKED SECTOR COUNT: " + this.get('selectedSectors').get('length'));
+//		console.log("PICKED SECTOR COUNT: " + this.get('selectedSectors').get('length'));
 		this.notifyPropertyChange('query');
 		this.notifyPropertyChange('formattedSectors');
 	},

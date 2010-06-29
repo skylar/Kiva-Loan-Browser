@@ -12,8 +12,7 @@
   @extends SC.Record
   @version 0.1
 */
-Klb.Search = SC.Object.extend(
-/** @scope Klb.Search.prototype */ {
+Klb.Search = SC.Object.extend(SC.Copyable, {
   
   id: '_none',
 	male: true,
@@ -22,8 +21,20 @@ Klb.Search = SC.Object.extend(
 	queryString: '',
 	countries: [],
 	sectors: [],
-	sortOrder: 'postedDate DESC'  
+	sortOrder: 'postedDate DESC', 
 
+	copy: function() {
+    return this.constructor.create({
+			id: this.get('id'),
+			male: this.get('male'),
+			female: this.get('female'),
+			groups: this.get('groups'),
+			queryString: this.get('queryString'),
+			countries: this.get('countries').slice(),
+			sectors: this.get('sectors').slice(),
+			sortOrder: this.get('sortOrder')  
+    });
+	}
 /*
   id:SC.Record.attr(Integer),
 	name:SC.Record.attr(String),

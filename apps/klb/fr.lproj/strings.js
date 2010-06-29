@@ -41,15 +41,16 @@ SC.stringsFor('Français', {
 	"_List":"Liste",
 
 	/// Sidebar
+	'_Explore':'Explorer',
 	'_Getting Started':'Commencer',
 	'_Browse All Loans':'Tous les prêts',
 	'_Sample Filters':'Exemples de filtres',
 	'_African Farmers':'Fermiers africains',
 	'_Francophone Countries':'Pays Francophones',
-	'_Expiring Soon':'Expiration bientôt',
+	'_Expiring Soon':'Expiration proche',
 
 	"_Filter Options":"Recherche Avancée",
-	"_Search": "Recherche (arriver bientôt)",
+	"_Search": "Recherche (très prochainement)",
   "_Countries": "Pays",
   "_Sectors": "Secteurs",
   "_Gender": "Sexe",

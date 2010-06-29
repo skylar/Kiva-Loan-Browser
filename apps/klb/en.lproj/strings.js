@@ -42,6 +42,7 @@ SC.stringsFor('English', {
 	"_List":"List",
 	
 	/// Sidebar
+	'_Explore':'Explore',
 	'_Getting Started':'Getting Started',
 	'_Browse All Loans':'Browse All Loans',
 	'_Sample Filters':'Sample Filters',
@@ -61,7 +62,7 @@ SC.stringsFor('English', {
   "_Borrowers": "Borrowers Per Loan",
   "_Partner_Rating": "Minimum Partner Rating",
   "_Groups": "Groups",
-  "_Individuals": "Individus",
+  "_Individuals": "Individuals",
   "_Reset": "Reset",
   "_Save": "Save",
   "_All": "All",

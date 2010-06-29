@@ -45,6 +45,25 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 .lendingSidebar {	
 	border-right: 1px solid gray;
 }
+ .sc-list-view.sc-source-list .sc-collection-item.klb-filter-item-view {
+ 	font-size: 12px;
+ 	font-weight: 300;
+ }
+
+.sc-theme.focus .sc-list-view.sc-source-list .sc-collection-item.klb-filter-item-view.sel {
+	background: none;
+	background-color:rgb(115, 188, 205);
+	border-top:2px solid rgb(101,166,181);
+	border-bottom:2px solid rgb(101,166,181);
+	color: white;
+}
+.sc-list-view.sc-source-list .sc-collection-item.klb-filter-item-view.disabled {
+	color: #888;
+	font-family: 'museo-slab-1','Arial','sans-serif';
+	font-weight: 500;
+	font-size:14px;
+	padding-top: 10px;
+}
 
 /* labels in the sidebar should be black & not wrap */
 .lendingSidebar .sc-label-view, .lendingSidebar .sc-checkbox-view .label {
@@ -53,9 +72,16 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
   text-overflow: ellipsis;
 }
 /* custom header size for Filter pane subheaders */
-.filter-subheader.sc-large-size  {
+.filter-subheader.sc-label-view.sc-large-size,
+.filter-header.sc-label-view.sc-large-size  {
+	font-family: 'museo-slab-1','Arial','sans-serif';
+	font-weight: 500;
+  color: #333;
+}
+.filter-subheader.sc-label-view.sc-large-size {
   font-size: 14px;
 }
+
 
 .sc-split-divider-view {
 	background-color: gray;
@@ -90,7 +116,7 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 }
 
 .sc-theme .buttonGridView .sc-button-view.sc-regular-size.square {
-	border: 2px solid #8bc8cd;
+	border: 2px solid rgb(115, 188, 205);
 	background: white;
 	font-weight: normal;
 	font-size: 13px;
@@ -122,7 +148,7 @@ body.sc-theme .sc-view.sc-gray-border.no-border {
 }
 
 .buttonGridView .sc-button-view.sc-regular-size.square.sel {
-	background: #8bc8cd;
+	background: rgb(115, 188, 205);
 }
 .buttonGridView .sc-button-view.sc-regular-size.square.sel .sc-button-label {
 	color: white;

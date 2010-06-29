@@ -17,13 +17,13 @@ Klb.pickerPanes.countryPicker = SC.Page.design({
 			label: SC.LabelView.design({
 			 layout: { top:10, left:20, right:20, height:24 },
 			 value: "_Choose Countries".loc(),
-			 controlSize: SC.LARGE_CONTROL_SIZE,
+			 controlSize: SC.LARGE_CONTROL_SIZE
 			}),
 			
 			buttonGridView: Klb.GridView.design({
 			 layout: { top: 40, left: 18, bottom: 18+24+18, right: 18 },
 			 contentBinding: 'Klb.searchController.availableCountries',
-			 classNames: 'buttonGridView'.w(),
+			 classNames: 'buttonGridView'.w()
 			}),
 			
       selectButton: SC.ButtonView.design({
@@ -31,7 +31,7 @@ Klb.pickerPanes.countryPicker = SC.Page.design({
         title: "_OK".loc(),
         isDefault: YES,
         action: "chooseCountries",
-        target: "Klb.searchController",
+        target: "Klb.searchController"
       })
    	}) 
   })
@@ -59,7 +59,7 @@ Klb.pickerPanes.sectorPicker = SC.Page.design({
 					//contentCheckboxKey: 'isSelected',
 					contentValueKey: 'name',
 					rowHeight: 24
-				}),
+				})
       }),
       
       selectButton: SC.ButtonView.design({
