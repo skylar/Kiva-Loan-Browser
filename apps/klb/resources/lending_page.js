@@ -7,7 +7,6 @@
 
 sc_require('views/loan_listing');
 sc_require('views/filter_item');
-sc_require('views/group_filter_item');
 sc_require('views/scroll');
 sc_require('controllers/loans');
 sc_require('controllers/lending');
