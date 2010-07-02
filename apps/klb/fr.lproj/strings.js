@@ -77,7 +77,7 @@ SC.stringsFor('Français', {
 	"_loan found":"prêt trouvé",
 
 	"_Finding Available Loans":"Recherche des prêts en cours…",
-	"_No Loans Matched Your Criteria":"Aucun prêt ne correspond à ces criteres",
+	"_No Loans Matched Your Criteria":"Aucun prêt ne correspond à ces critères",
 	"_Please choose another filter or change your filter options.":"Choisissez d‘autres filtres svp",
 	
 	//loan_list item"

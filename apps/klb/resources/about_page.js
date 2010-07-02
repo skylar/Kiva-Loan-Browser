@@ -7,16 +7,17 @@
 
 sc_require('views/static_content');
 sc_require('views/display_text');
+sc_require('views/scroll');
 
 // This page describes the main user interface for your application.
 Klb.aboutPage = SC.Page.design({
 
-	mainView: SC.ScrollView.design({
+	mainView: Klb.ScrollView.design({
 		hasHorizontalScroller: NO,
 		layout: {top:0,bottom:0,left:0,right:0},
 		
 		contentView: SC.View.design({
-			layout: {left:0,right:0,top:0,height:2370},
+			layout: {left:0,right:0,top:0,height:2500},
 			childViews: 'pageView'.w(),
 			classNames: 'contentBackdrop',
 
@@ -316,7 +317,7 @@ Klb.aboutPage = SC.Page.design({
 			
 			partners: SC.View.design({
 				layout: {top:2070,left:20,right:20},
-				childViews: 'title logo1 logo2 logo3'.w(),
+				childViews: 'title logo1 logo2 logo3 logo4 logo5'.w(),
 				
 				title: Klb.DisplayTextView.design({
 					layout: {top:0,height:30,left:0,right:0},
@@ -334,7 +335,15 @@ Klb.aboutPage = SC.Page.design({
 				logo3: SC.ImageView.design({
 					layout: {top:120,height:70,right:120,width:224},
 					value: sc_static('partner_greenwichConsulting.png')
-				})
+				}),
+				logo4: SC.ImageView.design({
+					layout: {top:227,height:52,left:150,width:181},
+					value: sc_static('partner_eyeka.png')
+				}),
+				logo5: SC.ImageView.design({
+					layout: {top:210,height:87,right:200,width:111},
+					value: sc_static('partner_mtv.png')
+				})				
 			})
 		
 		})})})

@@ -7,11 +7,12 @@
 
 //sc_require('views/simple_button');
 sc_require('views/display_text');
+sc_require('views/scroll');
 
 // This page describes the main user interface for your application.
 Klb.prehomePage = SC.Page.design({
 
-	mainView: SC.ScrollView.design({
+	mainView: Klb.ScrollView.design({
 		layout: {top:0,bottom:0,left:0,right:0},
 		contentView: SC.View.design({
 			layout: {top:0,height:860,right:0,left:0},

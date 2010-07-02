@@ -10,7 +10,7 @@ config :all, :required => :sproutcore, :title => 'Kiva en Français'
 #config :all, :minify => false
 
 # Configure lanugages to build
-config :all, :languages => [:fr, :en]
+config :klb, :build_languages => [:fr,:en]
 
 # Set up some proxies for dev/debug mode
 proxy '/proxy', :to => 'kivadevcamp.org'

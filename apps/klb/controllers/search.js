@@ -32,7 +32,6 @@ Klb.searchController = SC.ObjectController.create({
 	],
 	currentSortOrder: 'postedDate DESC',
 	currentSearch: Klb.Search.create(),
-	
 	canCheckout: NO,
 
 	query: function() {

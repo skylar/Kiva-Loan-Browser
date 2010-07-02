@@ -25,7 +25,7 @@ Klb.mainPage = SC.Page.design({
       
 			logoView: SC.ImageView.extend(SCUI.SimpleButton).design({
 			  layout: { left: 5, top: 5, width: 123, height: 64 },
-			  value: sc_static('images/kef_logo_150.png'),
+			  value: sc_static('images/kef_logo_123.png'),
 			  classNames: 'simulatedLogoButton',
 			  target: 'Klb.mainController',
 			  action: 'showPrehome'

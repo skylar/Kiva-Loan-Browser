@@ -10,8 +10,8 @@ require('views/grid');
 Klb.pickerPanes.countryPicker = SC.Page.design({
   
   mainPane: SC.PanelPane.design({
-		contentView: SC.View.design({
 	    layout: { width: 1010, height: 550, centerX: 0, centerY: 0 },
+		contentView: SC.View.design({
 			childViews: 'selectButton label buttonGridView'.w(),
 			
 			label: SC.LabelView.design({
@@ -40,8 +40,8 @@ Klb.pickerPanes.countryPicker = SC.Page.design({
 Klb.pickerPanes.sectorPicker = SC.Page.design({
 
 	mainPane: SC.PanelPane.design({
+		layout: { width: 300, height: 300, centerX: 0, centerY: 0 },
 		contentView: SC.View.design({
-			layout: { width: 300, height: 300, centerX: 0, centerY: 0 },
 			childViews: 'selectButton label scrollView'.w(),
 			
 			label: SC.LabelView.design({

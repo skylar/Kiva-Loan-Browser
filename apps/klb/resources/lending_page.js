@@ -8,6 +8,7 @@
 sc_require('views/loan_listing');
 sc_require('views/filter_item');
 sc_require('views/group_filter_item');
+sc_require('views/scroll');
 sc_require('controllers/loans');
 sc_require('controllers/lending');
 
@@ -214,7 +215,7 @@ loansLoading: SC.View.design({
   backgroundColor: 'white',
 
   loadingLabelView: SC.LabelView.design({
-    layout: { centerX: 0, centerY: 0, height: 24, width: 300 },
+    layout: { left:0, right:0, centerY: 0, height: 24 },
     textAlign: SC.ALIGN_CENTER,
     classNames: "center-label",
     controlSize: SC.LARGE_CONTROL_SIZE,
@@ -229,7 +230,7 @@ noTargets: SC.View.design({
   backgroundColor: 'white',
 
   labelView: SC.LabelView.design({
-    layout: { centerX: 0, centerY: -24, height: 24, width: 300 },
+    layout: { left:0,right:0,centerY: -24, height: 24},
     backgroundColor: 'white',
     textAlign: SC.ALIGN_CENTER,
     classNames: "center-label",
@@ -378,7 +379,7 @@ searchListView: SC.View.design({
   layout: { top: 0, bottom: 0, left: 0, right: 0 },
   childViews: 'loanView loanViewBar'.w(),
   
-  loanView: SC.ScrollView.design({
+  loanView: Klb.ScrollView.design({
     hasHorizontalScroller: NO,
     layout: { top: 0, bottom: 41, left: 0, right: 0 },
     classNames: 'no-border',
@@ -388,12 +389,12 @@ searchListView: SC.View.design({
 			classNames: 'loanListView',
 		  contentBinding: 'Klb.loansController.arrangedObjects',
 //			  selectionBinding: 'Klb.loansController.selection',
-      selectionDelegate: Klb.loansController,
+     		selectionDelegate: Klb.loansController,
 			contentValueKey: "name",
 			exampleView: Klb.LoanListingView,
 			rowHeight: 120,
 			actOnSelect: YES,
-      action: "selectLoan"
+      		action: "selectLoan"
 		})
   }),
   
