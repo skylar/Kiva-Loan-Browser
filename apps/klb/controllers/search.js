@@ -40,7 +40,11 @@ Klb.searchController = SC.ObjectController.create({
 	      iFemale, iMale, gQuery, cSearch,
 	      selectedCountries,
 	      selectedSectors;
-	  
+	 
+	 	// all matches must be fundraining w/ ready record status
+//	 	ands.push('status="ready"'); 
+	 	ands.push('loanStatus="fundraising"');
+	 	  
 	  // copy in any changed properties to the currentSearch
 		this.currentSearch.set('male',this.get('showMale'));
 		this.currentSearch.set('female',this.get('showFemale'));
@@ -240,9 +244,6 @@ Klb.searchController = SC.ObjectController.create({
 
 		// set a default search object (to avoid issues w/ null for now)
 		this.set('currentSearch',Klb.Search.create());
-		
-		// Though results handled, this triggers the data store to fetch loans...
-		Klb.store.find(Klb.AVAILABLE_LOANS_QUERY);
 		
 		// The actual query that drives loan serach results
 		this.notifyPropertyChange('query');

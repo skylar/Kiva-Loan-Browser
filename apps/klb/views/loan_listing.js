@@ -15,7 +15,11 @@ Klb.LoanListingView = SC.ListItemView.extend({
   }),
   
   render: function(context, firstTime) {
-    var content = this.get('content'),percentage,rating,ratingContext,fullStars,emptyStars,remainder,k;
+    var content = this.get('content'),percentage,rating,ratingContext,fullStars,emptyStars,remainder,k,image;
+
+		console.log("RENDER for " + content.get('id'));    
+    image = content.get('image');
+    if(!image) { image = {id:0,'template_id':1}; }
     
 	if (firstTime === YES) {
 		this.renderChildViews(context,firstTime);
@@ -27,7 +31,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
             .addStyle({
               top: 10, left: 10, width: 100, height: 100,
               'backgroundColor':'#dddddd',
-              backgroundImage: 'url(http://www.kiva.org/img/w200h200/' + content.get('image').id + '.jpg)',
+              backgroundImage: 'url(http://www.kiva.org/img/w200h200/' + image.id + '.jpg)',
               '-moz-background-size': 'cover',
               '-webkit-background-size': 'cover',
               '-moz-border-radius': 6,

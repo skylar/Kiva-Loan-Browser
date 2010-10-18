@@ -13,5 +13,6 @@ config :all, :required => :sproutcore, :title => 'Kiva en Français'
 config :klb, :build_languages => [:fr,:en]
 
 # Set up some proxies for dev/debug mode
+proxy '/a', :to => 'kapi.kivaenfrancais.org:5482'
 proxy '/proxy', :to => 'kivadevcamp.org'
 proxy '/v1', :to => 'api.kivaws.org'

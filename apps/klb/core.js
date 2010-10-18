@@ -28,8 +28,9 @@ Klb = SC.Application.create(
   // Activates responder tracing
   trace: YES,
   currentPane : null,
-	pickerPanes: {}
+	pickerPanes: {},
 
+	allLoans: null
 });
 
 // Bonus add-in
@@ -46,6 +47,8 @@ Klb.imageByName = function(name) {
 
 Klb.AVAILABLE_PARTNERS_QUERY = SC.Query.local(Klb.Partner,
 	{conditions: 'rating > 0'});
+Klb.AVAILABLE_LOANS_REMOTE_QUERY = SC.Query.remote(Klb.Loan, 
+	{conditions: 'loanStatus = "fundraising"', orderBy: ['postedDate']});
 Klb.AVAILABLE_LOANS_QUERY = SC.Query.local(Klb.Loan, 
 	{conditions: 'loanStatus = "fundraising"', orderBy: ['postedDate']});
 

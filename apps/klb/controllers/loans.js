@@ -29,6 +29,8 @@ Klb.loansController = SC.ArrayController.create(SC.CollectionViewDelegate,
 /** @scope Klb.loansController.prototype */ {
     
   searchControllerQueryDidChange: function() {
+  	console.log("search control query did change");
+  	
     var q = Klb.getPath('searchController.query');
     if (q) {
     	console.log("current query");

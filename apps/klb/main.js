@@ -12,6 +12,7 @@
 // As you develop your application you will probably want to override this.
 // See comments for some pointers on what to do next.
 //
+
 Klb.main = function main() {
 
 	// Step 1: Initialize the data store
@@ -35,7 +36,23 @@ Klb.main = function main() {
 	// Step 1. Set the content property on your primary controller.
   // This will make your app come alive!
 	Klb.searchController.primeData();
+	
 //	Klb.demosController.primeData();
-} ;
+// Though results handled, this triggers the data store to fetch loans...
+	Klb.set('allLoans', Klb.store.find(Klb.AVAILABLE_LOANS_REMOTE_QUERY));
+	Klb.allLoans.addObserver('length', null,function(sender, key, value) {
+		var ids = sender.storeKeys.map(function(sk) {
+		    return Klb.store.idFor(sk);
+		  }, this);
+//		console.log("Klb.allLoans.length did CHANGE fetching...");
+//		console.log(ids);
+		
+		Klb.store.retrieveRecords(Klb.Loan, ids, null, YES);
+	});
+	
+// once we have a list of all available loans, we need the full loan records?
+};
+
 
 function main() { Klb.main(); }
+
