@@ -13,6 +13,7 @@
 //
 SC.stringsFor('English', {
   // "_String Key": "Localized String"
+	"__INTL__":"en",
 
 	//// General
 	"_KlbTitle": "Loanr",
@@ -59,7 +60,7 @@ SC.stringsFor('English', {
   "_Male": "Male",
   "_Gender": "Gender",
   "_Sector": "Sector",
-  "_Borrowers": "Borrowers Per Loan",
+  "_Borrowers": "Borrowers",
   "_Partner_Rating": "Minimum Partner Rating",
   "_Groups": "Groups",
   "_Individuals": "Individuals",

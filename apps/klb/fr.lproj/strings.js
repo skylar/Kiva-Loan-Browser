@@ -13,6 +13,7 @@
 //
 SC.stringsFor('Français', {
   // "_String Key": "Localized String"
+	"__INTL__":"fr",
   
   //// General
 	"_KlbTitle": "Kiva en Français",

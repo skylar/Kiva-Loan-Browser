@@ -33,7 +33,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
 		}
 		else if(query === Klb.AVAILABLE_LOANS_REMOTE_QUERY) {
 			// load a cached list of all available partners
-			SC.Request.getUrl("/a/loans/newest/ids.json").json()
+			SC.Request.getUrl("/a/loans/fundraising/ids.json").json()
 				.notify(this, 'didFetchAvailableLoans', store, query)
 				.send();
 
@@ -159,7 +159,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
      // find the URL for the recordType.  if we can’t find one we can’t handle it
      var url;
      if (recordType === Klb.Loan) {
-       url = "/v1/loans/%@.json";
+       url = "/a/loans/%@.json";
       } else {
         // handle other types here...
       }
@@ -168,7 +168,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
       if (url) {
         var ids = sortedIds[SC.guidFor(recordType)],
         	numLoans = ids.get('length'),
-        	k = 0, pageSize = 10, idsSubset;
+        	k = 0, pageSize = 100, idsSubset;
         	
         for(k=0; k<numLoans; k+=pageSize) {
 	        idsSubset = ids.slice(k,k+pageSize);
@@ -197,8 +197,8 @@ Klb.KivaDataSource = SC.DataSource.extend(
         storeKeys = params.storeKeys;
  
     // normal: load into store...response == dataHash
-    if (SC.ok(response) && response.get('body').loans) {
-			response.get('body').loans.forEach(
+    if (SC.ok(response) && response.get('body')) {
+			response.get('body').forEach(
 			function(item, index, enm) {
 				if(item.location.country === "South Sudan") {
 //						console.log('plugged one SS entry for ' + item.name);
@@ -208,7 +208,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
 				item.loc_country_code = item.location.country_code;
 				item.loan_amount = item.terms.loan_amount;
 			});
-      store.loadRecords(recordType, response.get('body').loans);
+      store.loadRecords(recordType, response.get('body'));
  
     // error: indicate as such...response == error
     } else {
@@ -256,7 +256,6 @@ Klb.KivaDataSource = SC.DataSource.extend(
 			response.get('body').loans.forEach( 
 				function(item, index, enm) {
 					if(item.location.country === "South Sudan") {
-//						console.log('plugged one SS entry for ' + item.name);
 						item.location.country_code = '_S';
 					}
 					

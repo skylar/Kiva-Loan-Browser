@@ -66,24 +66,25 @@ Klb.searchController = SC.ObjectController.create({
 	  }
 	  
 	  // gender/groups
-	  iMale = "(borrowerCount=1 AND gender='male')";
-	  iFemale = "(borrowerCount=1 AND gender='female')";
-	 	if (/*cSearch.get('male') &&*/ cSearch.get('female')) {
+	  iMale = "(borrowerCount=1 AND gender='M')";
+	  iFemale = "(borrowerCount=1 AND gender='F')";
+	 	if (cSearch.get('male') && cSearch.get('female')) {
 	 		if(!cSearch.get('groups')) {
 		 		ands.push("borrowerCount = 1");
 		 	} // else, do nothing
 	 	} 
 	 	else if (cSearch.get('groups')) {
-	 		gQuery = "(borrowerCount > 2";
+	 		gQuery = "(borrowerCount >= 2";
 	 		if(cSearch.get('male')) { gQuery += " OR " + iMale; }
 	 		else if(cSearch.get('female')) { gQuery += " OR " + iFemale; }
 	 		gQuery += ")";
 	 		ands.push(gQuery);
-	 	} else {
+	 	} 
+	 	else if (cSearch.get('male')) { ands.push(iMale); }
+	 	else if (cSearch.get('female')) { ands.push(iFemale); }
+	 	else {
 	 		ands.push("borrowerCount = 0");
 	 	}
-//	 	else if (cSearch.get('male')) { ands.push(iMale); }
-//	 	else if (cSearch.get('female')) { ands.push(iFemale); }
 	  
 	  console.log("MY JOINS: " + ands.join(' AND '));
 	  return { conditions: ands.join(' AND '), parameters: parameters,

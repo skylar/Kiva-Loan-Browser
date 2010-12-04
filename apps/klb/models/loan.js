@@ -36,8 +36,7 @@ Klb.Loan = SC.Record.extend(
   borrowers: SC.Record.attr(Array, {key:'borrowers'}),
   
   fundedName:function(){
-    return this.get('name') + ' ' + this.get('fundedAmount');
-    
+    return this.get('name') + ' ' + this.get('fundedAmount');    
   }.property('name','fundedAmount').cacheable(),
   
   remainingAmount: function() {
@@ -51,5 +50,13 @@ Klb.Loan = SC.Record.extend(
   borrowerCount: function() {
   	if(!this.get('borrowers')) return 0;  	
   	return this.get('borrowers').get('length');
+  }.property('borrowers').cacheable(),
+  
+  gender: function() {
+  	if(!this.get('borrowers')) return 'X'; // undefeind
+  	if(this.get('borrowers').get('length') === 1) {
+  		return this.get('borrowers').objectAt(0).gender;
+  	}
+  	return 'G'; // group
   }.property('borrowers').cacheable()
 }) ;

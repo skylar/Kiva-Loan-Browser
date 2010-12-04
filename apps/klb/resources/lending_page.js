@@ -66,7 +66,7 @@ Klb.lendingPage = SC.Page.design({
     dividerView: SC.SplitDividerView,
     
     bottomRightView: SC.View.design({
-      childViews: 'filterTitle searchField genderLabel femaleCheckbox groupCheckbox locationLabel locationContent locationButton sectorLabel sectorContent sectorButton'.w(),
+      childViews: 'filterTitle searchField genderLabel femaleCheckbox maleCheckbox groupCheckbox locationLabel locationContent locationButton sectorLabel sectorContent sectorButton'.w(),
 
       filterTitle: SC.LabelView.design({
 			  layout: { left: 5, top: 5, right: 5, height: 32 },
@@ -88,10 +88,9 @@ Klb.lendingPage = SC.Page.design({
 			  controlSize: SC.LARGE_CONTROL_SIZE,
 			  classNames: 'filter-subheader'
 			}),
-			// note: for now, female checkbox acts as box for individuals. temp fix until borrower gender can be determined...
 			femaleCheckbox: SC.CheckboxView.design({
 			  layout: { left: 10, top: 90, width: 80, height: 24 },
-			  title: "_Individuals".loc(), //"_Female".loc(),
+			  title: "_Female".loc(), //"_Female".loc(),
 			  valueBinding: 'Klb.searchController.showFemale'
 			}),
 			maleCheckbox: SC.CheckboxView.design({

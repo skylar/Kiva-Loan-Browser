@@ -44,9 +44,11 @@ Klb.main = function main() {
 		var ids = sender.storeKeys.map(function(sk) {
 		    return Klb.store.idFor(sk);
 		  }, this);
-//		console.log("Klb.allLoans.length did CHANGE fetching...");
-//		console.log(ids);
-		
+		if(ids.get('length') > 10000) {
+			// start w/ a smaller pre-fetch of 30 loans
+			Klb.store.retrieveRecords(Klb.Loan, ids.slice(0,10), null, YES);
+			ids = ids.slice(30);
+		}
 		Klb.store.retrieveRecords(Klb.Loan, ids, null, YES);
 	});
 	

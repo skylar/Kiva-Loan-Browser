@@ -15,12 +15,18 @@ Klb.LoanListingView = SC.ListItemView.extend({
   }),
   
   render: function(context, firstTime) {
-    var content = this.get('content'),percentage,rating,ratingContext,fullStars,emptyStars,remainder,k,image;
+    var content = this.get('content'),percentage,rating,ratingContext,fullStars,emptyStars,remainder,k,image,use;
 
 		console.log("RENDER for " + content.get('id'));    
     image = content.get('image');
     if(!image) { image = {id:0,'template_id':1}; }
     
+    if(content.get('use_intl') && content.get('use_intl').texts.hasOwnProperty('__INTL__'.loc())) {
+    	use = content.get('use_intl').texts.get('__INTL__'.loc());
+    } else {
+    	use = content.get('use');
+    }
+
 	if (firstTime === YES) {
 		this.renderChildViews(context,firstTime);
 		
@@ -55,13 +61,13 @@ Klb.LoanListingView = SC.ListItemView.extend({
             .push(('_'+content.get('activity')).loc())
           .end();
           
-         /* loan use */
-    //    context
-    //      .begin('div')
-    //        .addClass('sc-view')
-    //        .addStyle({ left: 120, top: 60, height: 18, right:180 })
-    //        .push('<span style="font-weight: bold;">','_Loan_Use'.loc(),': </span>', content.get('use'))
-    //      .end();
+        //  loan use
+        context
+          .begin('div')
+            .addClass('sc-view')
+            .addStyle({ left: 120, top: 60, height: 18, right:180 })
+            .push('<span style="font-weight: bold;">','_Loan_Use'.loc(),': </span>', use)
+          .end();
           
         // country
         context

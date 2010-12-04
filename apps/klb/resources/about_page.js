@@ -172,7 +172,7 @@ Klb.aboutPage = SC.Page.design({
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'53',
+								value:'56',
 								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
@@ -191,7 +191,7 @@ Klb.aboutPage = SC.Page.design({
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'119',
+								value:'124',
 								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
@@ -210,7 +210,7 @@ Klb.aboutPage = SC.Page.design({
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'368,007',
+								value:'462,826',
 								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
@@ -229,7 +229,7 @@ Klb.aboutPage = SC.Page.design({
 							figure: Klb.DisplayTextView.design({
 								layout:{top:0,height:50},
 								classNames: 'dataFigure',
-								value:'$142,920,635',
+								value:'$178,320,635',
 								textAlign:SC.ALIGN_CENTER
 							}),
 							label: Klb.DisplayTextView.design({
