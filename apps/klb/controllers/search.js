@@ -22,6 +22,10 @@ Klb.searchController = SC.ObjectController.create({
 	showMale: true,
 	showFemale: true,
 	showGroups: true,
+
+	// updated by data store events
+  kivaHasLoans: true, // assume kiva has loans, unless proven otherwise
+  storeIsReadyForSearch: false,
 	
 	sortOptions: [
 		{"name":"_Most_Recent".loc(), "value":"postedDate DESC"},
@@ -42,7 +46,7 @@ Klb.searchController = SC.ObjectController.create({
 	      selectedSectors;
 	 
 	 	// all matches must be fundraining w/ ready record status
-//	 	ands.push('status="ready"'); 
+		//	 	ands.push('status="ready"'); 
 	 	ands.push('loanStatus="fundraising"');
 	 	  
 	  // copy in any changed properties to the currentSearch
@@ -66,22 +70,16 @@ Klb.searchController = SC.ObjectController.create({
 	  }
 	  
 	  // gender/groups
-	  iMale = "(borrowerCount=1 AND gender='M')";
-	  iFemale = "(borrowerCount=1 AND gender='F')";
+	  iMale = "(gender='M')";
+	  iFemale = "(gender='F')";
+ 		if(!cSearch.get('groups')) {
+			ands.push("borrowerCount = 1"); 		
+ 		}
 	 	if (cSearch.get('male') && cSearch.get('female')) {
-	 		if(!cSearch.get('groups')) {
-		 		ands.push("borrowerCount = 1");
-		 	} // else, do nothing
-	 	} 
-	 	else if (cSearch.get('groups')) {
-	 		gQuery = "(borrowerCount >= 2";
-	 		if(cSearch.get('male')) { gQuery += " OR " + iMale; }
-	 		else if(cSearch.get('female')) { gQuery += " OR " + iFemale; }
-	 		gQuery += ")";
-	 		ands.push(gQuery);
-	 	} 
+			// do nothing
+	 	} else if(cSearch.get('female')) { ands.push(iFemale); }
 	 	else if (cSearch.get('male')) { ands.push(iMale); }
-	 	else if (cSearch.get('female')) { ands.push(iFemale); }
+	 	else if (cSearch.get('groups')) { ands.push("borrowerCount >= 2"); }
 	 	else {
 	 		ands.push("borrowerCount = 0");
 	 	}
@@ -179,10 +177,20 @@ Klb.searchController = SC.ObjectController.create({
 	    var idx, ret = [];
 	    
 	    ret.push(Klb.searchController.currentFilters.create({
-	    	title: '_African Farmers'.loc(),
+	    	title: '_African Women'.loc(),
 				value: Klb.Search.create({
-					countries:['BJ','BI','CM','GH','ML','MZ','UG','EC','NG','CD','CG','_S','RW','SN','TG','TD','CI','SL','TZ'],
-					sectors:[{'name':'_Agriculture'.loc(),'value':'Agriculture','isSelected':false}]
+					countries:['BJ','BI','CM','GH','ML','MZ','UG','GQ','NG','CD','CG','_S','RW','SN','TG','TD','CI','SL','TZ'],
+					female:true,
+					male:false,
+					groups:true
+				}),
+	    	treeItemIsExpanded:NO,
+	    	treeItemChildren: null
+	    }));
+	    ret.push(Klb.searchController.currentFilters.create({
+	    	title: '_Educational Loans'.loc(),
+				value: Klb.Search.create({
+					sectors:[{'name':'_Education'.loc(),'value':'Education','isSelected':false}]
 				}),
 	    	treeItemIsExpanded:NO,
 	    	treeItemChildren: null
@@ -246,7 +254,7 @@ Klb.searchController = SC.ObjectController.create({
 		// set a default search object (to avoid issues w/ null for now)
 		this.set('currentSearch',Klb.Search.create());
 		
-		// The actual query that drives loan serach results
+		// The actual query that drives loan search results
 		this.notifyPropertyChange('query');
 	},
 
@@ -262,10 +270,9 @@ Klb.searchController = SC.ObjectController.create({
 		var len = this.get('availablePartners').get('length');
 		console.log("Observed availablePartners change w/ "+len);
 		
-	// for now, we wait until we have partner data to load activate the display
+		// partner data is one requirement for READY, so check status
 		if(this.get('availablePartners').get('length') > 0) {
-		//	Klb.lendingController.set('currentScene','searchListView');
-			Klb.makeFirstResponder(Klb.READY_LIST);
+			Klb.sendAction('checkLoadingState', this, null);
 		}
 	}.observes('*availablePartners.length'), // something not quite right w/ this
 	

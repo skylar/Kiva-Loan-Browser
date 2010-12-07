@@ -16,7 +16,7 @@ SC.stringsFor('English', {
 	"__INTL__":"en",
 
 	//// General
-	"_KlbTitle": "Loanr",
+	"_KlbTitle": "Kiva Translated",
 	"_OK": "OK",
 	"_Edit": "Edit",
 	
@@ -48,6 +48,8 @@ SC.stringsFor('English', {
 	'_Browse All Loans':'Browse All Loans',
 	'_Sample Filters':'Sample Filters',
 	'_African Farmers':'African Farmers',
+	'_African Women':'African Women',
+	'_Educational Loans':'Educational Loans',
 	'_Francophone Countries':'Francophone Countries',
 	'_Expiring Soon':'Expiring Soon',
 	
@@ -436,7 +438,9 @@ SC.stringsFor('English', {
 	"_Party Supplies":"Party Supplies",
 	"_Patchwork":"Patchwork",
 	"_Perfumes":"Perfumes",
+	"_Family Education Expenses":"Family Education Expenses",
 	"_Personal Education Expenses":"Personal Education Expenses",
+	"_Personal Student Loan":"Personal Student Loan",
 	"_Personal Housing Expenses":"Personal Housing Expenses",
 	"_Personal Medical Expenses":"Personal Medical Expenses",
 	"_Personal Products Sales":"Personal Products Sales",

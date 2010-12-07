@@ -16,6 +16,45 @@ sc_require('models/loan');
 Klb.KivaDataSource = SC.DataSource.extend(
 /** @scope Klb.KivaDataSource.prototype */ {
 
+	allLoans: null,
+	lastCachedLoanIndex: 0,
+	loanLoadThreshold: 0,
+	loanLoadQueue: [],
+	storedLoanTotal: 0,
+	totalLoanVolume: 0,
+
+	preFetchLoanObjects: function() {
+		var ids = [], last = this.get('lastCachedLoanIndex')
+			,volume;
+		
+		if(!this.get('totalLoanVolume')) {
+			volume = Klb.get('allLoans').storeKeys.get('length');
+// artificially limit results?
+//			if(volume > 1200) { volume = 1200; }
+			this.set('totalLoanVolume', volume);
+		}
+		
+		if(this.get('totalLoanVolume') <= last) {
+			return;
+		}
+		
+		ids = Klb.get('allLoans').storeKeys.map(function(sk) {
+		    return Klb.store.idFor(sk);
+		  }, this);
+		  
+		if(last === 0) {
+			// keep first query small to be safe
+			Klb.store.retrieveRecords(Klb.Loan, ids.slice(0,20), null, YES);
+			this.set('lastCachedLoanIndex', 20);
+			this.set('loanLoadThreshold', 20);
+		}
+		else {
+			Klb.store.retrieveRecords(Klb.Loan
+				, ids.slice(last,last+500), null, YES);
+			this.set('lastCachedLoanIndex', last+500);
+		}
+	},
+
   // ..........................................................
   // QUERY SUPPORT
   // 
@@ -67,11 +106,20 @@ Klb.KivaDataSource = SC.DataSource.extend(
 	        return Klb.Loan.storeKeyFor(id);
 	      }, this);
 //	    console.log(storeKeys);
-			console.log(response.get('body'));
+//			console.log(response.get('body'));
 	    store.loadQueryResults(query, storeKeys);
 			if(query) {
 				store.dataSourceDidFetchQuery(query);
+			}			
+			// check for Kiva-out-of-loans state
+			if(storeKeys.get('length') <= 0) {
+				Klb.searchController.set('kivaHasLoans', false);
+				console.log("NO KIVA LOANS");
+			} else {
+				this.preFetchLoanObjects();
+  			console.log("*** confirmed kiva has lons");
 			}
+			Klb.sendAction('checkLoadingState', this, null);
   	}
 		else {
 			store.dataSourceDidErrorQuery(query, response);
@@ -79,30 +127,30 @@ Klb.KivaDataSource = SC.DataSource.extend(
 		console.log("END didFetchAvailableLoans."); 
 	},
 	
-	didFetchNewestLoans: function(response, store, query) {
-		console.log("NEW LOANS fetch did complete.");
-		
-		if(SC.ok(response) && response.get('body').loans) {
+//	didFetchNewestLoans: function(response, store, query) {
+//		console.log("NEW LOANS fetch did complete.");
+//		
+//		if(SC.ok(response) && response.get('body').loans) {
 			// copy country_code to top-level for easy modelling
-			response.get('body').loans.forEach( 
-				function(item, index, enm) {
-					if(item.location.country === "South Sudan") {
+//			response.get('body').loans.forEach( 
+//				function(item, index, enm) {
+//					if(item.location.country === "South Sudan") {
 //						console.log('plugged one SS entry for ' + item.name);
-						item.location.country_code = '_S';
-					}
-					item.loc_country_code = item.location.country_code;
-				});
-		
-			store.loadRecords(Klb.Loan, response.get('body').loans);
-			if(query) {
-				store.dataSourceDidFetchQuery(query);
-			}
-		}
-		else {
-			store.dataSourceDidErrorQuery(query, response);
-		}
-		console.log("END didFetchNewestLoans.");
-	},
+//						item.location.country_code = '_S';
+//					}
+//					item.loc_country_code = item.location.country_code;
+//				});
+//		
+//			store.loadRecords(Klb.Loan, response.get('body').loans);
+//			if(query) {
+//				store.dataSourceDidFetchQuery(query);
+//			}
+//		}
+//		else {
+//			store.dataSourceDidErrorQuery(query, response);
+//		}
+//		console.log("END didFetchNewestLoans.");
+//	},
 
 	didFetchPartners: function(response, store, query) {
 		console.log("PARTNERS fetch did complete.");
@@ -172,12 +220,14 @@ Klb.KivaDataSource = SC.DataSource.extend(
         	
         for(k=0; k<numLoans; k+=pageSize) {
 	        idsSubset = ids.slice(k,k+pageSize);
-          console.log('founds some loans...' + ids);
+          //console.log('founds some loans...' + ids);
         
 	        SC.Request.getUrl(url.fmt(idsSubset.join(','))).json()
 	          .notify(this, this.didRetrieveRecords, 
 	          	{ store: store, recordType: recordType, storeKeys: storeKeys }).send();
+	          	
  				}
+
         // set the proper return value.  
         ret = (ret===NO) ? SC.MIXED_STATE : (ret===null ? YES : ret);  
  
@@ -191,15 +241,19 @@ Klb.KivaDataSource = SC.DataSource.extend(
  
   // called when a group of records have returns. assume result is array of data hashes
   didRetrieveRecords: function(response, params) {
-  console.log('***got the records back');
     var store = params.store,
         recordType = params.recordType,
-        storeKeys = params.storeKeys;
+        storeKeys = params.storeKeys,
+        numLoans, item, k;
  
     // normal: load into store...response == dataHash
     if (SC.ok(response) && response.get('body')) {
-			response.get('body').forEach(
-			function(item, index, enm) {
+    	numLoans = response.get('body').get('length');
+    	
+    	// do some pre-processing on the loan objects
+    	//  (kiva bugs, oddly placed data, etc.)
+     	for(k=0;k<numLoans;k++) {
+    		item = response.get('body').objectAt(k);
 				if(item.location.country === "South Sudan") {
 //						console.log('plugged one SS entry for ' + item.name);
 					item.location.country_code = '_S';
@@ -207,16 +261,52 @@ Klb.KivaDataSource = SC.DataSource.extend(
 				
 				item.loc_country_code = item.location.country_code;
 				item.loan_amount = item.terms.loan_amount;
-			});
-      store.loadRecords(recordType, response.get('body'));
+
+				// disable fields we don't need now to save memory?
+				item.description = ''; 
+				item.terms = null;
+				
+				// add every item to a single queue to simplify store load
+				this.get('loanLoadQueue').push(item);
+			}
+			
+		  console.log('***got the records back. queue total: ' + this.get('loanLoadQueue').length);
+    	// every time we get loans we must decide, load into
+    	// the store or queue for later processing?
+    	// NOTE: loading into SC's store seems to have a lot of
+    	//  overhead for already existing items (re-indexing?)
+    	if(this.get('loanLoadQueue').get('length') >= this.get('loanLoadThreshold')
+    	 || this.get('loanLoadQueue').get('length') + this.get('storedLoanTotal') >= this.get('totalLoanVolume')) {
+    		// TODO: in the future, may need queues based on recordType.
+    		//  for now, it works out that they are all for loans.
+    		this.storeRecordsFromQueuedResults(recordType,store);
+    	}
+    	
+    	// regardless, load more loans!
+			this.preFetchLoanObjects();
  
     // error: indicate as such...response == error
     } else {
 		  console.log('***ERROR on retrieve');
     	store.dataSourceDidError(storeKeys, response.get('body')); }
   },
-/*
-  retrieveRecord: function(store, storeKey) {
+
+	storeRecordsFromQueuedResults: function(recordType,store) {
+		console.log('storing records to the STORE of size' + this.get('loanLoadQueue').length);
+		
+		//Klb.searchController.beginPropertyChanges();
+    store.loadRecords(recordType, this.get('loanLoadQueue'));
+		//Klb.searchController.endPropertyChanges();
+
+    // reset threshold/queue
+    this.set('storedLoanTotal', this.get('storedLoanTotal') + this.get('loanLoadQueue').length);
+    this.set('loanLoadQueue', []);
+    this.set('loanLoadThreshold',200);
+    
+		Klb.searchController.set('storeIsReadyForSearch', true);		
+	},
+	
+/*  retrieveRecord: function(store, storeKey) {
     // TODO: Add handlers to retrieve an individual record's contents
     // call store.dataSourceDidComplete(storeKey) when done.
     
@@ -245,7 +335,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
  
     return YES; 
   },
- */
+ 
   didRetrieveLoanRecord: function(response, params) {
     console.log('******** found loan record.');
     var store = params.store,
@@ -267,6 +357,7 @@ Klb.KivaDataSource = SC.DataSource.extend(
     // error: indicate as such...response == error
     } else store.dataSourceDidError(storeKey, response.get('body'));
   },
+  */
   
   createRecord: function(store, storeKey) {
     

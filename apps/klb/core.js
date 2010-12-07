@@ -29,8 +29,6 @@ Klb = SC.Application.create(
   trace: YES,
   currentPane : null,
 	pickerPanes: {},
-
-	allLoans: null
 });
 
 // Bonus add-in

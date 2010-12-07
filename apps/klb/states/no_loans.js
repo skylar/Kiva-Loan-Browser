@@ -6,6 +6,8 @@
 // ==========================================================================
 /*globals Klb */
 
+sc_require('states/ready');
+
 /**
   Displayed when the app has no targets.
 */

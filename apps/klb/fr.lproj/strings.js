@@ -47,6 +47,8 @@ SC.stringsFor('Français', {
 	'_Browse All Loans':'Tous les prêts',
 	'_Sample Filters':'Exemples de filtres',
 	'_African Farmers':'Fermiers africains',
+	'_African Women':'Femmes africaines',
+	'_Educational Loans':'Prêts étudiants',
 	'_Francophone Countries':'Pays Francophones',
 	'_Expiring Soon':'Expiration proche',
 
@@ -436,7 +438,9 @@ SC.stringsFor('Français', {
 	"_Party Supplies":"Articles de Fêtes",
 	"_Patchwork":"Patchwork",
 	"_Perfumes":"Parfums",
+	"_Family Education Expenses":"Dépenses pour l'Education",
 	"_Personal Education Expenses":"Dépenses Personnelles pour l'Education",
+	"_Personal Student Loan":"Prêt étudiant",
 	"_Personal Housing Expenses":"Dépenses Personnelles de Logement",
 	"_Personal Medical Expenses":"Dépenses Personnelles pour les Soins Médicaux",
 	"_Personal Products Sales":"Ventes de Produits Personnels",

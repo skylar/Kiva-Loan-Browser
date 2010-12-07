@@ -77,12 +77,12 @@ Klb.registerPage = SC.Page.design({
 				}),
 
 			  labelView: SC.LabelView.design({
-			    layout: { centerX: 0, centerY: 24, height: 24, width: 300 },
+			    layout: { centerX: 0, centerY: 24, height: 50, width: 300 },
 			    textAlign: SC.ALIGN_CENTER,
 			    classNames: "center-label",
 			    controlSize: SC.LARGE_CONTROL_SIZE,
 			    fontWeight: SC.BOLD_WEIGHT,
-			    value: 'Loading Kiva website...'.loc()
+			    value: '_Loading Kiva Website'.loc()
 			  })
 			}),
 

@@ -28,7 +28,8 @@ Klb.READY_LIST = SC.Responder.create({
     //       var test = Klb.computeRouteTest();
     //       if (test) Klb.sendAction('selectTest', this, test);
     //       else Klb.updateRoute(target, null, YES);
-    //     }     
+    //     }
+		Klb.sendAction('updateStateForResultCount', this, null);
   },
   
   willLoseFirstResponder: function() {

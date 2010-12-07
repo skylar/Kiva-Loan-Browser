@@ -22,7 +22,7 @@ Klb.LoanListingView = SC.ListItemView.extend({
     if(!image) { image = {id:0,'template_id':1}; }
     
     if(content.get('use_intl') && content.get('use_intl').texts.hasOwnProperty('__INTL__'.loc())) {
-    	use = content.get('use_intl').texts.get('__INTL__'.loc());
+    	use = content.get('use_intl').texts['__INTL__'.loc()];
     } else {
     	use = content.get('use');
     }
@@ -87,36 +87,39 @@ Klb.LoanListingView = SC.ListItemView.extend({
     		ratingContext = context
     		  .begin('div')
     		    .addClass('sc-view')
-    		    .addStyle({ left: 120+340, width:50+(17*5), top: 83, height: 18 })
-    		    .push('<span style="font-weight: bold;">','_Rating'.loc(),': </span>');
+    		    .addStyle({ right: 180, width:160+(17*5), top: 83, height: 18 })
+    		    .begin('div')
+    		    .addStyle({ right:5*17+10, width:150, top:5,height:18,textAlign:'right'
+    		    	,fontWeight:'bold'}).push('_Rating'.loc()).end();
     
         rating = content.get('partner').get('rating');
         fullStars = Math.floor(rating);
-        remainder = rating - fullStars;
+        halfStar = ((rating - fullStars) * 10) > 5.4;
         emptyStars = 5 - fullStars;
+        if(halfStar) { emptyStars--; }
         
-        for(k=0;k<fullStars;k++) {
-        	ratingContext.begin('div').addClass('sc-view')
-        		.addStyle({left:50 + (k*17),width:17,bottom:0,height:17,
-        			border:'0px',
-        			backgroundImage:'url('+Klb.imageByName('images/ratingStar_full.png')+')'})
-        	.end();
-        }
-    		if(remainder*10 > 5.4) {
-    			ratingContext.begin('div').addClass('sc-view')
-    				.addStyle({left:50 + fullStars*17,width:17,bottom:0,height:17,
-        			border:'0px',
-    					backgroundImage:'url('+Klb.imageByName('images/ratingStar_half.png')+')'})
-    			.end();
-    			fullStars++;
-    		}
     		for(k=0;k<emptyStars;k++) {
     			ratingContext.begin('div').addClass('sc-view')
-    				.addStyle({left:50+(fullStars+k)*17,width:17,bottom:0,height:17,
+    				.addStyle({right:k*17,width:17,bottom:0,height:17,
         			border:'0px',
     					backgroundImage:'url('+Klb.imageByName('images/ratingStar_empty.png')+')'})
     			.end();
     		}
+    		if(halfStar) {
+    			ratingContext.begin('div').addClass('sc-view')
+    				.addStyle({right:emptyStars*17,width:17,bottom:0,height:17,
+        			border:'0px',
+    					backgroundImage:'url('+Klb.imageByName('images/ratingStar_half.png')+')'})
+    			.end();
+    			emptyStars++;
+    		}
+        for(k=0;k<fullStars;k++) {
+        	ratingContext.begin('div').addClass('sc-view')
+        		.addStyle({right:((emptyStars+k)*17),width:17,bottom:0,height:17,
+        			border:'0px',
+        			backgroundImage:'url('+Klb.imageByName('images/ratingStar_full.png')+')'})
+        	.end();
+        }
         ratingContext.end();
         
         // remaining amount  

@@ -14,6 +14,8 @@
 //
 
 Klb.main = function main() {
+	
+	document.title = '_KlbTitle'.loc();
 
 	// Step 1: Initialize the data store
 	// NOTE: use this nifty test to swap to fixtures if the network is down
@@ -37,22 +39,8 @@ Klb.main = function main() {
   // This will make your app come alive!
 	Klb.searchController.primeData();
 	
-//	Klb.demosController.primeData();
-// Though results handled, this triggers the data store to fetch loans...
+	// Though results handled, this triggers the data store to fetch loans...
 	Klb.set('allLoans', Klb.store.find(Klb.AVAILABLE_LOANS_REMOTE_QUERY));
-	Klb.allLoans.addObserver('length', null,function(sender, key, value) {
-		var ids = sender.storeKeys.map(function(sk) {
-		    return Klb.store.idFor(sk);
-		  }, this);
-		if(ids.get('length') > 10000) {
-			// start w/ a smaller pre-fetch of 30 loans
-			Klb.store.retrieveRecords(Klb.Loan, ids.slice(0,10), null, YES);
-			ids = ids.slice(30);
-		}
-		Klb.store.retrieveRecords(Klb.Loan, ids, null, YES);
-	});
-	
-// once we have a list of all available loans, we need the full loan records?
 };
 
 

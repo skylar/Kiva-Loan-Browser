@@ -53,10 +53,21 @@ Klb.Loan = SC.Record.extend(
   }.property('borrowers').cacheable(),
   
   gender: function() {
-  	if(!this.get('borrowers')) return 'X'; // undefeind
-  	if(this.get('borrowers').get('length') === 1) {
-  		return this.get('borrowers').objectAt(0).gender;
+  	var male = false, female = false, k,
+  		bc = this.get('borrowers').get('length');
+
+  	if(!this.get('borrowers')) return 'X'; // undefined
+  	for(k=0;k<bc;k++) {
+  		if(this.get('borrowers').objectAt(k).gender === 'F') {
+  			female = true;
+  		} else if(this.get('borrowers').objectAt(k).gender === 'M') {
+  			male = true;
+  		}
   	}
-  	return 'G'; // group
+  	
+  	if(male && female) return 'X';
+  	if(male) return 'M';
+  	if(female) return 'F';
+  	return 'X'; // mixed
   }.property('borrowers').cacheable()
 }) ;

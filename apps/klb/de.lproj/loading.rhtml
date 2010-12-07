@@ -1,0 +1,17 @@
+<% content_for :page_styles do %>
+<meta description="Thanks to Kiva, the world's first online lending platform, you can lend small amounts of money to entrepreneurs and help alleviate poverty. Kiva en Français has been created to help francophones in their online lending experience." />
+<meta keywords="kiva, microfinance, micro-finance, microcrédit, micro-crédit, prêt, microentrepreneur, projets, réduire pauvreté, micro-crédit en ligne, social business, innovation sociale" />
+<% end %>
+<% content_for :loading do %>
+<% # Any HTML in this file will be visible on screen while your page loads
+   # its application JavaScript.  SproutCore applications are optimized for 
+   # caching and startup very fast, so your users will often only see this 
+   # content for a brief moment on their first app load, if at all.
+%>
+<div class="header">
+	<img src="<%= sc_static('images/kef_logo_123.png') %>" />
+</div>
+
+<p class="loading"><img src="<%= sc_static('images/animated_loader.gif') %>"/>Lade... einen Moment bitte!</p>
+
+<% end %>

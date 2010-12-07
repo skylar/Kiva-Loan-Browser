@@ -32,6 +32,15 @@ Klb.READY = SC.Responder.create({
   back: function() {
     Klb.detailController.set('content', null);
     Klb.makeFirstResponder(Klb.READY_LIST);
-  }
+  },
       
+  checkLoadingState: function() {
+  	// we need partners
+  	if(Klb.searchController.get('availablePartners').get('length') > 0
+  	 && (!Klb.searchController.get('kivaHasLoans') ||
+  	 	Klb.searchController.get('storeIsReadyForSearch'))) {
+  	// we need at least one callback of data, or kiva-out-of-loans state
+	    Klb.makeFirstResponder(Klb.READY_LIST);
+  	}
+  }
 });
